@@ -1,6 +1,12 @@
 # ThinkPython2-CN
 《ThinkPython2》中文译本, 希望能令你的Python学习之路简单一些。
 
+## 结构
+
+- 中文简体: book/book_cn.pdf
+- 中文繁体: book/book_tw.pdf
+
+
 ## 感谢
 
 感谢原书对于我的帮助以及影响，谢谢Allen Downey。
