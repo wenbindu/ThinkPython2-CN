@@ -3,8 +3,8 @@
 
 ## 结构
 
-- 中文简体: book/book_cn.pdf
-- 中文繁体: book/book_tw.pdf
+- [x] 中文简体: book_cn.pdf
+- [ ] 中文繁体: book_tw.pdf
 
 
 ## 感谢
