@@ -3,8 +3,15 @@
 
 ## 结构
 
-- [x] 中文简体: book_cn.pdf
-- [ ] 中文繁体: book_tw.pdf
+#### tex 文件:
+
+- 中文简体: book/book_zh-Hans.tex
+- 中文繁体: book/book_zh-Hant.tex
+
+#### pdf 文件:
+
+- [x] 中文简体: ThinkPython-SimplifiedChinese.pdf
+- [x] 中文繁体: ThinkPython-TraditionalChinese.pdf
 
 
 ## 感谢
@@ -14,7 +21,7 @@
 
 ## 提示
 
-如果你想重新编译，可以将*tex*文件复制到原作者[仓库](https://github.com/AllenDowney/ThinkPython2)的book目录下，采用*Latex* 重新编译。
+如果你想重新编译，安装texlive采用*XeLatex* 重新编译。
 
 编译本书需要安装：
 -  texlive-latex-base
