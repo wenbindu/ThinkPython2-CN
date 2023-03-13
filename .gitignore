@@ -1,1 +1,7 @@
-book/*.log
+*.log
+*.idx
+*.aux
+*.out
+*.synctex.gz
+*.toc
+
