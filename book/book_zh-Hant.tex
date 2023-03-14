@@ -229,55 +229,54 @@ The \LaTeX\ source for this book is available from
 
 \section*{本書由來}
 
-1999年1月, 我正準備以Java教學生編程入門, 
+1999年1月, 我準備以Java教學生編程入門, 
 課程已講過三次, 但我沮喪依舊. 
-因為多人無法完成目標, 雖有優秀個體, 但整體效果令人難以接受.
+這門課的失敗率太高, 即使是那些優秀的學生, 其整體成績水平也不理想.
 
-依我觀察, 問題出在書本教案上, 
-書籍厚重, 畫蛇添足, 細枝末節過多, 編程思慮不足.
-因此學生總是陷於困境: 起步易, 行進難, 半途而廢.
-學生學得囫圇吞棗, 老師教得步步回首.
+據我觀察, 問題出在書本教案上, 
+書籍厚重, 畫蛇添足, 細枝末節過多, 關於如何編程, 缺乏更多的指導.
+因此學生總是容易陷入困境: 起步易, 行進難, 半途而廢.
+學生學得囫圇吞棗, 而我則要花費整個學期, 收拾殘局.
 
-此次開課前兩週, 我決定自己寫本書, 目標如下：
+開課前兩週, 我決定自己寫本書, 目標如下：
 
 \begin{itemize}
 
-\item 少.十頁易解, 百頁難讀.
+\item 少. 十頁易解, 百頁難通.
 
-\item 精.詞彙早解釋, 術語早提煉.
+\item 精. 詞彙早解釋, 術語早提煉.
 
-\item 緩.大而化小, 小步慢跑.
+\item 緩. 將困難部分大而化小, 小步慢跑.
 
-\item 專.聚焦思想, 精簡程序.
+\item 專. 聚焦編程思想, 精簡程序代碼.
 
 \end{itemize}
 
 莫名其妙地選擇了個題目 {\em 像計算機專家一樣思考
 (How to Think Like a Computer Scientist)}.
 
-首版略顯粗略, 但是簡單有效. 
-學生知其然, 並知其所以然, 我便可聚焦課堂於難點, 趣題和操作實踐. 
-絕知此事要躬行, 實踐是艱難且不可避免的, 卻也是最有趣的. 
+首版雖然略顯粗略, 但是效果不錯. 
+學生知其然, 並知其所以然, 我也可聚焦課堂於難點, 趣題以及操作實踐. 
 
-我基於 GNU 自由文檔許可證發布此書, 
-也就是說, 任何人都可以基於此協議, 複製, 修改, 分享此書. 
+我基於GNU自由文檔許可證發布此書, 
+也就是說, 任何人都可以複製, 修改, 分享此書. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-後續的事情就有趣了, 弗吉尼亞州的Jeff Elkner高校教師採用了本書, 
-並轉換為了Python教材. 通過他給我的Python版書籍, 
-我有了一段不一樣的Python學習之旅. 
+後續的事情很有趣, 弗吉尼亞州的Jeff Elkner高中教師採用了本書, 
+並翻譯為了Python教材. 他給我發送了他的翻譯版本, 
+我便有了一段不尋常得經歷, 通過閱讀自己的書來學習Python.  
 同時依靠 Green Tea Press, 於2001年, 我首次發布了Python版. 
 \index{Elkner, Jeff}
 
-2003年, 我開始在歐林學院任職, 並且首次教授Python. 
-和教授Java相比, 驚喜非凡, 學生樂於學習且樂在其中. 
+2003年, 我開始在歐林學院教書, 並且首次教授Python. 
+和Java相比, 驚喜非凡, 學生樂於學習且樂在其中. 
 \index{Olin College}
 
 自此, 我不斷優化此書, 校正錯誤, 提高案例水準, 
 並不斷增加一些新的例子和練習. 
 
-因此本書有個通俗易懂的名字{\em Think Python}. 
+現在標題不再那麼誇張, 改為了{\em Think Python}. 
 部分修改如下:
 
 \begin{itemize}
@@ -290,13 +289,13 @@ The \LaTeX\ source for this book is available from
 
 \item 增加了一系列的案例：涵蓋練習-解答-討論三個階段的訓練. 
 
-\item 探討了程序開發流程以及基礎設計模式. 
+\item 擴展了對程序開發流程以及基礎設計模式的探討. 
 
-\item 增加了關於調試和算法分析的附錄. 
+\item 添加了關於調試和算法分析的附錄. 
 
 \end{itemize}
 
-第二版 {\em Think Python} 有如下變化：
+{\em Think Python}第二版有如下變化：
 
 \begin{itemize}
 
@@ -304,14 +303,13 @@ The \LaTeX\ source for this book is available from
 
 \item 網頁版功能更加豐富, 使初學者可以無需安裝 Python 便可在瀏覽器運行. 
 
-\item 對於第~\ref{turtle}節, 我將本人常用的海龜繪圖包 Swampy 換成了功能更豐富, 
-應用更廣泛的 {\tt turtle}包. 
+\item 對於第~\ref{turtle}節, 我將自己的海龜繪圖包Swampy 更標準的Python模塊{\tt turtle}. 
 
-\item 增加了新章節 "利器", 主要介紹一些 Python 不常用但是高效的功能. 
+\item 增加了新章節 "利器", 主要介紹一些Python不必需卻非常有用的功能. 
 
 \end{itemize}
 
-希望本書能對大家在學習編程知識, 以及培養計算機專家一樣思維模式
+希望您喜歡本書, 同時對您在學習編程知識, 以及培養計算機專家一樣的思維模式
 方面有所裨益. 
 
 
@@ -323,25 +321,29 @@ Allen B. Downey \\
 
 \section*{致謝}
 
-感謝Jeff Elkner把這本Java書籍轉換為Python, 
+感謝Jeff Elkner將我的Java書籍翻譯為Python, 
 並讓我愛上了Python.
 \index{Elkner, Jeff}
 
-感謝Chris Meyers寫了 {\em How to Think Like a Computer Scientist} 部分章節. 
+感謝Chris Meyers為{\em How to Think Like a Computer Scientist}
+貢獻了部分章節. 
 \index{Meyers, Chris}
 
-感謝創建GNU自由文檔協議以及創作共用的自由軟件基金會. 
-基於此協議以及知識共享協議, 我才能和Jeff, Chris一起合作. 
+
+感謝自由軟件基金開發的GNU自由文檔許可證, 
+這令我和Jeff 以及 Chris 的合作成為可能,
+也感謝我正在使用其許可證的知識共享組織. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 \index{Creative Commons}
 
 
-感謝整理{\em How to Think Like a Computer Scientist}的Lulu的編纂. 
+感謝在Lulu工作, 為{\em How to Think Like a Computer Scientist}
+進行編纂的編輯們. 
 
 感謝耐心編輯 {\em Think Python}的O'Reilly Media的朋友. 
 
-感謝使用本書早期版本的學生們, 感謝所有提出建議和提出錯誤的朋友. 
+感謝所有使用本書早期版本的學生們, 以及所有為本書提供更正和建議的貢獻者(如下所列). 
 
 
 \section*{貢獻者名單}
@@ -370,19 +372,19 @@ Allen B. Downey \\
 \item Michael Conlon 修正了第2章的一處語法錯誤, 並優化第一章的一處格式, 
 初次提出關於口譯技術的討論. 
 
-\item Beno\^{i}t Girard 修正了5.6節一個重大錯誤. 
+\item Beno\^{i}t Girard 修正了5.6節一個幽默的錯誤. 
 
 \item Courtney Gleason 和 Katherine Smith 編寫了 {\tt horsebet.py}, 
 這是本書早期版本的一個案例腳本, 此程序現在仍然可以在網站找到. 
 
-\item Lee Harr 修正了多個錯誤, 所以應該把他列為主要編輯者. 
+\item Lee Harr 修正了很多錯誤, 所以應該把他列為主要編輯者. 
 
 \item James Kaylin 作為學生, 修正了大量錯誤. 
 
 \item David Kershaw 修正了3.10節的 {\tt catTwice} 函數錯誤. 
 
 \item Eddie Lam修正了第1,2,3章大量錯誤, 同時修復了Makefile文件, 
-從而我們可以創建索引. 同時幫助我們建立了版本庫. 
+從而我們可以創建索引. 同時幫助我們設置了版本控制方案. 
 
 \item Man-Yong 修正了2.4節的一個樣例. 
 
@@ -391,14 +393,14 @@ Allen B. Downey \\
 
 \item Chris McAloon 修正了3.9和3.10節的錯誤. 
 
-\item Matthew J. Moelter 作為一個長期貢獻者, 為本書提供了大量修訂和建議. 
+\item Matthew J. Moelter 作為一個長期貢獻者, 為本書提供了大量更正和建議. 
 
 \item Simon Dicon Montford 發現了第3章的一個函數定義的遺漏和幾個變量的命名錯誤. 
 同時指出第13章的{\tt increment}函數錯誤. 
 
 \item John Ouzts 修正了第三章的 "return value" 的定義. 
 
-\item Kevin Parks 為本書的發行優化提供了寶貴的意見. 
+\item Kevin Parks 就如何改進本書的發行提供了寶貴的意見. 
 
 \item David Pool 對本書給予了善意的鼓勵, 並指出了第一章詞彙表中的一個錯字. 
 
@@ -407,7 +409,7 @@ Allen B. Downey \\
 \item Robin Shaw 指出13.1節中, 使用了沒有預先定義的printTime函數. 
 
 \item Paul Sleigh 指出了第7章的一個錯誤, 
-以及Jonah Cohen 的生成HTML的Prel腳本中的一個錯誤. 
+以及Jonah Cohen 從LaTex生成HTML的Prel腳本中的一個錯誤. 
 
 \item Craig T. Snydal 在 Drew University 使用本書教學, 
 並為變量命名和修正提供了寶貴意見. 
@@ -417,7 +419,7 @@ Allen B. Downey \\
 
 \item Keith Verheyden 修正了第3章的一個錯誤. 
 
-\item Peter Winstanley 指出了拉丁版第3章的一個長期存在的錯誤. 
+\item Peter Winstanley 指出了第3章拉丁語中的一個長期存在的錯誤. 
 
 \item Chris Wrobell修正了 I/O 和異常章節中的一個錯誤. 
 
@@ -446,7 +448,7 @@ Allen B. Downey \\
 
 \item David Hutchins 修正了序中的一個錯詞. 
 
-\item Gregor Lingl 在奧地利的維也納的一個高校教授Python, 他翻譯了德語版, 並在翻譯過程中, 修正了第5章的多個錯誤. 
+\item Gregor Lingl 在奧地利的維也納的一個高校講授Python, 他翻譯了德語版, 並在翻譯過程中, 修正了第5章的多個錯誤. 
 
 \item Julie Peters 修正了序中的一個錯字. 
 
@@ -460,7 +462,8 @@ Allen B. Downey \\
 
 \item Curtis Yanko 辨析了第2章一個歧義. 
 
-\item Ben Logan 修正了本書HTML版的大量錯誤. 
+\item Ben Logan 修正了許多拼寫錯誤, 
+以及在將本書翻譯成HTML時遇到的問題. 
 
 \item Jason Armstrong 發現第2章遺漏的一個詞彙. 
 
@@ -539,7 +542,7 @@ Allen B. Downey \\
 \item Gregg Lind 和 Abigail Heithoff 提供了~\ref{checksum}習題. 
 
 \item Max Hailperin 修正了大量錯誤, 同時提供了大量建議. 
-Max 是 {\em Concrete Abstractions} 一書的作者之一, 讀完此書, 
+Max 是 {\em Concrete Abstractions} 一書的其中一位作者, 讀完此書, 
 你可以閱讀這本非凡之作. 
 
 \item Chotipat Pornavalai 修正了錯誤信息中的一處問題. 
@@ -561,7 +564,7 @@ Max 是 {\em Concrete Abstractions} 一書的作者之一, 讀完此書,
 \item Ratnakar Tiwari 提供了退化三角形說明腳註. 
 
 \item Anurag Goel 提供了 \verb"is_abecedarian"
-的另外一種方案, 並修正了多個錯誤. 同時他知曉如何拼寫Jane Austen. 
+的另外一種解決方案, 並修正了多個錯誤. 同時他知曉如何拼寫Jane Austen. 
 
 \item Kelli Kratzer 指出了一處拼寫錯誤. 
 
@@ -581,11 +584,11 @@ Max 是 {\em Concrete Abstractions} 一書的作者之一, 讀完此書,
 
 \item Paul Stoop 修正了 \verb+uses_only+ 中的一處拼寫錯誤. 
 
-\item Eric Bronner 指出了關於執行順序的討論中的一處歧義. 
+\item Eric Bronner 指出了關於執行順序的討論中的一處混亂. 
 
 \item Alexandros Gezerlis 為提供建議的數量和質量設定了新的標準, 深表謝意. 
 
-\item Gray Thomas knows his right from his left.
+\item Gray Thomas 頭腦清醒, 梳理了很多問題.
 
 \item Giovanni Escobar Sosa 提供了大量修訂. 
 
@@ -613,7 +616,7 @@ Max 是 {\em Concrete Abstractions} 一書的作者之一, 讀完此書,
 
 \item Ishwar Bhat 修訂了關於費馬大定理的描述. 
 
-\item Andrea Zanella 將此書翻譯為意大利文, 同時修正了多個錯誤. 
+\item Andrea Zanella 將此書翻譯為意大利語, 同時修正了多個錯誤. 
 
 
 \item 感謝Melissa Lewis 和 Luciano Ramalho對第二版提供的建議和幫助. 
@@ -626,7 +629,7 @@ Max 是 {\em Concrete Abstractions} 一書的作者之一, 讀完此書,
 
 \item Per Starb{\"a}ck 令我了解了Python3中的通用換行符. 
 
-\item Laurent Rosenfeld 和 Mihaela Rotaru 將本書翻譯為了法文, 並糾正了諸多錯誤. 
+\item Laurent Rosenfeld 和 Mihaela Rotaru 將本書翻譯為了法語, 並糾正了諸多錯誤. 
 
 % ENDCONTRIB
 
