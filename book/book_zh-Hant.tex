@@ -248,7 +248,7 @@ The \LaTeX\ source for this book is available from
 
 \item 緩. 將困難部分大而化小, 小步慢跑.
 
-\item 專. 聚焦編程思想, 精簡程序代碼.
+\item 專. 聚焦編程思想, 精簡程式代碼.
 
 \end{itemize}
 
@@ -289,7 +289,7 @@ The \LaTeX\ source for this book is available from
 
 \item 增加了一系列的案例：涵蓋練習-解答-討論三個階段的訓練. 
 
-\item 擴展了對程序開發流程以及基礎設計模式的探討. 
+\item 擴展了對程式開發流程以及基礎設計模式的探討. 
 
 \item 添加了關於調試和算法分析的附錄. 
 
@@ -330,7 +330,7 @@ Allen B. Downey \\
 \index{Meyers, Chris}
 
 
-感謝自由軟件基金開發的GNU自由文檔許可證, 
+感謝自由軟體基金開發的GNU自由文檔許可證, 
 這令我和Jeff 以及 Chris 的合作成為可能,
 也感謝我正在使用其許可證的知識共享組織. 
 \index{GNU Free Documentation License}
@@ -375,7 +375,7 @@ Allen B. Downey \\
 \item Beno\^{i}t Girard 修正了5.6節一個幽默的錯誤. 
 
 \item Courtney Gleason 和 Katherine Smith 編寫了 {\tt horsebet.py}, 
-這是本書早期版本的一個案例腳本, 此程序現在仍然可以在網站找到. 
+這是本書早期版本的一個案例腳本, 此程式現在仍然可以在網站找到. 
 
 \item Lee Harr 修正了很多錯誤, 所以應該把他列為主要編輯者. 
 
@@ -428,7 +428,7 @@ Allen B. Downey \\
 \item Christoph Zwerschke 給出多個修正和教學建議, 並解釋了
  {\em gleich}和 {\em selbe}的不同. 
 
-\item James Mayer 修正了一堆拼寫和排版問題, 甚至包括貢獻列表中的兩個問題. 
+\item James Mayer 修正了一堆拼寫和排版問題, 甚至包括貢獻串列中的兩個問題. 
 
 \item Hayden McAfee 解決了一個兩例相校令人困惑的差異. 
 
@@ -658,26 +658,26 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 % START THE BOOK
 \mainmatter
 
-\chapter{程序思維}
+\chapter{程式之道}
 
 本書期望能帶你做到像計算機專家一樣思考. 
 這意味著你要整合數學, 工程和自然科學的知識去綜合思考. 
-比如數學, 計算機專家用專業語言去表達觀點(尤其涉及計算). 
-比如工程師, 他們設計原件, 拼裝組件, 構建系統, 權衡各種方案. 
-比如科學家, 他們觀察複雜系統行為, 小心假設, 積極求證. 
+像數學家一樣, 計算機專家通常以形式語言去表達思想(尤其涉及計算). 
+像工程師一樣, 他們設計原件, 拼裝組件, 構建系統, 權衡各種方案. 
+像科學家一樣, 他們觀察複雜系統行為, 小心假設, 積極求證. 
 \index{problem solving}
 
 計算機專家最重要的能力是{\bf 解決問題}. 
-解決問題意味著要分析問題, 提出創造性解決方案, 並能清晰準確表述. 
-事實證明, 學習編程是鍛鍊解決問題能力的極好機會. 
-這也是本章叫做程序思維的緣由. 
+解決問題意味著能夠發現問題, 同時可以提出創造性解決方案, 並能清晰準確表述. 
+事實證明, 學習編程是鍛鍊解決問題能力的絕佳機會. 
+這也是本章叫做程式之道的緣由. 
  
-一方面, 我們將學習編程這一技能, 另一方面, 我們將利用編程技能來實現目標. 
+一方面, 你將學習編程這一技能, 另一方面, 你將利用編程技能來實現目標. 
 隨著不斷學習, 我們終將看到彼岸. 
 
-\section{何為程序?}
+\section{何為程式}
 
-{\bf 程序} 簡而言之, 就是一堆執行運算的指令. 
+{\bf 程式} 簡而言之, 就是一堆執行運算的指令. 
 運算可以是數學計算, 例如求解方程或多項式. 
 也可以是符號運算, 例如檢索或者替換文檔中的語句詞彙. 
 也可以是圖形運算, 比如處理圖片, 播放視頻. 
@@ -689,46 +689,49 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 
 \item[輸入:] 從鍵盤, 文件, 網絡或者其他設備中獲取數據. 
 
-\item[輸出:] 將數據顯示於屏幕, 保存至文件, 發送到網絡等. 
+\item[輸出:] 將數據顯示於屏幕, 保存至文件, 通過網絡發送等. 
 
 \item[數學計算:] 加減乘除等數學運算. 
 
-\item[條件選擇:] 只能在命運分支的安排下, 低頭前進. 
+\item[條件選擇:] 檢查條件並運行相應的代碼(只能在命運分支的安排下, 低頭前進). 
 
-\item[循環執行:] 在宿命輪迴中不斷嘗試, 於既定界限處終達彼岸. 
+\item[迴圈執行:] 重複執行, 直到改變(在宿命輪迴中不斷嘗試, 於既定界限處終達彼岸). 
 
 \end{description}
 
 無論相信與否, 基礎指令不過這些. 
 不管是哪種編程語言, 
-也無論何等複雜, 都由這些基礎指令構成. 
+也無論何等複雜, 都由類似指令構成. 
 如此你便了解了何為編程, 
 那便是將龐大複雜的任務不斷分解, 
-不斷細化, 直至細化為這幾個基礎指令為止. 
+不斷細化, 直至細化為這些基礎指令為止. 
 
 
-\section{運行 Python}
+\section{運行程式}
 
-巧婦難為無米之炊, 運行Python程序必然需要先安裝Python和其他軟件, 
+巧婦難為無米之炊, 運行Python程式必然需要先安裝Python和相關軟體, 
 熟悉操作系統和命令行的人還好, 對於初學者, 同時學習操作系統和編程, 
 必然是件萬分痛苦的事情. 
 \index{running Python}
 \index{Python!running}
 
-我建議先在瀏覽器上進行Python編程學習, 後續再按步驟進行Python安裝. 
+為了避免上述問題, 
+我建議您先在瀏覽器上學習Python編程, 後續再按步驟進行Python安裝. 
 \index{Python in a browser}
 
-在線運行Python代碼的網站很多, 如果無從下手, 我推薦PythonAnywhere. 
+在線運行Python代碼的網站很多, 
+如果你已經有青睞的, 繼續使用即可,
+如果無從下手, 我推薦PythonAnywhere. 
 入門指導可以查閱\url{http://tinyurl.com/thinkpython2e}
 \index{PythonAnywhere}
 
-本書有兩個版本, 分別是 Python 2 和 Python 3, 內容相似, 
-可以互相借鑑. 其中差異, 初學時需要關注. 
-本書主要面向 Python 3, 同時包括了一些關於Python 2的內容. 
+Python有兩個版本, 分別是Python 2和Python 3, 它們及其相似, 
+所以如果學會一種, 便很容易照貓畫虎. 兩者稍有差異, 初學時需要關注. 
+本書主要面向Python 3, 同時也包含了一些關於Python 2的內容. 
 \index{Python 2}
 
-運行Python代碼的程序叫做 Python {\bf 解釋器} . 通常點擊圖標
-或者在命令行輸入{\tt python} 來啟動程序. 啟動後, 可以看到如下
+運行Python代碼的程式叫做Python{\bf 解釋器}. 通常點擊圖標
+或者在命令行鍵入{\tt python} 來啟動程式. 啟動後, 可以看到如下
 輸出：
 \index{interpreter}
 
@@ -740,9 +743,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 \end{verbatim}
 %
 
-前三行主要是 Python 解釋器信息以及操作系統信息, 內容因人而異. 
-注意版本信息, 比如 {\tt 3.4.0}, 第一位的3表示此解釋器版本是Python 3, 
-如果是2, 則表示Pyhton 2. 
+前三行主要是Python解釋器信息以及操作系統信息, 內容因人而異. 
+注意版本信息(此處是{\tt 3.4.0}), 以3開頭表示此解釋器版本是Python 3, 
+如果是以2開頭, 則表示Pyhton 2. 
 
 最後一行是個 {\bf 提示符}, 表示一切就緒, 只待代碼. 
 如果輸入一行代碼, 並敲擊 Enter鍵, 解釋器就會顯示運行結果. 
@@ -756,12 +759,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 到此, 你應該學會了如何啟動Python解釋器, 並運行代碼了. 
 
-\section{初識}
+\section{初識程式}
 \label{hello}
 \index{Hello, World}
 
-通常, 學習一門新的編程語言, 遇到的第一個程序就是 "Hello, World!". 
-Python語言這樣表示：
+通常, 學習一門新的編程語言, 寫的第一個程式就是 "Hello, World!". 
+在Python中這樣編寫：
 
 \begin{verbatim}
 >>> print('Hello, World!')
@@ -769,29 +772,29 @@ Python語言這樣表示：
 %
 
 這就是{\bf print 語法}, 不要誤會是打印到紙上, 而是顯示在屏幕上, 
-結果就是這個語句：
+結果就是這樣：
 
 \begin{verbatim}
 Hello, World!
 \end{verbatim}
 %
 
-單引號表示語句的開始和結束, 並不會顯示在輸出上. 
+程式中的引號表示語句的開始和結束, 並不會出現在結果中. 
 \index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
-括號表示{\tt print}是個函數, 後續在第~\ref{funcchap}節會介紹. 
+圓括號表示{\tt print}是個函數, 後續會在第~\ref{funcchap}章介紹. 
 \index{function} \index{print function}
 
-Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括號. 
+Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號. 
 \index{Python 2}
 
 \begin{verbatim}
 >>> print 'Hello, World!'
 \end{verbatim}
 %
-這種語言版本之間的差異需要注意, 
+這種差異很值得深究, 
 但現在, 我們可以開始學習Python編程了. 
 
 
@@ -799,10 +802,10 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括
 \index{operator!arithmetic}
 \index{arithmetic operator}
 
-講完了 "Hello, World", 我們講講算術. Python 通過 {\bf 運算符} 
+講完了 "Hello, World", 我們講講算術. Python 通過 {\bf 運算子} 
 實現加減乘除等計算. 
 
-運算符 {\tt +}, {\tt -}, 和 {\tt *} 分別表示加法, 減法和乘法, 參看以下樣例：
+運算子 {\tt +}, {\tt -}, 和 {\tt *} 分別表示加法, 減法和乘法, 參看以下樣例：
 
 \begin{verbatim}
 >>> 40 + 2
@@ -813,7 +816,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括
 42
 \end{verbatim}
 %
-運算符 {\tt /} 表示除法:
+運算子 {\tt /} 表示除法:
 
 \begin{verbatim}
 >>> 84 / 2
@@ -823,7 +826,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括
 
 對於結果為 {\tt 42.0}, 而不是{\tt 42}的疑惑, 下章解釋. 
 
-運算符{\tt **} 表示冪運算, 表示一個數字的次方. 
+運算子{\tt **} 表示冪運算, 表示一個數字的次方. 
 
 \begin{verbatim}
 >>> 6**2 + 6
@@ -831,7 +834,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括
 \end{verbatim}
 %
 
-運算符 \verb"^" 在某些編程語言中表示冪運算, 但是Python中, 
+運算子 \verb"^" 在某些編程語言中表示冪運算, 但是Python中, 
 表示位運算的 "異或" 操作. 如果不了解位運算, 那下面的例子只會讓你困惑. 
 
 \begin{verbatim}
@@ -852,11 +855,11 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以後邊不會有括
 \index{string}
 
 
- {\bf 值} 是程序的基本要素, 例如字母, 數字. 前文看到的
+ {\bf 值} 是程式的基本要素, 例如字母, 數字. 前文看到的
  {\tt 2}, {\tt 42.0}, 以及 \verb"'Hello, World!'", 都屬於值. 
 
 而這些值分屬不同 {\bf 類型}:
-{\tt 2} 是 {\bf 整樹}, 
+{\tt 2} 是 {\bf 整數}, 
 {\tt 42.0} 是 {\bf 浮點數}, 
 而 \verb"'Hello, World!'" 是 {\bf 字符串}, 也就是一堆字符的集合. 
 \index{integer}
@@ -997,7 +1000,7 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 
 \item[散文:] 用詞淺顯直白, 行文多有章法, 表意使用較少, 相比於詩詞, 易於理解. 
 
-\item[程序:] 電腦程序的編寫不允許有任何比喻象徵等手法, 必須
+\item[程式:] 電腦程式的編寫不允許有任何比喻象徵等手法, 必須
 遵照語法結構, 不可有一絲逾矩. 
 
 
@@ -1051,26 +1054,26 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \item[底層語言(low-level language):] 便於計算機運行的語言, 也叫 "機器語言" 或者 "匯編語言".
 \index{low-level language}
 
-\item[可移植(portability):] 一個程序可運行於多種設備的特性. 
+\item[可移植(portability):] 一個程式可運行於多種設備的特性. 
 \index{portability}
 
-\item[解釋器(interpret):] 讀取並執行代碼的程序. 
+\item[解釋器(interpret):] 讀取並執行代碼的程式. 
 \index{interpret}
 
 \item[提示符(prompt):] 解釋器的聲明, 用來提示準備接收輸入信息. 
 \index{prompt}
 
-\item[程序(program):] 運算指令集合. 
+\item[程式(program):] 運算指令集合. 
 \index{program}
 
 \item[打印語句(print statement):] Python中輸出到屏幕的指令. 
 \index{print statement}
 \index{statement!print}
 
-\item[運算符(operator):] 類似加減乘除的符號. 
+\item[運算子(operator):] 類似加減乘除的符號. 
 \index{operator}
 
-\item[值(value):] 程序操作的基本元素, 例如數字或者字符串. 
+\item[值(value):] 程式操作的基本元素, 例如數字或者字符串. 
 \index{value}
 
 \item[類型(type):] 值的集合. 目前遇到的有整數集合 (type {\tt int}), 
@@ -1093,16 +1096,16 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 例如數學語言, 編程語言; 所有的編程語言都是形式語言. 
 \index{formal language}
 
-\item[符號(token):] 程序中的基本元素, 類似自然語言中的單詞. 
+\item[符號(token):] 程式中的基本元素, 類似自然語言中的單詞. 
 \index{token}
 
-\item[語法(syntax):] 程序的結構規範. 
+\item[語法(syntax):] 程式的結構規範. 
 \index{syntax}
 
-\item[解析(parse):] 分析語法結構並檢驗程序. 
+\item[解析(parse):] 分析語法結構並檢驗程式. 
 \index{parse}
 
-\item[異常(bug):] 程序中的錯誤. 
+\item[異常(bug):] 程式中的錯誤. 
 \index{bug}
 
 \item[調試(debugging):] 定位異常並解決的過程. 
@@ -1111,13 +1114,13 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \end{description}
 
 
-\section{習題}
+\section{習題集}
 
 \begin{exercise}
 
 工欲善其事, 必先利其器, 搭配電腦實操來學習本書, 效果更好. 
 
-學習新知識更有效的方式是不斷試錯, 不斷思考. 比如 "Hello, World" 的程序, 
+學習新知識更有效的方式是不斷試錯, 不斷思考. 比如 "Hello, World" 的程式, 
 試一試雙引號只寫一半是否可以？
 不寫雙引號, 會怎麼樣？
 以及 {\tt print} 拼錯了, 又會如何？
@@ -1140,7 +1143,7 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \item 數學表示中, 首位補零很正常, 比如 {\tt09}. 
 但是在Python世界中, 如果輸入 {\tt 011} 會出來什麼結果呢?
 
-\item 如果兩個值之間沒有運算符會如何? 
+\item 如果兩個值之間沒有運算子會如何? 
 
 \end{enumerate}
 
@@ -1212,7 +1215,7 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \section{變量名}
 \index{variable}
 
-程序工程師一般會為變量起個容易理解記憶的名字, 使人一看即知其用途. 
+程式工程師一般會為變量起個容易理解記憶的名字, 使人一看即知其用途. 
 
 變量名可長可短, 包含字母和數字, 但不能以數字開頭, 
 大小寫均可用, 但是方便起見, 建議只用小寫字母. 
@@ -1258,7 +1261,7 @@ break      except     in         raise
 
 \section{表達式和語句}
 
-{\bf 表達式} 是值, 變量以及運算符的集合. 
+{\bf 表達式} 是值, 變量以及運算子的集合. 
 值本身可以認為是表達式, 同樣, 變量本身也是. 
 所以下面都可以認為是合法的表達式：
 \index{expression}
@@ -1350,8 +1353,8 @@ x + 1
 \index{order of operations}
 \index{PEMDAS}
 
-當表達式含有多個運算符時, 執行順序主要基於 {\bf 運算次序}. 
-對於數學運算符, Python也遵循數學慣例. 
+當表達式含有多個運算子時, 執行順序主要基於 {\bf 運算次序}. 
+對於數學運算子, Python也遵循數學慣例. 
 本書採用縮寫 {\bf PEMDAS} 來輔助記憶以下規則：
 
 \begin{itemize}
@@ -1373,14 +1376,14 @@ x + 1
 
 \end{itemize}
 
-不必強求記憶這些運算符的優先級, 碰到比較複雜的表達式, 採用括號會方便很多. 
+不必強求記憶這些運算子的優先級, 碰到比較複雜的表達式, 採用括號會方便很多. 
 
 
 \section{字符串操作}
 \index{string!operation}
 \index{operator!string}
 
-通常, 字符串甚至類似數字的字符串的運算, 一般不能使用數學運算符, 
+通常, 字符串甚至類似數字的字符串的運算, 一般不能使用數學運算子, 
 下面的表達式均是非法運算：
 
 \begin{verbatim}
@@ -1418,7 +1421,7 @@ throatwarbler
 隨著代碼量越來越龐大, 越來越複雜, 閱讀並理解其邏輯也越來越困難. 
 形式語言使用時又寫得密密麻麻, 對著滿頁代碼去明白其邏輯和功能, 便異常艱難. 
 
-所以, 在程序代碼中加入一些自然語言來進行解釋, 說明其作用, 便顯得異常重要. 
+所以, 在程式代碼中加入一些自然語言來進行解釋, 說明其作用, 便顯得異常重要. 
 這些解釋說明, 便叫做{\bf 注釋},  一般以井號( \verb"#") 開頭：
 
 \begin{verbatim}
@@ -1458,7 +1461,7 @@ v = 5     # 速度(米/秒)
 \index{debugging}
 \index{bug}
 
-一般程序中會出現三種異常：
+一般程式中會出現三種異常：
 語法錯誤, 運行時錯誤以及語義錯誤. 
 有效區分三者差異, 可以大大提高定位速度. 
 
@@ -1472,18 +1475,18 @@ v = 5     # 速度(米/秒)
 \index{error message}
 \index{syntax} 
 
-如果程序存在語法錯誤, Python會直接報錯並退出執行, 
-程序便無法繼續運行. 
+如果程式存在語法錯誤, Python會直接報錯並退出執行, 
+程式便無法繼續運行. 
 開始學習編程時, 需要耗費大量精力跟蹤語法錯誤. 
 隨著經驗增長, 此類錯誤會越來越少, 而定位也會越來越快. 
 
 
-\item[運行時錯誤:] 運行時錯誤只有在程序開始運行後才會出現. 
+\item[運行時錯誤:] 運行時錯誤只有在程式開始運行後才會出現. 
 這些錯誤也叫作{\bf 異常}, 因為一般表示異常或者壞的事情發生了. 
 \index{runtime error} \index{error!runtime}
   \index{exception} \index{safe language} \index{language!safe}
 
-本書前面幾章的程序較為簡單, 運行時錯誤也較少遇到, 
+本書前面幾章的程式較為簡單, 運行時錯誤也較少遇到, 
 所以想窺其全貌, 還需一段時間. 
 
 \item[語義錯誤:] 第三種錯誤是 "語義錯誤", 意如其字. 
@@ -1514,10 +1517,10 @@ v = 5     # 速度(米/秒)
 均不能作為變量名使用. 
 \index{keyword}
 
-\item[操作數(operand):]  運算符操作的單一值對象. 
+\item[操作數(operand):]  運算子操作的單一值對象. 
 \index{operand}
 
-\item[表達式(expression):]  變量、運算符以及值的集合, 共同來表示單一結果. 
+\item[表達式(expression):]  變量、運算子以及值的集合, 共同來表示單一結果. 
 \index{expression}
 
 \item[求值(evaluate):]  執行運算產生值, 從而簡化表達式的過程. 
@@ -1538,19 +1541,19 @@ v = 5     # 速度(米/秒)
 \item[腳本(script):] 存儲代碼的文件. 
 \index{script}
 
-\item[運算次序(order of operations):]  包含多運算符和操作數的表達式執行時所遵循的先後順序. 
+\item[運算次序(order of operations):]  包含多運算子和操作數的表達式執行時所遵循的先後順序. 
 \index{order of operations}
 
 \item[拼接(concatenate):]  操作數首位相接. 
 \index{concatenation}
 
-\item[注釋(comment):]  幫助他人理解代碼的有效信息, 對程序執行無影響. 
+\item[注釋(comment):]  幫助他人理解代碼的有效信息, 對程式執行無影響. 
 \index{comment}
 
 \item[語法錯誤(syntax error):] 導致代碼無法解析(因此無法解釋)的錯誤. 
 \index{syntax error}
 
-\item[異常(exception):]  程序運行時遇到的錯誤. 
+\item[異常(exception):]  程式運行時遇到的錯誤. 
 \index{exception}
 
 \item[語義(semantics):]  代碼含義. 
@@ -1562,7 +1565,7 @@ v = 5     # 速度(米/秒)
 \end{description}
 
 
-\section{習題}
+\section{習題集}
 
 \begin{exercise}
 
@@ -1885,7 +1888,7 @@ I sleep all night and I work all day.
 \section{定義和調用}
 \index{function definition}
 
-將上述代碼片段整理為一個完整程序:
+將上述代碼片段整理為一個完整程式:
 
 \begin{verbatim}
 def print_lyrics():
@@ -1899,7 +1902,7 @@ def repeat_lyrics():
 repeat_lyrics()
 \end{verbatim}
 %
-此程序包含兩個函數：\verb"print_lyrics" 和 \verb"repeat_lyrics". 
+此程式包含兩個函數：\verb"print_lyrics" 和 \verb"repeat_lyrics". 
 這些函數定義的執行和其他語句一樣, 但是會在執行後創建函數對象. 
 函數內的語句只有在函數調用時才會執行, 同時定義函數並不會輸出結果. 
 \index{use before def}
@@ -1907,11 +1910,11 @@ repeat_lyrics()
 如你所料, 函數運行前必須先定義函數, 也就是說, 
 函數定義語句先執行, 函數才能被調用. 
 
-練習一下, 將程序的末行提到開始, 令函數先被調用, 再被定義. 
-運行程序, 看看會報什麼錯誤. 
+練習一下, 將程式的末行提到開始, 令函數先被調用, 再被定義. 
+運行程式, 看看會報什麼錯誤. 
 
 將函數調用再次移回末尾, 然後將 \verb"print_lyrics" 函數定義
-放到 \verb"repeat_lyrics" 函數的後面, 看看程序運行時, 會發生什麼?
+放到 \verb"repeat_lyrics" 函數的後面, 看看程式運行時, 會發生什麼?
 
 \section{運行流程}
 \index{flow of execution}
@@ -1919,7 +1922,7 @@ repeat_lyrics()
 為保證函數定義先於函數調用, 需要了解語句執行順序, 
 也叫做{\bf 運行流程 }. 
 
-程序代碼從第一行開始, 從上到下, 逐行運行. 
+程式代碼從第一行開始, 從上到下, 逐行運行. 
 
 執行函數的定義不會改變代碼邏輯運行順序, 
 但是要謹記, 函數內的語句只會在函數被調用時才執行. 
@@ -1934,7 +1937,7 @@ repeat_lyrics()
 幸虧Python 解釋器能夠有效追蹤函數的執行流程, 才可以在函數執行完成後, 
 回到函數調用的地方, 從而繼續執行, 直到結束. 
 
-所以, 不要簡單地從上到下閱讀程序, 
+所以, 不要簡單地從上到下閱讀程式, 
 有時候更要關注代碼運行流程. 
 
 
@@ -2045,14 +2048,14 @@ NameError: name 'cat' is not defined
 \index{parameter}
 
 
-\section{棧圖}
+\section{堆疊圖}
 \label{stackdiagram}
 \index{stack diagram}
 \index{function frame}
 \index{frame}
-若想跟蹤變量使用情況, 一般繪製{\bf 棧圖}比較有效. 
-和狀態圖類似, 棧圖也會標識每個變量的值, 不同之處是, 
-棧圖會標識變量所屬函數. 
+若想跟蹤變量使用情況, 一般繪製{\bf 堆疊圖}比較有效. 
+和狀態圖類似, 堆疊圖也會標識每個變量的值, 不同之處是, 
+堆疊圖會標識變量所屬函數. 
 \index{stack diagram}
 \index{diagram!stack}
 
@@ -2063,11 +2066,11 @@ NameError: name 'cat' is not defined
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack.pdf}}
-\caption{棧圖.}
+\caption{堆疊圖.}
 \label{fig.stack}
 \end{figure}
 
-棧圖中的各個框的排列方式標示了各個函數的調用關係. 
+堆疊圖中的各個框的排列方式標示了各個函數的調用關係. 
 此例中, \verb"print_twice"函數被 \verb"cat_twice"調用, 
 \verb"cat_twice" 被\verb"__main__"調用. \verb"__main__"是
 頂層框的一個特殊名字, 任何函數外的變量, 都屬於它. 
@@ -2097,7 +2100,7 @@ NameError: name 'cat' is not defined
 以及運行時函數, 甚至引起錯誤的代碼行號. 
 \index{traceback}
 
-在溯源信息中的函數次序和棧圖中的框的次序是一致的, 
+在溯源信息中的函數次序和堆疊圖中的框的次序是一致的, 
 當前正在運行的函數都是在最下面. 
 
 \section{有值函數和無值函數}
@@ -2161,10 +2164,10 @@ None
 \index{type!NoneType}
 
 
-\section{函數何用?}
+\section{函數何用}
 \index{function!reasons for}
 
-將程序劃分為一個個函數是否值得, 對此的考量, 可以參看以下緣由:
+將程式劃分為一個個函數是否值得, 對此的考量, 可以參看以下緣由:
 
 \begin{itemize}
 
@@ -2172,7 +2175,7 @@ None
 
 \item 函數可以消除重複, 簡化代碼, 針對功能, 修改一處即可. 
 
-\item 將程序切分為函數, 可以分別調試, 然後組合它們即可. 
+\item 將程式切分為函數, 可以分別調試, 然後組合它們即可. 
 
 \item 設計良好的函數可以編寫一次, 調試一次, 多處調用, 有效復用. 
 
@@ -2188,20 +2191,20 @@ None
 
 在某些方面, 調試和偵探工作很像. 面對線索, 有效推理, 確定造就結果的流程和緣由. 
 
-調試又像實驗科學, 針對問題, 一旦有所想法, 便可修改程序, 再次嘗試. 
-如果假設正確, 便可預期修改後的結果, 向可執行的程序代碼推進. 
+調試又像實驗科學, 針對問題, 一旦有所想法, 便可修改程式, 再次嘗試. 
+如果假設正確, 便可預期修改後的結果, 向可執行的程式代碼推進. 
 如果假設錯誤, 便要繼續探究了. 正如Sherlock Holmes(夏洛克·福爾摩斯)所說, 
 ``除去所有不可能因素, 留下來的東西, 無論多麼不願意相信, 但這就是事實
 的真相."(A. Conan Doyle, {\em The Sign of Four})
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
-對某些人而言, 編程便是調試. 這是因為, 編程便是不斷調試程序, 直到實現目標的過程. 
-所以, 建議先寫可執行代碼, 然後逐步修改並調試程序, 進而實現預定效果. 
+對某些人而言, 編程便是調試. 這是因為, 編程便是不斷調試程式, 直到實現目標的過程. 
+所以, 建議先寫可執行代碼, 然後逐步修改並調試程式, 進而實現預定效果. 
 
 比如, Linux 操作系統具有數百萬行代碼,  但它起源於Linus Torvalds
 研究Intel 80386芯片的一段簡單代碼. 據Larry Greenfield所說, 
-``Linus的早期項目中, 有個程序是在AAAA和BBBB之間交替輸出, 而這後來演化為了Linux.''
+``Linus的早期項目中, 有個程式是在AAAA和BBBB之間交替輸出, 而這後來演化為了Linux.''
 ({\em The Linux Users' Guide} Beta Version 1).
 \index{Linux}
 
@@ -2229,7 +2232,7 @@ None
 \item[形參(parameter):] 函數內部用於表示傳入參數的名稱. 
 \index{parameter}
 
-\item[函數調用(function call):] 運行函數的語句, 由函數名, 以及括號中的參數列表構成. 
+\item[函數調用(function call):] 運行函數的語句, 由函數名, 以及括號中的參數串列構成. 
 \index{function call}
 
 \item[實參(argument):]  函數調用時傳入函數的值. 這個值會賦值給函數內部的形參. 
@@ -2271,10 +2274,10 @@ None
 \item[運行流程(flow of execution):] 語句運行的順序.
 \index{flow of execution}
 
-\item[棧圖(stack diagram):]  表示函數,變量,以及值的關係圖. 
+\item[堆疊圖(stack diagram):]  表示函數,變量,以及值的關係圖. 
 \index{stack diagram}
 
-\item[框(frame):]  棧圖中表示函數調用的箱體圖,包括局部變量以及參數. 
+\item[框(frame):]  堆疊圖中表示函數調用的箱體圖,包括局部變量以及參數. 
 \index{function frame}
 \index{frame}
 
@@ -2285,7 +2288,7 @@ None
 \end{description}
 
 
-\section{習題}
+\section{習題集}
 
 \begin{exercise}
 \index{len function}
@@ -2402,7 +2405,7 @@ O'Reilly Media, 1997).
 \end{exercise}
 
 
-\chapter{案例分析: 接口設計}
+\chapter{案例分析: 介面設計}
 \label{turtlechap}
 
 本章採用案例來講述, 如何設計可以協同運行的函數. 
@@ -2418,7 +2421,7 @@ O'Reilly Media, 1997).
 本章的代碼樣例可以從\url{http://thinkpython2.com/code/polygon.py}獲取. 
 
 
-\section{turtle模塊}
+\section{模塊turtle}
 \label{turtle}
 
 打開Python解釋器, 鍵入以下命令, 以檢查是否安裝 {\tt turtle}模塊:
@@ -2473,7 +2476,7 @@ bob.fd(100)
 如果筆落下, 烏龜移動時會留下痕跡. 
 {\tt pu}和{\tt pd}方法分別代表``抬筆(pen up)''和``落筆(pen down)''.
 
-將下面代碼加入程序, 以實現繪製直角(
+將下面代碼加入程式, 以實現繪製直角(
 創建{\tt bob}對象後, 調用\verb"mainloop"前):
 
 \begin{verbatim}
@@ -2482,7 +2485,7 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-運行程序, 可以看到{\tt bob}對象會向東移動, 然後向北移動, 並留下兩根垂直線段. 
+運行程式, 可以看到{\tt bob}對象會向東移動, 然後向北移動, 並留下兩根垂直線段. 
 
 現在嘗試繪製個正方形, 先不要著急學習下面的內容. 
 
@@ -2528,7 +2531,7 @@ Hello!
 \end{verbatim}
 %
 這是{\tt for}語句的簡單使用, 後面會講更多用法. 
-但這些已足夠令我們重寫繪製方塊的程序了. 
+但這些已足夠令我們重寫繪製方塊的程式了. 
 暫時不要看下面的內容, 先嘗試一下. 
 
 以下用{\tt for}語句實現繪製正方形:
@@ -2544,12 +2547,12 @@ for i in range(4):
 縮進的內容為函數體. 
 函數體可以是任意行語句. 
 
- {\tt for} 語句也叫 {\bf 循環}, 因為代碼執行流程會重複執行循環體, 
-此例中, 會執行四次循環體.
+ {\tt for} 語句也叫 {\bf 迴圈}, 因為代碼執行流程會重複執行迴圈體, 
+此例中, 會執行四次迴圈體.
 \index{loop}
 
 這一版代碼和上一版略有不同, 繪製完最後一條線後, 會多一次轉向. 
-雖然多的這一步操作增加了耗時, 但是利用循環, 使重複操作更加簡單. 
+雖然多的這一步操作增加了耗時, 但是利用迴圈, 使重複操作更加簡單. 
 當然, 這也令小烏龜回到了開始的地方, 朝向了開始的方向. 
 
 \section{習題集}
@@ -2563,10 +2566,10 @@ for i in range(4):
 
 \item 編寫{\tt square}函數, 參數是個turtle對象{\tt t}, 用turtle繪製正方形. 
 
-編寫函數, 將{\tt bob} 作為參數傳給{\tt square}, 然後運行程序. 
+編寫函數, 將{\tt bob} 作為參數傳給{\tt square}, 然後運行程式. 
 
 \item 為 {\tt square}添加參數{\tt length}, 令邊的長度為{\tt length}, 
-同時修改函數, 令其調用第二個實參. 再次運行程序, 給{\tt length} 賦不同的值進行測試. 
+同時修改函數, 令其調用第二個實參. 再次運行程式, 給{\tt length} 賦不同的值進行測試. 
 
 \item 複製{\tt square}並命名為 {\tt polygon} . 添加參數{\tt n},
 令其繪製正n邊形. 提示：正n邊形外角角度為$360/n$度. 
@@ -2575,7 +2578,7 @@ for i in range(4):
 
 \item 編寫{\tt circle} 函數, 以turtle類型的{\tt t}, 以及半徑{\tt r}為參數, 
 通過調用{\tt polygon}函數, 輸入適當長度和邊數, 繪製一個近似的圓形. 
-用不同的 {\tt r}值, 測試程序. \index{circle function} \index{function!circle}
+用不同的 {\tt r}值, 測試程式. \index{circle function} \index{function!circle}
 
 提示: 確定圓的周長, 使其滿足{\tt 邊長 * 邊數 = 周長}.
 
@@ -2602,9 +2605,9 @@ def square(t):
 square(bob)
 \end{verbatim}
 %
-函數內的 {\tt fd} 和 {\tt lt}縮進兩次, 表示運行於函數定義裡面的{\tt for} 循環中. 
+函數內的 {\tt fd} 和 {\tt lt}縮進兩次, 表示運行於函數定義裡面的{\tt for} 迴圈中. 
 下一行 {\tt square(bob)}, 左邊距對齊同時沒有縮進, 
-表示上面的 {\tt for} 循環以及函數定義都已結束. 
+表示上面的 {\tt for} 迴圈以及函數定義都已結束. 
 
 函數內的 {\tt t} 和 {\tt bob}指向的是同一個烏龜對象, 
 因此{\tt t.lt(90)}就好比 {\tt bob.lt(90)}. 
@@ -2663,7 +2666,7 @@ polygon(bob, 7, 70)
 \index{Python 2}
 
 當函數有多個數值參數時, 很容易混淆各自代表什麼, 以及參數順序. 
-所以比較好的辦法, 便是在傳遞實參列表時, 附上形參的名字:
+所以比較好的辦法, 便是在傳遞實參串列時, 附上形參的名字:
 
 \begin{verbatim}
 polygon(bob, n=7, length=70)
@@ -2674,11 +2677,11 @@ polygon(bob, n=7, length=70)
 \index{keyword argument}
 \index{argument!keyword}
 
-這種語法令程序可讀性更強. 同時也提示了實參和形參如何生效：
+這種語法令程式可讀性更強. 同時也提示了實參和形參如何生效：
 調用函數時, 實參賦值給了形參. 
 
 
-\section{接口設計}
+\section{介面設計}
 
 下一步要編寫 {\tt circle}, 此函數以半徑{\tt r}為參數. 
 以下是採用{\tt polygon}來繪製正五十邊形的代碼：
@@ -2703,16 +2706,16 @@ def circle(t, r):
 此代碼的局限性在於, {\tt n} 是一個常量, 這表示繪製大的圓時, 線段過長. 
 而繪製小圓時, 需要耗費時間繪製小線段. 
 要想使此函數通用, 可以將{\tt n}作為函數的參數. 
-這樣用戶( {\tt circle}的調用者)便可以更方便地使用, 但是接口會顯得不那麼簡潔了. 
+這樣用戶( {\tt circle}的調用者)便可以更方便地使用, 但是介面會顯得不那麼簡潔了. 
 \index{interface}
 
-函數{\bf 接口} 是函數用途的簡介: 參數是什麼？函數做什麼？返回什麼？
-如果一個接口聚焦於特定功能, 而非無關細節, 那麼這個接口就是``簡潔''的. 
+函數{\bf 介面} 是函數用途的簡介: 參數是什麼？函數做什麼？返回什麼？
+如果一個介面聚焦於特定功能, 而非無關細節, 那麼這個介面就是``簡潔''的. 
 
-這個案例中, {\tt r}放在接口中合適, 是因為要用它來確定圓的大小. 
-而{\tt n}放進接口則顯得不太友好, 是因為它只與{\em 如何}繪製圓的細節有關. 
+這個案例中, {\tt r}放在介面中合適, 是因為要用它來確定圓的大小. 
+而{\tt n}放進介面則顯得不太友好, 是因為它只與{\em 如何}繪製圓的細節有關. 
 
-與其令接口複雜, 不如根據{\tt 周長}來確定一個合適的{\tt n}:
+與其令介面複雜, 不如根據{\tt 周長}來確定一個合適的{\tt n}:
 
 \begin{verbatim}
 def circle(t, r):
@@ -2749,7 +2752,7 @@ def arc(t, r, angle):
         t.lt(step_angle)
 \end{verbatim}
 %
-函數後半段和 {\tt polygon}很像, 但如果我們不調整接口, 便無法復用 {\tt polygon}. 
+函數後半段和 {\tt polygon}很像, 但如果我們不調整介面, 便無法復用 {\tt polygon}. 
 我們需要給 {\tt polygon} 加入角度作為第三個參數, 來使其通用, 
 那麼也不能繼續使用 {\tt polygon}作為名字了！反而叫{\tt polyline}會更合適些:
 
@@ -2782,13 +2785,13 @@ def circle(t, r):
     arc(t, r, 360)
 \end{verbatim}
 %
-此過程---調整代碼, 優化接口, 便於復用---叫做{\bf 重構}. 
+此過程---調整代碼, 優化介面, 便於復用---叫做{\bf 重構}. 
 此案例中, 我們發現{\tt arc}和{\tt polygon}具有一些相似代碼, 
 所以將其``抽離''為{\tt polyline}.\
 \index{refactoring}
 
 如果早有規劃, 我們可能會優先編寫{\tt polyline}, 避免後續耗時重構. 
-但一般你很難在項目開始的時候, 便深入了解一切, 規劃好所有接口. 
+但一般你很難在項目開始的時候, 便深入了解一切, 規劃好所有介面. 
 只有開始編碼, 你才會更好地研究並理解其中曲折. 
 所以, 有時候重構的過程也是你學習新知識的歷程. 
 
@@ -2801,7 +2804,7 @@ def circle(t, r):
 
 \begin{enumerate}
 
-\item 先不考慮函數定義, 寫段小程序.
+\item 先不考慮函數定義, 寫段小程式.
 
 \item 如果代碼可用, 抽離相關代碼, 封裝進函數, 並命名.
 
@@ -2809,18 +2812,18 @@ def circle(t, r):
 
 \item 重複步驟1-3, 盡量抽離各個函數, 盡量複製黏貼, 減少打字(以及重複調試).
 
-\item 嘗試重構程序. 比如, 在多個地方有相似代碼, 試試能否將其
+\item 嘗試重構程式. 比如, 在多個地方有相似代碼, 試試能否將其
 拆解為恰當的通用函數.
 
 \end{enumerate}
 
 這種流程存在一定的缺點---後續會講述一些替代方案---但是在你無法提前規劃, 
-如何將程序拆解為函數時, 這種方法可以讓你再編碼的同時優化程序. 
+如何將程式拆解為函數時, 這種方法可以讓你再編碼的同時優化程式. 
 
 \section{幫助文檔}
 \label{docstring}
 \index{docstring}
-{\bf 幫助文檔}是指函數開頭部分, 用來對接口(``doc''是``documentation''的簡稱)
+{\bf 幫助文檔}是指函數開頭部分, 用來對介面(``doc''是``documentation''的簡稱)
 進行解釋說明的文檔. 下面是個例子:
 
 \begin{verbatim}
@@ -2845,16 +2848,16 @@ def polyline(t, n, length, angle):
 同時簡要概括了函數的功能(無需探查函數細節實現), 
 以及各個參數的類型和作用, 以及應用場景. 
 
-設計接口, 重要的一步, 便是編寫友好的幫助文檔. 
-一個設計優良的接口, 應該是易於理解的;
-如果需要耗費大量口舌講解, 那麼這個接口還有待優化. 
+設計介面, 重要的一步, 便是編寫友好的幫助文檔. 
+一個設計優良的介面, 應該是易於理解的;
+如果需要耗費大量口舌講解, 那麼這個介面還有待優化. 
 
 
 \section{調試}
 \index{debugging}
 \index{interface}
 
-接口類似於調用方和函數之間的中間人. 
+介面類似於調用方和函數之間的中間人. 
 調用方提供特定參數, 函數執行特定操作. 
 
 例如,  {\tt polyline}需要四個參數 : Turtle對象{\tt t},  整數{\tt n}, 
@@ -2879,7 +2882,7 @@ def polyline(t, n, length, angle):
 \item[方法(method):] 用句點於對象連接的函數. 
 \index{method}
 
-\item[循環(loop):] 程序中可以重複執行的部分. 
+\item[迴圈(loop):] 程式中可以重複執行的部分. 
 \index{loop}
 
 \item[封裝(encapsulation):] 將一系列語句放入函數定義中的過程. 
@@ -2892,16 +2895,16 @@ def polyline(t, n, length, angle):
 \index{keyword argument}
 \index{argument!keyword}
 
-\item[接口(interface):] 關於如何使用函數的描述, 包括函數名, 實參, 以及返回值信息. 
+\item[介面(interface):] 關於如何使用函數的描述, 包括函數名, 實參, 以及返回值信息. 
 \index{interface}
 
-\item[重構(refactoring):] 修改代碼, 以優化函數接口, 提升代碼質量的流程.
+\item[重構(refactoring):] 修改代碼, 以優化函數介面, 提升代碼質量的流程.
 \index{refactoring}
 
 \item[開發計劃(development plan):] 編碼流程.
 \index{development plan}
 
-\item[幫助文檔(docstring):] 函數定義開頭部分的文檔, 用來描述函數接口. 
+\item[幫助文檔(docstring):] 函數定義開頭部分的文檔, 用來描述函數介面. 
 \index{docstring}
 
 \item[前置條件(precondition):] 函數運行前, 調用方需滿足的條件. 
@@ -2921,7 +2924,7 @@ def polyline(t, n, length, angle):
 
 \begin{enumerate}
 
-\item 繪製棧圖, 描述{\tt circle(bob, radius)}運行時的程序狀態. 
+\item 繪製堆疊圖, 描述{\tt circle(bob, radius)}運行時的程式狀態. 
 可以手算, 或者在代碼中加入 {\tt print}語句.
 \index{stack diagram}
 
@@ -2929,7 +2932,7 @@ def polyline(t, n, length, angle):
 因為用來逼近圓的線段總會在圓的外側. 
 所以Turtle的最終位置總會和真實位置有偏差. 
 我的解決方案可以有效降低誤差. 閱讀代碼, 看看是否有所幫助. 
-畫個棧圖, 也許便明白了其原理. 
+畫個堆疊圖, 也許便明白了其原理. 
 
 \end{enumerate}
 
@@ -3001,12 +3004,12 @@ def polyline(t, n, length, angle):
 \chapter{條件和遞歸}
 
 本章的重點是{\tt if}語句, 
-基於程序的狀態不同, 執行不同的代碼. 
-但首先我要先介紹兩個新的運算符: 向下取整和求模. 
+基於程式的狀態不同, 執行不同的代碼. 
+但首先我要先介紹兩個新的運算子: 向下取整和求模. 
 
 \section{向下取整和求模}
 
-{\bf 向下取整} 運算符,即 \verb"//", 
+{\bf 向下取整} 運算子,即 \verb"//", 
 兩數相除, 結果向下取整. 
 例如, 假設某電影時長105分鐘, 你想知道按小時計, 是多長時間. 
 一般除法返回的是浮點數:
@@ -3042,7 +3045,7 @@ def polyline(t, n, length, angle):
 \index{modulus operator}
 \index{operator!modulus}
 
-還可以使用 {\bf 求模運算符},  \verb"%",  
+還可以使用 {\bf 求模運算子},  \verb"%",  
 兩數相除, 返回餘數. 
 
 \begin{verbatim}
@@ -3060,7 +3063,7 @@ def polyline(t, n, length, angle):
 同樣, {\tt x \% 100}獲取的就是兩位餘數. 
 
 如果你使用的是Python 2, 除法略有不同. 
-其除法運算符, \verb"/",  會在兩個整數相除時, 自動向下取整, 
+其除法運算子, \verb"/",  會在兩個整數相除時, 自動向下取整, 
 如果有一個是{\tt 浮點數}, 那麼結果才是浮點格式. 
 \index{Python 2}
 
@@ -3072,7 +3075,7 @@ def polyline(t, n, length, angle):
 \index{operator!logical}
 
 {\bf 布爾表達式} 是用來表示結果是對或錯的表達式. 
-下面例子使用運算符{\tt ==},  比較兩個操作數, 
+下面例子使用運算子{\tt ==},  比較兩個操作數, 
 如果相等, 則結果為{\tt True}, 否則為{\tt False}:
 
 \begin{verbatim}
@@ -3097,7 +3100,7 @@ False
 <class 'bool'>
 \end{verbatim}
 %
- {\tt ==}運算符是{\bf 關係運算符}的一種, 其他還有:
+ {\tt ==}運算子是{\bf 關係運算子}的一種, 其他還有:
 
 \begin{verbatim}
       x != y               # x不等於 y
@@ -3107,19 +3110,19 @@ False
       x <= y               # x 小於等於 y
 \end{verbatim}
 %
-雖然這些運算符對你來說並不陌生, 但是Python中的運算符和數學裡的不同. 
+雖然這些運算子對你來說並不陌生, 但是Python中的運算子和數學裡的不同. 
 一個很常見的錯誤就是混淆單等號({\tt =})和雙等號({\tt ==}). 
-要知道,  {\tt =}是賦值運算符, 而{\tt ==}是關係運算符. 
-而且也沒有{\tt =<} 和 {\tt =>}這種運算符. 
+要知道,  {\tt =}是賦值運算子, 而{\tt ==}是關係運算子. 
+而且也沒有{\tt =<} 和 {\tt =>}這種運算子. 
 \index{relational operator}
 \index{operator!relational}
 
 
-\section {邏輯運算符}
+\section {邏輯運算子}
 \index{logical operator}
 \index{operator!logical}
 
-有三種{\bf 邏輯運算符}: {\tt and}, {\tt or}, 和 {\tt not}.
+有三種{\bf 邏輯運算子}: {\tt and}, {\tt or}, 和 {\tt not}.
 其語義和英文中的意思很相似. 例如
 {\tt x > 0 and x < 10} 表示只有在 {\tt x} 大於0 {\em 且}小於10時才為真.
 \index{and operator}
@@ -3132,11 +3135,11 @@ False
 {\tt n\%2 == 0 or n\%3 == 0} 需要在{\em 一個或者全部}條件都成立時為真, 
 也就是說, 被2整除{\em 或}被3整除. 
 
-最後, {\tt not}運算符是個對布爾表達式取反的操作. 
+最後, {\tt not}運算子是個對布爾表達式取反的操作. 
 所以, 當{\tt x > y}為假,  {\tt not (x > y)}便為真, 
 也就表示{\tt x}小於或者等於{\tt y}時, 為真.
 
-嚴格來說, 邏輯運算符的操作數都應該是布爾表達式, 不過Python在這方面不太嚴格. 
+嚴格來說, 邏輯運算子的操作數都應該是布爾表達式, 不過Python在這方面不太嚴格. 
 任何非零的數都當作{\tt True}:
 
 \begin{verbatim}
@@ -3156,7 +3159,7 @@ True
 \index{if statement}
 \index{statement!if}
 \index{conditional execution}
-若想寫出實用性強的程序, 就必然需要程序可以根據條件, 進行選擇處理. 
+若想寫出實用性強的程式, 就必然需要程式可以根據條件, 進行選擇處理. 
 {\bf 條件語句} 便可以解決此難題. 
 最簡單的便是{\tt if} 語句:
 
@@ -3271,7 +3274,7 @@ else:
 雖然語句的縮進可以使代碼結構清晰, 但是{\bf 嵌套條件}的語句閱讀起來卻很麻煩. 
 所以, 最好還是盡量不用. 
 
-邏輯運算符可以有效簡化嵌套條件語句, 例如, 可以用一行條件語句來重寫下面的代碼:
+邏輯運算子可以有效簡化嵌套條件語句, 例如, 可以用一行條件語句來重寫下面的代碼:
 
 \begin{verbatim}
 if 0 < x:
@@ -3279,7 +3282,7 @@ if 0 < x:
         print('x is a positive single-digit number.')
 \end{verbatim}
 %
-只有兩個條件都滿足, {\tt print} 語句才會運行, 這恰恰和{\tt and}運算符的作用一樣:
+只有兩個條件都滿足, {\tt print} 語句才會運行, 這恰恰和{\tt and}運算子的作用一樣:
 
 \begin{verbatim}
 if 0 < x and x < 10:
@@ -3299,7 +3302,7 @@ if 0 < x < 10:
 \index{recursion}
 
 既然一個函數可以調用另一個函數, 那麼, 函數也就可以調用自身. 
-雖然目前還未看到其用途, 但這卻是程序最神奇的功能之一了. 
+雖然目前還未看到其用途, 但這卻是程式最神奇的功能之一了. 
 看看以下示例:
 
 \begin{verbatim}
@@ -3377,32 +3380,32 @@ def print_n(s, n):
 輸出{\tt s},  以 $n-1$ 為參數, 調用自己, 重複$n-1$次. 
 那麼, 所有輸出的行數便是 {\tt 1 + (n - 1)},  其和為{\tt n}. 
 
-對於這種簡單樣例, 用{\tt for} 循環可能更加方便. 
-但是後續我們會遇到一些例子, 用{\tt for}循環比較難編寫, 而用遞歸卻輕而易舉, 
+對於這種簡單樣例, 用{\tt for} 迴圈可能更加方便. 
+但是後續我們會遇到一些例子, 用{\tt for}迴圈比較難編寫, 而用遞歸卻輕而易舉, 
 所以, 現在不啻為一個好的開始. 
 \index{for loop}
 \index{loop!for}
 
 
-\section{遞歸函數的棧圖}
+\section{遞歸函數堆疊圖}
 \label{recursive.stack}
 \index{stack diagram}
 \index{function frame}
 \index{frame}
 
-在第~\ref{stackdiagram}節, 我們使用棧圖來描述函數調用時
-程序的狀態. 
-同樣, 棧圖也有助於我們更好理解遞歸函數. 
+在第~\ref{stackdiagram}節, 我們使用堆疊圖來描述函數調用時
+程式的狀態. 
+同樣, 堆疊圖也有助於我們更好理解遞歸函數. 
 
 一旦函數被調用, Python都會創建一個包含函數局部變量以及參數的框. 
 所以對於遞歸函數, 可能會同時創建多個框. 
 
-圖~\ref{fig.stack2}便是以{\tt n = 3}為參數, 調用{\tt countdown}所產生的棧圖. 
+圖~\ref{fig.stack2}便是以{\tt n = 3}為參數, 調用{\tt countdown}所產生的堆疊圖. 
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack2.pdf}}
-\caption{棧圖.}
+\caption{堆疊圖.}
 \label{fig.stack2}
 \end{figure}
 
@@ -3411,10 +3414,10 @@ def print_n(s, n):
 \index{base case}
 \index{recursion!base case}
 
-四個{\tt countdown}的框分別對應不同的{\tt n}值, 最底層{\tt n=0}的棧, 叫做
-{\tt 邊界條件},  也就是不再進行遞歸調用的棧, 所以下面也不會再有其他框了. 
+四個{\tt countdown}的框分別對應不同的{\tt n}值, 最底層{\tt n=0}的堆疊, 叫做
+{\tt 邊界條件},  也就是不再進行遞歸調用的堆疊, 所以下面也不會再有其他框了. 
 
-做個練習, 以\verb"s = 'Hello'"和{\tt n=2}為參數, 繪製\verb"print_n"調用的棧圖. 
+做個練習, 以\verb"s = 'Hello'"和{\tt n=2}為參數, 繪製\verb"print_n"調用的堆疊圖. 
 然後編寫名為 \verb"do_n" 的函數, 參數為一個函數對象, 和一個數值{\tt n}. 
 使其調用{\tt n}次給定的函數. 
 
@@ -3428,14 +3431,14 @@ def print_n(s, n):
 
 如果遞歸一直無法觸及邊界條件, 則會一直調用, 永不終止. 
 這便叫做{\bf 無窮遞歸}, 出現這種情況, 往往表示情況不妙. 
-下面是個無窮遞歸的極簡程序:
+下面是個無窮遞歸的極簡程式:
 
 \begin{verbatim}
 def recurse():
     recurse()
 \end{verbatim}
 %
-多數編程環境中, 無窮遞歸的程序不會一直運行. 
+多數編程環境中, 無窮遞歸的程式不會一直運行. 
 在Python中, 當達到了最大遞歸深度, 便會報錯:
 \index{exception!RuntimeError}
 \index{RuntimeError}
@@ -3451,7 +3454,7 @@ def recurse():
 RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
-這次的追蹤信息比以往的要長一些. 這個錯誤發生時, 棧中已經有1000個{\tt 遞歸}框了!
+這次的追蹤信息比以往的要長一些. 這個錯誤發生時, 堆疊中已經有1000個{\tt 遞歸}框了!
 
 如若不幸遇到無窮遞歸, 最好重新審視一下你的函數, 確保存在不再遞歸調用的邊界條件. 
 如果已有邊界條件, 請檢查是否可以保證其被觸達. 
@@ -3460,10 +3463,10 @@ RuntimeError: Maximum recursion depth exceeded
 \section{鍵盤輸入}
 \index{keyboard input}
 
-到目前為止, 我們編寫的程序,基本都沒有涉及用戶輸入, 它們每次執行都一樣. 
+到目前為止, 我們編寫的程式,基本都沒有涉及用戶輸入, 它們每次執行都一樣. 
 
-Python提供了內置函數{\tt input},  可以暫停程序運行, 等待用戶鍵入信息. 
-當用戶敲擊{\sf  Return} 或 {\sf Enter}鍵時, 程序恢復運行, 
+Python提供了內置函數{\tt input},  可以暫停程式運行, 等待用戶鍵入信息. 
+當用戶敲擊{\sf  Return} 或 {\sf Enter}鍵時, 程式恢復運行, 
 同時\verb"input"將用戶輸入作為字符串返回. 
 在Python 2中, 同樣作用的函數叫做\verb"raw_input".
 \index{Python 2}
@@ -3594,11 +3597,11 @@ ValueError: math domain error
 
 \begin{description}
 
-\item[向下取整(floor division):] 運算符{\tt //}, 將兩數相除, 結果向下(負無窮方向)取整.
+\item[向下取整(floor division):] 運算子{\tt //}, 將兩數相除, 結果向下(負無窮方向)取整.
   \index{floor division} 
   \index{division!floor}
 
-\item[求模運算符(modulus operator):]  百分號({\tt \%})表示的運算符, 用於整數, 表示兩數相除後的餘數. 
+\item[求模運算子(modulus operator):]  百分號({\tt \%})表示的運算子, 用於整數, 表示兩數相除後的餘數. 
 \index{modulus operator}
 \index{operator!modulus}
 
@@ -3606,13 +3609,13 @@ ValueError: math domain error
 \index{boolean expression}
 \index{expression!boolean}
 
-\item[關係運算符(relational operator):] 比較操作數的運算符: 
+\item[關係運算子(relational operator):] 比較操作數的運算子: 
 {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, 和 {\tt <=}.
 
-\item[邏輯運算符(logical operator):]  拼接布爾表達式的運算符: 
+\item[邏輯運算子(logical operator):]  拼接布爾表達式的運算子: 
 {\tt and}, {\tt or}, 以及 {\tt not}.
 
-\item[條件語句(conditional statement):]  根據條件, 確定程序運行流程的語句.
+\item[條件語句(conditional statement):]  根據條件, 確定程式運行流程的語句.
 \index{conditional statement}
 \index{statement!conditional}
 
@@ -3686,7 +3689,7 @@ $a$, $b$, 和 $c$ 滿足
 
 \[a^n + b^n = c^n \]
 %
-那麼程序應輸出,  ``Holy smokes, Fermat was wrong!'', 
+那麼程式應輸出,  ``Holy smokes, Fermat was wrong!'', 
 否則, 輸出``No, that doesn't work.''
 
 \item 編寫函數, 令用戶輸入 {\tt a}, {\tt b}, {\tt c} 和 {\tt n}, 
@@ -3721,7 +3724,7 @@ $a$, $b$, 和 $c$ 滿足
 \end{exercise}
 
 \begin{exercise}
-下面的程序會輸出什麼？繪製棧圖, 展示輸出結果時的程序狀態.
+下面的程式會輸出什麼？繪製堆疊圖, 展示輸出結果時的程式狀態.
 
 \begin{verbatim}
 def recurse(n, s):
@@ -3880,7 +3883,7 @@ def absolute_value(x):
 {\tt return}語句後的代碼, 或者任何不被觸及的代碼, 都叫做{\bf 無效代碼}.
 \index{dead code}
 
-有值返回函數中, 最好保證程序中的每種可能情況, 都有{\tt return}語句. 例如:
+有值返回函數中, 最好保證程式中的每種可能情況, 都有{\tt return}語句. 例如:
 
 \begin{verbatim}
 def absolute_value(x):
@@ -3920,7 +3923,7 @@ None
 
 隨著編寫的函數越來越長, 你會發現, 調試時間也越來越恐怖. 
 
-若想解決越來越複雜的程序, 可以試試新的方法, 即{\bf 增量開發}.
+若想解決越來越複雜的程式, 可以試試新的方法, 即{\bf 增量開發}.
 增量開發是通過每次只編寫並測試少量代碼, 從而避免
 長時間的連續開發調試. 
 \index{testing!incremental development}
@@ -4002,12 +4005,12 @@ def distance(x1, y1, x2, y2):
     return result
 \end{verbatim}
 %
-如果運行正常, 意味著程序正確. 
+如果運行正常, 意味著程式正確. 
 否則, 就要輸出返回語句前的 {\tt result} 的值, 仔細排查. 
 
 最終版本的函數, 除了返回一個值, 不會輸出任何信息. 
-{\tt print} 語句只是為了便於調試代碼, 一旦確認程序無誤, 就應將其移除. 
-類似這種代碼, 一般叫做{\bf 腳手架代碼},  主要用來輔助構建程序, 而並不應
+{\tt print} 語句只是為了便於調試代碼, 一旦確認程式無誤, 就應將其移除. 
+類似這種代碼, 一般叫做{\bf 腳手架代碼},  主要用來輔助構建程式, 而並不應
 忝列最終成品之中. 
 \index{scaffolding}
 
@@ -4018,11 +4021,11 @@ def distance(x1, y1, x2, y2):
 
 \begin{enumerate}
 
-\item 首先寫個可運行的程序, 然後逐步增加. 任何時候遇到錯誤, 都要弄清緣由, 盡快解決. 
+\item 首先寫個可運行的程式, 然後逐步增加. 任何時候遇到錯誤, 都要弄清緣由, 盡快解決. 
 
 \item 利用變量保存中間狀態值, 以便展示和檢驗. 
 
-\item 一旦程序運行正常, 便可以移除冗餘代碼, 並精簡繁瑣的語句. 
+\item 一旦程式運行正常, 便可以移除冗餘代碼, 並精簡繁瑣的語句. 
 但是要警惕不要使代碼難以閱讀和理解. 
 
 \end{enumerate}
@@ -4068,7 +4071,7 @@ def circle_area(xc, yc, xp, yp):
     return result
 \end{verbatim}
 %
-臨時變量{\tt radius} 和 {\tt result} 在開發和調試時有用, 但是程序一旦正常運行, 
+臨時變量{\tt radius} 和 {\tt result} 在開發和調試時有用, 但是程式一旦正常運行, 
 便可以通過組合函數調用, 精簡如下:
 
 \begin{verbatim}
@@ -4103,7 +4106,7 @@ False
 True
 \end{verbatim}
 %
- 既然{\tt ==}運算符的結果為布爾值, 
+ 既然{\tt ==}運算子的結果為布爾值, 
 我們便可以直接返回, 從而精簡函數:
 
 \begin{verbatim}
@@ -4144,18 +4147,18 @@ if is_divisible(x, y) == True:
 目前, 我們只學到了Python的一小部分, 但麻雀雖小, 五臟俱全, 
 這一小部分便足以表達一門{\em 完整的}編程語言了, 
 也就是說, 如果一切皆是計算, 那麼以上所學便已足夠. 
-任何程序都可以只用以上所學模塊, 進行構建(當然, 可能還需要一些控制設備
+任何程式都可以只用以上所學模塊, 進行構建(當然, 可能還需要一些控制設備
 的命令, 比如管理鼠標, 硬盤等, 但是也僅需要這些).
 
-最早證明了上述偉大結論的是艾蘭圖靈(Alan Turing), 最早的計算機科學家之一
-(有人會計較其是數學家, 但是早期的計算機科學家, 基本都是數學家). 
+最早證明了上述偉大結論的是艾蘭圖靈(Alan Turing), 最早的電腦科學家之一
+(有人會計較其是數學家, 但是早期的電腦科學家, 基本都是數學家). 
 因此, 這個理論也叫做圖靈論斷(Turing Thesis). 
 關於圖靈論斷, 如果想更加詳細深入了解, 我推薦 Michael Sipser 所寫
  {\em 計算理論導引(Introduction to the Theory of Computation)} 一書.
 
 為了展示目前所學的威力, 我們分析幾個遞歸數學函數. 
-遞歸定義和循環定義類似, 某種意義上說, 函數定義體內包含了對定義體的引用. 
-通常一個完全循環的定義, 是無用的:
+遞歸定義和迴圈定義類似, 某種意義上說, 函數定義體內包含了對定義體的引用. 
+通常一個完全迴圈的定義, 是無用的:
 
 \begin{description}
 
@@ -4211,7 +4214,7 @@ def factorial(n):
         return result
 \end{verbatim}
 %
-此程序的執行流程和第~\ref{recursion}節的{\tt
+此程式的執行流程和第~\ref{recursion}節的{\tt
 countdown}極為相似. 如果以3為參數調用{\tt factorial}:
 
 3不等於0,則走第二分支, 計算{\tt n-1}的階乘...
@@ -4237,16 +4240,16 @@ countdown}極為相似. 如果以3為參數調用{\tt factorial}:
 返回值(2)乘以此時為3的$n$, 結果為6, 也就是整個流程最終的結果. 
 \index{stack diagram}
 
-圖~\ref{fig.stack3} 是這一系列函數調用的棧圖展現.
+圖~\ref{fig.stack3} 是這一系列函數調用的堆疊圖展現.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack3.pdf}}
-\caption{棧圖.}
+\caption{堆疊圖.}
 \label{fig.stack3}
 \end{figure}
 
-返回值會在棧中被傳遞. 
+返回值會在堆疊中被傳遞. 
 每個框內, 返回值就是{\tt result}的值, 也就是{\tt recurse}和{\tt n}相乘的結果. 
 \index{function frame}
 \index{frame}
@@ -4258,7 +4261,7 @@ countdown}極為相似. 如果以3為參數調用{\tt factorial}:
 \index{recursion}
 \index{leap of faith}
 
-閱讀程序的一種方式是跟蹤其執行順序, 但是你很快會不堪重負. 
+閱讀程式的一種方式是跟蹤其執行順序, 但是你很快會不堪重負. 
 另一種可行方案, 我稱之為``置信遷移''. 當遇到某個函數調用時, 
 不是根據執行流程深入跟蹤, 
 而是{\em 假設}這個函數工作正常, 可以返回正確結果. 
@@ -4274,7 +4277,7 @@ countdown}極為相似. 如果以3為參數調用{\tt factorial}:
 我們便可以直接使用它, 而無需再探究細節. 
 \index{testing!leap of faith}
 
-遞歸程序也一樣. 當你進行遞歸調用時, 
+遞歸程式也一樣. 當你進行遞歸調用時, 
 無需一步步跟蹤運行流程, 你應該相信遞歸調用運行正常
 (會返回正確的結果), 然後問問自己, ``既然我可以計算出 $n-1$的階乘, 那麼
 是不是我也可以計算出$n$的階乘？" 很顯然你可以, 乘以$n$即可. 
@@ -4382,16 +4385,16 @@ None
 \index{guardian pattern}
 \index{pattern!guardian}
 
-此程序展示了一種叫做{\bf 哨兵}的角色. 
-前兩個條件, 就像哨兵一樣, 避免程序犯錯, 使其正確運行. 
+此程式展示了一種叫做{\bf 哨兵}的角色. 
+前兩個條件, 就像哨兵一樣, 避免程式犯錯, 使其正確運行. 
 
 在第~\ref{raise}節, 我們會看到一種更靈活的方案來輸出錯誤信息: 上報異常. 
 
 
 \section{調試}
 \label{factdebug}
-將程序大而化小, 也就天然地為調試創造了一個個的檢查點. 
-如果程序運行異常, 需要考慮以下三種可能原因:
+將程式大而化小, 也就天然地為調試創造了一個個的檢查點. 
+如果程式運行異常, 需要考慮以下三種可能原因:
 \index{debugging} 
 
 \begin{itemize}
@@ -4462,14 +4465,14 @@ def factorial(n):
 \index{temporary variable}
 \index{variable!temporary}
 
-\item[無效代碼(dead code):]  程序永遠不會運行的語句, 通常在{\tt return}語句之後. 
+\item[無效代碼(dead code):]  程式永遠不會運行的語句, 通常在{\tt return}語句之後. 
 \index{dead code}
 
 \item[增量開發(incremental development):]  一次僅僅開發並測試少量代碼的開發方案, 
 小步慢跑, 從而防止費時調試. 
 \index{incremental development}
 
-\item[腳手架(scaffolding):]  程序開發中起輔助作用的代碼, 但不會留在最終程序中. 
+\item[腳手架(scaffolding):]  程式開發中起輔助作用的代碼, 但不會留在最終程式中. 
 \index{scaffolding}
 
 \item[哨兵(guardian):]  一種編程模式, 使用條件語句進行檢驗, 並處理可能導致異常的情形. 
@@ -4482,7 +4485,7 @@ def factorial(n):
 \section{習題集}
 
 \begin{exercise}
-針對以下代碼, 繪製棧圖, 查看程序輸出為何?
+針對以下代碼, 繪製堆疊圖, 查看程式輸出為何?
 \index{stack diagram}
 
 \begin{verbatim}
@@ -4604,7 +4607,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 
 本章主講疊代, 其主要實現重複執行一段語句. 
 在第~\ref{recursion}節的遞歸, 便是一種疊代. 
-在第~\ref{repetition}節的{\tt for}循環, 也是一種疊代. 
+在第~\ref{repetition}節的{\tt for}迴圈, 也是一種疊代. 
 本章, 我們會接觸另一種疊代, {\tt while} 語句. 
 但這裡要先講一下變量賦值. 
 
@@ -4627,7 +4630,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 %
 第一次輸出{ \tt x}, 值為5, 第二次輸出, 值為7.
 
-圖~\ref{fig.assign2}  展示了棧圖中{\bf 重新賦值}
+圖~\ref{fig.assign2}  展示了堆疊圖中{\bf 重新賦值}
 的過程. \index{state diagram} \index{diagram!state}
 
 在此, 我想澄清一下大家的困惑.
@@ -4661,7 +4664,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/assign2.pdf}}
-\caption{棧圖}
+\caption{堆疊圖}
 \label{fig.assign2}
 \end{figure}
 
@@ -4704,7 +4707,7 @@ NameError: name 'x' is not defined
 \index{decrement}
 
 
-\section{{\tt while} 語句}
+\section{{\tt while}語句}
 \index{statement!while}
 \index{while loop}
 \index{loop!while}
@@ -4747,24 +4750,24 @@ def countdown(n):
 
 \end{enumerate}
 
-這種程序流轉, 便叫做循環. 因為第三步驟時, 會返回到起點. 
+這種程式流轉, 便叫做迴圈. 因為第三步驟時, 會返回到起點. 
 \index{condition}
 \index{loop}
 \index{body}
 
-循環體通常會修改一個或多個變量的值, 從而令條件最終為假, 終止循環. 
-否則, 循環會一直重複, 成為{\bf 無限循環}. 
-對計算機科學家們, 有個樂此不疲的玩笑, 
+迴圈體通常會修改一個或多個變量的值, 從而令條件最終為假, 終止迴圈. 
+否則, 迴圈會一直重複, 成為{\bf 無限迴圈}. 
+對電腦科學家們, 有個樂此不疲的玩笑, 
 便是觀察洗髮水的使用說明, 
-``起泡, 沖洗, 重複'',  這就是個無限循環. 
+``起泡, 沖洗, 重複'',  這就是個無限迴圈. 
 \index{infinite loop}
 \index{loop!infinite}
 
-在{\tt countdown}例子中, 我們如此保證循環終止：
-如果{\tt n}小於或等於0,循環不再運行. 
-由於{\tt n}每循環一次, 就會變小, 終究會變成0.
+在{\tt countdown}例子中, 我們如此保證迴圈終止：
+如果{\tt n}小於或等於0,迴圈不再運行. 
+由於{\tt n}每迴圈一次, 就會變小, 終究會變成0.
 
-而有些循環, 則不太容易判斷, 比如:
+而有些迴圈, 則不太容易判斷, 比如:
 
 \begin{verbatim}
 def sequence(n):
@@ -4776,33 +4779,33 @@ def sequence(n):
             n = n*3 + 1
 \end{verbatim}
 %
-此循環的條件是{\tt n != 1},  那麼只有{\tt n}等於{\tt 1}時, 條件為假, 循環才終止. 
+此迴圈的條件是{\tt n != 1},  那麼只有{\tt n}等於{\tt 1}時, 條件為假, 迴圈才終止. 
 
-每次循環, 程序都輸出{\tt n}的值, 然後檢查是奇是偶. 
+每次迴圈, 程式都輸出{\tt n}的值, 然後檢查是奇是偶. 
 如果是偶數, 則{\tt n}除以2. 如果是奇數, 則{\tt n}值更新為{\tt n*3 + 1}. 
 例如, 如果{\tt sequence}的參數為3, {\tt n}值依次變為3, 10, 5, 16, 8, 4, 2, 1.
 
 
-由於{\tt n} 有時增加, 有時減少, 所以很難保證{\tt n}會達到1, 或者程序終止. 
-對於某些特殊的{\tt n}值, 我們可以確信循環會終止. 
-比如, 如果起始值是2的冪, 那麼循環每次執行後{\tt n}都會是偶數, 直到最終成為1.
+由於{\tt n} 有時增加, 有時減少, 所以很難保證{\tt n}會達到1, 或者程式終止. 
+對於某些特殊的{\tt n}值, 我們可以確信迴圈會終止. 
+比如, 如果起始值是2的冪, 那麼迴圈每次執行後{\tt n}都會是偶數, 直到最終成為1.
 剛剛例子中得到的數列, 從16開始, 便是如此. 
 \index{Collatz conjecture}
 
-問題的難點在於, 是否可以證明對於{\em 所有}正數的{\tt n}, 程序都會結束. 
+問題的難點在於, 是否可以證明對於{\em 所有}正數的{\tt n}, 程式都會結束. 
 目前, 還沒有人能證明或者證否此命題! 
 (參閱 \url{http://en.wikipedia.org/wiki/Collatz_conjecture})
 
 做個練習, 用疊代替換遞歸, 重寫第~\ref{recursion}節的\verb"print_n"函數, 
 
-\section{{\tt break}}
+\section{{\tt break}語句}
 \index{break statement}
 \index{statement!break}
-有時, 想要出紅塵, 就需要先入紅塵, 只有進入循環體, 
-才知道何時應當終止循環. 
-這時, 我們可以用{\tt break}語句跳出循環. 
+有時, 想要出紅塵, 就需要先入紅塵, 只有進入迴圈體, 
+才知道何時應當終止迴圈. 
+這時, 我們可以用{\tt break}語句跳出迴圈. 
 
-例如, 想要獲取用戶的輸入, 直到用戶輸入{\tt done}, 才跳出循環, 可以這樣寫:
+例如, 想要獲取用戶的輸入, 直到用戶輸入{\tt done}, 才跳出迴圈, 可以這樣寫:
 
 \begin{verbatim}
 while True:
@@ -4814,11 +4817,11 @@ while True:
 print('Done!')
 \end{verbatim}
 %
-循環條件為{\tt True}, 便會一直循環, 所以只有觸及 break 語句, 才會跳出循環. 
+迴圈條件為{\tt True}, 便會一直迴圈, 所以只有觸及 break 語句, 才會跳出迴圈. 
 
-每次循環, 都會打印尖括號來提示用戶輸入, 
-如果用戶輸入了{\tt done}, {\tt break} 語句會終止循環. 
-否則, 程序會打印用戶的輸入, 並進入下一輪循環. 
+每次迴圈, 都會打印尖括號來提示用戶輸入, 
+如果用戶輸入了{\tt done}, {\tt break} 語句會終止迴圈. 
+否則, 程式會打印用戶的輸入, 並進入下一輪迴圈. 
 舉個例子:
 
 \begin{verbatim}
@@ -4828,9 +4831,9 @@ not done
 Done!
 \end{verbatim}
 %
-這種寫法在{\tt while}循環中很常見, 
+這種寫法在{\tt while}迴圈中很常見, 
 因為你能夠隨時檢驗其條件(而不僅僅在頭部驗證), 
-同時也可以主動地去終止循環(``發生時停止''), 
+同時也可以主動地去終止迴圈(``發生時停止''), 
 而不是被動地等待結束(``執行到停止'').
 
 
@@ -4838,7 +4841,7 @@ Done!
 \label{squareroot}
 \index{square root}
 
-在編程中, 循環通常用來進行數值計算, 通過用近似值逼近真實值來實現. 
+在編程中, 迴圈通常用來進行數值計算, 通過用近似值逼近真實值來實現. 
 \index{Newton's method}
 
 例如, 牛頓公式(Newton's method)便是一種計算平方根的方法. 
@@ -4895,8 +4898,8 @@ Done!
 2.0
 \end{verbatim}
 %
-當{\tt y == x}時, 我們便可以停止循環了. 
-下面的循環, 以估計值{\tt x}開始並不斷逼近真實值, 在結果不再變化時終止:
+當{\tt y == x}時, 我們便可以停止迴圈了. 
+下面的迴圈, 以估計值{\tt x}開始並不斷逼近真實值, 在結果不再變化時終止:
 
 \begin{verbatim}
 while True:
@@ -4950,7 +4953,7 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 遵循簡單的規則, 一步步操作, 便可得到結果. 
 
 執行算法固然無聊, 但其設計過程卻既有趣又挑戰智力, 
-同時也是計算機科學的核心. 
+同時也是電腦科學的核心. 
 
 有些事情, 對於人們來說很自然, 無難度, 且下意識便可完成, 
 而算法卻很難解決. 
@@ -4960,7 +4963,7 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 
 \section{調試}
 \label{bisectbug}
-隨著程序代碼規模的增長, 你會發現需要耗費更多時間在
+隨著程式代碼規模的增長, 你會發現需要耗費更多時間在
 調試上. 一般更多的代碼, 也就意味著更多的出錯機會, 
 以及更多的潛在問題. 
 \index{debugging!by bisection}
@@ -4968,7 +4971,7 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 一種有效節約調試時間的方法便是``二分調試''.
 比如, 有100行代碼, 一次檢查一行, 需要100次. 
 
-或者, 將程序對半切分. 找到程序的中間位置, 或者靠近中間的位置, 
+或者, 將程式對半切分. 找到程式的中間位置, 或者靠近中間的位置, 
 以便從中間開始檢查. 添加{\tt print}語句(或者其他可驗證效果的東西), 
 然後運行代碼. 
 
@@ -5004,10 +5007,10 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 \item[自減(decrement):] 不斷減少某個值的變量更新. 
 \index{decrement}
 
-\item[疊代(iteration):] 採用遞歸或者循環, 重複執行一段語句. 
+\item[疊代(iteration):] 採用遞歸或者迴圈, 重複執行一段語句. 
 \index{iteration}
 
-\item[無限循環(infinite loop):] 終止條件一直不能抵達的循環. 
+\item[無限迴圈(infinite loop):] 終止條件一直不能抵達的迴圈. 
 \index{infinite loop}
 
 \item[算法(algorithm):]  解決一類問題的通用步驟. 
@@ -5021,7 +5024,7 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 \begin{exercise}
 \index{algorithm!square root}
 
-複製第~\ref{squareroot}節的循環, 封裝為\verb"mysqrt" 函數, 
+複製第~\ref{squareroot}節的迴圈, 封裝為\verb"mysqrt" 函數, 
 令其以{\tt a}為參數, 選擇一個合適的值{\tt x}, 返回{\tt a}的
 近似平方根.  \index{encapsulation}
 
@@ -5083,7 +5086,7 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \sum^\infty_{k=0} \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} \]
 
 編寫函數 \verb"estimate_pi", 使用上述公式計算 $\pi$的近似值, 
-同時返回結果. 用{\tt while}循環計算各個項並求和, 直到最後一項小於{\tt 1e-15}
+同時返回結果. 用{\tt while}迴圈計算各個項並求和, 直到最後一項小於{\tt 1e-15}
 ($10^{-15}$的python表示法)為止. 
 同時可以和 {\tt math.pi}比較結果, 檢驗效果. 
 
@@ -5128,7 +5131,7 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \end{verbatim}
 %
 如眾人所知,  \verb"'banana'" 的第一個字母是{\tt b}, 
-而不是{\tt a}. 但是, 對於計算機科學家來說, 索引是從字符串開始位置的偏移量, 
+而不是{\tt a}. 但是, 對於電腦科學家來說, 索引是從字符串開始位置的偏移量, 
 所以第一個字符的偏移量是0.
 
 \begin{verbatim}
@@ -5162,7 +5165,7 @@ TypeError: string indices must be integers
 \end{verbatim}
 %
 
-\section{{\tt len}}
+\section{{\tt len}函數}
 \index{len function}
 \index{function!len}
 
@@ -5201,7 +5204,7 @@ IndexError: string index out of range
 \index{negative index}
 
 
-\section{用{\tt for} 循環遍歷}
+\section{{\tt for}迴圈}
 \label{for}
 \index{traversal}
 \index{loop!traversal}
@@ -5212,7 +5215,7 @@ IndexError: string index out of range
 很多操作一次僅操作字符串中的一個字符. 
 一般從頭部開始, 順序逐個獲取字符, 做些操作, 直到末尾結束. 
 這種處理模式叫做{\bf 遍歷}.
-一般可以用{\tt while}循環進行遍歷:
+一般可以用{\tt while}迴圈進行遍歷:
 
 \begin{verbatim}
 index = 0
@@ -5222,32 +5225,32 @@ while index < len(fruit):
     index = index + 1
 \end{verbatim}
 %
-上面循環會遍歷字符串, 並每行打印一個字符. 
-循環條件是{\tt index < len(fruit)}, 
-所以當{\tt index} 等於字符串長度時, 條件為假, 循環體終止. 
+上面迴圈會遍歷字符串, 並每行打印一個字符. 
+迴圈條件是{\tt index < len(fruit)}, 
+所以當{\tt index} 等於字符串長度時, 條件為假, 迴圈體終止. 
 最後獲取的字符, 索引為{\tt len(fruit)-1}, 也就是最後一個字符. 
 
 做個練習, 寫個函數, 以字符串為入參, 倒序輸出每個字符, 每行一個. 
 
-遍歷字符串的另一種方法是用{\tt for}循環:
+遍歷字符串的另一種方法是用{\tt for}迴圈:
 
 \begin{verbatim}
 for letter in fruit:
     print(letter)
 \end{verbatim}
 %
-每次循環後, 字符串中下一個字符會賦值給變量{\tt letter}. 
-直到沒有字符可用, 循環便終止. 
+每次迴圈後, 字符串中下一個字符會賦值給變量{\tt letter}. 
+直到沒有字符可用, 迴圈便終止. 
 \index{concatenation}
 \index{abecedarian}
 \index{McCloskey, Robert}
 
-下面的例子, 展示了如何用拼接(字符串相加)以及{\tt for}循環, 來構建
+下面的例子, 展示了如何用拼接(字符串相加)以及{\tt for}迴圈, 來構建
 一個簡單序列(按照字母順序). 
 在Robert McCloskey的書{\em Make Way for Ducklings}中, 
 小鴨子們的名字分別是Jack, Kack, Lack,
 Mack, Nack, Ouack, Pack, 和 Quack.
-循環依次輸出名字:
+迴圈依次輸出名字:
 
 \begin{verbatim}
 prefixes = 'JKLMNOPQ'
@@ -5271,7 +5274,7 @@ Qack
 \end{verbatim}
 %
 顯然, 上面結果並不是全部正確, 因為 ``Ouack'' 和 ``Quack'' 都拼錯了. 
-做個練習, 修改程序, 使其正常. 
+做個練習, 修改程式, 使其正常. 
 
 
 
@@ -5393,10 +5396,10 @@ def find(word, letter):
 而是根據字符, 查找其索引. 如果字符沒有檢索到, 
 則返回{\tt -1}. 
 
-這是我們第一次見到, 在循環內使用{\tt return}語句. 
-如果{\tt word[index] == letter}, 函數會跳出循環, 並立刻返回結果. 
+這是我們第一次見到, 在迴圈內使用{\tt return}語句. 
+如果{\tt word[index] == letter}, 函數會跳出迴圈, 並立刻返回結果. 
 
-如果字符串中沒有想要的字符, 程序會一直執行到循環結束, 並
+如果字符串中沒有想要的字符, 程式會一直執行到迴圈結束, 並
 返回{\tt -1}.
 
 這種算法--遍歷序列並返回預期結果--叫做{\bf 檢索}. 
@@ -5408,13 +5411,13 @@ def find(word, letter):
 使其從{\tt word}的此索引處開始檢索.
 
 
-\section{循環和計數}
+\section{迴圈和計數}
 \label{counter}
 \index{counter}
 \index{counting and looping}
 \index{looping and counting}
 \index{looping!with strings}
-以下程序會統計字符串中{\tt a}出現的次數:
+以下程式會統計字符串中{\tt a}出現的次數:
 
 \begin{verbatim}
 word = 'banana'
@@ -5425,9 +5428,9 @@ for letter in word:
 print(count)
 \end{verbatim}
 %
-此程序描述了另一種算法, 稱之為{\bf 計數器}.
+此程式描述了另一種算法, 稱之為{\bf 計數器}.
 初始化變量{\tt count}為0, 其後每找到一次{\tt a}, 就加1.
-循環結束後,  {\tt count}便包含了結果-- {\tt a}的全部數量.
+迴圈結束後,  {\tt count}便包含了結果-- {\tt a}的全部數量.
 
 \index{encapsulation}
 做個練習, 封裝以上代碼為{\tt count}函數, 使其以字符串和字母
@@ -5517,7 +5520,7 @@ print(count)
 \index{boolean operator}
 \index{operator!boolean}
 
-單詞 {\tt in}是一個布爾運算符, 其比較兩個字符串, 
+單詞 {\tt in}是一個布爾運算子, 其比較兩個字符串, 
 如果前者是後者的一部分, 
 則返回{\tt True}:
 
@@ -5539,7 +5542,7 @@ def in_both(word1, word2):
 %
 
 變量名選擇得足夠好的話, Python讀起來便如同英語. 
-讀一下這個循環, ``for (each) letter in (the first) word, if (the) letter 
+讀一下這個迴圈, ``for (each) letter in (the first) word, if (the) letter 
 (appears) in (the second) word, print (the) letter.''
 
 下面是apples和oranges比較的結果:
@@ -5556,7 +5559,7 @@ s
 \index{string!comparison}
 \index{comparison!string}
 
-關係運算符同樣適用於字符串. 
+關係運算子同樣適用於字符串. 
 比如要判斷兩字符串是否相等:
 
 \begin{verbatim}
@@ -5565,7 +5568,7 @@ if word == 'banana':
 \end{verbatim}
 %
 
-其他的關係運算符也適用於按照字母順序進行比較:
+其他的關係運算子也適用於按照字母順序進行比較:
 
 \begin{verbatim}
 if word < 'banana':
@@ -5622,7 +5625,7 @@ def is_reverse(word1, word2):
 
 {\tt i} 和 {\tt j}是索引: {\tt i} 正向遍歷{\tt word1}, 同時{\tt j} 倒序遍歷
 {\tt word2}. 如果遇到兩個字母不同, 則即刻返回{\tt False}. 
-如果可以通過循環檢驗, 則所有字母都匹配, 返回{\tt True}. 
+如果可以通過迴圈檢驗, 則所有字母都匹配, 返回{\tt True}. 
 
 如果用``pots'' 和 ``stop'' 測試函數, 我們期望得到的時{\tt True}, 
 但是遇到了索引錯誤:
@@ -5649,7 +5652,7 @@ IndexError: string index out of range
         j = j-1
 \end{verbatim}
 %
-再次運行程序, 得到如下信息:
+再次運行程式, 得到如下信息:
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -5658,7 +5661,7 @@ IndexError: string index out of range
 IndexError: string index out of range
 \end{verbatim}
 %
-首次循環,  {\tt j} 的值是4,
+首次迴圈,  {\tt j} 的值是4,
 超出了\verb"'pots'"的索引範圍. 
 最後一個字符的索引應該是3,
 所以{\tt j} 的初始值應該是{\tt len(word2)-1}.
@@ -5673,15 +5676,15 @@ IndexError: string index out of range
 True
 \end{verbatim}
 %
-這次我們的到了正確結果, 但是循環只運行了三次, 有點奇怪. 
-為了弄清怎麼回事, 可以繪製棧圖來輔助理解. 
+這次我們的到了正確結果, 但是迴圈只運行了三次, 有點奇怪. 
+為了弄清怎麼回事, 可以繪製堆疊圖來輔助理解. 
 第一次疊代, \verb"is_reverse"的狀態框見圖~\ref{fig.state4}.  
 \index{state diagram} \index{diagram!state}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/state4.pdf}}
-\caption{棧圖.}
+\caption{堆疊圖.}
 \label{fig.state4}
 \end{figure}
 
@@ -5689,7 +5692,7 @@ True
 {\tt j}的值, 用來標識{\tt word1} 和 {\tt word2}中的字符, 
 從而幫助理解. 
 
-從此狀態框開始, 在紙上執行程序, 每次疊代時修改{\tt i} 和 {\tt j}值. 
+從此狀態框開始, 在紙上執行程式, 每次疊代時修改{\tt i} 和 {\tt j}值. 
 然後找到並修復函數中的第二個錯誤. 
 \label{isreverse}
 
@@ -5878,21 +5881,21 @@ def any_lowercase5(s):
 \end{exercise}
 
 
-\chapter{案例學習: word play}
+\chapter{案例學習: 單詞遊戲}
 \label{wordplay}
 
 本章學習第二個案例, 主要研究如何通過搜索特定詞彙, 進行猜謎. 
 比如, 查找最長回字文, 以及尋找按照字母表順序排列的單詞. 
-同時, 我將介紹一種新的程序開發模式: 抽離紛紛擾擾, 回歸已有方案. 
+同時, 我將介紹一種新的程式開發模式: 抽離紛紛擾擾, 回歸已有方案. 
 
 
-\section{讀取單詞列表}
+\section{讀取單詞串列}
 \label{wordlist}
-本章的練習, 需要準備一個英文單詞列表. 
-網上有很多可用的單詞列表, 但是對我們來說, 最理想的莫過於
-Grady Ward 收集整理, 作為Moby詞典項目, 貢獻給公共領域的單詞列表
+本章的練習, 需要準備一個英文單詞串列. 
+網上有很多可用的單詞串列, 但是對我們來說, 最理想的莫過於
+Grady Ward 收集整理, 作為Moby詞典項目, 貢獻給公共領域的單詞串列
 (詳見\url{http://wikipedia.org/wiki/Moby_Project}). 這是
-包含 113,809 個填詞遊戲的單詞列表; 也就是說, 這些單詞, 已經被
+包含 113,809 個填詞遊戲的單詞串列; 也就是說, 這些單詞, 已經被
 填詞遊戲和其他單詞遊戲證明了有效. 
 在Moby項目中, 這個文件名為 {\tt 113809of.fic};
 你可以從\url{http://thinkpython2.com/code/words.txt} 下載一個副本, 
@@ -5925,7 +5928,7 @@ Grady Ward 收集整理, 作為Moby詞典項目, 貢獻給公共領域的單詞�
 'aa\n'
 \end{verbatim}
 %
-單詞列表中第一個單詞是``aa'', 這是一種岩漿. 
+單詞串列中第一個單詞是``aa'', 這是一種岩漿. 
 後面的\verb"\n" 是換行符, 用來斷行. 
 
 文件對象會跟蹤目前讀到哪裡了, 從而, 再次運行
@@ -5948,8 +5951,8 @@ Grady Ward 收集整理, 作為Moby詞典項目, 貢獻給公共領域的單詞�
 'aahed'
 \end{verbatim}
 %
-你也可以將文件對象置於{\tt for}循環中. 
-這樣程序便會讀取 {\tt words.txt}, 然後逐行輸出每個單詞:
+你也可以將文件對象置於{\tt for}迴圈中. 
+這樣程式便會讀取 {\tt words.txt}, 然後逐行輸出每個單詞:
 \index{open function}
 \index{function!open}
 
@@ -5965,7 +5968,7 @@ for line in fin:
 下一節有這些習題的答案, 但盡量在看答案之前盡力一試吧. 
 
 \begin{exercise}
-編寫程序, 讀取{\tt words.txt}, 僅打印多於20個字符的單詞
+編寫程式, 讀取{\tt words.txt}, 僅打印多於20個字符的單詞
 (不包括空格). 
 \index{whitespace}
 
@@ -5985,8 +5988,8 @@ for line in fin:
 
 編寫 \verb"has_no_e" 函數, 如果輸入的單詞不包括``e'',  則返回{\tt True}. 
 
-編寫程序, 讀取{\tt words.txt}, 只打印不包含``e''的單詞. 
-統計列表中, 不包含``e''的單詞所占比例. 
+編寫程式, 讀取{\tt words.txt}, 只打印不包含``e''的單詞. 
+統計串列中, 不包含``e''的單詞所占比例. 
 \index{lipogram}
 
 \end{exercise}
@@ -5997,7 +6000,7 @@ for line in fin:
 編寫{\tt avoids}函數, 以單詞和禁用字母字符串為輸入, 當單詞不包含任何禁用字母時, 
 返回 {\tt True}. 
 
-編寫程序, 使用戶輸入禁用字母字符串, 
+編寫程式, 使用戶輸入禁用字母字符串, 
 然後輸出不含有這些字母的單詞數量. 
 看看你是否可以找出一個包含5個禁用字母的組合, 
 使被排除的單詞數最少?
@@ -6050,15 +6053,15 @@ def has_no_e(word):
     return True
 \end{verbatim}
 %
-{\tt for}循環會遍歷 {\tt word}中所有字母. 
+{\tt for}迴圈會遍歷 {\tt word}中所有字母. 
 如果遇到 ``e'', 則即刻返回{\tt False};
 否則繼續下一個字母. 
-如果循環正常結束, 也就是說沒有遇到``e'',  則返回{\tt True}.
+如果迴圈正常結束, 也就是說沒有遇到``e'',  則返回{\tt True}.
 \index{traversal}
 
 \index{in operator}
 \index{operator!in}
-你也可以使用{\tt in}運算符來精簡程序, 
+你也可以使用{\tt in}運算子來精簡程式, 
 我先介紹上述版本, 主要是闡述清楚檢索算法的內在邏輯. 
 
 \index{generalization}
@@ -6074,7 +6077,7 @@ def avoids(word, forbidden):
 \end{verbatim}
 %
 在此函數中, 一旦遇到禁止字母, 即刻返回{\tt False}, 
-如果循環終了, 則返回{\tt True}. 
+如果迴圈終了, 則返回{\tt True}. 
 
 \verb"uses_only" 與之極為相似, 無非條件相反:
 
@@ -6086,8 +6089,8 @@ def uses_only(word, available):
     return True
 \end{verbatim}
 %
-這裡不再是禁用字母列表了, 而是可用字母列表. 
-如果 {\tt word}中出現了不在可用列表中的字母, 返回{\tt False}.
+這裡不再是禁用字母串列了, 而是可用字母串列. 
+如果 {\tt word}中出現了不在可用串列中的字母, 返回{\tt False}.
 
 \verb"uses_all"和上述函數也較為相似, 不同之處在於, 
 我們交換了單詞和字母序列的角色:
@@ -6101,11 +6104,11 @@ def uses_all(word, required):
 \end{verbatim}
 %
 不再是遍歷 {\tt word}中的字母, 
-而是遍歷必需字母列表. 
-如果字母列表中有字母未出現在單詞中, 返回{\tt False}.
+而是遍歷必需字母串列. 
+如果字母串列中有字母未出現在單詞中, 返回{\tt False}.
 \index{traversal}
 
-如若你已像計算機科學家一樣去思考, 你便會注意到 \verb"uses_all" 
+如若你已像電腦科學家一樣去思考, 你便會注意到 \verb"uses_all" 
 是以前一個已解決的問題的另一種表達, 你便會這麼寫:
 
 \begin{verbatim}
@@ -6113,21 +6116,21 @@ def uses_all(word, required):
     return uses_only(required, word)
 \end{verbatim}
 %
-此案例便是一個{\bf 抽離紛擾, 回歸已知}的程序開發模式的實踐, 
+此案例便是一個{\bf 抽離紛擾, 回歸已知}的程式開發模式的實踐, 
 這種模式是將遇到的問題, 映射為已解決的問題, 
 從而用已有的解決方案來解決當前問題.   
 \index{reduction to a previously solved problem} 
 \index{development plan!reduction}
 
 
-\section{索引循環}
+\section{索引迴圈}
 \index{looping!with indices}
 \index{index!looping with}
-前一章節中, 我用{\tt for}循環編寫了大量函數, 這是因為我
+前一章節中, 我用{\tt for}迴圈編寫了大量函數, 這是因為我
 只關注字符串中的字符; 所以無需關注索引. 
 
 但\verb"is_abecedarian"函數中, 我們不得不比較相鄰的字母, 
-用{\tt for}循環便不太方便:
+用{\tt for}迴圈便不太方便:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6150,7 +6153,7 @@ def is_abecedarian(word):
     return is_abecedarian(word[1:])
 \end{verbatim}
 
-還可以使用 {\tt while} 循環:
+還可以使用 {\tt while} 迴圈:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6162,17 +6165,17 @@ def is_abecedarian(word):
     return True
 \end{verbatim}
 %
-此循環始於 {\tt i=0}, 終於{\tt i=len(word)-1}. 
-每次循環都會比較第$i$個字符(可以看作當前字符)
+此迴圈始於 {\tt i=0}, 終於{\tt i=len(word)-1}. 
+每次迴圈都會比較第$i$個字符(可以看作當前字符)
 和第$i+1$個字符(可以看作後一個字符). 
 
 如果後一個字符小於(在字母表順序中先於)當前字符, 
 我們會發現這和要求不符, 便返回{\tt False}.
 
-如果直到循環末尾, 仍然無異常, 則單詞合格. 
-為確信循環正常結束, 可以試試\verb"'flossy'". 
-單詞長度為6, 所以{\tt i} 為 4時, 便是最後一次循環, 
-因為這是倒數第二個字符的索引. 最後一次循環中, 
+如果直到迴圈末尾, 仍然無異常, 則單詞合格. 
+為確信迴圈正常結束, 可以試試\verb"'flossy'". 
+單詞長度為6, 所以{\tt i} 為 4時, 便是最後一次迴圈, 
+因為這是倒數第二個字符的索引. 最後一次迴圈中, 
 比較了倒數第二個和倒數第一個字符, 這恰恰符合預期. 
 \index{palindrome}
 
@@ -6211,7 +6214,7 @@ def is_palindrome(word):
 \index{testing!is hard}
 \index{program testing}
 
-程序測試很難. 本章的函數相對容易測試, 因為你可以用手算來檢驗結果. 
+程式測試很難. 本章的函數相對容易測試, 因為你可以用手算來檢驗結果. 
 即便如此, 要選擇一批單詞, 測試所有可能錯誤, 那便難上加難了. 
 
 以\verb"has_no_e"為例, 需要檢驗兩種情景: 一種是含有`e'的單詞, 返回{\tt False}, 
@@ -6224,19 +6227,19 @@ def is_palindrome(word):
 空字符串是{\bf 特例}的一種, 也就是那種容易被忽視, 卻往往是錯誤頻發之處的用例. 
 \index{special case}
 
-除了自己構建測試用例, 你也可以用類似{\tt words.txt}的單詞列表檢驗程序. 
+除了自己構建測試用例, 你也可以用類似{\tt words.txt}的單詞串列檢驗程式. 
 通過掃描輸出, 你可能會發現錯誤, 但要注意: 
 你可能發現了某種錯誤(包括了不應包含的單詞), 而忽略了其他錯誤
 (沒有包括應該包含的單詞). 
 
-通常, 程序測試可以幫助你發現錯誤, 但要製作出好的測試用例, 
-往往很難, 即使通過了這些測試, 你也不能百分百地確認你的程序正確. 
-一位傳奇的計算機科學家說過:
+通常, 程式測試可以幫助你發現錯誤, 但要製作出好的測試用例, 
+往往很難, 即使通過了這些測試, 你也不能百分百地確認你的程式正確. 
+一位傳奇的電腦科學家說過:
 \index{testing!and absence of bugs}
 
 \begin{quote}
 
-程序測試只能表明錯誤的存在, 卻永遠無法保證其不存在!
+程式測試只能表明錯誤的存在, 卻永遠無法保證其不存在!
 
 --- Edsger W. Dijkstra
 \end{quote}
@@ -6285,7 +6288,7 @@ def is_palindrome(word):
 是哪個單詞呢?
 \end{quote}
 
-編寫程序來尋找一下吧. 
+編寫程式來尋找一下吧. 
 答案: \url{http://thinkpython2.com/code/cartalk1.py}.
 
 \end{exercise}
@@ -6316,7 +6319,7 @@ def is_palindrome(word):
 ``問題來了, 我開始在里程表上看到的數字是什麼?''
 \end{quote}
 
-編寫個Python程序, 檢驗所有的6位數字, 然後輸出滿足上述要求的任意數字. 
+編寫個Python程式, 檢驗所有的6位數字, 然後輸出滿足上述要求的任意數字. 
 答案: \url{http://thinkpython2.com/code/cartalk2.py}.
 
 \end{exercise}
@@ -6341,7 +6344,7 @@ def is_palindrome(word):
 
 \end{quote}
 
-編寫Python程序, 尋找這個謎題的答案. 
+編寫Python程式, 尋找這個謎題的答案. 
 提示: 你可能會用到字符串的 {\tt zfill} 方法. 
 
 答案: \url{http://thinkpython2.com/code/cartalk3.py}.
@@ -6350,50 +6353,50 @@ def is_palindrome(word):
 
 
 
-\chapter{列表}
+\chapter{串列}
 
-本章講述Python最有用的內置類型, 列表. 
+本章講述Python最有用的內置類型, 串列. 
 同時你會深入了解對象, 學習一個對象對應多個名稱時會產生的現象. 
 
 
-\section{列表即序列}
+\section{串列即序列}
 \label{sequence}
 
-同字符串一樣, {\bf 列表} 也是值的序列. 
-字符串中, 值是字符;在列表中, 值可以是任何類型. 
-列表中的值, 叫做{\bf 元素}, 有時也叫{\bf 列表項}.
+同字符串一樣, {\bf 串列} 也是值的序列. 
+字符串中, 值是字符;在串列中, 值可以是任何類型. 
+串列中的值, 叫做{\bf 元素}, 有時也叫{\bf 串列項}.
 \index{list}
 \index{type!list}
 \index{element}
 \index{sequence}
 \index{item}
 
-創建列表的方式很多; 最簡單的莫過於將元素用方括號包起來(\verb"[" and \verb"]"):
+創建串列的方式很多; 最簡單的莫過於將元素用方括號包起來(\verb"[" and \verb"]"):
 
 \begin{verbatim}
 [10, 20, 30, 40]
 ['crunchy frog', 'ram bladder', 'lark vomit']
 \end{verbatim}
 %
-第一個例子是由四個整數構成的列表, 
-第二個示例列表則由三個字符串構成. 
-列表中的元素類型可以不同. 
-下面的列表, 便同時包括了字符串, 浮點數, 整數以及另一個列表:
+第一個例子是由四個整數構成的串列, 
+第二個示例串列則由三個字符串構成. 
+串列中的元素類型可以不同. 
+下面的串列, 便同時包括了字符串, 浮點數, 整數以及另一個串列:
 
 \begin{verbatim}
 ['spam', 2.0, 5, [10, 20]]
 \end{verbatim}
 %
-列表中包含列表, 叫做{\bf 嵌套列表}.
+串列中包含串列, 叫做{\bf 嵌套串列}.
 \index{nested list}
 \index{list!nested}
 
-不包含任何元素的列表, 叫做空列表;
-你可以用\verb"[]"創建空列表.
+不包含任何元素的串列, 叫做空串列;
+你可以用\verb"[]"創建空串列.
 \index{empty list}
 \index{list!empty}
 
-如你所想, 列表也可以賦給變量:
+如你所想, 串列也可以賦給變量:
 
 \begin{verbatim}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -6406,7 +6409,7 @@ def is_palindrome(word):
 \index{assignment}
 
 
-\section{列表可變}
+\section{串列可變}
 \label{mutable}
 \index{list!element}
 \index{access}
@@ -6414,7 +6417,7 @@ def is_palindrome(word):
 \index{bracket operator}
 \index{operator!bracket}
 
-從列表中獲取元素的語法和從字符串中獲取字符的語法一樣--方括號操作符. 
+從串列中獲取元素的語法和從字符串中獲取字符的語法一樣--方括號操作符. 
 括號中的表達式確定了索引值. 
 要注意, 索引從0開始:
 
@@ -6423,8 +6426,8 @@ def is_palindrome(word):
 'Cheddar'
 \end{verbatim}
 %
-和字符串不同, 列表是可變的, 當括號操作符出現在賦值語句左側, 
-就會將對應的列表元素重新賦值. 
+和字符串不同, 串列是可變的, 當括號操作符出現在賦值語句左側, 
+就會將對應的串列元素重新賦值. 
 \index{mutability}
 
 \begin{verbatim}
@@ -6450,15 +6453,15 @@ def is_palindrome(word):
 \label{fig.liststate}
 \end{figure}
 
-列表用單詞``list''在外, 元素在內的箱體圖表示. 
-{\tt cheeses} 指向了一個包括三個元素的列表, 其索引分別為0,1和2. 
+串列用單詞``list''在外, 元素在內的箱體圖表示. 
+{\tt cheeses} 指向了一個包括三個元素的串列, 其索引分別為0,1和2. 
 {\tt numbers} 包括兩個元素; 圖中也展現了第二個元素從123 被賦值為5的過程. 
-{\tt empty} 指向了一個空列表. 
+{\tt empty} 指向了一個空串列. 
 \index{item assignment}
 \index{assignment!item}
 \index{reassignment}
 
-列表索引和字符串索引的作用是一樣的:
+串列索引和字符串索引的作用是一樣的:
 
 \begin{itemize}
 
@@ -6468,7 +6471,7 @@ def is_palindrome(word):
 \index{exception!IndexError}
 \index{IndexError}
 
-\item 如果索引為負值, 則從列表末尾倒序計數. 
+\item 如果索引為負值, 則從串列末尾倒序計數. 
 
 \end{itemize}
 \index{list!index}
@@ -6478,7 +6481,7 @@ def is_palindrome(word):
 \index{in operator}
 \index{operator!in}
 
-運算符{\tt in}也可作用於列表. 
+運算子{\tt in}也可作用於串列. 
 
 \begin{verbatim}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -6489,21 +6492,21 @@ False
 \end{verbatim}
 
 
-\section{遍歷列表}
+\section{遍歷串列}
 \index{list!traversal}
 \index{traversal!list}
 \index{for loop}
 \index{loop!for}
 \index{statement!for}
 
-遍歷列表中元素的最常用方法便是{\tt for}循環. 語法和字符串遍歷相同:
+遍歷串列中元素的最常用方法便是{\tt for}迴圈. 語法和字符串遍歷相同:
 
 \begin{verbatim}
 for cheese in cheeses:
     print(cheese)
 \end{verbatim}
 %
-這種方法對於僅讀取列表中元素很方便, 但是如果你想寫入或者更新元素, 
+這種方法對於僅讀取串列中元素很方便, 但是如果你想寫入或者更新元素, 
 那便需要索引了. 
 通常把內置函數{\tt range} 和 {\tt len}結合使用:
 \index{looping!with indices}
@@ -6515,23 +6518,23 @@ for i in range(len(numbers)):
 \end{verbatim}
 %
 
-此循環會遍歷列表並更新每個元素. 
-{\tt len}方法會返回列表中元素數量. {\tt range} 則返回從0到 $n-1$的索引值列表, 
-其中 $n$ 是列表的長度. 
-每次循環, {\tt i}都會獲得下一個元素的索引. 循環體中的賦值語句
+此迴圈會遍歷串列並更新每個元素. 
+{\tt len}方法會返回串列中元素數量. {\tt range} 則返回從0到 $n-1$的索引值串列, 
+其中 $n$ 是串列的長度. 
+每次迴圈, {\tt i}都會獲得下一個元素的索引. 迴圈體中的賦值語句
 則會通過{\tt i}獲取元素的舊值, 並賦予新值. 
 \index{item update}
 \index{update!item}
 
-用{\tt for}循環遍歷空列表, 永遠不會執行循環體:
+用{\tt for}迴圈遍歷空串列, 永遠不會執行迴圈體:
 
 \begin{verbatim}
 for x in []:
     print('This never happens.')
 \end{verbatim}
 %
-雖然列表可以包含其他列表, 但是嵌入的列表仍表示一個元素. 
-下面列表的長度為{\tt 4}:
+雖然串列可以包含其他串列, 但是嵌入的串列仍表示一個元素. 
+下面串列的長度為{\tt 4}:
 \index{nested list}
 \index{list!nested}
 
@@ -6541,10 +6544,10 @@ for x in []:
 
 
 
-\section{列表操作}
+\section{串列操作}
 \index{list!operation}
 
-運算符 {\tt +} 可以用來拼接列表:
+運算子 {\tt +} 可以用來拼接串列:
 \index{concatenation!list}
 \index{list!concatenation}
 
@@ -6557,7 +6560,7 @@ for x in []:
 \end{verbatim}
 %
 
-運算符 {\tt *} 會將列表複製給定的次數:
+運算子 {\tt *} 會將串列複製給定的次數:
 \index{repetition!list}
 \index{list!repetition}
 
@@ -6572,14 +6575,14 @@ for x in []:
 第二個, 則複製了{\tt [1, 2, 3]}三次. 
 
 
-\section{列表切片}
+\section{串列切片}
 \index{slice operator}
 \index{operator!slice}
 \index{index!slice}
 \index{list!slice}
 \index{slice!list}
 
-切片運算符同樣適用於列表:
+切片運算子同樣適用於串列:
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -6593,7 +6596,7 @@ for x in []:
 %
 如果省略第一位索引, 則從頭開始, 進行切片. 
 如果省略第二位索引, 則切片止於末尾. 
-如果兩位都省略, 則切片便等同於複製整個列表. 
+如果兩位都省略, 則切片便等同於複製整個串列. 
 \index{list!copy}
 \index{slice!copy}
 \index{copy!slice}
@@ -6603,10 +6606,10 @@ for x in []:
 ['a', 'b', 'c', 'd', 'e', 'f']
 \end{verbatim}
 %
-因為列表可變, 所以最好在執行修改列表的操作前, 複製一份, 以防萬一. 
+因為串列可變, 所以最好在執行修改串列的操作前, 複製一份, 以防萬一. 
 \index{mutability}
 
-如果切片運算符在賦值號左側, 便可以同時更新多個元素:
+如果切片運算子在賦值號左側, 便可以同時更新多個元素:
 \index{slice!update}
 \index{update!slice}
 
@@ -6618,7 +6621,7 @@ for x in []:
 \end{verbatim}
 %
 
-% 你也可以通過將待更新元素放入空的位置, 從而向列表添加元素
+% 你也可以通過將待更新元素放入空的位置, 從而向串列添加元素
 % :
 
 % % \begin{verbatim}
@@ -6629,7 +6632,7 @@ for x in []:
 % \end{verbatim}
 % \afterverb
 %
-% 也可以通過賦值空列表, 從而移除元素. 
+% 也可以通過賦值空串列, 從而移除元素. 
 % :
 
 % % \begin{verbatim}
@@ -6640,16 +6643,16 @@ for x in []:
 % \end{verbatim}
 % \afterverb
 %
-% 但這些操作都可以用更加清晰明瞭的列表方法替換
+% 但這些操作都可以用更加清晰明瞭的串列方法替換
 % .
 
 
-\section{列表方法}
+\section{串列方法}
 \index{list!method}
 \index{method, list}
 
-Python 提供了大量操作列表的方法. 例如, 
-{\tt append} 可以在列表末尾添加新元素:
+Python 提供了大量操作串列的方法. 例如, 
+{\tt append} 可以在串列末尾添加新元素:
 \index{append method}
 \index{method!append}
 
@@ -6660,7 +6663,7 @@ Python 提供了大量操作列表的方法. 例如,
 ['a', 'b', 'c', 'd']
 \end{verbatim}
 %
-{\tt extend}會以列表為參數, 並將其中所有元素添加到執行列表中:
+{\tt extend}會以串列為參數, 並將其中所有元素添加到執行串列中:
 \index{extend method}
 \index{method!extend}
 
@@ -6674,7 +6677,7 @@ Python 提供了大量操作列表的方法. 例如,
 %
 這個例子中, {\tt t2} 沒有被修改. 
 
-{\tt sort} 會將列表元素, 從低到高排序:
+{\tt sort} 會將串列元素, 從低到高排序:
 \index{sort method}
 \index{method!sort}
 
@@ -6685,7 +6688,7 @@ Python 提供了大量操作列表的方法. 例如,
 ['a', 'b', 'c', 'd', 'e']
 \end{verbatim}
 %
-多數列表方法都沒有返回值; 這些方法修改列表然後返回{\tt None}. 
+多數串列方法都沒有返回值; 這些方法修改串列然後返回{\tt None}. 
 如果你意外寫了{\tt t = t.sort()}, 結果會令你失望. 
 \index{void method}
 \index{method!void}
@@ -6693,10 +6696,10 @@ Python 提供了大量操作列表的方法. 例如,
 \index{special value!None}
 
 
-\section{Map, filter 和 reduce}
+\section{Map, filter和reduce}
 \label{filter}
 
-若想對列表中所有數字求和, 可以用如下循環實現:
+若想對串列中所有數字求和, 可以用如下迴圈實現:
 
 % see add.py
 
@@ -6709,7 +6712,7 @@ def add_all(t):
 \end{verbatim}
 %
 {\tt total}初始為0.
-每循環一次{\tt x} 會從列表中獲取一個元素. {\tt +=} 操作符, 是一種更新運算的便捷寫法. 
+每迴圈一次{\tt x} 會從串列中獲取一個元素. {\tt +=} 操作符, 是一種更新運算的便捷寫法. 
 也是一種 {\bf 增量賦值語句}. 
 \index{update operator}
 \index{operator!update}
@@ -6726,10 +6729,10 @@ def add_all(t):
     total = total + x
 \end{verbatim}
 %
-隨著循環運行, {\tt total} 會累積元素求和;
+隨著迴圈運行, {\tt total} 會累積元素求和;
 這樣的變量有時也稱為{\bf 累加器}. 
 \index{accumulator!sum}
-對列表元素求和, 使用比較普遍, 所以Python提供了內置函數{\tt sum}:
+對串列元素求和, 使用比較普遍, 所以Python提供了內置函數{\tt sum}:
 
 \begin{verbatim}
 >>> t = [1, 2, 3]
@@ -6742,8 +6745,8 @@ def add_all(t):
 \index{pattern!reduce}
 \index{traversal}
 
-有時, 你會遍歷列表, 創建新列表. 例如, 下述函數會接收字符串列表, 
-並返回一個將所有字符串都轉為首字母大寫的字符串列表:
+有時, 你會遍歷串列, 創建新串列. 例如, 下述函數會接收字符串串列, 
+並返回一個將所有字符串都轉為首字母大寫的字符串串列:
 
 \begin{verbatim}
 def capitalize_all(t):
@@ -6753,7 +6756,7 @@ def capitalize_all(t):
     return res
 \end{verbatim}
 %
-{\tt res} 開始是一個空列表; 每次循環, 都會向其中添加下一個元素. 
+{\tt res} 開始是一個空串列; 每次迴圈, 都會向其中添加下一個元素. 
 所以{\tt res}也可認為是另一種累加器. 
 \index{accumulator!list}
 
@@ -6764,8 +6767,8 @@ def capitalize_all(t):
 \index{filter pattern}
 \index{pattern!filter}
 
-另一種常用操作是, 從列表中篩選部分元素, 返回子列表. 例如, 
-下面函數會接收一個字符串列表, 返回僅包含大寫字母的字符串列表:
+另一種常用操作是, 從串列中篩選部分元素, 返回子串列. 例如, 
+下面函數會接收一個字符串串列, 返回僅包含大寫字母的字符串串列:
 
 \begin{verbatim}
 def only_upper(t):
@@ -6781,14 +6784,14 @@ def only_upper(t):
 如\verb"only_upper" 一樣的操作, 叫做 {\bf filter}, 因為此操作會篩選出某些元素, 
 過濾掉其他元素. 
 
-大部分的列表操作都可以由map, filter 以及reduce 組合構成. 
+大部分的串列操作都可以由map, filter 以及reduce 組合構成. 
 
 
 \section{移除元素}
 \index{element deletion}
 \index{deletion, element of list}
 
-從列表中移除元素有多種方法. 
+從串列中移除元素有多種方法. 
 如果你知道所要移除元素的索引, 可以用
 {\tt pop}方法:
 \index{pop method}
@@ -6803,7 +6806,7 @@ def only_upper(t):
 'b'
 \end{verbatim}
 %
-{\tt pop} 會改變列表, 並返回被移除的元素. 
+{\tt pop} 會改變串列, 並返回被移除的元素. 
 如果未提供索引, 則會刪除並返回最後一個元素. 
 
 如果你不使用移除的元素, 則可以用{\tt del}元算符:
@@ -6845,13 +6848,13 @@ def only_upper(t):
 
 
 
-\section{列表和字符串}
+\section{串列和字符串}
 \index{list}
 \index{string}
 \index{sequence}
 
-字符串是一系列的字符, 列表是一系列的值, 但是字符列表和字符串並不可等同視之. 
-採用 {\tt list}方法, 可以將字符串轉換為字符列表:
+字符串是一系列的字符, 串列是一系列的值, 但是字符串列和字符串並不可等同視之. 
+採用 {\tt list}方法, 可以將字符串轉換為字符串列:
 \index{list!function}
 \index{function!list}
 
@@ -6893,9 +6896,9 @@ def only_upper(t):
 \end{verbatim}
 %
 {\tt join}和 {\tt split}的作用正好相反. 
-它會接收字符串列表, 然後拼接所有元素. 
+它會接收字符串串列, 然後拼接所有元素. 
 {\tt join}是一個字符串方法, 所以你需要
-在分隔符上調用此方法, 然後將列表作為參數傳入:
+在分隔符上調用此方法, 然後將串列作為參數傳入:
 \index{join method}
 \index{method!join}
 \index{concatenation}
@@ -6944,7 +6947,7 @@ b = 'banana'
 \index{is operator}
 \index{operator!is}
 
-若想判斷兩個變量是否指向了同一個對象, 可以用{\tt is}運算符.
+若想判斷兩個變量是否指向了同一個對象, 可以用{\tt is}運算子.
 
 \begin{verbatim}
 >>> a = 'banana'
@@ -6955,7 +6958,7 @@ True
 %
 此例中, Python僅創建了一個字符串對象, 然後{\tt a} 
 和 {\tt b} 都指向了此對象. 
-但是當你創建兩個列表時, 你得到的就是兩個對象:
+但是當你創建兩個串列時, 你得到的就是兩個對象:
 
 \begin{verbatim}
 >>> a = [1, 2, 3]
@@ -6976,7 +6979,7 @@ False
 \label{fig.list2}
 \end{figure}
 
-這種情況下, 可以說這兩個列表是{\bf 相等的},
+這種情況下, 可以說這兩個串列是{\bf 相等的},
 因為它們有相同的元素, 
 但它們不是{\bf 相同的}, 因為不是同一個對象. 
 兩個對象如果相同, 那麼它們必然相等, 
@@ -6985,9 +6988,9 @@ False
 \index{identity}
 
 到目前為止, 我們一直混用``對象''和 ``值'', 但更準確地說, 
-一個對象有一個值. 若創建{\tt [1, 2, 3]}, 你會得到一個列表對象, 
+一個對象有一個值. 若創建{\tt [1, 2, 3]}, 你會得到一個串列對象, 
 而這個對象的值是個整數序列. 
-如果另外一個列表也有相同的元素, 我們便說它們擁有相同的值, 
+如果另外一個串列也有相同的元素, 我們便說它們擁有相同的值, 
 但它們不是同一個對象. 
 \index{object}
 \index{value}
@@ -7050,7 +7053,7 @@ b = 'banana'
 所以{\tt a} 和 {\tt b} 是否指向同一個對象, 已無關緊要. 
 
 
-\section{列表參數}
+\section{串列參數}
 \label{list.arguments}
 \index{list!as argument}
 \index{argument}
@@ -7058,9 +7061,9 @@ b = 'banana'
 \index{reference}
 \index{parameter}
 
-當給函數傳遞列表時, 函數收到的是對該列表的引用. 
-如果函數修改了列表, 那麼調用一方也會看到相應變化. 
-例如, \verb"delete_head" 函數刪除了列表中第一個元素:
+當給函數傳遞串列時, 函數收到的是對該串列的引用. 
+如果函數修改了串列, 那麼調用一方也會看到相應變化. 
+例如, \verb"delete_head" 函數刪除了串列中第一個元素:
 
 \begin{verbatim}
 def delete_head(t):
@@ -7078,21 +7081,21 @@ def delete_head(t):
 \end{verbatim}
 %
 形參{\tt t}和變量{\tt letters}是同一個變量的別稱. 
-棧圖如圖~\ref{fig.stack5}所示.
+堆疊圖如圖~\ref{fig.stack5}所示.
 \index{stack diagram}
 \index{diagram!stack}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack5.pdf}}
-\caption{棧圖.}
+\caption{堆疊圖.}
 \label{fig.stack5}
 \end{figure}
 
-因兩個框共用一個列表, 所以我把列表畫在了它們中間. 
+因兩個框共用一個串列, 所以我把串列畫在了它們中間. 
 
-區分修改列表操作和新建列表操作, 是非常重要的. 
-例如,  {\tt append}方法是修改列表, 而{\tt +}運算符則會新建列表.
+區分修改串列操作和新建串列操作, 是非常重要的. 
+例如,  {\tt append}方法是修改串列, 而{\tt +}運算子則會新建串列.
 \index{append method}
 \index{method!append}
 \index{list!concatenation}
@@ -7111,7 +7114,7 @@ None
 %
 {\tt append} 的返回值是 {\tt None}.
 
-下面是使用 {\tt +}運算符的示例:
+下面是使用 {\tt +}運算子的示例:
 %
 \begin{verbatim}
 >>> t3 = t1 + [4]
@@ -7121,17 +7124,17 @@ None
 [1, 2, 3, 4]
 \end{verbatim}
 %
-操作結果是個新列表, 原列表也沒有變化.
+操作結果是個新串列, 原串列也沒有變化.
 
-在為修改列表而編寫函數時, 此差異尤要重視. 
-例如, 下面函數{\em 沒有}刪除列表的第一個元素:
+在為修改串列而編寫函數時, 此差異尤要重視. 
+例如, 下面函數{\em 沒有}刪除串列的第一個元素:
 %
 \begin{verbatim}
 def bad_delete_head(t):
     t = t[1:]              # WRONG!
 \end{verbatim}
 %
-此切片運算符會新建列表, 同時賦值號令 {\tt t}指向此新列表, 
+此切片運算子會新建串列, 同時賦值號令 {\tt t}指向此新串列, 
 但是這個操作並不會影響調用者.
 \index{slice operator}
 \index{operator!slice}
@@ -7145,18 +7148,18 @@ def bad_delete_head(t):
 %
 
 \verb"bad_delete_head"函數開始運行時, {\tt t} 和 {\tt t4} 指向了同一個
-列表. 函數結束時, {\tt t}指向了新的列表, 
-但是{\tt t4} 仍然指向了原來的,未被修改的列表.
+串列. 函數結束時, {\tt t}指向了新的串列, 
+但是{\tt t4} 仍然指向了原來的,未被修改的串列.
 
-一種替代方案是, 編寫一個創建並返回新列表的函數. 比如, 
-{\tt tail}函數會返回列表中除首元素的所有元素列表:
+一種替代方案是, 編寫一個創建並返回新串列的函數. 比如, 
+{\tt tail}函數會返回串列中除首元素的所有元素串列:
 
 \begin{verbatim}
 def tail(t):
     return t[1:]
 \end{verbatim}
 %
-此函數依然會保持原列表不變. 下面是用法:
+此函數依然會保持原串列不變. 下面是用法:
 
 \begin{verbatim}
 >>> letters = ['a', 'b', 'c']
@@ -7170,12 +7173,12 @@ def tail(t):
 \section{調試}
 \index{debugging}
 
-若使用列表(和其他可變對象)時不夠小心謹慎, 很容易導致長達數小時的調試跟蹤. 
+若使用串列(和其他可變對象)時不夠小心謹慎, 很容易導致長達數小時的調試跟蹤. 
 這裡有一些常見陷阱以及如何避免:
 
 \begin{enumerate}
 
-\item 多數的列表方法都是傳入參數, 返回 {\tt None}. 
+\item 多數的串列方法都是傳入參數, 返回 {\tt None}. 
 這和字符串方法恰恰相反, 字符串方法一般返回新字符串, 
 同時保持原始值不變. 
 
@@ -7195,16 +7198,16 @@ t = t.sort()           # WRONG!
 
 因為 {\tt sort}返回的是{\tt None}, 所以後續對{\tt t}的操作多會失敗.
 
-在使用列表方法前, 你應該認真閱讀文檔, 並在交互模式下測試一下. 
+在使用串列方法前, 你應該認真閱讀文檔, 並在交互模式下測試一下. 
 
 \item 確定原則, 堅定執行.
 
-列表使用中面臨的部分問題在於, 有多條道路通羅馬. 
-比如, 從列表中移除元素, 你可以用 {\tt pop}, {\tt remove}, {\tt del},
+串列使用中面臨的部分問題在於, 有多條道路通羅馬. 
+比如, 從串列中移除元素, 你可以用 {\tt pop}, {\tt remove}, {\tt del},
 甚至用切片重新賦值. 
 
-若想給列表添加元素, 可以用{\tt append}方法, 或者{\tt +}運算符. 
-假設{\tt t}是列表, {\tt x}是列表元素, 下面的操作都正確: 
+若想給串列添加元素, 可以用{\tt append}方法, 或者{\tt +}運算子. 
+假設{\tt t}是串列, {\tt x}是串列元素, 下面的操作都正確: 
 
 \begin{verbatim}
 t.append(x)
@@ -7226,11 +7229,11 @@ t = t + x              # WRONG!
 其他三個語句合法, 但並不會得到想要的效果. 
 
 
-\item 複製列表, 避免別稱.
+\item 複製串列, 避免別稱.
 \index{aliasing!copying to avoid}
 \index{copy!to avoid aliasing}
 
-你若想使用{\tt sort} 方法修改參數, 同時又想保留原列表, 那你可以複製一份. 
+你若想使用{\tt sort} 方法修改參數, 同時又想保留原串列, 那你可以複製一份. 
 
 \begin{verbatim}
 >>> t = [3, 1, 2]
@@ -7243,7 +7246,7 @@ t = t + x              # WRONG!
 \end{verbatim}
 
 此例中, 你也可以使用內置函數{\tt sorted}, 
-此函數可以返回新的排好序的列表, 同時又保留了原始列表. 
+此函數可以返回新的排好序的串列, 同時又保留了原始串列. 
 \index{sorted!function}
 \index{function!sorted}
 
@@ -7263,16 +7266,16 @@ t = t + x              # WRONG!
 
 \begin{description}
 
-\item[列表(list):] 由值構成的序列. 
+\item[串列(list):] 由值構成的序列. 
 \index{list}
 
-\item[元素(element):] 列表(或序列)中的值, 也可以稱為列表項.
+\item[元素(element):] 串列(或序列)中的值, 也可以稱為串列項.
 \index{element}
 
-\item[嵌套列表(nested list):] 列表中的元素是另外的列表. 
+\item[嵌套串列(nested list):] 串列中的元素是另外的串列. 
 \index{nested list}
 
-\item[累加器(accumulator):] 在循環中用於累加或累積結果的變量.
+\item[累加器(accumulator):] 在迴圈中用於累加或累積結果的變量.
 \index{accumulator}
 
 \item[增強賦值(augmented assignment):] 使用 \verb"+=" 這樣的操作符更新變量值的
@@ -7289,7 +7292,7 @@ t = t + x              # WRONG!
 \index{map pattern}
 \index{pattern!map}
 
-\item[filter:] 一種遍歷列表, 並篩選滿足特定條件的元素的處理模式.
+\item[filter:] 一種遍歷串列, 並篩選滿足特定條件的元素的處理模式.
 \index{filter pattern}
 \index{pattern!filter}
 
@@ -7321,8 +7324,8 @@ t = t + x              # WRONG!
 
 \begin{exercise}
 
-編寫 \verb"nested_sum" 函數, 接收包含整數列表的一個列表, 
-然後將所有內嵌列表的元素相加求和. 
+編寫 \verb"nested_sum" 函數, 接收包含整數串列的一個串列, 
+然後將所有內嵌串列的元素相加求和. 
 比如:
 
 \begin{verbatim}
@@ -7336,8 +7339,8 @@ t = t + x              # WRONG!
 \begin{exercise}
 \label{cumulative}
 \index{cumulative sum}
-編寫函數{\tt cumsum} , 使其接收一個數字列表, 返回累加之和;
-也就是, 第$i$個元素是原列表中的第$i+1$個元素之前所有元素之和. 
+編寫函數{\tt cumsum} , 使其接收一個數字串列, 返回累加之和;
+也就是, 第$i$個元素是原串列中的第$i+1$個元素之前所有元素之和. 
 比如:
 
 \begin{verbatim}
@@ -7350,7 +7353,7 @@ t = t + x              # WRONG!
 
 \begin{exercise}
 
-編寫\verb"middle"函數, 接收一個列表, 返回包含掐頭去尾後所有元素的新列表. 
+編寫\verb"middle"函數, 接收一個串列, 返回包含掐頭去尾後所有元素的新串列. 
 比如:
 
 \begin{verbatim}
@@ -7362,7 +7365,7 @@ t = t + x              # WRONG!
 \end{exercise}
 
 \begin{exercise}
-編寫函數 \verb"chop" , 使其接收一個列表, 然後移除首尾元素, 返回 {\tt None}.
+編寫函數 \verb"chop" , 使其接收一個串列, 然後移除首尾元素, 返回 {\tt None}.
 例如:
 
 \begin{verbatim}
@@ -7376,7 +7379,7 @@ t = t + x              # WRONG!
 
 
 \begin{exercise}
-編寫 \verb"is_sorted"函數, 接收一個列表, 如果列表是升序排列, 則返回 {\tt True}, 
+編寫 \verb"is_sorted"函數, 接收一個串列, 如果串列是升序排列, 則返回 {\tt True}, 
 否則返回 {\tt False}. 例如:
 
 \begin{verbatim}
@@ -7404,8 +7407,8 @@ False
 \index{duplicate}
 \index{uniqueness}
 
-編寫\verb"has_duplicates" 函數, 使其接收一個列表, 如果列表中
-存在重複出現的元素, 返回{\tt True}. 注意不要修改原始列表.
+編寫\verb"has_duplicates" 函數, 使其接收一個串列, 如果串列中
+存在重複出現的元素, 返回{\tt True}. 注意不要修改原始串列.
 
 \end{exercise}
 
@@ -7435,7 +7438,7 @@ False
 \index{list!concatenation}
 \index{concatenation!list}
 
-編寫函數讀取{\tt words.txt} 內容, 並將其中每個單詞放入列表中. 
+編寫函數讀取{\tt words.txt} 內容, 並將其中每個單詞放入串列中. 
 寫兩個版本, 一個採用{\tt append}方法, 另一個則用 {\tt t = t + [x]} 實現. 
 哪種耗時較長? 為什麼?
 
@@ -7455,21 +7458,21 @@ False
 \index{membership!binary search}
 \index{binary search}
 \index{search, binary}
-若要檢驗一個單詞是否在列表中, 可以用{\tt in}運算符, 
+若要檢驗一個單詞是否在串列中, 可以用{\tt in}運算子, 
 但是速度會慢, 因為它是從頭開始, 順序檢索. 
 
 由於這些單詞通常是按照字母表順序排列, 我們可以通過對摺查找
-(也叫二分查找), 提高速度. 此方法和你通過字典(此處指書籍, 不是數據結構)
+(也叫二分查找), 提高速度. 此方法和你通過字典(此處指書籍, 不是資料結構)
 查找單詞的方式很像. 
 你一般會先翻到字典中間, 然後看單詞在之前, 還是之後. 如果在前面, 則繼續此
 方法查找, 如果在後面, 同樣操作. 
 
 無論怎樣, 你都可以將搜索區間減半. 
-如果單詞列表有113,809 個單詞, 大約17次, 你就可以定位到單詞, 
+如果單詞串列有113,809 個單詞, 大約17次, 你就可以定位到單詞, 
 或者確定其不在其中.
 
-編寫函數\verb"in_bisect",  使其接收一個有序列表, 以及一個目標值, 
-當單詞在列表中時, 返回{\tt True},  否則返回{\tt False}. 
+編寫函數\verb"in_bisect",  使其接收一個有序串列, 以及一個目標值, 
+當單詞在串列中時, 返回{\tt True},  否則返回{\tt False}. 
 \index{bisect module}
 \index{module!bisect}
 
@@ -7482,7 +7485,7 @@ False
 \index{reverse word pair}
 
 如果兩個單詞拼寫順序相反, 則稱其為``逆序對''.
-編寫程序, 查找單詞列表中所有逆序對.
+編寫程式, 查找單詞串列中所有逆序對.
 參見代碼: \url{http://thinkpython2.com/code/reverse_pair.py}.
 
 \end{exercise}
@@ -7520,7 +7523,7 @@ False
 \index{key-value pair}
 \index{index}
 
- {\bf 字典} 如同列表, 但更加通用. 列表中, 索引必須是整數, 
+ {\bf 字典} 如同串列, 但更加通用. 串列中, 索引必須是整數, 
 而在字典中, 索引(幾乎)可以是任何類型. 
 
 字典包括一個索引集合, 叫做{\bf 鍵(keys)}, 以及一個值的集合. 
@@ -7606,7 +7609,7 @@ KeyError: 'four'
 3
 \end{verbatim}
 %
-運算符{\tt in}對字典也同樣有效;
+運算子{\tt in}對字典也同樣有效;
 它可以判斷某個{\em key} 是否存在於字典的鍵中(而不是值中). 
 \index{membership!dictionary}
 \index{in operator}
@@ -7620,7 +7623,7 @@ False
 \end{verbatim}
 %
 若要確定值是否存在於字典中, 可以用{\tt values}方法, 它會返回值的集合,  
-然後使用{\tt in}運算符:
+然後使用{\tt in}運算子:
 \index{values method}
 \index{method!values}
 
@@ -7630,12 +7633,12 @@ False
 True
 \end{verbatim}
 %
-運算符{\tt in}在列表和字典中使用的算法不同. 
-對於列表來說, 它會如第~\ref{find}節一樣, 按照順序搜索列表中的元素. 
-隨著列表變長, 確定目標的耗時也會更長. 
+運算子{\tt in}在串列和字典中使用的算法不同. 
+對於串列來說, 它會如第~\ref{find}節一樣, 按照順序搜索串列中的元素. 
+隨著串列變長, 確定目標的耗時也會更長. 
 
-Python中的字典則使用了叫做{\bf 哈希表}的數據結構, 使其具有了一個神奇特性: 
-無論字典中有多少項, {\tt in} 運算符都耗時相同. 
+Python中的字典則使用了叫做{\bf 雜湊表}的資料結構, 使其具有了一個神奇特性: 
+無論字典中有多少項, {\tt in} 運算子都耗時相同. 
 我會在第~\ref{hashtable}節解釋其原理, 暫時這些還不重要. 
 
 \section{以字典為計數器}
@@ -7651,8 +7654,8 @@ Python中的字典則使用了叫做{\bf 哈希表}的數據結構, 使其具有
 然後遍歷字符串, 遇到哪個字母, 相應計數器就加一, 
 可能會用到鏈式條件. 
 
-\item 你也可以創建一個包含26個元素的列表. 
-把每個字母轉換成數字(使用內置函數{\tt ord}), 用這些數字作為列表的索引, 
+\item 你也可以創建一個包含26個元素的串列. 
+把每個字母轉換成數字(使用內置函數{\tt ord}), 用這些數字作為串列的索引, 
 然後累加相應計數器. 
 
 \item 你也可以新建一個字典, 這個字典將字母作為鍵, 
@@ -7688,7 +7691,7 @@ def histogram(s):
 \index{traversal}
 
 函數第一行新建了一個空字典. 
-然後用 {\tt for} 循環遍歷字符串. 每次循環中, 如果字符{\tt c}不在字典中, 
+然後用 {\tt for} 迴圈遍歷字符串. 每次迴圈中, 如果字符{\tt c}不在字典中, 
 則創建一個新的項, 將{\tt c}作鍵, 初始值為1（只遇到了一次）. 
 如果{\tt c} 已經在字典中, 則 {\tt d[c]}加一.
 \index{histogram}
@@ -7726,7 +7729,7 @@ def histogram(s):
 做個練習, 用{\tt get} 來精煉一下{\tt histogram}函數. 
 盡量避免使用{\tt if}語句. 
 
-\section{循環和字典}
+\section{迴圈和字典}
 \index{dictionary!looping with}
 \index{looping!with dictionaries}
 \index{traversal}
@@ -7782,7 +7785,7 @@ t 1
 
 但是, 如果你有{\tt v}, 那麼如何找到{\tt k}呢?
 面臨兩個難題：第一, 可能有多個鍵的值為 {\tt v}. 
-基於不同需要, 可能你只需要選一個, 也可能需要將所有的放入列表. 
+基於不同需要, 可能你只需要選一個, 也可能需要將所有的放入串列. 
 第二, 沒有一個簡單的語法可以實現{\bf 反向查找}; 你需要檢索才行.
 
 下面這個函數, 可以根據輸入的值, 返回第一個映射該值的鍵:
@@ -7802,7 +7805,7 @@ def reverse_lookup(d, v):
 \index{pattern!search} \index{raise statement} \index{statement!raise}
 \index{exception!LookupError} \index{LookupError}
 
-如果一直運行到循環結束, 這表示{\tt v}沒有出現在字典的值中, 
+如果一直運行到迴圈結束, 這表示{\tt v}沒有出現在字典的值中, 
 所以會引起異常. 
 
 下面是一個正常的反向查找的樣例:
@@ -7840,15 +7843,15 @@ LookupError: value does not appear in the dictionary
 \end{verbatim}
 %
 反向查找比正向查找要慢得多;
-如果使用頻繁, 或者字典過大, 都會對程序性能造成影響. 
+如果使用頻繁, 或者字典過大, 都會對程式性能造成影響. 
 
 
-\section{字典和列表}
+\section{字典和串列}
 \label{invert}
 
-列表可以作為值出現在字典中. 比如, 給定一個字典, 映射了字母和其頻次, 
+串列可以作為值出現在字典中. 比如, 給定一個字典, 映射了字母和其頻次, 
 你想倒過來看看; 也就是創建個字典, 是從頻次映射到字母的. 
-然而, 可能有些字母的頻次相同, 那麼這個倒過來的字典中, 每個值都應該是個字母列表. 
+然而, 可能有些字母的頻次相同, 那麼這個倒過來的字典中, 每個值都應該是個字母串列. 
 \index{invert dictionary}
 \index{dictionary!invert}
 
@@ -7866,10 +7869,10 @@ def invert_dict(d):
     return inverse
 \end{verbatim}
 %
-每次循環, {\tt key}都從{\tt d}中獲取一個鍵, {\tt val}獲取對應的值. 
+每次迴圈, {\tt key}都從{\tt d}中獲取一個鍵, {\tt val}獲取對應的值. 
 如果{\tt val}不在{\tt inverse}這個字典中, 也就是說以前沒有遇到過, 
-那便創建一個新項, 並用{\bf 單元素集}(包含一個元素的列表)來初始化它. 
-如果在字典中, 則將此鍵添加到列表中. \index{singleton}
+那便創建一個新項, 並用{\bf 單元素集}(包含一個元素的串列)來初始化它. 
+如果在字典中, 則將此鍵添加到串列中. \index{singleton}
 
 此為示例:
 
@@ -7892,11 +7895,11 @@ def invert_dict(d):
 圖~\ref{fig.dict1} 是表示 {\tt hist}和 {\tt inverse}的狀態圖. 
 字典用箱體表示, 其上有{\tt dict}類型標識, 其內是鍵值對. 
 通常如果值是整數, 浮點數或者字符串, 我會將其繪製在箱體內部, 
-但如果是列表, 我會繪製在箱體外部, 只是為了簡單易懂. 
+但如果是串列, 我會繪製在箱體外部, 只是為了簡單易懂. 
 \index{state diagram}
 \index{diagram!state}
 
-列表可以是字典的值, 就像圖中所示, 但是不能作為鍵使用. 
+串列可以是字典的值, 就像圖中所示, 但是不能作為鍵使用. 
 下面是擅自使用遇到的錯誤:
 \index{TypeError}
 \index{exception!TypeError}
@@ -7911,7 +7914,7 @@ Traceback (most recent call last):
 TypeError: list objects are unhashable
 \end{verbatim}
 %
-以前我講過, 字典的實現基於哈希表, 意味著其鍵必須是{\bf 可散列的}.
+以前我講過, 字典的實現基於雜湊表, 意味著其鍵必須是{\bf 可散列的}.
 \index{hash function}
 \index{hashable}
 
@@ -7920,20 +7923,20 @@ TypeError: list objects are unhashable
 \index{immutability}
 
 如果鍵不可變, 則一切正常. 
-如果鍵像列表一樣可變, 那麼便不太妙了. 
+如果鍵像串列一樣可變, 那麼便不太妙了. 
 比如, 你想創建個鍵值對, 
 Python 計算鍵的哈希值, 並將其存儲於相應的位置. 
 如果你修改了鍵, 然後再次計算哈希值, 那麼位置不同了. 
 這時候, 相當於一個鍵對應了兩個不同的位置, 或者說, 你無法找到
 某個鍵了. 總之, 字典不能正常使用了. 
 
-這也就是鍵必須要可哈希的原因, 以及為何像列表一樣的可變類型不能用作鍵的
+這也就是鍵必須要可哈希的原因, 以及為何像串列一樣的可變類型不能用作鍵的
 原因. 突破此限制的最簡單方法是使用元組, 這個在下一章節會學到. 
 
 因為字典是可變的, 所以不能用作鍵, 
 但是{\em 可以}用作值. 
 
-\section{緩存}
+\section{快取}
 \label{memoize}
 
 如果你已經學習了第~\ref{one.more.example}節的{\tt fibonacci}函數, 
@@ -7962,8 +7965,8 @@ Python 計算鍵的哈希值, 並將其存儲於相應的位置.
 \index{memo}
 
 另一種思路是跟蹤並記錄已經計算過的數據, 將其存儲到字典中. 
-將之前計算過的值存儲起來, 方便後續使用, 這種操作叫做{\bf 緩存}.
-下面是 {\tt fibonacci}的``緩存''版本:
+將之前計算過的值存儲起來, 方便後續使用, 這種操作叫做{\bf 快取}.
+下面是 {\tt fibonacci}的``快取''版本:
 
 \begin{verbatim}
 known = {0:0, 1:1}
@@ -8002,7 +8005,7 @@ def fibonacci(n):
 
 全局變量, 一個常用的地方, 便是作為{\bf 標識}使用;
 也就是作為布爾變量, 來表示(``標識'')條件是否成立. 
-比如, 有些程序會使用 {\tt verbose}作為標識, 來控制輸出信息的
+比如, 有些程式會使用 {\tt verbose}作為標識, 來控制輸出信息的
 詳細程度:
 
 \begin{verbatim}
@@ -8024,7 +8027,7 @@ def example2():
     been_called = True         # WRONG
 \end{verbatim}
 %
-運行此程序, 你會注意到\verb"been_called"的值沒有改變. 
+運行此程式, 你會注意到\verb"been_called"的值沒有改變. 
 問題在於 {\tt example2} 內部又創建了名為\verb"been_called"的局部變量. 
 而局部變量會在函數結束後釋放, 並不會對全局變量產生影響. 
 \index{global statement}
@@ -8083,7 +8086,7 @@ def example4():
     known[2] = 1
 \end{verbatim}
 %
-所以你可以在全局的列表或字典中, 添加, 移除以及替換元素, 
+所以你可以在全局的串列或字典中, 添加, 移除以及替換元素, 
 但是你若想對變量重新賦值, 需要提前聲明全局變量:
 
 \begin{verbatim}
@@ -8092,7 +8095,7 @@ def example5():
     known = dict()
 \end{verbatim}
 %
-全局變量是很有用, 但如果你到處使用, 並且還頻繁修改, 那麼程序往往會
+全局變量是很有用, 但如果你到處使用, 並且還頻繁修改, 那麼程式往往會
 難以調試. 
 
 
@@ -8105,20 +8108,20 @@ def example5():
 
 \item[降低輸入規模:] 如果可能, 降低數據集大小. 比如, 讀取文本文件, 
 只讀取前10行, 或者使用你能找到的最簡樣例. 
-可以重新編輯文件, 或者(更優的做法是)修改程序, 只讀取前{\tt n}行. 
+可以重新編輯文件, 或者(更優的做法是)修改程式, 只讀取前{\tt n}行. 
 
 如果報錯, 可以將{\tt n}減小為剛好會報錯的最小值, 
-然後修正異常, 並逐步增大{\tt n}值, 如此循環往復. 
+然後修正異常, 並逐步增大{\tt n}值, 如此迴圈往復. 
 
 \item[檢驗概覽及類型:] 不要打印並檢驗全部數據集, 只需輸出數據的概覽:
-比如, 字典中項的個數, 或者列表中數字總數量. 
+比如, 字典中項的個數, 或者串列中數字總數量. 
 
 值類型錯誤, 是產生運行時錯誤的常見原因. 
 所以調試此類錯誤, 通常打印值的類型即可. 
 
 \item[編寫自檢代碼:]  有時候, 你可以編寫代碼, 自動檢驗異常. 
-例如, 你要計算數字列表的平均值, 你可以檢驗一下, 結果是否
-比列表中最大值還要大, 或者比最小值還要小. 這叫做``合理性檢驗'', 
+例如, 你要計算數字串列的平均值, 你可以檢驗一下, 結果是否
+比串列中最大值還要大, 或者比最小值還要小. 這叫做``合理性檢驗'', 
 是因為要檢查結果是否``不合理''.  
 \index{sanity check}
 \index{consistency check}
@@ -8166,15 +8169,15 @@ def example5():
 \item[實現(implementation):] 一種執行計算的方式. 
 \index{implementation}
 
-\item[哈希表(hashtable):] 實現Python字典的算法. 
+\item[雜湊表(hashtable):] 實現Python字典的算法. 
 \index{hashtable}
 
-\item[哈希函數(hash function):] 哈希表使用的函數, 用來計算鍵的位置. 
+\item[哈希函數(hash function):] 雜湊表使用的函數, 用來計算鍵的位置. 
 \index{hash function}
 
 \item[散列的(hashable):] 一種可以使用哈希函數的類型. 
 不可變類型, 像整型, 浮點型和字符串型, 都是可散列的;
-像列表和字典這種可變類型, 則不是. 
+像串列和字典這種可變類型, 則不是. 
 \index{hashable}
 
 \item[查找(lookup):] 一種字典操作, 根據鍵查找對應的值.
@@ -8187,10 +8190,10 @@ def example5():
 \index{raise statement}
 \index{statement!raise}
 
-\item[單元素集(singleton):] 只包含一個元素的列表(或者其他序列).
+\item[單元素集(singleton):] 只包含一個元素的串列(或者其他序列).
 \index{singleton}
 
-\item[調用圖(call graph):] 一種用來展示程序執行流程的圖, 包括每步創建的框, 
+\item[調用圖(call graph):] 一種用來展示程式執行流程的圖, 包括每步創建的框, 
 以及從調用者指向被調用者的箭頭. 
 \index{call graph}
 \index{diagram!call graph}
@@ -8225,9 +8228,9 @@ def example5():
 
 編寫函數, 讀取{\tt words.txt}中的單詞, 
 將其作為鍵存儲於字典中. 值是什麼無關緊要. 
-然後便可以用{\tt in}運算符快速檢驗某個字符串是否在字典中. 
+然後便可以用{\tt in}運算子快速檢驗某個字符串是否在字典中. 
 
-如果你做過習題~\ref{wordlist1}, 可以比較一下這種實現, 和列表的{\tt in}運算, 
+如果你做過習題~\ref{wordlist1}, 可以比較一下這種實現, 和串列的{\tt in}運算, 
 以及二分查找相比, 速度如何. 
 
 \end{exercise}
@@ -8245,8 +8248,8 @@ def example5():
 
 
 \begin{exercise}
-用緩存的方式重寫習題~\ref{ackermann} 中的Ackermann函數, 
-看看是否緩存方式可以使其處理較大參數. 
+用快取的方式重寫習題~\ref{ackermann} 中的Ackermann函數, 
+看看是否快取方式可以使其處理較大參數. 
 提示: 不能.
 參考: \url{http://thinkpython2.com/code/ackermann_memo.py}.
 \index{Ackermann function}
@@ -8258,7 +8261,7 @@ def example5():
 \begin{exercise}
 \index{duplicate}
 如果做過習題~\ref{duplicate}, 你應該已經寫過一個\verb"has_duplicates" 函數, 
-令其接收一個列表作為參數, 如果其中存在任意重複對象, 則返回{\tt True}.
+令其接收一個串列作為參數, 如果其中存在任意重複對象, 則返回{\tt True}.
 
 使用字典來編寫一個更簡單高效的\verb"has_duplicates"版本. 
 參考: \url{http://thinkpython2.com/code/has_duplicates.py}.
@@ -8273,7 +8276,7 @@ def example5():
 兩個單詞, 如果翻轉其中一個, 得到另一個, 則稱其為``翻轉詞組''
 (參見習題~\ref{exrotate}中的\verb"rotate_word" ).
 
-編寫程序讀取一個單詞表, 並找到所有的翻轉詞組. 
+編寫程式讀取一個單詞表, 並找到所有的翻轉詞組. 
 參考: \url{http://thinkpython2.com/code/rotate_pairs.py}.
 
 \end{exercise}
@@ -8320,7 +8323,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 可以讀取發音詞典並返回一個Python字典, 此字典將每個單詞映射到了
 表示發音的字符串. 
 
-編寫程序列出所有滿足謎語條件的單詞. 
+編寫程式列出所有滿足謎語條件的單詞. 
 答案: \url{http://thinkpython2.com/code/homophone.py}.
 
 \end{exercise}
@@ -8330,8 +8333,8 @@ It must have been a nine-pointer!' 發音完全一樣.
 \chapter{元組}
 \label{tuplechap}
 
-本章介紹另一種內置類型, 元組, 以及列表、字典和元組如何一起使用. 
-同時展示可變長度參數列表的一個特性, 以及聚合和擴展運算符. 
+本章介紹另一種內置類型, 元組, 以及串列、字典和元組如何一起使用. 
+同時展示可變長度參數串列的一個特性, 以及聚合和擴展運算子. 
 
 話外音：對於 ``tuple''如何發音, 尚無共識. 有人讀``tuh-ple'', 
 和 ``supple''發音類系. 
@@ -8344,7 +8347,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 \index{sequence}
 
 元組也是值的序列. 其中值可以是任意類型, 也是用整數作為索引, 
-所以在某些方面, 元組和列表很像. 
+所以在某些方面, 元組和串列很像. 
 但兩者最大的區別在於元組不可變. 
 \index{mutability}
 \index{immutability}
@@ -8391,7 +8394,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 ()
 \end{verbatim}
 %
-如果參數是一個序列(字符串, 列表或者元組), 
+如果參數是一個序列(字符串, 串列或者元組), 
 結果便會得到一個由元素序列構成的元組:
 
 \begin{verbatim}
@@ -8403,7 +8406,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 因為{\tt tuple} 是一個內置函數名, 
 所以要盡量避免用作變量名. 
 
-多數列表運算符同樣適用於元組. 
+多數串列運算子同樣適用於元組. 
 所以用方括號也可以索引元組元素:
 \index{bracket operator}
 \index{operator!bracket}
@@ -8414,7 +8417,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 'a'
 \end{verbatim}
 %
-切片運算符也可以選擇元組中一段區間的元素. 
+切片運算子也可以選擇元組中一段區間的元素. 
 \index{slice operator}
 \index{operator!slice}
 \index{tuple!slice}
@@ -8447,7 +8450,7 @@ TypeError: object doesn't support item assignment
 %
 這個語句創建新元組, 然後用 {\tt t} 指向它. 
 
-關係運算符也同樣適用於元組以及其他序列;
+關係運算子也同樣適用於元組以及其他序列;
 Python會從各自序列的首元素開始比較, 如果相等, 則比較下一個元素, 
 以此類推, 直到找出不同元素. 
 而後續元素便不再比較(即使後面元素更大). 
@@ -8498,7 +8501,7 @@ True
 ValueError: too many values to unpack
 \end{verbatim}
 %
-也有更普遍的用法, 右側可以用各種類型的序列(字符串, 列表或者元組). 
+也有更普遍的用法, 右側可以用各種類型的序列(字符串, 串列或者元組). 
 例如, 將一個郵箱地址切分為用戶名和域名, 可以這麼寫:
 \index{split method}
 \index{method!split}
@@ -8509,7 +8512,7 @@ ValueError: too many values to unpack
 >>> uname, domain = addr.split('@')
 \end{verbatim}
 %
-{\tt split}的結果是一個兩元素的列表;
+{\tt split}的結果是一個兩元素的串列;
 第一個元素賦值給了{\tt uname}, 第二個賦值給了{\tt domain}. 
 
 \begin{verbatim}
@@ -8591,7 +8594,7 @@ def printall(*args):
 \end{verbatim}
 %
 聚合的對立面是{\bf 擴展}. 
-如果你有一個值的序列, 想將其作為多個參數, 傳入函數, 那便可以使用{\tt *}運算符. 
+如果你有一個值的序列, 想將其作為多個參數, 傳入函數, 那便可以使用{\tt *}運算子. 
 比如, {\tt divmod}僅接收兩個參數; 如果傳入一個元組, 則運行異常:
 \index{scatter}
 \index{argument scatter}
@@ -8635,13 +8638,13 @@ TypeError: sum expected at most 2 arguments, got 3
 做個練習, 寫個函數 \verb"sum_all", 使其可以接收任意數量參數, 並返回總和. 
 
 
-\section{列表和元組}
+\section{串列和元組}
 \index{zip function}
 \index{function!zip}
 {\tt zip}是個內置函數,  其接收兩個或者更多序列作為參數, 並交錯獲取其中元素. 
 這個函數的名字表示其像拉鏈, 彷若兩排交錯的牙齒. 
 
-下面的例子是壓縮一個字符串和一個列表:
+下面的例子是壓縮一個字符串和一個串列:
 
 \begin{verbatim}
 >>> s = 'abc'
@@ -8651,7 +8654,7 @@ TypeError: sum expected at most 2 arguments, got 3
 \end{verbatim}
 %
 結果是個 {\bf zip 對象}, 用來疊代數值對. 
-所以{\tt zip}常常用在{\tt for}循環內:
+所以{\tt zip}常常用在{\tt for}迴圈內:
 
 \begin{verbatim}
 >>> for pair in zip(s, t):
@@ -8664,19 +8667,19 @@ TypeError: sum expected at most 2 arguments, got 3
 %
 
 zip對象是一種{\bf 疊代器}, 也就是一種用來疊代序列的對象. 
-疊代器和列表在某些方面比較相似, 但與列表不同的是, 你不能從
+疊代器和串列在某些方面比較相似, 但與串列不同的是, 你不能從
 疊代器中通過索引獲取元素. 
 \index{iterator}
 
-如果你想使用列表的運算符和方法, 可以用zip對象構建列表:
+如果你想使用串列的運算子和方法, 可以用zip對象構建串列:
 
 \begin{verbatim}
 >>> list(zip(s, t))
 [('a', 0), ('b', 1), ('c', 2)]
 \end{verbatim}
 %
-列表中都是元組; 在這個例子中, 每個元組都包括
-字符串中的一個字母, 以及列表中的相應元素. 
+串列中都是元組; 在這個例子中, 每個元組都包括
+字符串中的一個字母, 以及串列中的相應元素. 
 \index{list!of tuples}
 
 若序列長度不同, 則結果長度取決於較短的那個序列. 
@@ -8686,7 +8689,7 @@ zip對象是一種{\bf 疊代器}, 也就是一種用來疊代序列的對象.
 [('A', 'E'), ('n', 'l'), ('n', 'k')]
 \end{verbatim}
 %
-可以在{\tt for}循環中使用元組賦值, 遍曆元組列表:
+可以在{\tt for}迴圈中使用元組賦值, 遍曆元組串列:
 \index{traversal}
 \index{tuple assignment}
 \index{assignment!tuple}
@@ -8697,9 +8700,9 @@ for letter, number in t:
     print(number, letter)
 \end{verbatim}
 %
-每次循環, Python都會獲取列表中的下一個元組, 並將其元素分別
+每次迴圈, Python都會獲取串列中的下一個元組, 並將其元素分別
 賦給 {\tt letter} 和 {\tt number}. 
-循環的輸出如下:
+迴圈的輸出如下:
 \index{loop}
 
 \begin{verbatim}
@@ -8780,7 +8783,7 @@ b 1
 %
 如你所想, 字典中的項沒有特定順序. 
 
-相反, 你也可以用一個元組列表, 初始化一個新字典: 
+相反, 你也可以用一個元組串列, 初始化一個新字典: 
 \index{dictionary!initialize}
 
 \begin{verbatim}
@@ -8799,14 +8802,14 @@ b 1
 {'a': 0, 'c': 2, 'b': 1}
 \end{verbatim}
 %
-字典的{\tt update}方法也可以接收一個元組列表, 然後將其
+字典的{\tt update}方法也可以接收一個元組串列, 然後將其
 作為鍵值對添加到已有字典中.
 \index{update method}
 \index{method!update}
 \index{traverse!dictionary}
 \index{dictionary!traversal}
 
-使用元組作為字典的鍵, 很常見(主要是列表不能). 
+使用元組作為字典的鍵, 很常見(主要是串列不能). 
 比如, 電話簿會將姓氏-名字映射到電話號碼. 
 假設我們定義了{\tt last}, {\tt first} 和 {\tt number}, 
 便可以編寫如下:
@@ -8826,12 +8829,12 @@ for last, first in directory:
     print(first, last, directory[last,first])
 \end{verbatim}
 %
-此循環會遍歷 {\tt directory}中的鍵, 也就是元組. 
+此迴圈會遍歷 {\tt directory}中的鍵, 也就是元組. 
 同時會將元組中的元素賦值給{\tt last} 和 {\tt first}, 
 然後輸出姓名以及對應的電話號碼. 
 
 在狀態圖中展示元組有兩種方法. 
-較詳細的版本會展示起索引和元素, 就像列表一樣. 
+較詳細的版本會展示起索引和元素, 就像串列一樣. 
 例如, 圖~\ref{fig.tuple1} 展示了元組 \verb"('Cleese', 'John')" .
 \index{state diagram}
 \index{diagram!state}
@@ -8860,11 +8863,11 @@ for last, first in directory:
 \section{序列中的序列}
 \index{sequence}
 
-我一直講的是元組列表, 但是本章幾乎所有示例同樣適用於
-列表構成的列表, 元組構成的元組, 以及列表構成的元組. 
+我一直講的是元組串列, 但是本章幾乎所有示例同樣適用於
+串列構成的串列, 元組構成的元組, 以及串列構成的元組. 
 為了避免枚舉各種組合, 直接叫做序列構成的序列, 便簡單多了. 
 
-很多情形下, 不同類型的序列(字符串, 列表以及元組)可以替換使用, 
+很多情形下, 不同類型的序列(字符串, 串列以及元組)可以替換使用, 
 那你如何從中擇優呢?
 \index{string}
 \index{list}
@@ -8876,14 +8879,14 @@ for last, first in directory:
 因為其元素需要是字符. 
 同時, 他們不能被修改. 
 如果你想要修改字符串中的字符(而不是新建一個新字符串), 
-你最好還是用字符列表吧. 
+你最好還是用字符串列吧. 
 
-列表比元組更加常用, 主要因為列表可變. 
+串列比元組更加常用, 主要因為串列可變. 
 但以下情況, 用元組會更好:
 
 \begin{enumerate}
 
-\item 在某些情形, 比如{\tt return}語句, 語法上創建元組比創建列表更簡便. 
+\item 在某些情形, 比如{\tt return}語句, 語法上創建元組比創建串列更簡便. 
 
 \item 如果你想使用序列作為字典的鍵, 
 你需要使用元組或者字符串這種不可變類型. 
@@ -8893,10 +8896,10 @@ for last, first in directory:
 
 \end{enumerate}
 
-因為元組不可變, 所以它們不提供 {\tt sort} 和 {\tt reverse}這種修改現有列表的方法, 
-但是Python提供內置函數 {\tt sorted}, 其接收任意序列, 然後返回一個排序後的新列表, 
+因為元組不可變, 所以它們不提供 {\tt sort} 和 {\tt reverse}這種修改現有串列的方法, 
+但是Python提供內置函數 {\tt sorted}, 其接收任意序列, 然後返回一個排序後的新串列, 
 也提供了{\tt reversed}函數, 其接收一個序列, 返回一個疊代器, 此疊代器可以
-倒序遍歷列表. 
+倒序遍歷串列. 
 \index{sorted function}
 \index{function!sorted} \index{reversed function}
 \index{function!reversed}
@@ -8909,22 +8912,22 @@ for last, first in directory:
 \index{shape error}
 \index{error!shape}
 
-列表, 字典以及元組都是 {\bf 數據結構}的例子;
-本章我們開始了解複合數據結構, 像元組列表, 或者用元組作鍵, 
-列表作值的字典. 
-複合數據結構很有用, 但很容易產生我說的{\bf 格式異常};
-就是當數據結構中出現了不恰當的類型, 大小或結構, 導致的錯誤. 
-比如, 你想要一個含有一個整數的列表, 而我給了一個單純的整數
-(不被列表包含), 那便會出錯. 
+串列, 字典以及元組都是 {\bf 資料結構}的例子;
+本章我們開始了解複合資料結構, 像元組串列, 或者用元組作鍵, 
+串列作值的字典. 
+複合資料結構很有用, 但很容易產生我說的{\bf 格式異常};
+就是當資料結構中出現了不恰當的類型, 大小或結構, 導致的錯誤. 
+比如, 你想要一個含有一個整數的串列, 而我給了一個單純的整數
+(不被串列包含), 那便會出錯. 
 \index{structshape module}
 \index{module!structshape}
 
 為了調試這種異常, 我寫了一個叫作 {\tt structshape} 的模塊, 
-其提供了一個{\tt structshape}函數, 可以接收任意數據結構作為參數, 
+其提供了一個{\tt structshape}函數, 可以接收任意資料結構作為參數, 
 返回一個其格式的概述. 
 你可以從 \url{http://thinkpython2.com/code/structshape.py} 下載. 
 
-下面是一個簡單列表的示範:
+下面是一個簡單串列的示範:
 
 \begin{verbatim}
 >>> from structshape import structshape
@@ -8935,7 +8938,7 @@ for last, first in directory:
 %
 
 嚴謹點的寫法是``list of 3 int{\em s}'', 
-但是忽略複數, 便於操作. 下面是一個列表構成的列表:
+但是忽略複數, 便於操作. 下面是一個串列構成的串列:
 
 \begin{verbatim}
 >>> t2 = [[1,2], [3,4], [5,6]]
@@ -8943,7 +8946,7 @@ for last, first in directory:
 'list of 3 list of 2 int'
 \end{verbatim}
 %
-如果列表中的元素類型不止一種, 
+如果串列中的元素類型不止一種, 
 {\tt structshape} 按順序匯總類型:
 
 \begin{verbatim}
@@ -8952,7 +8955,7 @@ for last, first in directory:
 'list of (3 int, float, 2 str, 2 list of int, int)'
 \end{verbatim}
 %
-這是一個元組列表:
+這是一個元組串列:
 
 \begin{verbatim}
 >>> s = 'abc'
@@ -8969,7 +8972,7 @@ for last, first in directory:
 'dict of 3 int->str'
 \end{verbatim}
 %
-如果你對你的數據結構感到棘手, 可以試試{\tt structshape}.
+如果你對你的資料結構感到棘手, 可以試試{\tt structshape}.
 
 
 \section{術語表}
@@ -8987,7 +8990,7 @@ for last, first in directory:
 \item[聚合(gather):] 將多個參數聚合為一個元組的操作.
 \index{gather}
 
-\item[擴展(scatter):] 使序列表現為多個參數的操作. 
+\item[擴展(scatter):] 使序串列現為多個參數的操作. 
 \index{scatter}
 
 \item[zip對象(zip object):] 調用內置函數{\tt zip}返回的結果;
@@ -8995,10 +8998,10 @@ for last, first in directory:
 \index{zip object}
 \index{object!zip}
 
-\item[疊代器(iterator):] 可遍歷序列的對象, 但不適用列表運算符和方法. 
+\item[疊代器(iterator):] 可遍歷序列的對象, 但不適用串列運算子和方法. 
 \index{iterator}
 
-\item[數據結構(data structure):] 相關值的集合, 通常由列表, 字典, 元組等組成. 
+\item[資料結構(data structure):] 相關值的集合, 通常由串列, 字典, 元組等組成. 
 \index{data structure}
 
 \item[格式異常(shape error):] 值的格式不合適導致的錯誤, 通常是類型或者大小. 
@@ -9031,7 +9034,7 @@ for last, first in directory:
 
 \begin{enumerate}
 
-\item 編寫程序, 從文件中讀取單詞列表(參見第~\ref{wordlist}節), 
+\item 編寫程式, 從文件中讀取單詞串列(參見第~\ref{wordlist}節), 
 並且輸出所有的變位詞集合. 
 
 下面是個輸出樣例:
@@ -9043,11 +9046,11 @@ for last, first in directory:
 ['resmelts', 'smelters', 'termless']
 \end{verbatim}
 %
-提示: 你或許會想要構建個字典, 將字母集合映射到單詞列表, 
-而列表中的單詞都可以用這些字母構成. 問題來了, 你如何表示這些字母集合, 
+提示: 你或許會想要構建個字典, 將字母集合映射到單詞串列, 
+而串列中的單詞都可以用這些字母構成. 問題來了, 你如何表示這些字母集合, 
 從而使其能夠作為鍵來使用?
 
-\item 修改上面的程序, 使其先輸出最長的變位詞, 然後輸出次長, 依次類推. 
+\item 修改上面的程式, 使其先輸出最長的變位詞, 然後輸出次長, 依次類推. 
 \index{Scrabble}
 \index{bingo}
 
@@ -9066,7 +9069,7 @@ for last, first in directory:
 \index{metathesis}
 如果將一個單詞交換其中兩個字母的位置, 構成另一個單詞, 則這兩個單詞
 構成了一個 ``易位詞對''; 比如, ``converse'' 和 ``conserve''.  
-編寫程序, 從字典中尋找所有的``易位詞對''.
+編寫程式, 從字典中尋找所有的``易位詞對''.
 提示: 不用嘗試所有的單詞組合, 也不用嘗試所有可能易位操作. 
 參考:
 \url{http://thinkpython2.com/code/metathesis.py}.  
@@ -9096,13 +9099,13 @@ for last, first in directory:
 \index{reducible word}
 \index{word, reducible}
 
-編寫程序, 尋找所有這樣可以縮減的單詞, 然後確定最長的單詞. 
+編寫程式, 尋找所有這樣可以縮減的單詞, 然後確定最長的單詞. 
 
 這道題相比其他題有些難, 所以這裡給些提示:
 
 \begin{enumerate}
 
-\item 你可能需要寫個函數, 接收一個單詞, 然後計算得到所有的單詞列表. 
+\item 你可能需要寫個函數, 接收一個單詞, 然後計算得到所有的單詞串列. 
 這些單詞都是通過移除一個字母得到. 這些就是這個單詞的``子類''.
 \index{recursive definition}
 \index{definition!recursive}
@@ -9110,9 +9113,9 @@ for last, first in directory:
 \item 用遞歸思路來考慮, 如果一個單詞的子類是可以縮減的, 
 那麼這個單詞就是可以縮減的. 可以將空字符串可縮減, 作為基準條件. 
 
-\item 我提供的單詞列表 {\tt words.txt}, 不包含單字母單詞. 所以你可能需要添加``I'', ``a''和空字符串. 
+\item 我提供的單詞串列 {\tt words.txt}, 不包含單字母單詞. 所以你可能需要添加``I'', ``a''和空字符串. 
 
-\item 若想提升程序性能, 最好緩存住已知的可縮減單詞. 
+\item 若想提升程式性能, 最好緩存住已知的可縮減單詞. 
 
 \end{enumerate}
 
@@ -9126,14 +9129,14 @@ for last, first in directory:
 %\end{exercise}
 
 
-\chapter{案例學習: 數據結構的選擇}
+\chapter{案例學習: 資料結構選擇}
 
-截止當前, 你已學習了Python最核心的數據結構, 
+截止當前, 你已學習了Python最核心的資料結構, 
 同時也已熟悉了與之相關的一些算法. 
 若想後續深入了解算法知識, 可以學習章節~\ref{algorithms}. 
 但現在不用太急切; 後續時間方便了, 可以耐心學習. 
 
-本章通過多道習題, 一個案例來讓你思考如何選擇和應用數據結構. 
+本章通過多道習題, 一個案例來讓你思考如何選擇和應用資料結構. 
 
 
 \section{詞頻統計}
@@ -9143,7 +9146,7 @@ for last, first in directory:
 
 \begin{exercise}
 
-寫個程序, 讀取文件, 把每行拆分成單詞, 去掉空格和標點, 並將其轉為小寫. 
+寫個程式, 讀取文件, 把每行拆分成單詞, 去掉空格和標點, 並將其轉為小寫. 
 \index{string module}
 \index{module!string}
 
@@ -9190,14 +9193,14 @@ for last, first in directory:
 
 \begin{exercise}
 
-修改上面習題中的程序, 輸出書中出現次數最多的20個單詞. 
+修改上面習題中的程式, 輸出書中出現次數最多的20個單詞. 
 
 \end{exercise}
 
 
 \begin{exercise}
 
-修改上述代碼, 使其讀取單詞列表(參見第~\ref{wordlist}節), 
+修改上述代碼, 使其讀取單詞串列(參見第~\ref{wordlist}節), 
 並輸出所有出現在書中, 但不在單詞表中的詞彙. 
 看看有多少是拼寫異常? 又有多少是{\em 應該}包含在單詞表中的常用詞彙,
 又有哪些是晦澀難懂的單詞?
@@ -9211,12 +9214,12 @@ for last, first in directory:
 \index{deterministic}
 \index{pseudorandom}
 
-多數程序, 給定同樣的輸入, 每次都是同樣的輸出, 這就叫做{\bf 確定性}.
+多數程式, 給定同樣的輸入, 每次都是同樣的輸出, 這就叫做{\bf 確定性}.
 確定性是件好事, 因為我們總是希望同樣的計算產生同樣的結果. 
 但對於某些應用來說, 我們需要計算機能變得不可預測. 
 遊戲就是一個很好的例子, 也有很多其他的應用場景. 
 
-想讓一個程序完全隨機, 是很難的, 但是可以讓其看起來隨機. 
+想讓一個程式完全隨機, 是很難的, 但是可以讓其看起來隨機. 
 一種方法是使用算法生成{\bf 偽隨機}數.
 偽隨機數不是真正隨機的, 因為它們是用一個確定的運算生成的, 
 但只是從數字來看, 很難與真隨機進行區分. 
@@ -9229,7 +9232,7 @@ for last, first in directory:
 
 函數{\tt random}會返回0.0到1.0之間(包括0.0但不包括1.0)的一個隨機浮點數. 
 每次調用{\tt random}, 都會得到既定長序列上的下一個值. 
-下面的循環便是一個例子:
+下面的迴圈便是一個例子:
 
 \begin{verbatim}
 import random
@@ -9291,7 +9294,7 @@ for i in range(10):
 你可以從 \url{http://thinkpython2.com/code/analyze_book1.py}下載
 我的解決方案. 此外, 你也會需要\url{http://thinkpython2.com/code/emma.txt}這個文件.
 
-下面是一個讀取文件, 並基於其中單詞構建詞頻統計的程序:
+下面是一個讀取文件, 並基於其中單詞構建詞頻統計的程式:
 \index{histogram!word frequencies}
 
 \begin{verbatim}
@@ -9315,7 +9318,7 @@ def process_line(line, hist):
 hist = process_file('emma.txt')
 \end{verbatim}
 %
-這個程序會讀取 {\tt emma.txt}, 其中包括了Jane Austen的{\em Emma}小說. 
+這個程式會讀取 {\tt emma.txt}, 其中包括了Jane Austen的{\em Emma}小說. 
 \index{Austen, Jane}
 
 \verb"process_file" 遍歷文件中的每一行, 同時將每行內容逐次傳給\verb"process_line". 
@@ -9324,8 +9327,8 @@ hist = process_file('emma.txt')
 \index{traversal}
 
 \verb"process_line"用字符串方法{\tt replace}將連字符替換為空格, 然後用
- {\tt split}方法, 將整行拆分為字符串列表. 
-然後遍歷列表, 並使用{\tt strip}方法, 移除標點符號, 使用{\tt lower}方法, 
+ {\tt split}方法, 將整行拆分為字符串串列. 
+然後遍歷串列, 並使用{\tt strip}方法, 移除標點符號, 使用{\tt lower}方法, 
 轉換為全小寫. (此處簡單說是``轉換'', 但要記住字符串是不可變的, 所以像
 {\tt strip}以及{\tt lower} 方法, 都是返回新的字符串.)
 
@@ -9363,10 +9366,10 @@ Number of different words: 7214
 
 \section{最常用單詞}
 
-若想找到最常用的單詞, 我們可以創建一個元組列表, 
-每個元組都包含一個單詞和其頻數, 然後據此將列表排序.
+若想找到最常用的單詞, 我們可以創建一個元組串列, 
+每個元組都包含一個單詞和其頻數, 然後據此將串列排序.
 
-下面函數接收一個詞頻統計, 然後返回一個詞-頻元組列表:
+下面函數接收一個詞頻統計, 然後返回一個詞-頻元組串列:
 
 \begin{verbatim}
 def most_common(hist):
@@ -9378,8 +9381,8 @@ def most_common(hist):
     return t
 \end{verbatim}
 
-每個元組中, 頻數在前, 所以列表便是按頻數排序. 
-下面循環會輸出前十個最常用單詞:
+每個元組中, 頻數在前, 所以串列便是按頻數排序. 
+下面迴圈會輸出前十個最常用單詞:
 
 \begin{verbatim}
 t = most_common(hist)
@@ -9457,7 +9460,7 @@ print_most_common(hist, 20)
 \index{subtraction!dictionary}
 從本書選擇不在{\tt words.txt} 中的單詞會比較麻煩, 你可能已經
 意識到, 這是個集合減法; 也就是說, 我們希望找出所有在某集合
-(本書單詞), 但不在另一個集合(單詞列表)中的單詞. 
+(本書單詞), 但不在另一個集合(單詞串列)中的單詞. 
 
 {\tt subtract}函數會接收字典{\tt d1}和{\tt d2}, 返回一個新字典, 
 其包含所有{\tt d1}中包含, 但{\tt d2}中不包含的鍵. 
@@ -9494,17 +9497,17 @@ friend's venice apartment ...
 \end{verbatim}
 %
 這些單詞有些是名字和所有格. 其他的, 例如``rencontre'', 已經很罕見了. 
-但是有些依舊很常用, 確實也應該包含在列表中!
+但是有些依舊很常用, 確實也應該包含在串列中!
 
 \begin{exercise}
 \index{set}
 \index{type!set}
 
-Python提供了一種名為 {\tt set} 的數據結構, 其可以滿足多數的集合操作. 
+Python提供了一種名為 {\tt set} 的資料結構, 其可以滿足多數的集合操作. 
 你可以仔細閱讀章節~\ref{sets}, 或者閱讀
 \url{http://docs.python.org/3/library/stdtypes.html#types-set}上面的文檔. 
 
-編寫程序, 使用集合減法, 尋找包含在本書但是不在單詞列表中的單詞. 
+編寫程式, 使用集合減法, 尋找包含在本書但是不在單詞串列中的單詞. 
 參考:
 \url{http://thinkpython2.com/code/analyze_book2.py}.
 
@@ -9516,7 +9519,7 @@ Python提供了一種名為 {\tt set} 的數據結構, 其可以滿足多數的�
 \index{histogram!random choice}
 
 若要從詞頻統計中選擇隨機單詞, 最簡單的方法是每個單詞複製一定數量, 
-複製的數量為其對應的頻數, 合併為列表, 然後, 從中選擇單詞:
+複製的數量為其對應的頻數, 合併為串列, 然後, 從中選擇單詞:
 
 \begin{verbatim}
 def random_word(h):
@@ -9531,22 +9534,22 @@ def random_word(h):
 {\tt extend}方法和{\tt append}作用相似, 只是前者參數是個序列. 
 
 這個算法有效, 但不夠有效率; 每次選擇隨機單詞, 
-都需要重新構建和原書一樣大的列表. 
-顯然, 更優的方案是只建立一次列表, 然後多次選擇, 但列表依然很大.
+都需要重新構建和原書一樣大的串列. 
+顯然, 更優的方案是只建立一次串列, 然後多次選擇, 但串列依然很大.
 
 一個更高效的方案是:
 
 \begin{enumerate}
 
-\item 使用 {\tt keys} 生成本書單詞的列表.
+\item 使用 {\tt keys} 生成本書單詞的串列.
 
-\item 用詞頻的各步累積之和(參看習題~\ref{cumulative}), 構建列表. 
-列表中最後一項, 便是書中單詞總數, $n$. 
+\item 用詞頻的各步累積之和(參看習題~\ref{cumulative}), 構建串列. 
+串列中最後一項, 便是書中單詞總數, $n$. 
   
 \item 選擇一個從1到$n$的隨機值. 使用二分搜索(參看習題~\ref{bisection}), 
-尋找隨機值在累積值列表中所嵌入位置的索引. 
+尋找隨機值在累積值串列中所嵌入位置的索引. 
 
-\item 使用該索引值從單詞列表中確定對應的單詞. 
+\item 使用該索引值從單詞串列中確定對應的單詞. 
 
 \end{enumerate}
 
@@ -9554,14 +9557,14 @@ def random_word(h):
 \label{randhist}
 \index{algorithm}
 
-採用上面的算法, 編寫程序, 從書中隨機獲取單詞. 參考:
+採用上面的算法, 編寫程式, 從書中隨機獲取單詞. 參考:
 \url{http://thinkpython2.com/code/analyze_book3.py}.
 
 \end{exercise}
 
 
 
-\section{Markov 分析}
+\section{Markov分析}
 \label{markov}
 \index{Markov analysis}
 如果從書中隨機選擇一些詞彙, 單詞意思可能都明白, 
@@ -9616,12 +9619,12 @@ Markov 分析:
 
 \begin{enumerate}
 
-\item 寫個程序, 讀取文本內容, 進行Markov分析. 
+\item 寫個程式, 讀取文本內容, 進行Markov分析. 
 結果應該是個從前綴映射到可能後綴集合的字典. 
-這個集合可以是列表, 元組或者字典; 取決於你的選擇. 
-你可以用兩個詞的前綴測試程序, 但最好想辦法讓程序可以兼容其他長度的前綴. 
+這個集合可以是串列, 元組或者字典; 取決於你的選擇. 
+你可以用兩個詞的前綴測試程式, 但最好想辦法讓程式可以兼容其他長度的前綴. 
 
-\item 在上面的程序中增加一個函數, 基於Markov分析生成隨機文本. 
+\item 在上面的程式中增加一個函數, 基於Markov分析生成隨機文本. 
 下面是針對 {\em Emma}採用兩個單詞前綴進行Markov分析後, 生成的文本:
 
 \begin{quote}
@@ -9637,7 +9640,7 @@ it all himself.
 
 如果增加前綴單詞長度, 會如何? 得到的隨機文本是否會語義明了一些?
 
-\item 一旦程序運行正常, 你可以試試混搭: 
+\item 一旦程式運行正常, 你可以試試混搭: 
 如果將兩本或者多本書的文本合併, 生成的隨機文本夾雜著各處來源的單詞短語, 將非常有趣. 
 \index{mash-up}
 
@@ -9652,11 +9655,11 @@ it all himself.
 你也會用到\url{http://thinkpython2.com/code/emma.txt}.
 
 
-\section{數據結構}
+\section{資料結構}
 \index{data structure}
 
 使用Markov方法生成隨機文本固然有趣, 但是這個練習有個關鍵點：
-數據結構的選擇. 在解決前面的習題時, 你不得不考慮以下幾點:
+資料結構的選擇. 在解決前面的習題時, 你不得不考慮以下幾點:
 
 \begin{itemize}
 
@@ -9670,20 +9673,20 @@ it all himself.
 
 最後一個很簡單: 對於從鍵映射到相應的值, 很顯然, 採用字典. 
 
-如果是前綴, 最好選擇字符串, 字符串列表或者字符串元組. 
+如果是前綴, 最好選擇字符串, 字符串串列或者字符串元組. 
 
-對於後綴, 可以選擇列表; 或者詞頻統計(字典).
+對於後綴, 可以選擇串列; 或者詞頻統計(字典).
 \index{implementation}
 
-至於如何抉擇? 首先要考慮無論選擇哪種數據結構, 都不可避免的相應操作. 
+至於如何抉擇? 首先要考慮無論選擇哪種資料結構, 都不可避免的相應操作. 
 對於前綴來說, 我們需要從開頭刪除單詞, 在末尾添加單詞. 比如, 如果現在
 前綴是``Half a'', 後面的詞是``bee'',  你需要構建下一個前綴詞, ``a bee''. 
 \index{tuple!as key in dictionary}
 
-首選可能是列表, 因為很容易添加和刪除元素, 但我們同時需要
-使用前綴作為字典的鍵, 所以列表不合適. 
+首選可能是串列, 因為很容易添加和刪除元素, 但我們同時需要
+使用前綴作為字典的鍵, 所以串列不合適. 
 而元組呢, 無法執行增刪操作, 
-但是可以用加法運算符構建新元組:
+但是可以用加法運算子構建新元組:
 
 \begin{verbatim}
 def shift(prefix, word):
@@ -9698,21 +9701,21 @@ def shift(prefix, word):
 對於後綴集合來說, 我們需要執行的操作包括增加新後綴(或者
 增加已有後綴的頻次), 以及隨機選擇後綴. 
 
-添加新後綴, 對於列表實現或者詞頻統計都同樣簡單. 
-而從列表中選擇隨機元素很容易, 但是從一個詞頻字典中操作, 便不太高效
+添加新後綴, 對於串列實現或者詞頻統計都同樣簡單. 
+而從串列中選擇隨機元素很容易, 但是從一個詞頻字典中操作, 便不太高效
 (參考習題~\ref{randhist}). 
 
 目前來說, 我們考慮更多的是實現難易, 
-但在選擇數據結構時, 還需要考慮一些其他因素. 
-比如運行時間. 總有一些時候, 理論上可以預期某種數據結構就是比
-另外一種要快. 比如, 我提到過的{\tt in}運算符, 字典比列表快, 
+但在選擇資料結構時, 還需要考慮一些其他因素. 
+比如運行時間. 總有一些時候, 理論上可以預期某種資料結構就是比
+另外一種要快. 比如, 我提到過的{\tt in}運算子, 字典比串列快, 
 最起碼元素數量很多的時候, 一目了然. 
 
-但往往你無法提前知曉哪種實現要更快. 一種方法是, 對每種數據結構都
+但往往你無法提前知曉哪種實現要更快. 一種方法是, 對每種資料結構都
 進行實現, 然後運行比較, 看哪種更快. 這個方法叫做{\bf 基準分析}.
-更實際一些的方法是選擇一種最容易實現的數據結構, 
+更實際一些的方法是選擇一種最容易實現的資料結構, 
 然後看是否滿足預期. 如果滿足, 便沒必要優化了. 如果不滿足, 
-可以使用一些工具, 像{\tt profile}模塊, 以定位程序最耗時的部分. 
+可以使用一些工具, 像{\tt profile}模塊, 以定位程式最耗時的部分. 
 \index{benchmarking}
 \index{profile module}
 \index{module!profile}
@@ -9720,29 +9723,29 @@ def shift(prefix, word):
 另一個需要考慮的因素是存儲空間. 
 比如, 使用詞頻字典作為後綴集合, 只會消耗很少的空間, 
 因為無論單詞在文中出現多少次, 每個單詞你只需存儲一次. 
-某些情況下, 節省空間也可以提高程序運行速度, 而且在極端情況下, 
-內存耗盡, 程序便無法運行. 但對於多數應用來說, 運行時間的考量要優先於存儲空間. 
+某些情況下, 節省空間也可以提高程式運行速度, 而且在極端情況下, 
+內存耗盡, 程式便無法運行. 但對於多數應用來說, 運行時間的考量要優先於存儲空間. 
 
-最後再發散一下: 在本章節, 我已暗示, 我們應該使用一種數據結構進行分析和生成. 
-但這二者又是兩個階段, 那麼便可以在分析時用一種數據結構, 然後在生成時, 
-轉換為另一種數據結構. 如果生成節省的時間超過了轉換耗費的時間, 
+最後再發散一下: 在本章節, 我已暗示, 我們應該使用一種資料結構進行分析和生成. 
+但這二者又是兩個階段, 那麼便可以在分析時用一種資料結構, 然後在生成時, 
+轉換為另一種資料結構. 如果生成節省的時間超過了轉換耗費的時間, 
 那這種方案便有利可圖. 
 
 
 \section{調試}
 \index{debugging}
 
-調試一個程序時, 尤其是面對嚴重問題時, 一定要做好以下五個步驟:
+調試一個程式時, 尤其是面對嚴重問題時, 一定要做好以下五個步驟:
 
 \begin{description}
 
 \item[閱讀(Reading):] 檢查代碼, 讀給自己, 看看所寫是否符合所想. 
 
-\item[運行(Running):] 做些修改, 運行各版本程序. 通常, 如果你在程序合適的位置, 
+\item[運行(Running):] 做些修改, 運行各版本程式. 通常, 如果你在程式合適的位置, 
 輸出合適的內容, 很容易定位問題, 不過有些時候, 你還是需要輔以腳手架代碼. 
 
 \item[反思(Ruminating):] 花點時間多思考！是哪種錯誤: 語法, 運行時, 還是語義錯誤？
-從異常信息, 或者程序輸出中能得到什麼信息? 哪種錯誤會引發你看到的問題？
+從異常信息, 或者程式輸出中能得到什麼信息? 哪種錯誤會引發你看到的問題？
 問題出現前, 你最後一次改動了什麼？
 
 \item[小黃鴨(Rubberducking):] 如果你向另一個人闡述問題, 有時候在問完問題之前, 
@@ -9752,11 +9755,11 @@ def shift(prefix, word):
 看\url{https://en.wikipedia.org/wiki/Rubber_duck_debugging}.
 
 \item[回撤(Retreating):] 有時候, 最好的辦法是回退, 
-取消最近的修改, 直到程序正常並且你能理解. 然後開始再次構建. 
+取消最近的修改, 直到程式正常並且你能理解. 然後開始再次構建. 
 
 \end{description}
 
-新手程序員有時候會在以上某種步驟中徘徊, 而忘記了其他步驟. 
+新手程式師有時候會在以上某種步驟中徘徊, 而忘記了其他步驟. 
 上面的每一步都有其不靈的時候. 
 \index{typographical error}
 
@@ -9767,7 +9770,7 @@ def shift(prefix, word):
 
 運行實例往往有用, 尤其是一些小而簡單的測試. 但是如果你不思考, 也不閱讀, 
 便進行實驗, 那便會陷入我稱之為``隨機遊走編程''的誤區中, 
-這種過程是隨機修改, 直至程序正常. 可想而知, 隨機遊走編程必然會耗費大量時間. 
+這種過程是隨機修改, 直至程式正常. 可想而知, 隨機遊走編程必然會耗費大量時間. 
 \index{random walk programming}
 \index{development plan!random walk programming}
 
@@ -9776,12 +9779,12 @@ def shift(prefix, word):
 對於問題所在, 你至少要有一種假設. 
 如果有兩種或者多種可能性, 想辦法設計個測試, 排除其中可能假設. 
 
-但如果錯誤過多, 或者嘗試修復的程序過於龐大複雜, 
+但如果錯誤過多, 或者嘗試修復的程式過於龐大複雜, 
 那即使再好的調試方案, 都會失效. 
-有時候, 最好的選擇便是回退代碼, 簡化程序, 直到其正常且你能理解. 
+有時候, 最好的選擇便是回退代碼, 簡化程式, 直到其正常且你能理解. 
 
-新手程序員往往不願意回退代碼, 因為他們無法忍受刪除一行代碼(即使是錯誤代碼). 
-可以在刪減代碼前, 將程序複製一份, 這樣會讓你感覺好一些. 
+新手程式師往往不願意回退代碼, 因為他們無法忍受刪除一行代碼(即使是錯誤代碼). 
+可以在刪減代碼前, 將程式複製一份, 這樣會讓你感覺好一些. 
 在你想還原的時候, 便可以一次性複製回來. 
 
 定位嚴重的異常, 需要閱讀, 運行, 思考, 有時候還要回退代碼. 
@@ -9792,7 +9795,7 @@ def shift(prefix, word):
 
 \begin{description}
 
-\item[確定性(deterministic):] 給定相同輸入, 程序執行相同操作的特性. 
+\item[確定性(deterministic):] 給定相同輸入, 程式執行相同操作的特性. 
 \index{deterministic}
 
 \item[偽隨機數(pseudorandom):] 由確定算法生成, 只是看起來像是隨機的數字序列. 
@@ -9804,7 +9807,7 @@ def shift(prefix, word):
 \item[覆蓋(override):] 用參數替換默認值. 
 \index{override}
 
-\item[基準分析(benchmarking):] 在多個數據結構間抉擇的方法, 通過實現多個方案, 
+\item[基準分析(benchmarking):] 在多個資料結構間抉擇的方法, 通過實現多個方案, 
 並用可能的輸入作為樣本進行測試. 
 \index{benchmarking}
 
@@ -9823,7 +9826,7 @@ def shift(prefix, word):
 \index{frequency!word}
 \index{Zipf's law}
 
-一個單詞的``排名''便是其在單詞列表中根據頻次排序後, 所在的位置:
+一個單詞的``排名''便是其在單詞串列中根據頻次排序後, 所在的位置:
 最常用的排第一, 第二常用的排第二, 依次類推. 
 
 Zipf定律(\url{http://en.wikipedia.org/wiki/Zipf's_law})
@@ -9840,10 +9843,10 @@ Zipf定律(\url{http://en.wikipedia.org/wiki/Zipf's_law})
 %
 如果繪製log $f$和log $r$的關係圖, 你會得到一個斜率是$-s$, 截距為log $c$的斜線. 
 
-編寫程序, 讀取文件中文本, 
+編寫程式, 讀取文件中文本, 
 統計單詞頻次, 按照頻次降序, 逐行輸出每個單詞, 以及
 log $f$和log $r$. 
-採用繪圖程序, 繪製結果曲線, 檢驗是否構成一條直線. 
+採用繪圖程式, 繪製結果曲線, 檢驗是否構成一條直線. 
 能否再估計一下$s$的值?
 
 參考: \url{http://thinkpython2.com/code/zipf.py}.
@@ -9858,8 +9861,8 @@ log $f$和log $r$.
 
 \chapter{文件}
 
-本章介紹程序將數據保存在永久存儲中的``持久化''概念, 同時展示如何
-使用不同類型的永久存儲, 比如文件和數據庫. 
+本章介紹程式將數據保存在永久存儲中的``持久化''概念, 同時展示如何
+使用不同類型的永久存儲, 比如文件和資料庫. 
 
 
 \section{持久化}
@@ -9867,24 +9870,24 @@ log $f$和log $r$.
 \index{type!file}
 \index{persistence}
 
-以往我們遇到的多數程序都是一閃而過的, 因為它們運行很快, 也產生了一些輸出, 
+以往我們遇到的多數程式都是一閃而過的, 因為它們運行很快, 也產生了一些輸出, 
 但當運行結束, 其數據便會消失不見. 
 如果再次運行, 又是從頭開始而已. 
 
-有些程序是{\bf 持久化的}: 其運行時間很長(甚至一直運行);
-這些程序至少會將部分數據進行永久儲存(比如, 硬盤);
-如果程序中斷後重新運行, 便可以從之前停止的地方, 繼續執行. 
+有些程式是{\bf 持久化的}: 其運行時間很長(甚至一直運行);
+這些程式至少會將部分數據進行永久儲存(比如, 硬盤);
+如果程式中斷後重新運行, 便可以從之前停止的地方, 繼續執行. 
 
-操作系統便是一個持久化程序的例子, 計算機一旦啟動, 便要執行諸多操作;
+操作系統便是一個持久化程式的例子, 計算機一旦啟動, 便要執行諸多操作;
 再比如網絡服務器, 需要一直運行, 等待接收來自網絡的請求. 
 
-程序管理數據的一個最簡單方法是讀寫文本文件. 
+程式管理數據的一個最簡單方法是讀寫文本文件. 
 之前, 我們已經接觸過讀取文本文件了, 
-本章將學習如何使用程序, 將文本寫入文件. 
+本章將學習如何使用程式, 將文本寫入文件. 
 
-此外, 我們也可以將程序狀態存儲到數據庫中. 
-本章將介紹一個簡單的數據庫, 以及模塊{\tt pickle}, 
-它可以很容易存儲程序數據. 
+此外, 我們也可以將程式狀態存儲到資料庫中. 
+本章將介紹一個簡單的資料庫, 以及模塊{\tt pickle}, 
+它可以很容易存儲程式數據. 
 \index{pickle module}
 \index{module!pickle}
 
@@ -9935,10 +9938,10 @@ log $f$和log $r$.
 \index{close method}
 \index{method!close}
 %
-如果你沒有關閉文件, 程序運行結束, 便會自動關閉. 
+如果你沒有關閉文件, 程式運行結束, 便會自動關閉. 
 
 
-\section{格式運算符}
+\section{格式運算子}
 \index{format operator}
 \index{operator!format}
 
@@ -9950,9 +9953,9 @@ log $f$和log $r$.
 >>> fout.write(str(x))
 \end{verbatim}
 %
-另一種方法是使用{\bf 格式運算符}, {\tt \%}. 
+另一種方法是使用{\bf 格式運算子}, {\tt \%}. 
 {\tt \%}在整數操作上是取余運算. 
-但在第一個運算對象是字符串時, {\tt \%}便是格式運算符. 
+但在第一個運算對象是字符串時, {\tt \%}便是格式運算子. 
 \index{format string}
 
 第一個運算對象通常是{\bf 格式字符串}, 它包括一個或者多個{\bf 格式序列}, 
@@ -10008,7 +10011,7 @@ TypeError: %d format: a number is required, not str
 
 可以從
 \url{https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting}
-了解更多關於格式運算符的信息. 
+了解更多關於格式運算子的信息. 
 此外, 有個功能更強大的替代方案, 便是字符串的格式化方法, 你可以從
 \url{https://docs.python.org/3/library/stdtypes.html#str.format}了解更多細節. 
 
@@ -10035,7 +10038,7 @@ TypeError: %d format: a number is required, not str
 \index{folder}
 
 文件是按照{\bf 目錄}(也叫``文件夾'')來組織存放的. 
-每個運行的程序都有一個``當前目錄'', 也是大多數運算的默認目錄. 
+每個運行的程式都有一個``當前目錄'', 也是大多數運算的默認目錄. 
 比如, 當你要打開一個文件讀取內容時, Python會在當前目錄尋找此文件. 
 \index{os module}
 \index{module!os}
@@ -10096,7 +10099,7 @@ True
 %
 同理, {\tt os.path.isfile}可以判斷路徑是否是一個文件. 
 
-{\tt os.listdir} 會返回指定目錄下的文件列表(以及其他目錄):
+{\tt os.listdir} 會返回指定目錄下的文件串列(以及其他目錄):
 
 \begin{verbatim}
 >>> os.listdir(cwd)
@@ -10183,24 +10186,24 @@ Python 會先執行{\tt try}語句區塊.
 
 使用{\tt try}語句處理異常的方式叫做{\bf 捕獲}異常. 
 在上面例子中, {\tt except}部分會輸出一句錯誤信息, 但幫助不大. 
-通常, 捕獲異常是為了讓你有機會修正問題, 或重試程序, 或者至少優雅地結束程序. 
+通常, 捕獲異常是為了讓你有機會修正問題, 或重試程式, 或者至少優雅地結束程式. 
 
 
-\section{數據庫}
+\section{資料庫}
 \index{database}
 
-{\bf 數據庫}是用來存儲數據的文件. 
-很多數據庫都是像字典一樣構建, 從鍵映射到值, 進行數據存儲. 
-數據庫和字典之間最大的區別, 在於數據庫存儲在磁盤(或者其他永久存儲中), 
-所以程序結束後, 數據依然存在. 
+{\bf 資料庫}是用來存儲數據的文件. 
+很多資料庫都是像字典一樣構建, 從鍵映射到值, 進行數據存儲. 
+資料庫和字典之間最大的區別, 在於資料庫存儲在磁盤(或者其他永久存儲中), 
+所以程式結束後, 數據依然存在. 
 \index{dbm module} \index{module!dbm}
 
- {\tt dbm} 模塊提供了一個創建和更新數據庫文件的接口. 
-下面的例子中, 我將創建一個數據庫來存儲圖片文件的描述. 
+ {\tt dbm} 模塊提供了一個創建和更新資料庫文件的介面. 
+下面的例子中, 我將創建一個資料庫來存儲圖片文件的描述. 
 \index{open function}
 \index{function!open}
 
-打開數據庫便如打開文件一樣:
+打開資料庫便如打開文件一樣:
 
 \begin{verbatim}
 >>> import dbm
@@ -10208,12 +10211,12 @@ Python 會先執行{\tt try}語句區塊.
 \end{verbatim}
 %
 
-模式 \verb"'c'" 表示如果數據庫不存在, 則新建一個. 
-其結果是一個數據庫對象, 使用方式(很多操作)和字典一樣.
+模式 \verb"'c'" 表示如果資料庫不存在, 則新建一個. 
+其結果是一個資料庫對象, 使用方式(很多操作)和字典一樣.
 \index{database object}
 \index{object!database}
 
-當創建新的項, {\tt dbm}便會更新數據庫文件.
+當創建新的項, {\tt dbm}便會更新資料庫文件.
 \index{update!database}
 
 \begin{verbatim}
@@ -10244,7 +10247,7 @@ b'Photo of John Cleese doing a silly walk.'
 %
 
 字典的某些方法, 比如{\tt keys} 和 {\tt items}, 
-並不適用於數據庫對象. 但是可以用{\tt for}循環對其進行疊代, 遍歷對象:
+並不適用於資料庫對象. 但是可以用{\tt for}迴圈對其進行疊代, 遍歷對象:
 \index{dictionary methods!dbm module}
 
 \begin{verbatim}
@@ -10252,7 +10255,7 @@ for key in db:
     print(key, db[key])
 \end{verbatim}
 %
-和操作其他文件一樣, 用完之後, 需要關閉數據庫:
+和操作其他文件一樣, 用完之後, 需要關閉資料庫:
 
 \begin{verbatim}
 >>> db.close()
@@ -10270,7 +10273,7 @@ for key in db:
 \index{pickle module} \index{module!pickle}
 
 這時候{\tt pickle}模塊便有用武之地了. 
-它可以將幾乎任何類型對象轉換為字符串, 以便存儲於數據庫中, 
+它可以將幾乎任何類型對象轉換為字符串, 以便存儲於資料庫中, 
 然後用的時候再將字符串轉換回對象. 
 
 {\tt pickle.dumps}會接收一個對象參數, 返回一個字符串形式的文本
@@ -10306,7 +10309,7 @@ False
 %
 換個說法, 序列化對象, 然後再反序列化的過程, 就如同複製對象一樣. 
 
-你可以用{\tt pickle}來將任何非字符串數據存儲到數據庫中. 
+你可以用{\tt pickle}來將任何非字符串數據存儲到資料庫中. 
 實際上, 因為這種聯動操作過於普遍, 以至於將其
 封裝進了{\tt shelve}模塊.  
 \index{shelve module}
@@ -10317,14 +10320,14 @@ False
 \index{shell}
 \index{pipe}
 
-多數操作系統都提供了命令行接口, 一般稱為 {\bf shell}.
+多數操作系統都提供了命令行介面, 一般稱為 {\bf shell}.
 Shells 通常提供了大量命令, 以定位文件系統, 以及運行應用. 
 比如, 在Unix中, 你可以用{\tt cd}命令切換目錄, 
 使用{\tt ls}命令顯示目錄下的內容, 以及(比如)鍵入{\tt firefox} 來啟動瀏覽器. 
 \index{ls (Unix command)}
 \index{Unix command!ls}
 
-任何你能通過shell啟動的程序, 都可以通過Python, 使用{\bf 管道對象}來啟動, 這個對象表示了一個運行中的程序. 
+任何你能通過shell啟動的程式, 都可以通過Python, 使用{\bf 管道對象}來啟動, 這個對象表示了一個運行中的程式. 
 
 比如, Unix命令{\tt ls -l}通常會用長文件名格式來顯示當前目錄內容. 
 在Python中, 可以用{\tt os.popen}\footnote{{\tt popen}模塊目前已經廢棄, 
@@ -10406,7 +10409,7 @@ def linecount(filename):
 print(linecount('wc.py'))
 \end{verbatim}
 %
-如果運行程序, 代碼會讀取自身, 並輸出文件中內容的行數, 也就是7.
+如果運行程式, 代碼會讀取自身, 並輸出文件中內容的行數, 也就是7.
 你也可以像下面這樣導入這個模塊:
 
 \begin{verbatim}
@@ -10438,17 +10441,17 @@ print(linecount('wc.py'))
 \index{import statement}
 \index{statement!import}
 
-如果需要將程序作為模塊導入, 通常遵循下面的寫法:
+如果需要將程式作為模塊導入, 通常遵循下面的寫法:
 
 \begin{verbatim}
 if __name__ == '__main__':
     print(linecount('wc.py'))
 \end{verbatim}
 %
-\verb"__name__" 是一個內置變量, 程序一旦開始運行, 便被賦值. 
-如果程序作為一個腳本運行, \verb"__name__"的值為\verb"'__main__'";
+\verb"__name__" 是一個內置變量, 程式一旦開始運行, 便被賦值. 
+如果程式作為一個腳本運行, \verb"__name__"的值為\verb"'__main__'";
 就像上面例子, 測試代碼便會執行. 
-如果程序作為模塊導入, 那\verb"__name__"的值便不是\verb"'__main__'", 
+如果程式作為模塊導入, 那\verb"__name__"的值便不是\verb"'__main__'", 
 那測試代碼不會執行. 
 \index{name built-in variable}
 \index{main}
@@ -10500,8 +10503,8 @@ if __name__ == '__main__':
 如果在不同系統間移動文件, 這些不兼容的地方, 便是引發問題之處. 
 \index{end of line character}
 
-對於多數系統來說, 有諸多程序可以實現格式轉換. 
-你可以在\url{http://en.wikipedia.org/wiki/Newline}上查找軟件
+對於多數系統來說, 有諸多程式可以實現格式轉換. 
+你可以在\url{http://en.wikipedia.org/wiki/Newline}上查找軟體
 (以及閱讀此問題的更多細節). 
 或者, 你也可以自己寫一個轉換工具. 
 
@@ -10510,15 +10513,15 @@ if __name__ == '__main__':
 
 \begin{description}
 
-\item[持久化(persistent):] 程序可以隨時執行, 同時至少將數據保存到永久存儲中. 
+\item[持久化(persistent):] 程式可以隨時執行, 同時至少將數據保存到永久存儲中. 
 \index{persistence}
 
-\item[格式運算符(format operator):] 一個操作符, {\tt \%}, 連接格式字符串和元組, 
+\item[格式運算子(format operator):] 一個操作符, {\tt \%}, 連接格式字符串和元組, 
 生成一個將元組元素格式化為指定格式的字符串. 
 \index{format operator}
 \index{operator!format}
 
-\item[格式字符串(format string):] 用於格式運算符的字符串, 內含格式序列.  
+\item[格式字符串(format string):] 用於格式運算子的字符串, 內含格式序列.  
 \index{format string}
 
 \item[格式序列(format sequence):] 格式字符串中的字符序列, 
@@ -10540,21 +10543,21 @@ if __name__ == '__main__':
 \item[絕對路徑(absolute path):] 從文件系統中的根目錄開始的路徑. 
 \index{absolute path}
 
-\item[捕獲異常(catch):] 使用 {\tt try} 和 {\tt except} 語句來防止異常中斷程序執行. 
+\item[捕獲異常(catch):] 使用 {\tt try} 和 {\tt except} 語句來防止異常中斷程式執行. 
 \index{catch}
 
-\item[數據庫(database):] 一個文件, 其內容以類似字典的鍵值對應的方式來管理. 
+\item[資料庫(database):] 一個文件, 其內容以類似字典的鍵值對應的方式來管理. 
 \index{database}
 
 \item[字節對象(bytes object):] 和字符串相似的一種對象.
 \index{bytes object}
 \index{object!bytes}
 
-\item[shell:] 一個程序, 允許用戶輸入命令, 然後通過啟動其他程序來執行命令. 
+\item[shell:] 一個程式, 允許用戶輸入命令, 然後通過啟動其他程式來執行命令. 
 \index{shell}
 
-\item[管道對象(pipe object):] 表示一個正在運行的程序的對象, 
-允許Python程序運行命令並讀取結果.
+\item[管道對象(pipe object):] 表示一個正在運行的程式的對象, 
+允許Python程式運行命令並讀取結果.
 \index{pipe object}
 \index{object!pipe}
 
@@ -10570,7 +10573,7 @@ if __name__ == '__main__':
 如果文件中出現模式字符串, 則用替換字符串進行替換. 
 
 如果在打開, 讀取, 寫入或者關閉文件過程中發生異常, 
-你的程序需要捕獲異常, 輸出錯誤信息, 安全退出. 
+你的程式需要捕獲異常, 輸出錯誤信息, 安全退出. 
 參考: \url{http://thinkpython2.com/code/sed.py}.
 
 \end{exercise}
@@ -10582,14 +10585,14 @@ if __name__ == '__main__':
 
 如果你從 \url{http://thinkpython2.com/code/anagram_sets.py}下載了
 習題~\ref{anagrams}的答案, 你會發現, 
-其創建了一個字典, 將一個有序字母字符串映射到了一個單詞列表, 
-列表中的單詞均由這些字母構成. 比如,
-\verb"'opst'" 映射著列表
+其創建了一個字典, 將一個有序字母字符串映射到了一個單詞串列, 
+串列中的單詞均由這些字母構成. 比如,
+\verb"'opst'" 映射著串列
 \verb"['opts', 'post', 'pots', 'spot', 'stop', 'tops']".
 
 編寫一個模塊, 導入 \verb"anagram_sets"模塊並提供兩個新的
 函數: \verb"store_anagrams"可以將字母異位詞字典存儲到``shelf''; 
-\verb"read_anagrams"則可以查找單詞並返回它的字母異位詞列表. 
+\verb"read_anagrams"則可以查找單詞並返回它的字母異位詞串列. 
 參考: \url{http://thinkpython2.com/code/anagram_db.py}.
 
 \end{exercise}
@@ -10605,8 +10608,8 @@ if __name__ == '__main__':
 
 \begin{enumerate}
 
-\item 編寫一個程序, 搜索目錄, 並遞歸其所有子目錄, 
-返回一個包括所有給定後綴 (比如 {\tt .mp3})的完整路徑的列表. 
+\item 編寫一個程式, 搜索目錄, 並遞歸其所有子目錄, 
+返回一個包括所有給定後綴 (比如 {\tt .mp3})的完整路徑的串列. 
 提示: {\tt os.path}提供了一些有用函數, 可以用來處理文件和路徑名稱. 
 \index{duplicate}
 \index{MD5 algorithm}
@@ -10630,7 +10633,7 @@ if __name__ == '__main__':
 \chapter{類和對象}
 \label{clobjects}
 
-截至當前, 你應該已經知曉如何使用函數組織代碼, 
+截至當前, 你應該已經知曉如何使用函陣列織代碼, 
 如何使用內置類型管理數據. 
 接下來要學習``面向對象編程''了, 
 這種方式是通過自定義類型來管理代碼和數據的模式. 
@@ -10663,7 +10666,7 @@ if __name__ == '__main__':
 
 \item 我們可以將坐標分別保存在兩個變量中, {\tt x}和{\tt y}. 
 
-\item 我們也可以將坐標作為列表或元組的元素進行存儲. 
+\item 我們也可以將坐標作為串列或元組的元素進行存儲. 
 
 \item 我們也可以創建一個新的類型, 用對象表示點. 
 
@@ -10954,7 +10957,7 @@ def grow_rectangle(rect, dwidth, dheight):
 \label{copying}
 \index{aliasing}
 
-別名的使用會讓程序變得複雜, 因為一處改動可能會影響到其他地方. 
+別名的使用會讓程式變得複雜, 因為一處改動可能會影響到其他地方. 
 同時, 追蹤指向某個既定對象的所有變量, 又很困難. 
 \index{copying objects}
 \index{object!copying}
@@ -10987,10 +10990,10 @@ False
 \end{verbatim}
 %
 
-{\tt is}運算符表明{\tt p1}和{\tt p2}不是同一個對象, 這符合我們的預期. 
+{\tt is}運算子表明{\tt p1}和{\tt p2}不是同一個對象, 這符合我們的預期. 
 對於{\tt ==}, 本來我們看兩者包含數據一樣, 預期會是{\tt True}. 
-但在此處, 令你沮喪的是, 對於實例來說, {\tt ==}運算符的默認操作和
-{\tt is}運算符是一樣的; 都是檢驗對象是否相同, 而不是判斷是否相等.
+但在此處, 令你沮喪的是, 對於實例來說, {\tt ==}運算子的默認操作和
+{\tt is}運算子是一樣的; 都是檢驗對象是否相同, 而不是判斷是否相等.
 這是因為對於用戶自定義類型, Python至少現在還無法知道如何衡量相等.
 \index{is operator}
 \index{operator!is}
@@ -11016,7 +11019,7 @@ True
 \label{fig.rectangle2}
 \end{figure}
 
-圖~\ref{fig.rectangle2}展示了上面程序的對象圖.
+圖~\ref{fig.rectangle2}展示了上面程式的對象圖.
 \index{state diagram}
 \index{diagram!state}
 \index{object diagram}
@@ -11206,7 +11209,7 @@ except AttributeError:
 
 目前, 我們已經知道了如何創建新的類型, 下一步, 我們學習如何用
 自定義類型對象作為參數和返回值, 編寫函數. 
-本章將介紹``函數式編程模式'', 以及兩種新的程序開發範式. 
+本章將介紹``函數式編程模式'', 以及兩種新的程式開發範式. 
 
 
 本章的代碼樣例可以從\url{http://thinkpython2.com/code/Time1.py}下載. 
@@ -11382,12 +11385,12 @@ def increment(time, seconds):
 我們需要重複執行, 直到{\tt time.second}小於60.
 一種解決方案是用{\tt while}語句替換{\tt if}語句. 
 雖然可行, 但不夠高效. 
-做個練習, 編寫一個不包含任何循環的{\tt increment}正確版本. 
+做個練習, 編寫一個不包含任何迴圈的{\tt increment}正確版本. 
 
 修改器所為, 純函數皆可為. 
 事實上, 有些編程語言只允許使用純函數. 
 有證據表明, 使用純函數比使用修改器, 開發更快, 出錯更少. 
-但有時修改器用來更方便, 而函數式程序則效率不高. 
+但有時修改器用來更方便, 而函數式程式則效率不高. 
 
 通常, 我建議在合理的情況下, 都使用純函數, 只有在優勢明顯時才
 採用修改器. 這種方法便稱之為{\bf 函數式編程模式}. 
@@ -11468,7 +11471,7 @@ def add_time(t1, t2):
 而時間處理更符合我們的直觀感受. 
 
 但如果我們注意到時間不過是60進制的數字, 並預先編寫轉換函數 (\verb"time_to_int"
-和 \verb"int_to_time"), 便可以得到一個更精簡, 易讀, 易調試, 也更可靠的程序. 
+和 \verb"int_to_time"), 便可以得到一個更精簡, 易讀, 易調試, 也更可靠的程式. 
 
 同時這也更利於後續添加新的功能. 
 比如, 假如要對兩個Time對象相減, 獲取其時間間隔. 
@@ -11536,7 +11539,7 @@ def add_time(t1, t2):
 
 \begin{description}
 
-\item[原型和補丁(prototype and patch):] 一種通過先寫程序初稿, 然後測試, 並修正發現的錯誤的開發方案. 
+\item[原型和補丁(prototype and patch):] 一種通過先寫程式初稿, 然後測試, 並修正發現的錯誤的開發方案. 
 \index{prototype and patch}
 
 \item[設計開發(designed development):] 一種開發方案, 採用上帝視角處理問題, 
@@ -11552,11 +11555,11 @@ def add_time(t1, t2):
 多數修改器都是沒有返回值的;
 也就是說, 它們返回{\tt None}. \index{modifier}
 
-\item[函數式編程風格(functional programming style):] 一種程序設計風格, 其中多數函數
+\item[函數式編程風格(functional programming style):] 一種程式設計風格, 其中多數函數
 都是純函數.
 \index{functional programming style}
 
-\item[不變式(invariant):] 程序執行期間, 應該始終為真的條件. 
+\item[不變式(invariant):] 程式執行期間, 應該始終為真的條件. 
 \index{invariant}
 
 \item[斷言語句(assert statement):] 檢查條件是否滿足, 並在失敗時拋出異常的語句. 
@@ -11594,16 +11597,16 @@ def add_time(t1, t2):
 
 \begin{enumerate}
 
-\item 使用 {\tt datetime} 模塊編寫程序, 獲取當前日期並打印星期幾. 
+\item 使用 {\tt datetime} 模塊編寫程式, 獲取當前日期並打印星期幾. 
 
-\item 編寫個程序, 輸入生日, 輸出用戶的年齡以及距離下個生日的
+\item 編寫個程式, 輸入生日, 輸出用戶的年齡以及距離下個生日的
 天數, 小時數, 分鐘數和秒數. 
 \index{birthday}
 
 \item 對於兩個生日不同的人, 
 總有一天, 一個人的出生天數是另一個人的兩倍. 
 我們稱之為``雙倍日''.
-編寫個程序, 輸入兩個生日, 計算他們的``雙倍日''.
+編寫個程式, 輸入兩個生日, 計算他們的``雙倍日''.
 
 \item 進階一下, 編寫個更通用的版本, 計算某人的出生天數是另一個$n$倍大的那一天. 
 \index{Double Day}
@@ -11635,7 +11638,7 @@ Python是個{\bf 面向對象編程語言},
 
 \begin{itemize}
 
-\item 程序包括類和方法定義.
+\item 程式包括類和方法定義.
 
 \item 多數運算都基於對象操作而存在. 
 
@@ -11651,7 +11654,7 @@ Python是個{\bf 面向對象編程語言},
 到目前為止, 我們都還沒有充分使用Python提供的支持面向對象編程的強大功能. 
 這些功能嚴格來說並非必須;
 多數功能的語法我們都已經變相實現過了. 
-但很多時候, 面向對象的語法更加簡潔, 同時更加精確地表達程序結構. 
+但很多時候, 面向對象的語法更加簡潔, 同時更加精確地表達程式結構. 
 
 比如, 在{\tt Time1.py}中, 類定義和函數定義並無明顯關聯. 
 認真觀察, 便會發現每個函數都至少有一個{\tt Time}對象作為參數. 
@@ -11660,7 +11663,7 @@ Python是個{\bf 面向對象編程語言},
 
 透過觀察, 很自然地引出了{\bf 方法};
 一個方法便是一個與某個類相關聯的函數. 
-我們已經接觸過字符串, 列表, 字典和元組的方法. 
+我們已經接觸過字符串, 串列, 字典和元組的方法. 
 本章中, 我們將構建自定義類型的方法. 
 \index{syntax}
 \index{semantics}
@@ -11861,7 +11864,7 @@ True
 這種語法的一個好處, 是它讀起來如同英語: ``end is after start?''
 
 
-\section{ init 方法}
+\section{init方法}
 \index{init method}
 \index{method!init}
 
@@ -11925,7 +11928,7 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 \index{class!Point}
 
 
-\section{ {\tt \_\_str\_\_} 方法}
+\section{{\tt \_\_str\_\_}方法}
 \index{str method@\_\_str\_\_ method}
 \index{method!\_\_str\_\_}
 
@@ -11959,11 +11962,11 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 創建一個Point對象, 並打印輸出. 
 
 
-\section{運算符重載}
+\section{運算子重載}
 \label{operator.overloading}
 
-通過定義一些特殊方法, 你可以對自定義類型, 重新定義運算符的行為. 
-比如, 你為{\tt Time}類定義了\verb"__add__" 方法, 便可以用{\tt +}運算符操作Time對象. 
+通過定義一些特殊方法, 你可以對自定義類型, 重新定義運算子的行為. 
+比如, 你為{\tt Time}類定義了\verb"__add__" 方法, 便可以用{\tt +}運算子操作Time對象. 
 \index{programmer-defined type}
 \index{type!programmer-defined}
 
@@ -11988,13 +11991,13 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 11:20:00
 \end{verbatim}
 %
-當對Time對象應用{\tt +}運算符時, Python會調用\verb"__add__".
+當對Time對象應用{\tt +}運算子時, Python會調用\verb"__add__".
 當打印結果時, Python會調用\verb"__str__".
 所以我們看到的, 只是冰山一角而已！
 \index{operator overloading}
 
-對自定義類型, 改變運算符的行為, 這便是{\bf 運算符重載}. 
-對於Python中的每個運算符, 都有一個類似\verb"__add__"的特殊方法與之對應. 
+對自定義類型, 改變運算子的行為, 這便是{\bf 運算子重載}. 
+對於Python中的每個運算子, 都有一個類似\verb"__add__"的特殊方法與之對應. 
 更多詳細信息, 請參考
 \url{http://docs.python.org/3/reference/datamodel.html#specialnames}.
 
@@ -12038,7 +12041,7 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 \index{type-based dispatch}
 \index{dispatch, type-based}
 
-下面時一個在不同類型上使用{\tt +}運算符的例子:
+下面時一個在不同類型上使用{\tt +}運算子的例子:
 
 \begin{verbatim}
 >>> start = Time(9, 45)
@@ -12062,7 +12065,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 而是對一個整數加上Time對象, 
 所以不知道如何處理了. 
 有個取巧的解決辦法: 用特殊方法\verb"__radd__", 表示``右側相加''. 
-當Time對象出現在{\tt +}運算符右側時, 將調用此方法. 
+當Time對象出現在{\tt +}運算子右側時, 將調用此方法. 
 以下是定義:
 \index{radd method}
 \index{method!radd}
@@ -12117,7 +12120,7 @@ def histogram(s):
     return d
 \end{verbatim}
 %
-這個函數對於列表, 元組, 甚至字典都適用, 只要{\tt s}中的元素是可哈希的, 
+這個函數對於串列, 元組, 甚至字典都適用, 只要{\tt s}中的元素是可哈希的, 
 就都可以作為{\tt d}的鍵. 
 
 \begin{verbatim}
@@ -12152,7 +12155,7 @@ def histogram(s):
 \section{調試}
 \index{debugging}
 
-在程序運行的任何時刻, 向對象添加屬性都是可行的, 
+在程式運行的任何時刻, 向對象添加屬性都是可行的, 
 但如果對象類型相同, 屬性不同, 那很容易出錯. 
 所以比較好的方法是在init方法中初始化對象的全部屬性. 
 \index{init method}
@@ -12192,17 +12195,17 @@ def print_attributes(obj):
 \index{function!getattr}
 
 
-\section{接口和實現}
+\section{介面和實現}
 
-面向對象設計的一個目標便是令軟件便於維護, 
-也就是說當系統的某些部分發生了變化, 你依然可以保證程序正常運行, 
-從而可以修改程序, 以滿足新的需求. 
+面向對象設計的一個目標便是令軟體便於維護, 
+也就是說當系統的某些部分發生了變化, 你依然可以保證程式正常運行, 
+從而可以修改程式, 以滿足新的需求. 
 \index{interface}
 \index{implementation}
 \index{maintainable}
 \index{object-oriented design}
 
-實現這一目標的一個設計原則便是, 接口和實現分離. 
+實現這一目標的一個設計原則便是, 介面和實現分離. 
 對於對象來說, 就是類提供的方法不應該依賴於屬性的形式. 
 \index{attribute}
 
@@ -12219,11 +12222,11 @@ def print_attributes(obj):
 這種實現方式, 將會令某些方法, 比如\verb"is_after", 更容易實現, 而令某些方法更難編寫. 
 
 當你應用了一個新的類後, 你可能發現更好的實現方式. 
-但如果程序的其他部分正在使用你的類, 這時候修改接口, 
+但如果程式的其他部分正在使用你的類, 這時候修改介面, 
 往往比較耗時, 且容易出錯. 
 
-但如果你設計接口時足夠仔細, 你便可以在不改變接口的同時, 修改內部實現, 
-也就意味著程序其他部分無需變動. 
+但如果你設計介面時足夠仔細, 你便可以在不改變介面的同時, 修改內部實現, 
+也就意味著程式其他部分無需變動. 
 
 
 \section{術語表}
@@ -12251,7 +12254,7 @@ def print_attributes(obj):
 \index{positional argument}
 \index{argument!positional}
 
-\item[運算符重載(operator overloading):] 修改類似{\tt +}這樣運算符的操作, 
+\item[運算子重載(operator overloading):] 修改類似{\tt +}這樣運算子的操作, 
 從而令其適用於自定義類型. 
 \index{overloading}
 \index{operator!overloading}
@@ -12295,7 +12298,7 @@ def print_attributes(obj):
 \begin{enumerate}
 
 \item 一個\verb"__init__" 方法, 初始化一個名為\verb"pouch_contents"的屬性, 
-使其為空列表. 
+使其為空串列. 
 
 \item 一個名為\verb"put_in_pouch"的方法, 使其接收一個任意類型對象, 並將其放入
 \verb"pouch_contents"中. 
@@ -12384,8 +12387,8 @@ Q(Queen) & \mymapsto & 12 \\
 K(King) & \mymapsto & 13 \\
 \end{tabular}
 
-我用\mymapsto~符號表示映射比較清晰明了, 但不能寫入Python程序中. 
-它們只是程序設計的一部分, 不應出現在代碼中. 
+我用\mymapsto~符號表示映射比較清晰明了, 但不能寫入Python程式中. 
+它們只是程式設計的一部分, 不應出現在代碼中. 
 \index{Card class}
 \index{class!Card}
 
@@ -12420,8 +12423,8 @@ queen_of_diamonds = Card(1, 12)
 
 若要以人們容易理解的方式打印Card對象, 我們需要
 將整數編碼映射到相應等級和花色. 
-很自然想到使用字符串列表來實現. 
-我們將列表賦值給{\bf 類屬性}:
+很自然想到使用字符串串列來實現. 
+我們將串列賦值給{\bf 類屬性}:
 
 \begin{verbatim}
 # inside class Card:
@@ -12448,20 +12451,20 @@ queen_of_diamonds = Card(1, 12)
 無論何種類型的屬性, 都是通過點標法來獲取. 
 比如, 在\verb"__str__"中, {\tt self}是指卡牌對象, 
 同時{\tt self.rank}是其等級. 同樣, {\tt Card}是個類對象, 
-\verb"Card.rank_names"表示與類相關的字符串列表. 
+\verb"Card.rank_names"表示與類相關的字符串串列. 
 
 每個卡牌都有自己的{\tt suit}和{\tt rank}, 
 但\verb"suit_names" 和 \verb"rank_names"只有一份副本. 
 
 綜合來看, 表達式\verb"Card.rank_names[self.rank]" 
 表示``用{\tt self}對象的{\tt rank}屬性作為索引, 
-從{\tt Card}類的\verb"rank_names"列表中, 獲取相應的字符串.''
+從{\tt Card}類的\verb"rank_names"串列中, 獲取相應的字符串.''
 
 \verb"rank_names"的第一個元素是{\tt None},
 因為沒有卡牌的等級為零. 
 通過囊括{\tt None}作為一個占位符, 
 從而令索引2恰到好處地映射到了字符串\verb"'2'", 其他一樣. 
-如果不想要這種取巧操作, 可以用字典替代列表. 
+如果不想要這種取巧操作, 可以用字典替代串列. 
 
 利用現有方法, 我們可以創建並打印紙牌:
 
@@ -12492,10 +12495,10 @@ Jack of Hearts
 \index{operator!relational}
 \index{relational operator}
 
-對於內置類型, 有比較運算符({\tt <}, {\tt >}, {\tt ==}, 等.)
+對於內置類型, 有比較運算子({\tt <}, {\tt >}, {\tt ==}, 等.)
 可以比較值, 並判斷一個值大於, 小於或者等於另一個. 
 對於自定義類型, 我們可以提供一個表示``小於''的\verb"__lt__"方法, 
-來覆蓋內置運算符的操作. 
+來覆蓋內置運算子的操作. 
 \index{programmer-defined type}
 \index{type!programmer-defined}
 
@@ -12550,7 +12553,7 @@ Jack of Hearts
 \index{deck, playing cards}
 
 現在我們有Card類了, 下一步要定義整副牌(Deck)了. 
-既然整副牌是由卡牌構成, 那自然每副牌都應該包含一個卡牌列表作為屬性. 
+既然整副牌是由卡牌構成, 那自然每副牌都應該包含一個卡牌串列作為屬性. 
 \index{init method}
 \index{method!init}
 
@@ -12573,9 +12576,9 @@ class Deck:
                 self.cards.append(card)
 \end{verbatim}
 %
-生成一副牌最容易的方法便是嵌套循環了. 
-外層循環枚舉了0到3的花色. 
-內層循環枚舉了1至13的等級. 
+生成一副牌最容易的方法便是嵌套迴圈了. 
+外層迴圈枚舉了0到3的花色. 
+內層迴圈枚舉了1至13的等級. 
 每次疊代都會用當前花色和等級創建一張牌, 
 並將其附加到{\tt self.cards}中. 
 \index{append method}
@@ -12599,7 +12602,7 @@ class Deck:
         return '\n'.join(res)
 \end{verbatim}
 %
-這個方法展示了一個拼接超大字符串的高效方法: 建立一個字符串列表, 然後使用字符串方法{\tt join}進行拼接. 
+這個方法展示了一個拼接超大字符串的高效方法: 建立一個字符串串列, 然後使用字符串方法{\tt join}進行拼接. 
 內置函數{\tt str}會對每個card都應用\verb"__str__"方法, 以返回字符串格式.
 \index{accumulator!string} \index{string!accumulator}
 \index{join method} \index{method!join} \index{newline}
@@ -12626,7 +12629,7 @@ King of Spades
 \section{添加, 移除, 洗牌和排序}
 
 若要發牌, 首先需要一個能夠從整副牌中移除並返回此對象的方法. 
-列表方法{\tt pop}提供了一種便捷的方法:
+串列方法{\tt pop}提供了一種便捷的方法:
 \index{pop method}
 \index{method!pop}
 
@@ -12637,11 +12640,11 @@ King of Spades
         return self.cards.pop()
 \end{verbatim}
 %
-由於{\tt pop}是從列表中移除{\em 最後一張}牌, 所以我們從底部發牌. 
+由於{\tt pop}是從串列中移除{\em 最後一張}牌, 所以我們從底部發牌. 
 \index{append method}
 \index{method!append}
 
-若要添加一張牌, 可以用列表方法{\tt append}:
+若要添加一張牌, 可以用串列方法{\tt append}:
 
 \begin{verbatim}
 # inside class Deck:
@@ -12655,8 +12658,8 @@ King of Spades
 從而改善外觀. 
 \index{veneer}
 
-這裡, \verb"add_card" 是一個``薄''方法, 用卡牌術語的方式, 表達列表操作. 
-而這會令實現的外觀, 或者接口, 容易理解. 
+這裡, \verb"add_card" 是一個``薄''方法, 用卡牌術語的方式, 表達串列操作. 
+而這會令實現的外觀, 或者介面, 容易理解. 
 
 再舉個例子, 我們可以用{\tt random}模塊中的{\tt shuffle}函數, 為Deck編寫一個
 {\tt shuffle}方法:
@@ -12674,7 +12677,7 @@ King of Spades
 %
 不要忘記引入{\tt random}模塊.
 
-做個練習, 用列表方法{\tt sort}為Deck編寫一個{\tt sort}方法, 
+做個練習, 用串列方法{\tt sort}為Deck編寫一個{\tt sort}方法, 
 為{\tt Deck}中的卡牌排序. 
 {\tt sort}方法會使用我們定義的\verb"__lt__"方法來確定順序. 
 \index{sort method} \index{method!sort}
@@ -12716,7 +12719,7 @@ class Hand(Deck):
 \index{class!child}
 
 在本例中, {\tt Hand}從{\tt Deck}繼承了\verb"__init__"方法, 
-但沒有滿足我們的需求：init方法本應用空列表初始化{\tt cards}, 
+但沒有滿足我們的需求：init方法本應用空串列初始化{\tt cards}, 
 而不是用52張新牌. 
 \index{override} \index{init method}
 \index{method!init}
@@ -12779,7 +12782,7 @@ King of Spades
 在某些情況下, 繼承的結構反映了問題的真正結構, 也就使得
 設計更易於理解. 
 
-另一方面, 繼承會使程序變得難以閱讀. 
+另一方面, 繼承會使程式變得難以閱讀. 
 當調用一個方法時, 有時很難搞明白它的定義在哪裡. 
 相關代碼可能分散在數個模塊. 
 此外, 許多使用繼承實現的事情, 不用繼承也能做到, 甚至做得更好. 
@@ -12788,11 +12791,11 @@ King of Spades
 \section{類圖}
 \label{class.diagram}
 
-我們已經接觸過表示程序狀態的棧圖, 以及展示對象的屬性以及值的對象圖. 
-這些圖好比程序運行時的快照, 因此也會隨著程序運行而變化. 
+我們已經接觸過表示程式狀態的堆疊圖, 以及展示對象的屬性以及值的對象圖. 
+這些圖好比程式運行時的快照, 因此也會隨著程式運行而變化. 
 
 它們通常很詳細; 但對於某些目的來說, 偏於細緻. 
-類圖是程序結構的一種更抽象的表達. 
+類圖是程式結構的一種更抽象的表達. 
 它不展示單獨對象, 而是表示類和類之間的關係. 
 
 類之間有多種關係:
@@ -12844,8 +12847,8 @@ King of Spades
 依賴關係通常用虛線箭頭表示. 
 或者, 若有很多依賴關係存在, 它們有時候會被省略. 
 
-一個更詳細的類圖, 可能會顯示Deck實際上包含了一個Card{\em 列表}, 
-但是一般類圖中不包含列表和字典這些內置類型. 
+一個更詳細的類圖, 可能會顯示Deck實際上包含了一個Card{\em 串列}, 
+但是一般類圖中不包含串列和字典這些內置類型. 
 
 \section{調試}
 \index{debugging}
@@ -12862,7 +12865,7 @@ King of Spades
 你調用的便是子類中的方法了. 
 這個特性說來是好事, 但有時令人困惑. 
 
-如果你不確定程序執行流程的時候, 最簡單的方法便是在相關方法
+如果你不確定程式執行流程的時候, 最簡單的方法便是在相關方法
 開始處添加打印語句, 輸出信息. 
 如果{\tt Deck.shuffle}打印了一條信息, 如{\tt Running Deck.shuffle}, 
 那便可以據此來追蹤執行流程. 
@@ -12891,13 +12894,13 @@ def find_defining_class(obj, meth_name):
 \index{method!mro}
 \index{method resolution order}
 
-\verb"find_defining_class"函數使用{\tt mro}方法, 獲取類對象的列表, 
+\verb"find_defining_class"函數使用{\tt mro}方法, 獲取類對象的串列, 
 進而根據方法進行搜索. 
 ``MRO''是``method resolution order''的簡稱, 
 是指Python``解析''方法名時所搜索的序列.
 
 下面是個設計建議：當你覆蓋一個方法時, 
-新方法的接口, 要和舊的保持一致. 
+新方法的介面, 要和舊的保持一致. 
 它應該接收同樣的參數, 返回相同的類型, 
 同時遵守相同的先決條件和後置條件. 
 如果你遵循上述規則, 你會發現為父類實例, 如Deck, 所設計的函數, 
@@ -12923,8 +12926,8 @@ def find_defining_class(obj, meth_name):
 
 但有時候很難界定所需的對象以及如何與之交互. 
 這種情況下, 你需要一個不同的開發模式. 
-之前我們通過封裝和泛化來設計函數接口, 同樣我們也可以通過{\bf 數據封裝}
-來設計類接口. 
+之前我們通過封裝和泛化來設計函數介面, 同樣我們也可以通過{\bf 數據封裝}
+來設計類介面. 
 \index{data encapsulation}
 
 第~\ref{markov}節的馬爾可夫分析, 便是一個很好的例子. 
@@ -12938,7 +12941,7 @@ prefix = ()
 \end{verbatim}
 
 因為這些變量是全局的, 我們一次只能運行一個分析. 
-如果我們讀取兩個文本, 他們的前置和後置詞彙都會被添加到同一個數據結構
+如果我們讀取兩個文本, 他們的前置和後置詞彙都會被添加到同一個資料結構
 中(會生成一些有趣的文本). 
 
 若要運行多個分析, 同時保持互不影響, 我們可以把每個分析的狀態封裝到對象中. 
@@ -12969,7 +12972,7 @@ class Markov:
 
         self.prefix = shift(self.prefix, word)        
 \end{verbatim}
-像這樣修改程序---改變設計而不改變其行為---便是另一種重構
+像這樣修改程式---改變設計而不改變其行為---便是另一種重構
 (參見第~\ref{refactoring}節).
 \index{refactoring}
 
@@ -12979,7 +12982,7 @@ class Markov:
 
 \item 先編寫讀寫全局變量的函數(如有必要).
 
-\item 一旦程序可以運行, 便可尋找全局變量和使用它們的函數之間的關聯.
+\item 一旦程式可以運行, 便可尋找全局變量和使用它們的函數之間的關聯.
 
 \item 將相關變量封裝為對象的屬性.
 
@@ -13009,7 +13012,7 @@ class Markov:
 \index{instance attribute}
 \index{attribute!instance}
 
-\item[偽裝方法(veneer):] 一個方法或者函數, 無需太多計算便可以為其他方法提供不同的接口. 
+\item[偽裝方法(veneer):] 一個方法或者函數, 無需太多計算便可以為其他方法提供不同的介面. 
 \index{veneer}
 
 \item[繼承(inheritance):] 定義新類的能力, 這個新類是先前定義的類的修改版本. 
@@ -13033,7 +13036,7 @@ class Markov:
 一個類的實例使用了另一個類的實例, 但沒有將其作為屬性存儲. 
 \index{HAS-A relationship}
 
-\item[類圖(class diagram):] 表示程序中各個類及其之間關係的圖解. 
+\item[類圖(class diagram):] 表示程式中各個類及其之間關係的圖解. 
 \index{class diagram}
 \index{diagram!class}
 
@@ -13052,7 +13055,7 @@ class Markov:
 \section{習題集}
 
 \begin{exercise}
-針對下面的程序, 繪製UML類圖, 展示其中的類和類之間的關係. 
+針對下面的程式, 繪製UML類圖, 展示其中的類和類之間的關係. 
 
 \begin{verbatim}
 class PingPongParent:
@@ -13085,7 +13088,7 @@ pong.add_ping(ping)
 
 \begin{exercise}
 編寫Deck的\verb"deal_hands"方法, 使其接收兩個參數, 分別為手牌數量以及每副手牌所含的卡牌數量. 
-此方法會創建相應數量的手牌對象, 給每幅手牌分配相應數量的卡牌, 然後返回一個手牌實例的列表. 
+此方法會創建相應數量的手牌對象, 給每幅手牌分配相應數量的卡牌, 然後返回一個手牌實例的串列. 
 \end{exercise}
 
 
@@ -13156,7 +13159,7 @@ pong.add_ping(ping)
 統計各種分類出現的次數. 
 
 \item 打印一個表格, 顯示各種分類及其出現概率. 
-用大量手牌, 不斷運行程序, 直到輸出結果收斂於合理區間. 
+用大量手牌, 不斷運行程式, 直到輸出結果收斂於合理區間. 
 把你得到的結果和\url{http://en.wikipedia.org/wiki/Hand_rankings}上的結果進行比較. 
 
 \end{enumerate}
@@ -13194,7 +13197,7 @@ else:
 這個語句檢驗{\tt x} 是否是正數. 
 如果是, 則計算{\tt math.log}. 
 如果不是, {\tt math.log}則會拋出一個ValueError.
-為了避免程序異常退出, 我們使用一個``NaN'', 這個符號是一個特殊的浮點數, 
+為了避免程式異常退出, 我們使用一個``NaN'', 這個符號是一個特殊的浮點數, 
 表示``不是一個數字''. 
 \index{NaN}
 \index{floating-point}
@@ -13257,11 +13260,11 @@ init方法:
 
 
 
-\section{列表推導式}
+\section{串列推導式}
 
 在第~\ref{filter}節, 我們學習了map和filter模式. 
-比如, 下面函數接收一個字符串列表, 將字符串方法{\tt capitalize}映射到每個元素上, 
-並返回一個新的字符串列表:
+比如, 下面函數接收一個字符串串列, 將字符串方法{\tt capitalize}映射到每個元素上, 
+並返回一個新的字符串串列:
 
 \begin{verbatim}
 def capitalize_all(t):
@@ -13271,7 +13274,7 @@ def capitalize_all(t):
     return res
 \end{verbatim}
 
-我們可以用{\bf 列表推導式}來精簡此函數:
+我們可以用{\bf 串列推導式}來精簡此函數:
 \index{list comprehension}
 
 \begin{verbatim}
@@ -13279,17 +13282,17 @@ def capitalize_all(t):
     return [s.capitalize() for s in t]
 \end{verbatim}
 
-方括號操作符表示我們在構造一個新列表. 
-方括號中的表達式, 指定了列表中的元素, 同時{\tt for}語句聲明了我們要遍歷的序列. 
+方括號操作符表示我們在構造一個新串列. 
+方括號中的表達式, 指定了串列中的元素, 同時{\tt for}語句聲明了我們要遍歷的序列. 
 \index{list}
 \index{for loop}
 
-列表推導式的語法略顯奇怪, 主要因為這個循環變量, 如例子中的{\tt s}, 在定義之前, 
+串列推導式的語法略顯奇怪, 主要因為這個迴圈變量, 如例子中的{\tt s}, 在定義之前, 
 便出現在了表達式中. 
 \index{loop variable}
 
-列表推導式也可以用來過濾. 
-比如, 下面函數僅選擇{\tt t}中大寫字母的元素, 並返回新列表:
+串列推導式也可以用來過濾. 
+比如, 下面函數僅選擇{\tt t}中大寫字母的元素, 並返回新串列:
 \index{filter pattern}
 \index{pattern!filter}
 
@@ -13302,19 +13305,19 @@ def only_upper(t):
     return res
 \end{verbatim}
 
-我們可以用列表推導式來重寫:
+我們可以用串列推導式來重寫:
 
 \begin{verbatim}
 def only_upper(t):
     return [s for s in t if s.isupper()]
 \end{verbatim}
 
-列表推導式更加簡潔, 也更易讀, 至少對於簡單表達式是這樣的. 
-而且, 它們相比同樣的for循環, 要更快, 甚至有時快很多. 
+串列推導式更加簡潔, 也更易讀, 至少對於簡單表達式是這樣的. 
+而且, 它們相比同樣的for迴圈, 要更快, 甚至有時快很多. 
 所以如果你因為我沒有更早提及而生氣, 我理解. 
 
-但是, 我要申辯一下, 列表推導式通常更難調試, 
-因為你不能在循環內部放置一個打印語句. 
+但是, 我要申辯一下, 串列推導式通常更難調試, 
+因為你不能在迴圈內部放置一個打印語句. 
 我建議你只在計算足夠簡單的情況, 也就是你上手便能正確完成的時候使用. 
 對於新手來說, 盡量別用. 
 \index{debugging}
@@ -13323,7 +13326,7 @@ def only_upper(t):
 
 \section{生成器表達式}
 
-{\bf 生成器表達式}和列表推導式相似, 但它使用圓括號而不是方括號:
+{\bf 生成器表達式}和串列推導式相似, 但它使用圓括號而不是方括號:
 \index{generator expression}
 \index{expression!generator}
 
@@ -13334,7 +13337,7 @@ def only_upper(t):
 \end{verbatim}
 %
 結果是一個生成器對象, 同時其知曉如何遍歷一個值序列. 
-但是與列表推導式不同, 它不會立即計算所有值; 而是在被調用時才計算. 
+但是與串列推導式不同, 它不會立即計算所有值; 而是在被調用時才計算. 
 內置函數{\tt next}會從生成器獲取下一個值:
 \index{generator object}
 \index{object!generator}
@@ -13347,7 +13350,7 @@ def only_upper(t):
 \end{verbatim}
 %
 當抵達了序列末尾, {\tt next}會拋出一個StopIteration異常. 
-你也可以使用{\tt for}循環來遍歷這些值:
+你也可以使用{\tt for}迴圈來遍歷這些值:
 \index{StopIteration}
 \index{exception!StopIteration}
 
@@ -13360,7 +13363,7 @@ def only_upper(t):
 \end{verbatim}
 %
 生成器對象會跟蹤序列中的位置, 
-所以{\tt for}循環會在{\tt next}停止的地方開始. 
+所以{\tt for}迴圈會在{\tt next}停止的地方開始. 
 一旦生成器被耗盡, 依然會拋出{\tt StopIteration}:
 
 \begin{verbatim}
@@ -13382,7 +13385,7 @@ StopIteration
 \section{{\tt any} 和 {\tt all}}
 
 Python提供了一個內置函數, {\tt any}, 其接收一個布爾值序列, 
-如果任意一個值為{\tt True}, 則返回{\tt True}. 通常適用於列表:
+如果任意一個值為{\tt True}, 則返回{\tt True}. 通常適用於串列:
 \index{any}
 \index{built-in function!any}
 
@@ -13400,7 +13403,7 @@ True
 True
 \end{verbatim}
 %
-這個例子不太明顯, 因為和{\tt in}運算符的效果一樣. 
+這個例子不太明顯, 因為和{\tt in}運算子的效果一樣. 
 但我們可以用{\tt any}來重寫第~\ref{search}節中, 曾經寫的一些搜索函數. 
 例如, 我們可以如下改寫{\tt avoids}:
 \index{search pattern}
@@ -13428,8 +13431,8 @@ Python還提供了另一個內置函數, {\tt all}, 如果序列中每個元素�
 \section{集合(set)}
 \label{sets}
 
-在第~\ref{dictsub}節, 我用字典來尋找出現在文檔中, 但是不在單詞列表中的單詞. 
-該函數接收兩個參數, 包含文檔中單詞的參數{\tt d1}(作為鍵),  和包含單詞列表的參數{\tt d2}. 
+在第~\ref{dictsub}節, 我用字典來尋找出現在文檔中, 但是不在單詞串列中的單詞. 
+該函數接收兩個參數, 包含文檔中單詞的參數{\tt d1}(作為鍵),  和包含單詞串列的參數{\tt d2}. 
 最後返回一個字典, 其鍵存在於{\tt d1}中, 但不包含在{\tt d2}中. 
 
 \begin{verbatim}
@@ -13448,7 +13451,7 @@ def subtract(d1, d2):
 Python提供了另一種內置類型, 叫做{\tt set}, 
 其效果很像字典中沒有值的鍵的集合. 
 向集合中添加元素是很快的; 檢查成員也很快. 
-同時集合也提供了執行常見操作的方法和運算符. 
+同時集合也提供了執行常見操作的方法和運算子. 
 \index{set}
 \index{object!set}
 
@@ -13493,7 +13496,7 @@ def has_duplicates(t):
 \index{duplicate}
 
 我們也可以使用集合完成第~\ref{wordplay}節的某些習題. 
-比如, 下面是一個使用循環的\verb"uses_only"實現版本:
+比如, 下面是一個使用迴圈的\verb"uses_only"實現版本:
 
 \begin{verbatim}
 def uses_only(word, available):
@@ -13512,7 +13515,7 @@ def uses_only(word, available):
 \end{verbatim}
 %
 
-運算符\verb"<=" 會檢驗一個集合是否是另一個的子集, 包括兩者相等的情況, 
+運算子\verb"<=" 會檢驗一個集合是否是另一個的子集, 包括兩者相等的情況, 
 也就是如果{\tt word}中的字母都出現在{\tt available}, 則返回真. 
 \index{subset}
 
@@ -13529,7 +13532,7 @@ def uses_only(word, available):
 
 計數器定義在{\tt collections}標準模塊中, 
 所以你需要先導入. 
-你可以用字符串, 列表或者支持疊代的任意類型來初始化計數器. 
+你可以用字符串, 串列或者支持疊代的任意類型來初始化計數器. 
 \index{collections}
 \index{module!collections}
 
@@ -13560,10 +13563,10 @@ def is_anagram(word1, word2):
 
 如果兩個單詞是換位詞, 那麼它們的相同字母具有相同的數量, 因此它們的計數器是等價的. 
 
-計數器提供了一些類似集合操作的方法和運算符, 
+計數器提供了一些類似集合操作的方法和運算子, 
 包括方法, 減法, 併集和交集. 
 此外, 還提供了一個常用的方法, \verb"most_common", 這個方法
-會返回一個按照最常見到最不常見排序的值-頻率對列表:
+會返回一個按照最常見到最不常見排序的值-頻率對串列:
 
 \begin{verbatim}
 >>> count = Counter('parrot')
@@ -13585,7 +13588,7 @@ a 1
 
 當你創建默認字典時, 你需要提供一個函數, 以用於創建新值. 
 用來創建對象的函數, 有時也稱為{\bf 工廠}.
-創建列表, 集合, 以及其他類型的內置函數, 都可以稱為工廠:
+創建串列, 集合, 以及其他類型的內置函數, 都可以稱為工廠:
 \index{factory function}
 
 \begin{verbatim}
@@ -13594,7 +13597,7 @@ a 1
 \end{verbatim}
 
 注意這個函數的參數{\tt list}, 是個類對象, 
-而不是一個新列表{\tt list()}. 
+而不是一個新串列{\tt list()}. 
 而且只有在訪問不存在的鍵時, 才會調用提供的函數.
 
 \begin{verbatim}
@@ -13603,7 +13606,7 @@ a 1
 []
 \end{verbatim}
 
-新的列表, 也就是{\tt t}, 便被加入了字典中. 
+新的串列, 也就是{\tt t}, 便被加入了字典中. 
 所以, 如果我們修改{\tt t}, {\tt d}也會相應變化:
 
 \begin{verbatim}
@@ -13612,10 +13615,10 @@ a 1
 defaultdict(<class 'list'>, {'new key': ['new value']})
 \end{verbatim}
 
-如果你要創建一個值為列表的字典, 可以使用{\tt defaultdict}來簡化代碼. 
+如果你要創建一個值為串列的字典, 可以使用{\tt defaultdict}來簡化代碼. 
 在習題~\ref{anagrams}的答案(可以從\url{http://thinkpython2.com/code/anagram_sets.py}獲取)中, 
-我創建了一個字典, 該字典將一個有序字母的字符串映射到了一個由這些字母構成的單詞的列表. 
-比如, {\tt 'opst'}映射了列表{\tt ['opts', 'post', 'pots', 'spot', 'stop', 'tops']}.
+我創建了一個字典, 該字典將一個有序字母的字符串映射到了一個由這些字母構成的單詞的串列. 
+比如, {\tt 'opst'}映射了串列{\tt ['opts', 'post', 'pots', 'spot', 'stop', 'tops']}.
 
 下面是原始代碼:
 
@@ -13645,8 +13648,8 @@ def all_anagrams(filename):
     return d
 \end{verbatim}
 
-但此方案也略有不足, 其不論是否必要, 每次都會創建新列表. 
-對於列表來說, 尚無關緊要, 但如果工廠函數很複雜, 
+但此方案也略有不足, 其不論是否必要, 每次都會創建新串列. 
+對於串列來說, 尚無關緊要, 但如果工廠函數很複雜, 
 那影響就很大了. 
 \index{factory function}
 
@@ -13665,7 +13668,7 @@ def all_anagrams(filename):
 對於習題~\ref{poker}, 你可以從
 \url{http://thinkpython2.com/code/PokerHandSoln.py}下載我的方案, 
 在函數\verb"has_straightflush"中使用了{\tt setdefault}. 
-這個方案也有缺陷, 不論是否需要, 每次循環都會創建{\tt Hand}對象. 
+這個方案也有缺陷, 不論是否需要, 每次迴圈都會創建{\tt Hand}對象. 
 作為一項練習, 試試用{\tt defaultdict}來重寫它. 
 
 
@@ -13696,7 +13699,7 @@ Point = namedtuple('Point', ['x', 'y'])
 \end{verbatim}
 
 第一個參數是你要創建的類的名稱. 
-第二個參數是Point對象應具有的屬性列表, 都用字符串表示. 
+第二個參數是Point對象應具有的屬性串列, 都用字符串表示. 
 最後, {\tt namedtuple}的返回值是一個類對象:
 \index{namedtuple}
 \index{object!namedtuple}
@@ -13775,7 +13778,7 @@ def printall(*args):
 (1, 2.0, '3')
 \end{verbatim}
 %
-然而{\tt *}運算符不會收集關鍵字參數:
+然而{\tt *}運算子不會收集關鍵字參數:
 \index{keyword argument}
 \index{argument!keyword}
 
@@ -13784,7 +13787,7 @@ def printall(*args):
 TypeError: printall() got an unexpected keyword argument 'third'
 \end{verbatim}
 %
-若要收集關鍵字參數, 可以使用{\tt **}運算符:
+若要收集關鍵字參數, 可以使用{\tt **}運算子:
 
 \begin{verbatim}
 def printall(*args, **kwargs):
@@ -13800,7 +13803,7 @@ def printall(*args, **kwargs):
 \end{verbatim}
 %
 同樣, 如果你有一個映射關鍵字和值的字典, 也可以在調用函數時, 
-使用發散運算符{\tt **}:
+使用發散運算子{\tt **}:
 \index{scatter}
 
 \begin{verbatim}
@@ -13809,7 +13812,7 @@ def printall(*args, **kwargs):
 Point(x=1, y=2)
 \end{verbatim}
 %
-如果沒用發散運算符, 函數會將{\tt d}當作一個位置參數, 
+如果沒用發散運算子, 函數會將{\tt d}當作一個位置參數, 
 所以便會將{\tt d}賦值給{\tt x}, 同時報錯, 因為沒有對{\tt y}進行賦值:
 
 \begin{verbatim}
@@ -13832,10 +13835,10 @@ TypeError: __new__() missing 1 required positional argument: 'y'
 \index{conditional expression}
 \index{expression!conditional}
 
-\item[列表推導式(list comprehension):] 一種方括號內包含{\tt for}循環, 產生新列表的表達式.
+\item[串列推導式(list comprehension):] 一種方括號內包含{\tt for}迴圈, 產生新串列的表達式.
 \index{list comprehension}
 
-\item[生成器表達式(generator expression):] 一種圓括號內包含{\tt for}循環, 
+\item[生成器表達式(generator expression):] 一種圓括號內包含{\tt for}迴圈, 
 從而產生生成器對象的表達式.  
 \index{generator expression}
 \index{expression!generator}
@@ -13877,8 +13880,8 @@ def binomial_coeff(n, k):
 使用嵌套條件表達式優化函數體.
 
 提示: 因為這個函數最終會不斷重複計算相同的值, 所以不夠高效. 
-你可以使用緩存模式(參見第~\ref{memoize}節)來提升其效率. 
-但是你會發現, 一旦使用了條件表達式, 緩存實現便變得困難. 
+你可以使用快取模式(參見第~\ref{memoize}節)來提升其效率. 
+但是你會發現, 一旦使用了條件表達式, 快取實現便變得困難. 
 \end{exercise}
 
 
@@ -13893,19 +13896,19 @@ def binomial_coeff(n, k):
 \begin{itemize}
 
 \item 語法錯誤多出現在解釋器翻譯源碼為字節碼的時候. 
-通常表示程序結構有缺陷. 
+通常表示程式結構有缺陷. 
 比如: {\tt def}語句後面遺漏了冒號, 會出現{\tt SyntaxError: invalid syntax}這樣的信息.
 \index{syntax error}
 \index{error!syntax}
 
-\item 運行時異常多在程序運行過程中, 因解釋器出錯而產生. 
+\item 運行時異常多在程式運行過程中, 因解釋器出錯而產生. 
 多數運行時異常信息包括異常發生的位置以及所執行的函數. 
 比如: 一個無盡的遞歸, 終會導致運行時異常, 出現``maximum recursion depth exceeded''報錯信息.
 \index{runtime error}
 \index{error!runtime}
 \index{exception}
 
-\item 語義異常多指程序運行不報錯, 但結果不正確.
+\item 語義異常多指程式運行不報錯, 但結果不正確.
 比如: 表達式沒有按你期望的順序執行, 從而產生了錯誤的結果.
 \index{semantic error}
 \index{error!semantic}
@@ -13919,16 +13922,16 @@ def binomial_coeff(n, k):
 \section{語法異常}
 \index{error message}
 
-如果你能弄清程序的語法異常是什麼, 便很容易修復. 
+如果你能弄清程式的語法異常是什麼, 便很容易修復. 
 不幸的是, 錯誤提示往往無用. 常見的多是{\tt SyntaxError: invalid syntax}和
 {\tt SyntaxError: invalid token}, 都是大而無用的籠統概括. 
 
-但另一方面, 錯誤信息確實告訴了你程序異常發生的位置. 
+但另一方面, 錯誤信息確實告訴了你程式異常發生的位置. 
 實際上, 是告知你Python所認為的異常所在, 但不一定就是錯誤確實發生的地方. 
 有時候, 錯誤信息先於錯誤的位置信息出現, 通常在前一行. 
 \index{incremental development}
 \index{development plan!incremental}
-如果你是逐步構建程序, 你便很容易定位錯誤所在. 其通常出現在你最後添加的代碼中. 
+如果你是逐步構建程式, 你便很容易定位錯誤所在. 其通常出現在你最後添加的代碼中. 
 
 如果你正從書中複製代碼, 從一開始, 便需要仔細比較你的代碼和書中的代碼. 
 檢查每個字符. 同時, 要謹記, 書中可能有錯誤, 所以你若看到了某些語法異常的代碼, 
@@ -13951,13 +13954,13 @@ def binomial_coeff(n, k):
 \index{quotation mark}
 
 \item 如果你有三個引號(單引號或者雙銀行)包起來的多行字符串, 確保正確終止了字符串. 
-未終止的字符串可能會在程序末尾引發{\tt invalid token}異常, 
-或者可能會將程序餘下部分當作字符串, 直至碰到下個字符串的標識. 
+未終止的字符串可能會在程式末尾引發{\tt invalid token}異常, 
+或者可能會將程式餘下部分當作字符串, 直至碰到下個字符串的標識. 
 而在第二種情形下, 可能不會產生錯誤信息!
 \index{multiline string}
 \index{string!multiline}
 
-\item 未封閉的開放運算符---\verb+(+, \verb+{+, 或
+\item 未封閉的開放運算子---\verb+(+, \verb+{+, 或
 \verb+[+---會使Python將下一行作為當前語句的一部分處理. 
 通常, 下一行立刻會報錯. 
 
@@ -13983,9 +13986,9 @@ def binomial_coeff(n, k):
 
 如果解釋器說有個錯誤, 但你總是找不到, 
 那可能是因為你和解釋器看到的不是相同的代碼. 
-檢查編碼環境, 確保你編輯的便是Python運行的程序. 
+檢查編碼環境, 確保你編輯的便是Python運行的程式. 
 
-如果你不確定, 則可以在程序開始的地方, 放個明顯且可控的異常. 
+如果你不確定, 則可以在程式開始的地方, 放個明顯且可控的異常. 
 然後再次運行, 如果編譯器沒有報錯, 那你便不是在運行最新的代碼. 
 
 
@@ -14012,64 +14015,64 @@ def binomial_coeff(n, k):
 \end{itemize}
 
 如果依然囿於困境, 不知緣由, 
-一種方法是從一個類似``Hello, World!''的新程序開始, 重新構建, 
-並確保該程序可以正常運行. 
-然後將原來的程序代碼, 逐步遷移到新的程序中. 
+一種方法是從一個類似``Hello, World!''的新程式開始, 重新構建, 
+並確保該程式可以正常運行. 
+然後將原來的程式代碼, 逐步遷移到新的程式中. 
 
 
 \section{運行時異常}
 
-如果你的程序語法都正常, Python便可以讀取並至少可以運行了. 
+如果你的程式語法都正常, Python便可以讀取並至少可以運行了. 
 那可能會出現什麼問題呢?
 
 
-\subsection{我的程序什麼也不做.}
+\subsection{我的程式什麼也不做.}
 
-這種情況, 往往由於你的文件雖然有函數和類, 但卻沒有調用函數來執行程序. 
+這種情況, 往往由於你的文件雖然有函數和類, 但卻沒有調用函數來執行程式. 
 這也可能是你有意為之, 因為你只是需要導入模塊, 提供類和函數而已. 
 
-如果不是有意而為, 那便要確保程序中有調用函數的地方, 同時保證執行流程能
+如果不是有意而為, 那便要確保程式中有調用函數的地方, 同時保證執行流程能
 觸及函數調用(參見下面的``執行流程''). 
 
 
-\subsection{程序掛起.}
+\subsection{程式掛起.}
 \index{infinite loop}
 \index{infinite recursion}
 \index{hanging}
 
-如果一個程序一直不運行, 看起來似乎什麼也沒做, 那便是程序``掛起''了. 
-通常是指程序陷入了無限循環或者無盡遞歸中. 
+如果一個程式一直不運行, 看起來似乎什麼也沒做, 那便是程式``掛起''了. 
+通常是指程式陷入了無限迴圈或者無盡遞歸中. 
 
 \begin{itemize}
 
-\item 如果你對程序中某個循環有所疑慮, 可以在循環開始前添加一個{\tt print}語句, 
-打印``進入循環'', 在循環結束的地方, 添加一個打印``退出循環''的語句. 
+\item 如果你對程式中某個迴圈有所疑慮, 可以在迴圈開始前添加一個{\tt print}語句, 
+打印``進入迴圈'', 在迴圈結束的地方, 添加一個打印``退出迴圈''的語句. 
 
-運行程序, 如果你只得到第一個信息, 而第二個沒有出現, 
-那便是陷入了無限循環. 可以跳轉到下面的``無限循環''章節, 深入理解. 
+運行程式, 如果你只得到第一個信息, 而第二個沒有出現, 
+那便是陷入了無限迴圈. 可以跳轉到下面的``無限迴圈''章節, 深入理解. 
 
-\item 多數情況下, 無盡遞歸會令程序運行運行一段時間後, 產生``RuntimeError: Maximum
+\item 多數情況下, 無盡遞歸會令程式運行運行一段時間後, 產生``RuntimeError: Maximum
 recursion depth exceeded(運行時錯誤：超出最大遞歸深度)''的錯誤. 
 如果不幸如此, 前往後面的``無盡遞歸''章節, 有更深入的介紹. 
 
 如果你沒有遇到這種錯誤, 但是仍然懷疑某個遞歸方法或函數, 存在問題, 
 你仍然可以使用``無盡遞歸''章節中的技巧進行排查解決. 
 
-\item 如果上面步驟都無效, 那便需要檢查其他循環以及遞歸的函數和方法了. 
+\item 如果上面步驟都無效, 那便需要檢查其他迴圈以及遞歸的函數和方法了. 
 
-\item 如果仍然無效, 那可能是你對於程序中的執行流程不太清楚. 
+\item 如果仍然無效, 那可能是你對於程式中的執行流程不太清楚. 
 可以參看後面的``執行流程''章節. 
 \end{itemize}
 
 
-\subsubsection{無限循環}
+\subsubsection{無限迴圈}
 \index{infinite loop}
 \index{loop!infinite}
 \index{condition}
 \index{loop!condition}
 
-如果你認為程序中存在無限循環, 同時知道出問題的循環所在, 那便可以在
-循環的末尾添加{\tt print}語句, 輸出條件中變量的值以及條件的結果. 
+如果你認為程式中存在無限迴圈, 同時知道出問題的迴圈所在, 那便可以在
+迴圈的末尾添加{\tt print}語句, 輸出條件中變量的值以及條件的結果. 
 
 比如:
 
@@ -14083,9 +14086,9 @@ while x > 0 and y < 0 :
     print("condition: ", (x > 0 and y < 0))
 \end{verbatim}
 %
-現在運行程序, 你會看到每次循環都有三行輸出. 
-最後一次循環時, 條件應該是{\tt False}.
-如果循環繼續執行, 那你便可以看到{\tt x}和{\tt y}的值, 
+現在運行程式, 你會看到每次迴圈都有三行輸出. 
+最後一次迴圈時, 條件應該是{\tt False}.
+如果迴圈繼續執行, 那你便可以看到{\tt x}和{\tt y}的值, 
 同時你便會發現其值未被正確更新的原因.
 
 
@@ -14093,16 +14096,16 @@ while x > 0 and y < 0 :
 \index{infinite recursion}
 \index{recursion!infinite}
 
-多數情況下, 無盡遞歸會令程序運行片刻, 然後產生
+多數情況下, 無盡遞歸會令程式運行片刻, 然後產生
 {\tt Maximum recursion depth exceeded(超出最大遞歸深度)}的異常. 
 
 如果你懷疑某個函數存在無盡遞歸, 那要確保函數有基線條件. 
 也就是有條件令函數可以返回而不是繼續遞歸調用. 
 如果沒有基線條件, 那你需要重構算法, 定義一個基線條件. 
 
-如果有基線條件, 但是程序看起來沒有觸及, 
+如果有基線條件, 但是程式看起來沒有觸及, 
 可以在函數起始位置添加({\tt print}語句, 輸出參數. 
-那當你運行程序時, 每次函數調用, 你都會看到幾行輸出, 
+那當你運行程式時, 每次函數調用, 你都會看到幾行輸出, 
 同時, 也會看到參數值. 
 如果參數沒有趨向於基線變化, 你便大概可以明確問題所在. 
 
@@ -14110,15 +14113,15 @@ while x > 0 and y < 0 :
 \subsubsection{執行流程}
 \index{flow of execution}
 
-如果你不確定程序的執行過程是如何流轉, 
+如果你不確定程式的執行過程是如何流轉, 
 可以在每個函數的開頭, 添加{\tt print}語句, 
 輸出像``entering function(進入函數){\tt foo}''這樣的信息, 
 信息中的{\tt foo}是相應的函數名稱.
 
-現在運行程序, 隨著函數調用, 會輸出每個函數的軌跡. 
+現在運行程式, 隨著函數調用, 會輸出每個函數的軌跡. 
 
 
-\subsection{運行程序, 得到異常.}
+\subsection{運行程式, 得到異常.}
 \index{exception}
 \index{runtime error}
 
@@ -14129,7 +14132,7 @@ while x > 0 and y < 0 :
 回溯信息會顯示當前運行函數, 以及調用它的函數, 以及更上層的函數, 等等. 
 換而言之, 它會跟蹤導致出現問題的函數調用序列, 包括每個調用語句所在的行號. 
 
-首先要檢查程序中異常發生的位置, 
+首先要檢查程式中異常發生的位置, 
 看看能否找到問題所在. 
 下面是一些常見的運行時錯誤:
 
@@ -14180,21 +14183,21 @@ while x > 0 and y < 0 :
 對象是{\tt None}的原因, 多是因為忘記了給函數返回一個值；
 如果一直運行到函數末尾, 都沒有{\tt return}語句, 那函數便會
 返回{\tt None}. 
-另外一個常見的原因是, 直接使用了某些列表方法的結果, 比如{\tt sort}, 
+另外一個常見的原因是, 直接使用了某些串列方法的結果, 比如{\tt sort}, 
 也會返回{\tt None}.
 \index{AttributeError}
 \index{exception!AttributeError}
 
-\item[索引異常(IndexError):] 用來訪問列表, 字符串或元組的索引, 超過了其長度減一. 
-在錯誤發生位置之前, 添加{\tt print}語句, 顯示索引的值和數組長度. 
-看看數組長度是否正確? 索引是否正確?
+\item[索引異常(IndexError):] 用來訪問串列, 字符串或元組的索引, 超過了其長度減一. 
+在錯誤發生位置之前, 添加{\tt print}語句, 顯示索引的值和陣列長度. 
+看看陣列長度是否正確? 索引是否正確?
 \index{IndexError}
 \index{exception!IndexError}
 
 \end{description}
 
 Python調試器({\tt pdb})對於追蹤異常非常有用, 
-因為它可以讓你檢查異常發生前, 程序的狀態. 
+因為它可以讓你檢查異常發生前, 程式的狀態. 
 你可以閱讀\url{https://docs.python.org/3/library/pdb.html}, 來深入了解{\tt pdb}.
 \index{debugger (pdb)}
 \index{pdb (Python debugger)}
@@ -14204,31 +14207,31 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 \index{print statement}
 \index{statement!print}
 
-使用{\tt print}語句調試程序的一大難題在於, 你將被大量輸出所淹沒. 
-有兩種解決途徑：簡化輸出, 或簡化程序. 
+使用{\tt print}語句調試程式的一大難題在於, 你將被大量輸出所淹沒. 
+有兩種解決途徑：簡化輸出, 或簡化程式. 
 
 若是簡化輸出, 你可以移除或者注釋掉無用的{\tt print}語句, 或者將其合併, 或者
 格式化為便於理解的格式. 
 
-若要簡化程序, 可以從以下幾個方面著手. 
-首先, 縮減程序所解決問題的規模. 
-比如, 如果你要檢索列表, 用{\tt 小的}列表. 
-如果程序是從用戶獲取輸入, 那便提供一個引發問題的最簡輸入. 
+若要簡化程式, 可以從以下幾個方面著手. 
+首先, 縮減程式所解決問題的規模. 
+比如, 如果你要檢索串列, 用{\tt 小的}串列. 
+如果程式是從用戶獲取輸入, 那便提供一個引發問題的最簡輸入. 
 \index{dead code}
 
-第二, 清理程序. 移除無用代碼, 重新組織程序, 使其便於理解. 
-例如, 如果你懷疑問題出在程序的深層嵌套中, 
+第二, 清理程式. 移除無用代碼, 重新組織程式, 使其便於理解. 
+例如, 如果你懷疑問題出在程式的深層嵌套中, 
 嘗試用簡單結構優化這部分. 
 如果你懷疑問題源於一個臃腫函數, 嘗試將其拆分為小函數, 並分別測試. 
 \index{testing!minimal test case}
 \index{test case, minimal}
 
 通常尋找最小測試用例的過程, 會引導你發現問題. 
-如果你發現程序在某個條件下運行正常, 但是另外條件下, 不正常, 
+如果你發現程式在某個條件下運行正常, 但是另外條件下, 不正常, 
 這就給了你解決所面臨問題的線索. 
 
 同樣, 重寫代碼可以幫你發現一些微妙的錯誤. 
-如果你改變了一些代碼, 以為不會影響程序, 但現實是影響到了, 
+如果你改變了一些代碼, 以為不會影響程式, 但現實是影響到了, 
 這也在某方面能給你一些提示. 
 
 
@@ -14236,26 +14239,26 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 
 在某些方面, 語義錯誤是最難調試的, 
 因為解釋器無法提供錯誤的有效信息. 
-只有你才知道程序應該如何運行. 
+只有你才知道程式應該如何運行. 
 \index{semantic error}
 \index{error!semantic}
 
-第一步是在程序代碼和你之所見之間, 建立連接. 
-你需要先假設程序做了某些事情. 
+第一步是在程式代碼和你之所見之間, 建立連接. 
+你需要先假設程式做了某些事情. 
 令調試如此困難的一方面, 在於計算機運行太快了. 
 
-你會期望可以減慢程序運行速度, 從而滿足人類的速度, 
+你會期望可以減慢程式運行速度, 從而滿足人類的速度, 
 確實有些調試器可以滿足你. 
-但相比較設置調試器, 插入或移除斷點, 以及``步進''程序到錯誤出現的位置, 其所耗費時間, 
+但相比較設置調試器, 插入或移除斷點, 以及``步進''程式到錯誤出現的位置, 其所耗費時間, 
 不如放置一些恰到好處的{\tt print}語句, 更加快捷. 
 
-\subsection{我的程序不能運行.}
+\subsection{我的程式不能運行.}
 
 你應該問問自己這些問題::
 
 \begin{itemize}
 
-\item 程序是否有應該執行, 卻沒有執行?
+\item 程式是否有應該執行, 卻沒有執行?
 找到不滿足要求的代碼部分, 使其符合預期. 
 
 \item 是否有不該發生的, 卻發生了?
@@ -14267,17 +14270,17 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 嘗試編寫一些簡單的測試用例, 並檢查結果是否符合預期. 
 \end{itemize}
 
-編程之前, 你需要先構建程序運行的邏輯模型. 
-如果你寫的程序運行不符合預期, 
+編程之前, 你需要先構建程式運行的邏輯模型. 
+如果你寫的程式運行不符合預期, 
 通常問題不在代碼上; 而在於你腦海中的模型. 
 \index{model, mental}
 \index{mental model}
 
-修正邏輯模型的最好方式, 是將程序拆解為組件(通常是函數和方法), 同時
+修正邏輯模型的最好方式, 是將程式拆解為組件(通常是函數和方法), 同時
 單獨測試每個部件. 
 一旦遇到模型和實際不符, 你便能快速解決問題. 
 
-當然, 你需要在開發程序時構建並測試組件. 
+當然, 你需要在開發程式時構建並測試組件. 
 如果遇到問題, 也應該只有少量的新代碼, 令你無所適從. 
 
 
@@ -14329,7 +14332,7 @@ y = x / 2 * math.pi
 \end{verbatim}
 %
 無論什麼時候, 只要你不確定執行順序, 便可以使用括號. 
-不僅能確保程序正確(按期望順序執行), 同時對於未能記憶運算符優先級的人來說, 
+不僅能確保程式正確(按期望順序執行), 同時對於未能記憶運算子優先級的人來說, 
 也便於閱讀. 
 
 
@@ -14370,20 +14373,20 @@ return count
 \index{emotional debugging}
 
 \item 迷信(``電腦討厭我'')和
-幻覺(``我反戴帽子, 程序才能正常運行'').
+幻覺(``我反戴帽子, 程式才能正常運行'').
 \index{debugging!superstition}
 \index{superstitious debugging}
 
-\item 隨機遊走編程(企圖編寫所有可能的程序, 從中選擇正確執行的那個).
+\item 隨機遊走編程(企圖編寫所有可能的程式, 從中選擇正確執行的那個).
 \index{random walk programming}
 \index{development plan!random walk programming}
 
 \end{itemize}
 
 如果你發現自己出現了上述症狀, 起來走走. 
-當你冷靜下來後, 再去思考程序. 
+當你冷靜下來後, 再去思考程式. 
 想想它在做什麼? 造成這種現象的原因可能是什麼?
-上次程序正常運行是什麼時候, 以及後來做了什麼?
+上次程式正常運行是什麼時候, 以及後來做了什麼?
 
 有時候, 你需要點時間才能找到問題. 
 我通常會在遠離電腦, 讓思緒漫遊時發現問題. 
@@ -14392,12 +14395,12 @@ return count
 
 \subsection{不, 我真的需要幫助.}
 
-問題時有發生. 即使最好的程序員, 偶爾也會陷入困境. 
-有時候你專注在程序上的時間太長了, 以致於無法發現錯誤. 
+問題時有發生. 即使最好的程式師, 偶爾也會陷入困境. 
+有時候你專注在程式上的時間太長了, 以致於無法發現錯誤. 
 你需要的是一雙重新審視的眼睛. 
 
 在你向他人尋求幫助之前, 要確保你做好了準備, 
-你的程序要盡量簡單, 並且程序在盡量少的輸入下, 可以產生錯誤. 
+你的程式要盡量簡單, 並且程式在盡量少的輸入下, 可以產生錯誤. 
 你應該在恰當的位置加入{\tt print}語句(同時輸出的信息也要便於理解). 
 你要對問題足夠了解, 從而能夠簡明扼要地描述清楚. 
 
@@ -14405,7 +14408,7 @@ return count
 
 \begin{itemize}
 
-\item 如果有錯誤信息, 錯誤是什麼, 程序哪部分產生的?
+\item 如果有錯誤信息, 錯誤是什麼, 程式哪部分產生的?
 
 \item 錯誤出現之前, 你最後做了什麼?
 你寫的最後一行代碼是什麼, 或者最早產生異常的測試用例是什麼?
@@ -14417,7 +14420,7 @@ return count
 當你找到錯誤時, 可以花時間想想, 如何能更快地找到它. 
 下次, 你遇到相似情形, 你便可以更快地定位問題. 
 
-要記住, 目標不僅僅是讓程序正常工作, 更是要學會如何令程序正常工作. 
+要記住, 目標不僅僅是讓程式正常工作, 更是要學會如何令程式正常工作. 
 
 
 \chapter{算法分析}
@@ -14428,7 +14431,7 @@ return count
 當你讀完此書, 可以讀讀它. 
 \end{quote}
 
-{\bf 算法分析}是計算機科學的一個分支, 主要研究算法的性能, 特別是其運行時間和所需空間. 
+{\bf 算法分析}是電腦科學的一個分支, 主要研究算法的性能, 特別是其運行時間和所需空間. 
 請參閱
 \url{http://en.wikipedia.org/wiki/Analysis_of_algorithms}.
 \index{algorithm} \index{analysis of algorithms}
@@ -14449,7 +14452,7 @@ Schmidt所期望的答案可能是
 但如果你是在一個像這樣的採訪中遇到這個問題, 我認為
 更好的答案是, ``對一百萬個整數進行排序的最快的方法是, 
 用我正使用的編程語言所提供的任意排序算法先實現. 
-其性能對於大部分應用來說已經足夠了, 但如果我的應用程序確實太慢, 
+其性能對於大部分應用來說已經足夠了, 但如果我的應用程式確實太慢, 
 我會用性能分析器來查看時間耗費在哪裡. 
 如果更快的排序算法對性能確實影響顯著, 那我會用一個較好的基線排序算法去實現''}.
 \index{radix sort}
@@ -14475,7 +14478,7 @@ Schmidt所期望的答案可能是
 \index{average case}
 
 \item 算法的性能也取決於問題的規模. 
-某種排序算法, 可能在小列表下排序快, 但對於長列表, 則排序慢. 
+某種排序算法, 可能在小串列下排序快, 但對於長串列, 則排序慢. 
 對於這種問題, 一個通用的方案是將運行時間(或操作數)表示為問題規模的函數, 
 然後根據其隨著問題規模的增加, 而速度增長的不同, 將這些函數進行歸類. 
 
@@ -14598,7 +14601,7 @@ $af+b$的複雜度如何?
 
 \end{exercise}
 
-關心性能的程序員對於這種分析通常難以接受.
+關心性能的程式師對於這種分析通常難以接受.
 他們有一種觀點: 有時候係數和非主導項才是真正的影響因素. 
 有時硬件的細節, 編程的語言, 輸入的特徵, 也會造成很大的差異. 
 而對於小規模的問題來說, 複雜度的增長量級無關緊要. 
@@ -14618,12 +14621,12 @@ Python中, 多數的算數運算都是常數時間;
 非常大的整數是個例外; 如果在這種情況, 那運行時間會隨著數字位數增大而增加. 
 \index{analysis of primitives}
 
-索引算法--讀寫序列或字典中的元素--是常數時間, 無論數據結構大小如何. 
+索引算法--讀寫序列或字典中的元素--是常數時間, 無論資料結構大小如何. 
 \index{indexing}
 
-遍歷序列或字典的{\tt for}循環通常是線性時間, 前提是
-循環體中的所有操作都是常數時間. 
-例如, 對列表中元素進行累加便是線性耗時:
+遍歷序列或字典的{\tt for}迴圈通常是線性時間, 前提是
+迴圈體中的所有操作都是常數時間. 
+例如, 對串列中元素進行累加便是線性耗時:
 
 \begin{verbatim}
     total = 0
@@ -14635,15 +14638,15 @@ Python中, 多數的算數運算都是常數時間;
 但其效率更高, 因為它是一個更加高效的實現; 用算法分析的語言來說, 
 就是它有較小的前導係數.
 
-經驗來說, 如果循環體內的複雜度是$O(n^a)$, 那麼整個循環的複雜度便是
+經驗來說, 如果迴圈體內的複雜度是$O(n^a)$, 那麼整個迴圈的複雜度便是
 $O(n^{a+1})$. 
-例外情況在於, 你確定循環會在特定疊代次數後退出. 
-如果不管$n$是多大, 循環僅運行$k$次, 
-那麼即使$k$很大, 該循環的複雜度也是$O(n^a)$.
+例外情況在於, 你確定迴圈會在特定疊代次數後退出. 
+如果不管$n$是多大, 迴圈僅運行$k$次, 
+那麼即使$k$很大, 該迴圈的複雜度也是$O(n^a)$.
 
 乘以$k$不會改變增長量級, 同樣除以一個數也不會. 
-所以如果循環體複雜度為 $O(n^a)$, 並且運行$n/k$次, 無論$k$多大, 
-循環的複雜度都是$O(n^{a+1})$. 
+所以如果迴圈體複雜度為 $O(n^a)$, 並且運行$n/k$次, 無論$k$多大, 
+迴圈的複雜度都是$O(n^{a+1})$. 
 
 多數字符串和元組操作都是線性時間, 除了索引查找以及{\tt len}函數, 這兩個是
 常數時間. 內置函數{\tt min}和{\tt max}都是線性時間. 
@@ -14659,17 +14662,17 @@ $O(n^{a+1})$.
 字符串方法{\tt join}的耗時是線性的; 其運行時間取決於字符串的總長度. 
 \index{join@{\tt join}}
 
-大部分列表方法的耗時都是線性的, 但也有一些例外情況:
+大部分串列方法的耗時都是線性的, 但也有一些例外情況:
 \index{list methods}
 
 \begin{itemize}
 
-\item 平均情況下, 向列表末尾增加一個元素是常數時間;
+\item 平均情況下, 向串列末尾增加一個元素是常數時間;
 當用盡空間時, 偶爾需要複製到更大空間, 
 但是$n$個操作的總體時間依然是$O(n)$, 所以每個操作的平均時間是
 $O(1)$. 
 
-\item 從列表末尾移除元素是常數時間.
+\item 從串列末尾移除元素是常數時間.
 
 \item 排序複雜度是$O(n \log n)$.
 \index{sorting}
@@ -14684,12 +14687,12 @@ $O(1)$.
 \item {\tt update}的耗時和作為參數的字典的大小成比例變化, 而和被更新的字典無關. 
 
 \item {\tt keys}, {\tt values}和{\tt items}都是常數時間, 因為他們都是返回疊代器. 
-但如果你遍歷疊代器, 那這個循環便是線性時間. 
+但如果你遍歷疊代器, 那這個迴圈便是線性時間. 
 \index{iterator}
 
 \end{itemize}
 
-字典的出現是計算機科學的一個小奇蹟. 在第~\ref{hashtable}節我們會
+字典的出現是電腦科學的一個小奇蹟. 在第~\ref{hashtable}節我們會
 看到它們是如何工作的. 
 
 \begin{exercise}
@@ -14739,7 +14742,7 @@ $O(1)$.
 \index{in@{\tt in} operator}
 
 如果序列的元素是有序的, 則可以用{\bf 二分檢索}, 其時間複雜度為$O(\log n)$. 
-二分檢索和你從字典(紙質版詞典, 不是數據結構)中查找單詞的方法很相似. 
+二分檢索和你從字典(紙質版詞典, 不是資料結構)中查找單詞的方法很相似. 
 你會先從中間打開, 檢查單詞在前面還是後面, 而不是從首頁開始按順序查找. 
 如果在前面, 你則去前半部查找, 否則去後半部查找. 
 但無論前後, 你都會從剩下一半的中間位置開始檢索. 
@@ -14751,24 +14754,24 @@ $O(1)$.
 二分檢索相比線性檢索要快很多, 但需要序列是順序排列的, 
 而這往往需要額外的工作. 
 
-還有一種數據類型, 叫做{\bf 哈希表}, 檢索更快---它可以
+還有一種資料型態, 叫做{\bf 雜湊表}, 檢索更快---它可以
 在常數時間內進行檢索---同時不需要對項目排序. 
-Python字典便是使用哈希表實現, 這也是為什麼大量字典操作, 包括{\tt in}操作, 
+Python字典便是使用雜湊表實現, 這也是為什麼大量字典操作, 包括{\tt in}操作, 
 都是常數時間的原因. 
 
 
-\section{哈希表}
+\section{雜湊表}
 \label{hashtable}
 
-想要解釋哈希表如何運作以及為何其性能如此出色, 
+想要解釋雜湊表如何運作以及為何其性能如此出色, 
 我需要先從一個map的簡單實現說起, 
-再逐步改進, 直到成為哈希表為止. 
+再逐步改進, 直到成為雜湊表為止. 
 \index{hashtable}
 
 這裡我用Python來演示這些實現, 但現實中, 你不必在Python中編寫這些代碼; 
 你只需要使用字典即可!
 因此, 在剩下的章節中, 你需要想像字典不存在, 同時你想實現一種鍵值映射的
-數據結構. 而你需要實現的功能如下:
+資料結構. 而你需要實現的功能如下:
 
 \begin{description}
 
@@ -14780,7 +14783,7 @@ Python字典便是使用哈希表實現, 這也是為什麼大量字典操作, �
 
 \end{description}
 現在, 我假設每個鍵只出現一次.
-那麼這個接口最簡單的實現方式便是使用一個元組列表,
+那麼這個介面最簡單的實現方式便是使用一個元組串列,
 其中每個元組都是一個鍵-值對.
 \index{LinearMap@{\tt LinearMap}}
 
@@ -14800,26 +14803,26 @@ class LinearMap:
         raise KeyError
 \end{verbatim}
 
-{\tt add}會將一個鍵-值元組加入數據項列表, 這需要常數時間.
+{\tt add}會將一個鍵-值元組加入數據項串列, 這需要常數時間.
 
-{\tt get}使用一個{\tt for}循環來檢索列表:
+{\tt get}使用一個{\tt for}迴圈來檢索串列:
 如果找到目標鍵, 則返回對應的值;
 否則, 拋出{\tt KeyError}.
 所以{\tt get}耗時是線性時間.
 \index{KeyError@{\tt KeyError}}
 
-另一種選擇是維護一個按鍵排序的列表.
+另一種選擇是維護一個按鍵排序的串列.
 那麼{\tt get}操作便可以使用二分檢索, 其時間複雜度為$O(\log n)$.
-但是在列表中插入新項的耗時變成了線性的,
+但是在串列中插入新項的耗時變成了線性的,
 所以這可能不是最佳選擇.
-也有其他數據結構可以用對數時間實現{\tt add}和{\tt get}操作,
+也有其他資料結構可以用對數時間實現{\tt add}和{\tt get}操作,
 但是仍然不如常數時間好, 那麼讓我們繼續.
 \index{red-black tree}
 
-一種優化{\tt LinearMap}的方法是將鍵-值對列表拆分並放入更小的列表中. 
-有一種實現方式叫做{\tt BetterMap}, 這是一個包含100個LinearMap的列表.
+一種優化{\tt LinearMap}的方法是將鍵-值對串列拆分並放入更小的串列中. 
+有一種實現方式叫做{\tt BetterMap}, 這是一個包含100個LinearMap的串列.
 稍後我們會看到, 雖然其{\tt get}的時間增長量級仍然是線性時間,
-但是{\tt BetterMap}是邁向哈希表的重要一步:
+但是{\tt BetterMap}是邁向雜湊表的重要一步:
 \index{BetterMap@{\tt BetterMap}}
 
 \begin{verbatim}
@@ -14843,21 +14846,21 @@ class BetterMap:
         return m.get(k)
 \end{verbatim}
 
-\verb"__init__"創建了一個包含{\tt n}個{\tt LinearMap}的列表.
+\verb"__init__"創建了一個包含{\tt n}個{\tt LinearMap}的串列.
 
 \verb"find_map"則被{\tt add}和{\tt get}用來
 定位要放置新項的映射, 或者查找元素所在的映射.
 
 \verb"find_map"使用內置函數{\tt hash}, 其幾乎可以接收任意Python對象, 
 並返回一個整數.
-但局限之處在於, 只對可哈希化的鍵有效. 對列表和字典這種可變類型, 因其不可哈希化而無效.
+但局限之處在於, 只對可哈希化的鍵有效. 對串列和字典這種可變類型, 因其不可哈希化而無效.
 \index{hash function}
 
 一般認為哈希對象相等, 則返回相同的哈希值,
 但是反之不一定正確: 具有不同值的兩個對象可能返回相同的哈希值.
 
 \verb"find_map" 使用模運算將哈希值轉換為0到{\tt len(self.maps)}之間的數, 
-所以結果便是列表的合法索引.
+所以結果便是串列的合法索引.
 當然, 這也意味著很多不同的哈希值都會擁有同樣的索引. 
 但如果哈希函數將結果均勻分布(哈希函數如此設計也是旨在於此), 
 那我們希望每個LinearMap都有$n/100$個項. 
@@ -14865,15 +14868,15 @@ class BetterMap:
 既然{\tt LinearMap.get}的運行時間和其內部項數量成正比, 
 那我們預計 BetterMap 大約比 LinearMap 快100倍. 
 時間增長量級雖然依舊是線性的, 但是前導係數變小了. 
-看起來是不錯了, 但仍不如哈希表好. 
+看起來是不錯了, 但仍不如雜湊表好. 
 
-這裡(最後)是令哈希表高效的關鍵策略:
+這裡(最後)是令雜湊表高效的關鍵策略:
 如果可以限定LinearMaps的最大長度, 那麼{\tt LinearMap.get}便是常數時間.
 你只需要跟蹤項的數量, 當每個LinearMap中的項數超出了閾值, 便增加
-更多的LinearMap, 調整哈希表大小. 
+更多的LinearMap, 調整雜湊表大小. 
 \index{bounded}
 
-下面是一個哈希表的實現:
+下面是一個雜湊表的實現:
 \index{HashMap}
 
 \begin{verbatim}
@@ -14925,7 +14928,7 @@ class HashMap:
 所以每個{\tt add}的平均耗時是常數時間!
 \index{constant time}
 
-若要了解其原理, 想像從一個空哈希表開始, 向其中添加一系列的項.
+若要了解其原理, 想像從一個空雜湊表開始, 向其中添加一系列的項.
 我們從2個LinearMap開始, 因此前兩個項添加很快(無需調整大小).
 假設每個都用了一單位的耗時. 
 再添加新的項就需要調整大小了, 所以我們需要先將前兩個進行再哈希(這個過程
@@ -14948,24 +14951,24 @@ class HashMap:
 
 圖~\ref{fig.hash}用圖形化的方式展示了其原理. 
 每個塊表示一單位的耗時. 
-每一列表示從左到右, 每次添加所需要的總耗時: 開始的兩個
+每一串列示從左到右, 每次添加所需要的總耗時: 開始的兩個
 {\tt add}操作, 每個耗時一單位, 第三個耗時3單位, 依此類推. 
 
 \begin{figure}
 \centerline{\includegraphics[width=5.5in]{figs/towers.pdf}}
-\caption{哈希表元素添加成本圖.\label{fig.hash}}
+\caption{雜湊表元素添加成本圖.\label{fig.hash}}
 \end{figure}
 
 再哈希所需要的額外消耗, 彷若一系列間距不斷增加, 同時高度不斷增長的高塔.
 如果你推倒這些塔, 將調整空間大小的成本分攤到所有添加操作上, 
 你可以從圖中明顯看到, $n$次添加操作的總成本為$2n-n$.
 
-這個算法的一個重要特性是, 當我們調整哈希表大小時, 其耗時呈幾何方式增長;
+這個算法的一個重要特性是, 當我們調整雜湊表大小時, 其耗時呈幾何方式增長;
 也就是說, 其大小乘以一個常數.
 如果你增大其規模---每次增加固定數量---每次{\tt add}的平均耗時便是線性的.
 \index{geometric resizing}
 
-你可以從\url{http://thinkpython2.com/code/Map.py}下載我的哈希表的實現代碼,
+你可以從\url{http://thinkpython2.com/code/Map.py}下載我的雜湊表的實現代碼,
 但請記住, 沒有必要用它; 如果你想使用映射, 用Python的字典即可.
 
 \section{術語表}
@@ -15002,10 +15005,10 @@ class HashMap:
 \item[二次方(quadratic):] 運行時間是$n^2$的算法, 其中$n$是問題規模的一個度量. 
 \index{quadratic}
 
-\item[檢索(search):] 定位集合(列表或字典)中的元素或確認其不存在的過程.
+\item[檢索(search):] 定位集合(串列或字典)中的元素或確認其不存在的過程.
 \index{search}
 
-\item[哈希表(hashtable):] 一種數據結構, 用來表示鍵-值對的集合, 同時
+\item[雜湊表(hashtable):] 一種資料結構, 用來表示鍵-值對的集合, 同時
 可以用常數時間進行檢索.
 \index{hashtable}
 
