@@ -658,21 +658,21 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 % START THE BOOK
 \mainmatter
 
-\chapter{程序思维}
+\chapter{程序之道}
 
 本书期望能带你做到像计算机专家一样思考. 
 这意味着你要整合数学, 工程和自然科学的知识去综合思考. 
-比如数学, 计算机专家用专业语言去表达观点(尤其涉及计算). 
-比如工程师, 他们设计原件, 拼装组件, 构建系统, 权衡各种方案. 
-比如科学家, 他们观察复杂系统行为, 小心假设, 积极求证. 
+像数学家一样, 计算机专家通常以形式语言去表达思想(尤其涉及计算). 
+像工程师一样, 他们设计原件, 拼装组件, 构建系统, 权衡各种方案. 
+像科学家一样, 他们观察复杂系统行为, 小心假设, 积极求证. 
 \index{problem solving}
 
 计算机专家最重要的能力是{\bf 解决问题}. 
-解决问题意味着要分析问题, 提出创造性解决方案, 并能清晰准确表述. 
-事实证明, 学习编程是锻炼解决问题能力的极好机会. 
-这也是本章叫做程序思维的缘由. 
+解决问题意味着能够发现问题, 同时可以提出创造性解决方案, 并能清晰准确表述. 
+事实证明, 学习编程是锻炼解决问题能力的绝佳机会. 
+这也是本章叫做程序之道的缘由. 
  
-一方面, 我们将学习编程这一技能, 另一方面, 我们将利用编程技能来实现目标. 
+一方面, 你将学习编程这一技能, 另一方面, 你将利用编程技能来实现目标. 
 随着不断学习, 我们终将看到彼岸. 
 
 \section{何为程序}
@@ -689,46 +689,49 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 
 \item[输入:] 从键盘, 文件, 网络或者其他设备中获取数据. 
 
-\item[输出:] 将数据显示于屏幕, 保存至文件, 发送到网络等. 
+\item[输出:] 将数据显示于屏幕, 保存至文件, 通过网络发送等. 
 
 \item[数学计算:] 加减乘除等数学运算. 
 
-\item[条件选择:] 只能在命运分支的安排下, 低头前进. 
+\item[条件选择:] 检查条件并运行相应的代码(只能在命运分支的安排下, 低头前进). 
 
-\item[循环执行:] 在宿命轮回中不断尝试, 于既定界限处终达彼岸. 
+\item[循环执行:] 重复执行, 直到改变(在宿命轮回中不断尝试, 于既定界限处终达彼岸). 
 
 \end{description}
 
 无论相信与否, 基础指令不过这些. 
 不管是哪种编程语言, 
-也无论何等复杂, 都由这些基础指令构成. 
+也无论何等复杂, 都由类似指令构成. 
 如此你便了解了何为编程, 
 那便是将庞大复杂的任务不断分解, 
-不断细化, 直至细化为这几个基础指令为止. 
+不断细化, 直至细化为这些基础指令为止. 
 
 
-\section{运行Python}
+\section{运行程序}
 
-巧妇难为无米之炊, 运行Python程序必然需要先安装Python和其他软件, 
+巧妇难为无米之炊, 运行Python程序必然需要先安装Python和相关软件, 
 熟悉操作系统和命令行的人还好, 对于初学者, 同时学习操作系统和编程, 
 必然是件万分痛苦的事情. 
 \index{running Python}
 \index{Python!running}
 
-我建议先在浏览器上进行Python编程学习, 后续再按步骤进行Python安装. 
+为了避免上述问题, 
+我建议您先在浏览器上学习Python编程, 后续再按步骤进行Python安装. 
 \index{Python in a browser}
 
-在线运行Python代码的网站很多, 如果无从下手, 我推荐PythonAnywhere. 
+在线运行Python代码的网站很多, 
+如果你已经有青睐的, 继续使用即可,
+如果无从下手, 我推荐PythonAnywhere. 
 入门指导可以查阅\url{http://tinyurl.com/thinkpython2e}
 \index{PythonAnywhere}
 
-本书有两个版本, 分别是 Python 2 和 Python 3, 内容相似, 
-可以互相借鉴. 其中差异, 初学时需要关注. 
-本书主要面向 Python 3, 同时包括了一些关于Python 2的内容. 
+Python有两个版本, 分别是Python 2和Python 3, 它们及其相似, 
+所以如果学会一种, 便很容易照猫画虎. 两者稍有差异, 初学时需要关注. 
+本书主要面向Python 3, 同时也包含了一些关于Python 2的内容. 
 \index{Python 2}
 
-运行Python代码的程序叫做 Python {\bf 解释器} . 通常点击图标
-或者在命令行输入{\tt python} 来启动程序. 启动后, 可以看到如下
+运行Python代码的程序叫做Python{\bf 解释器}. 通常点击图标
+或者在命令行键入{\tt python} 来启动程序. 启动后, 可以看到如下
 输出：
 \index{interpreter}
 
@@ -740,9 +743,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 \end{verbatim}
 %
 
-前三行主要是 Python 解释器信息以及操作系统信息, 内容因人而异. 
-注意版本信息, 比如 {\tt 3.4.0}, 第一位的3表示此解释器版本是Python 3, 
-如果是2, 则表示Pyhton 2. 
+前三行主要是Python解释器信息以及操作系统信息, 内容因人而异. 
+注意版本信息(此处是{\tt 3.4.0}), 以3开头表示此解释器版本是Python 3, 
+如果是以2开头, 则表示Pyhton 2. 
 
 最后一行是个 {\bf 提示符}, 表示一切就绪, 只待代码. 
 如果输入一行代码, 并敲击 Enter键, 解释器就会显示运行结果. 
@@ -756,12 +759,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 到此, 你应该学会了如何启动Python解释器, 并运行代码了. 
 
-\section{初识}
+\section{初识程序}
 \label{hello}
 \index{Hello, World}
 
-通常, 学习一门新的编程语言, 遇到的第一个程序就是 "Hello, World!". 
-Python语言这样表示：
+通常, 学习一门新的编程语言, 写的第一个程序就是 "Hello, World!". 
+在Python中这样编写：
 
 \begin{verbatim}
 >>> print('Hello, World!')
@@ -769,29 +772,29 @@ Python语言这样表示：
 %
 
 这就是{\bf print 语法}, 不要误会是打印到纸上, 而是显示在屏幕上, 
-结果就是这个语句：
+结果就是这样：
 
 \begin{verbatim}
 Hello, World!
 \end{verbatim}
 %
 
-单引号表示语句的开始和结束, 并不会显示在输出上. 
+程序中的引号表示语句的开始和结束, 并不会出现在结果中. 
 \index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
-括号表示{\tt print}是个函数, 后续在第~\ref{funcchap}节会介绍. 
+圆括号表示{\tt print}是个函数, 后续会在第~\ref{funcchap}章介绍. 
 \index{function} \index{print function}
 
-Python 2中, print 语法明显不同, 它不是函数, 所以后边不会有括号. 
+Python 2中, print 语法明显不同, 它不是函数, 所以不使用括号. 
 \index{Python 2}
 
 \begin{verbatim}
 >>> print 'Hello, World!'
 \end{verbatim}
 %
-这种语言版本之间的差异需要注意, 
+这种差异很值得深究, 
 但现在, 我们可以开始学习Python编程了. 
 
 
