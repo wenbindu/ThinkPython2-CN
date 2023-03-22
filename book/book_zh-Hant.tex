@@ -849,7 +849,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號.
 \index{operator!bitwise}
 
 
-\section{值和類型}
+\section{值和型態}
 \index{value}
 \index{type}
 \index{string}
@@ -858,14 +858,14 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號.
  {\bf 值} 是程式的基本要素, 例如字母, 數字. 前文看到的
  {\tt 2}, {\tt 42.0}, 以及 \verb"'Hello, World!'", 都屬於值. 
 
-而這些值分屬不同 {\bf 類型}:
+而這些值分屬不同 {\bf 型態}:
 {\tt 2} 是 {\bf 整數}, 
 {\tt 42.0} 是 {\bf 浮點數}, 
 而 \verb"'Hello, World!'" 是 {\bf 字符串}, 也就是一堆字符的集合. 
 \index{integer}
 \index{floating-point}
 
-若想知道值是哪種類型, 輸入命令：
+若想知道值是哪種型態, 輸入命令：
 
 \begin{verbatim}
 >>> type(2)
@@ -877,7 +877,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號.
 \end{verbatim}
 %
 
-"class" 表示類別, 值的類別就是類型. 
+"class" 表示類別, 值的類別就是型態. 
 
 \index{class}
 
@@ -890,7 +890,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號.
 \index{float type}
 \index{type!float}
 
-那麼 \verb"'2'" 和 \verb"'42.0'" 是什麼類型呢？看似是數字, 其實是
+那麼 \verb"'2'" 和 \verb"'42.0'" 是什麼型態呢？看似是數字, 其實是
 被引號括起來的字符串. 
 \index{quotation mark}
 
@@ -904,7 +904,7 @@ Python 2中, print 語法明顯不同, 它不是函數, 所以不使用括號.
 所以, 是字符串吧. 
 
 當我們想使用很大的整數時, 一般會在數字間加逗號分隔, 類似 {\tt 1,000,000}. 
-在Python中, 這雖然不是合法的{\tt 整型}，卻是一個合法的類型：
+在Python中, 這雖然不是合法的{\tt 整型}，卻是一個合法的型態：
 
 \begin{verbatim}
 >>> 1,000,000
@@ -1076,17 +1076,17 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \item[值(value):] 程式操作的基本元素, 例如數字或者字符串. 
 \index{value}
 
-\item[類型(type):] 值的集合. 目前遇到的有整數集合 (type {\tt int}), 
+\item[型態(type):] 值的集合. 目前遇到的有整數集合 (type {\tt int}), 
 浮點數集合 (type {\tt float})以及字符串集合 (type {\tt str}).
 \index{type}
 
-\item[整型(integer):] 整數類型. 
+\item[整型(integer):] 整數型態. 
 \index{integer}
 
-\item[浮點型(floating-point):] 小數表示的數字類型. 
+\item[浮點型(floating-point):] 小數表示的數字型態. 
 \index{floating-point}
 
-\item[字符串(string):] 字符序列類型
+\item[字符串(string):] 字符序列型態
 \index{string}
 
 \item[自然語言(natural language):] 人類溝通用的語言. 
@@ -1631,7 +1631,7 @@ v = 5     # 速度(米/秒)
 \end{verbatim}
 %
 此函數的名稱為{\tt type},  括號中的表達式叫做函數的{\bf 參數}. 
-此處獲得的結果, 表示參數的類型. 
+此處獲得的結果, 表示參數的型態. 
 \index{parentheses!argument in}
 
 通俗來說, 函數的作用便是根據 "輸入" 的參數, "返回" 相應的結果. 
@@ -1639,7 +1639,7 @@ v = 5     # 速度(米/秒)
 \index{argument}
 \index{return value}
 
-Python提供了值類型轉換的函數, 正常情況下, {\tt int} 函數會將任意值轉為整型, 
+Python提供了值型態轉換的函數, 正常情況下, {\tt int} 函數會將任意值轉為整型, 
 除非輸入有誤:
 \index{conversion!type}
 \index{type conversion}
@@ -1845,7 +1845,7 @@ print語句中的字符串需要被雙引號包著.
 %
 想結束函數定義, 需要多敲一個換行. 
 
-函數定義完成便會創建一個 \verb"function" 類型的 {\bf 函數對象}:
+函數定義完成便會創建一個 \verb"function" 型態的 {\bf 函數對象}:
 \index{function type}
 \index{type!function}
 
@@ -2152,7 +2152,7 @@ Bing
 None
 \end{verbatim}
 %
-{\tt None}是個具有既定類型的特殊值, 和字符串 \verb"'None'"是不同的:
+{\tt None}是個具有既定型態的特殊值, 和字符串 \verb"'None'"是不同的:
 
 \begin{verbatim}
 >>> type(None)
@@ -2451,7 +2451,7 @@ turtle.mainloop()
 <turtle.Turtle object at 0xb7bfbf4c>
 \end{verbatim}
 %
-這意味著{\tt bob}指向了{\tt turtle}模塊中{\tt Turtle}類型的對象.
+這意味著{\tt bob}指向了{\tt turtle}模塊中{\tt Turtle}型態的對象.
 
 \verb"mainloop" 會令窗口等待, 以執行其他操作. 但是本例
 只需關閉窗口, 暫不進行其他操作. 
@@ -2576,7 +2576,7 @@ for i in range(4):
 \index{polygon function} 
 \index{function!polygon}
 
-\item 編寫{\tt circle} 函數, 以turtle類型的{\tt t}, 以及半徑{\tt r}為參數, 
+\item 編寫{\tt circle} 函數, 以turtle型態的{\tt t}, 以及半徑{\tt r}為參數, 
 通過調用{\tt polygon}函數, 輸入適當長度和邊數, 繪製一個近似的圓形. 
 用不同的 {\tt r}值, 測試程式. \index{circle function} \index{function!circle}
 
@@ -2846,7 +2846,7 @@ def polyline(t, n, length, angle):
 
 幫助文檔雖然簡潔, 但是重要, 因為它包含函數使用的相關說明. 
 同時簡要概括了函數的功能(無需探查函數細節實現), 
-以及各個參數的類型和作用, 以及應用場景. 
+以及各個參數的型態和作用, 以及應用場景. 
 
 設計介面, 重要的一步, 便是編寫友好的幫助文檔. 
 一個設計優良的介面, 應該是易於理解的;
@@ -3507,7 +3507,7 @@ What...is the airspeed velocity of an unladen swallow?
 42
 \end{verbatim}
 %
-但如果用戶輸入的不是數字類型的字符串, 那便要報錯了:
+但如果用戶輸入的不是數字型態的字符串, 那便要報錯了:
 
 \begin{verbatim}
 >>> speed = input(prompt)
@@ -4319,7 +4319,7 @@ def fibonacci(n):
 \index{flow of execution}
 
 
-\section{類型檢查}
+\section{型態檢查}
 \label{guardian}
 
 試試給 {\tt factorial}函數傳遞個1.5的參數, 會發生什麼?
@@ -4343,11 +4343,11 @@ RuntimeError: Maximum recursion depth exceeded
 也就永遠不可能再成為0.
 
 我們有兩種方案. 一種是嘗試改進{\tt factorial}函數, 使其支持浮點數, 
-或者使其檢驗參數類型. 
+或者使其檢驗參數型態. 
 第一種方案會寫出伽瑪函數, 超出了本書的範疇. 所以選擇方案二. 
 \index{gamma function}
 
-我們可以使用內置 {\tt isinstance} 函數來檢驗參數類型. 
+我們可以使用內置 {\tt isinstance} 函數來檢驗參數型態. 
 同時, 我們也需要保證參數是正數:
 \index{isinstance function}
 \index{function!isinstance}
@@ -4407,7 +4407,7 @@ None
 
 \end{itemize}
 
-若要避免第一種異常, 可以在函數開始用{\tt  print}語句, 打印參數值(以及類型). 
+若要避免第一種異常, 可以在函數開始用{\tt  print}語句, 打印參數值(以及型態). 
 或者編寫代碼, 校驗前置條件. 
 \index{precondition}
 \index{postcondition}
@@ -6355,7 +6355,7 @@ def is_palindrome(word):
 
 \chapter{串列}
 
-本章講述Python最有用的內置類型, 串列. 
+本章講述Python最有用的內置型態, 串列. 
 同時你會深入了解對象, 學習一個對象對應多個名稱時會產生的現象. 
 
 
@@ -6363,7 +6363,7 @@ def is_palindrome(word):
 \label{sequence}
 
 同字符串一樣, {\bf 串列} 也是值的序列. 
-字符串中, 值是字符;在串列中, 值可以是任何類型. 
+字符串中, 值是字符;在串列中, 值可以是任何型態. 
 串列中的值, 叫做{\bf 元素}, 有時也叫{\bf 串列項}.
 \index{list}
 \index{type!list}
@@ -6380,7 +6380,7 @@ def is_palindrome(word):
 %
 第一個例子是由四個整數構成的串列, 
 第二個示例串列則由三個字符串構成. 
-串列中的元素類型可以不同. 
+串列中的元素型態可以不同. 
 下面的串列, 便同時包括了字符串, 浮點數, 整數以及另一個串列:
 
 \begin{verbatim}
@@ -7296,7 +7296,7 @@ t = t + x              # WRONG!
 \index{filter pattern}
 \index{pattern!filter}
 
-\item[對象(object):] 變量之指向. 對象擁有特定類型以及值.
+\item[對象(object):] 變量之指向. 對象擁有特定型態以及值.
 \index{object}
 
 \item[相等(equivalent):] 擁有相同的值.
@@ -7510,7 +7510,7 @@ False
 
 \chapter{字典}
 
-本章講述另一個內置類型, 字典. 
+本章講述另一個內置型態, 字典. 
 字典是Python最優秀的特性之一; 同時也是諸多高效且優雅算法的基石. 
 
 
@@ -7524,7 +7524,7 @@ False
 \index{index}
 
  {\bf 字典} 如同串列, 但更加通用. 串列中, 索引必須是整數, 
-而在字典中, 索引(幾乎)可以是任何類型. 
+而在字典中, 索引(幾乎)可以是任何型態. 
 
 字典包括一個索引集合, 叫做{\bf 鍵(keys)}, 以及一個值的集合. 
 每個鍵都和一個值相關聯. 鍵和值的這種對應關係, 叫做{\bf 鍵值對(key-value pair)}
@@ -7893,7 +7893,7 @@ def invert_dict(d):
 \end{figure}
 
 圖~\ref{fig.dict1} 是表示 {\tt hist}和 {\tt inverse}的狀態圖. 
-字典用箱體表示, 其上有{\tt dict}類型標識, 其內是鍵值對. 
+字典用箱體表示, 其上有{\tt dict}型態標識, 其內是鍵值對. 
 通常如果值是整數, 浮點數或者字符串, 我會將其繪製在箱體內部, 
 但如果是串列, 我會繪製在箱體外部, 只是為了簡單易懂. 
 \index{state diagram}
@@ -7918,7 +7918,7 @@ TypeError: list objects are unhashable
 \index{hash function}
 \index{hashable}
 
-{\bf hash}是一個函數, 其接收任意值(任何類型), 然後返回一個整數. 
+{\bf hash}是一個函數, 其接收任意值(任何型態), 然後返回一個整數. 
 字典會用這些被稱為哈希值的整數, 對鍵值對進行存儲和查找. 
 \index{immutability}
 
@@ -7930,7 +7930,7 @@ Python 計算鍵的哈希值, 並將其存儲於相應的位置.
 這時候, 相當於一個鍵對應了兩個不同的位置, 或者說, 你無法找到
 某個鍵了. 總之, 字典不能正常使用了. 
 
-這也就是鍵必須要可哈希的原因, 以及為何像串列一樣的可變類型不能用作鍵的
+這也就是鍵必須要可哈希的原因, 以及為何像串列一樣的可變型態不能用作鍵的
 原因. 突破此限制的最簡單方法是使用元組, 這個在下一章節會學到. 
 
 因為字典是可變的, 所以不能用作鍵, 
@@ -8113,11 +8113,11 @@ def example5():
 如果報錯, 可以將{\tt n}減小為剛好會報錯的最小值, 
 然後修正異常, 並逐步增大{\tt n}值, 如此迴圈往復. 
 
-\item[檢驗概覽及類型:] 不要打印並檢驗全部數據集, 只需輸出數據的概覽:
+\item[檢驗概覽及型態:] 不要打印並檢驗全部數據集, 只需輸出數據的概覽:
 比如, 字典中項的個數, 或者串列中數字總數量. 
 
-值類型錯誤, 是產生運行時錯誤的常見原因. 
-所以調試此類錯誤, 通常打印值的類型即可. 
+值型態錯誤, 是產生運行時錯誤的常見原因. 
+所以調試此類錯誤, 通常打印值的型態即可. 
 
 \item[編寫自檢代碼:]  有時候, 你可以編寫代碼, 自動檢驗異常. 
 例如, 你要計算數字串列的平均值, 你可以檢驗一下, 結果是否
@@ -8131,7 +8131,7 @@ def example5():
 
 \item[格式化輸出:] 格式化調試的輸出, 可以更直觀地展示錯誤. 
 在第~\ref{factdebug}節, 我們曾展示過樣例. 另一個好用的工具是 {\tt pprint} 模塊, 
-它提供了{\tt pprint}函數, 可以將內置類型輸出為更適合人類閱讀的格式({\tt pprint}
+它提供了{\tt pprint}函數, 可以將內置型態輸出為更適合人類閱讀的格式({\tt pprint}
 是``pretty pprint'' 的縮寫).
 \index{pretty print}
 \index{pprint module}
@@ -8175,9 +8175,9 @@ def example5():
 \item[哈希函數(hash function):] 雜湊表使用的函數, 用來計算鍵的位置. 
 \index{hash function}
 
-\item[散列的(hashable):] 一種可以使用哈希函數的類型. 
-不可變類型, 像整型, 浮點型和字符串型, 都是可散列的;
-像串列和字典這種可變類型, 則不是. 
+\item[散列的(hashable):] 一種可以使用哈希函數的型態. 
+不可變型態, 像整型, 浮點型和字符串型, 都是可散列的;
+像串列和字典這種可變型態, 則不是. 
 \index{hashable}
 
 \item[查找(lookup):] 一種字典操作, 根據鍵查找對應的值.
@@ -8333,7 +8333,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 \chapter{元組}
 \label{tuplechap}
 
-本章介紹另一種內置類型, 元組, 以及串列、字典和元組如何一起使用. 
+本章介紹另一種內置型態, 元組, 以及串列、字典和元組如何一起使用. 
 同時展示可變長度參數串列的一個特性, 以及聚合和擴展運算子. 
 
 話外音：對於 ``tuple''如何發音, 尚無共識. 有人讀``tuh-ple'', 
@@ -8346,7 +8346,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 \index{type!tuple}
 \index{sequence}
 
-元組也是值的序列. 其中值可以是任意類型, 也是用整數作為索引, 
+元組也是值的序列. 其中值可以是任意型態, 也是用整數作為索引, 
 所以在某些方面, 元組和串列很像. 
 但兩者最大的區別在於元組不可變. 
 \index{mutability}
@@ -8501,7 +8501,7 @@ True
 ValueError: too many values to unpack
 \end{verbatim}
 %
-也有更普遍的用法, 右側可以用各種類型的序列(字符串, 串列或者元組). 
+也有更普遍的用法, 右側可以用各種型態的序列(字符串, 串列或者元組). 
 例如, 將一個郵箱地址切分為用戶名和域名, 可以這麼寫:
 \index{split method}
 \index{method!split}
@@ -8867,7 +8867,7 @@ for last, first in directory:
 串列構成的串列, 元組構成的元組, 以及串列構成的元組. 
 為了避免枚舉各種組合, 直接叫做序列構成的序列, 便簡單多了. 
 
-很多情形下, 不同類型的序列(字符串, 串列以及元組)可以替換使用, 
+很多情形下, 不同型態的序列(字符串, 串列以及元組)可以替換使用, 
 那你如何從中擇優呢?
 \index{string}
 \index{list}
@@ -8889,7 +8889,7 @@ for last, first in directory:
 \item 在某些情形, 比如{\tt return}語句, 語法上創建元組比創建串列更簡便. 
 
 \item 如果你想使用序列作為字典的鍵, 
-你需要使用元組或者字符串這種不可變類型. 
+你需要使用元組或者字符串這種不可變型態. 
 
 \item 如果需要將一個序列作為參數傳遞給函數, 
 使用元組可以有效降低使用別名帶來的潛在問題. 
@@ -8916,7 +8916,7 @@ for last, first in directory:
 本章我們開始了解複合資料結構, 像元組串列, 或者用元組作鍵, 
 串列作值的字典. 
 複合資料結構很有用, 但很容易產生我說的{\bf 格式異常};
-就是當資料結構中出現了不恰當的類型, 大小或結構, 導致的錯誤. 
+就是當資料結構中出現了不恰當的型態, 大小或結構, 導致的錯誤. 
 比如, 你想要一個含有一個整數的串列, 而我給了一個單純的整數
 (不被串列包含), 那便會出錯. 
 \index{structshape module}
@@ -8946,8 +8946,8 @@ for last, first in directory:
 'list of 3 list of 2 int'
 \end{verbatim}
 %
-如果串列中的元素類型不止一種, 
-{\tt structshape} 按順序匯總類型:
+如果串列中的元素型態不止一種, 
+{\tt structshape} 按順序匯總型態:
 
 \begin{verbatim}
 >>> t3 = [1, 2, 3, 4.0, '5', '6', [7], [8], 9]
@@ -9004,7 +9004,7 @@ for last, first in directory:
 \item[資料結構(data structure):] 相關值的集合, 通常由串列, 字典, 元組等組成. 
 \index{data structure}
 
-\item[格式異常(shape error):] 值的格式不合適導致的錯誤, 通常是類型或者大小. 
+\item[格式異常(shape error):] 值的格式不合適導致的錯誤, 通常是型態或者大小. 
 \index{shape}
 
 \end{description}
@@ -9862,7 +9862,7 @@ log $f$和log $r$.
 \chapter{文件}
 
 本章介紹程式將數據保存在永久存儲中的``持久化''概念, 同時展示如何
-使用不同類型的永久存儲, 比如文件和資料庫. 
+使用不同型態的永久存儲, 比如文件和資料庫. 
 
 
 \section{持久化}
@@ -9945,7 +9945,7 @@ log $f$和log $r$.
 \index{format operator}
 \index{operator!format}
 
-{\tt write}的參數需要是字符串, 所以, 若要向文件寫入其他類型, 
+{\tt write}的參數需要是字符串, 所以, 若要向文件寫入其他型態, 
 需要先轉換為字符串. 最簡單的方法是使用{\tt str}:
 
 \begin{verbatim}
@@ -9995,7 +9995,7 @@ log $f$和log $r$.
 \end{verbatim}
 %
 元組中元素數量要和字符串中格式序列的數量保持一致. 
-同時, 元素的類型也要和格式序列保持一致:
+同時, 元素的型態也要和格式序列保持一致:
 \index{exception!TypeError}
 \index{TypeError}
 
@@ -10007,7 +10007,7 @@ TypeError: %d format: a number is required, not str
 \end{verbatim}
 %
 在第一個例子中, 元素數量不一致;
-第二個例子中, 元素類型不匹配.
+第二個例子中, 元素型態不匹配.
 
 可以從
 \url{https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting}
@@ -10269,11 +10269,11 @@ for key in db:
 \index{pickling}
 
 {\tt dbm}的一個限制是, 鍵和值必須是字符串或者字節. 
-如果使用其他類型, 會報錯. 
+如果使用其他型態, 會報錯. 
 \index{pickle module} \index{module!pickle}
 
 這時候{\tt pickle}模塊便有用武之地了. 
-它可以將幾乎任何類型對象轉換為字符串, 以便存儲於資料庫中, 
+它可以將幾乎任何型態對象轉換為字符串, 以便存儲於資料庫中, 
 然後用的時候再將字符串轉換回對象. 
 
 {\tt pickle.dumps}會接收一個對象參數, 返回一個字符串形式的文本
@@ -10634,9 +10634,9 @@ if __name__ == '__main__':
 \label{clobjects}
 
 截至當前, 你應該已經知曉如何使用函陣列織代碼, 
-如何使用內置類型管理數據. 
+如何使用內置型態管理數據. 
 接下來要學習``面向對象編程''了, 
-這種方式是通過自定義類型來管理代碼和數據的模式. 
+這種方式是通過自定義型態來管理代碼和數據的模式. 
 面向對象編程是一個很大的主題; 需要花費數章, 才能講解清楚. 
 \index{object-oriented programming}
 
@@ -10646,14 +10646,14 @@ if __name__ == '__main__':
 \url{http://thinkpython2.com/code/Point1_soln.py}下載.
 
 
-\section{自定義類型}
+\section{自定義型態}
 \label{point}
 \index{programmer-defined type}
 \index{type!programmer-defined}
 
-我們已經接觸過多種Python的內置類型;
-現在, 我們來嘗試定義一種新的類型. 
-舉例來說, 創建一個叫{\tt Point}的類型, 用於表示二維空間中的一個點. 
+我們已經接觸過多種Python的內置型態;
+現在, 我們來嘗試定義一種新的型態. 
+舉例來說, 創建一個叫{\tt Point}的型態, 用於表示二維空間中的一個點. 
 \index{point, mathematical}
 
 在數學語言中, 通常用括號中逗號分隔的坐標來表示點. 
@@ -10668,15 +10668,15 @@ if __name__ == '__main__':
 
 \item 我們也可以將坐標作為串列或元組的元素進行存儲. 
 
-\item 我們也可以創建一個新的類型, 用對象表示點. 
+\item 我們也可以創建一個新的型態, 用對象表示點. 
 
 \end{itemize}
 \index{representation}
 
-構建一種新的類型, 相比其他選項, 要更複雜, 
+構建一種新的型態, 相比其他選項, 要更複雜, 
 但是, 稍後會展示出它的威力. 
 
-這種自定義類型, 也叫做{\bf 類}. 
+這種自定義型態, 也叫做{\bf 類}. 
 類的定義便如下這般:
 \index{class}
 \index{object!class}
@@ -10728,7 +10728,7 @@ class Point:
 \index{hexadecimal}
 
 每個對象都是某個類的實例, 所以``對象''和``實例''可以互用. 
-但是本章我用``實例''來指代我所談論的自定義類型. 
+但是本章我用``實例''來指代我所談論的自定義型態. 
 
 
 \section{屬性}
@@ -10994,7 +10994,7 @@ False
 對於{\tt ==}, 本來我們看兩者包含數據一樣, 預期會是{\tt True}. 
 但在此處, 令你沮喪的是, 對於實例來說, {\tt ==}運算子的默認操作和
 {\tt is}運算子是一樣的; 都是檢驗對象是否相同, 而不是判斷是否相等.
-這是因為對於用戶自定義類型, Python至少現在還無法知道如何衡量相等.
+這是因為對於用戶自定義型態, Python至少現在還無法知道如何衡量相等.
 \index{is operator}
 \index{operator!is}
 \index{identity}
@@ -11072,7 +11072,7 @@ False
 AttributeError: Point instance has no attribute 'z'
 \end{verbatim}
 %
-如若不確定對象類型, 可以如下這般查看:
+如若不確定對象型態, 可以如下這般查看:
 \index{type function}
 \index{function!type}
 
@@ -11125,12 +11125,12 @@ except AttributeError:
 
 \begin{description}
 
-\item[類(class):] 用戶自定義類型. 一個類的聲明會創建一個新的類對象. 
+\item[類(class):] 用戶自定義型態. 一個類的聲明會創建一個新的類對象. 
 \index{class}
 \index{programmer-defined type}
 \index{type!programmer-defined}
 
-\item[類對象(class object):] 包含自定義類型信息的對象. 
+\item[類對象(class object):] 包含自定義型態信息的對象. 
 類對象可用來創建類的實例. 
 \index{class object}
 \index{object!class}
@@ -11207,8 +11207,8 @@ except AttributeError:
 \chapter{類和函數}
 \label{time}
 
-目前, 我們已經知道了如何創建新的類型, 下一步, 我們學習如何用
-自定義類型對象作為參數和返回值, 編寫函數. 
+目前, 我們已經知道了如何創建新的型態, 下一步, 我們學習如何用
+自定義型態對象作為參數和返回值, 編寫函數. 
 本章將介紹``函數式編程模式'', 以及兩種新的程式開發範式. 
 
 
@@ -11220,7 +11220,7 @@ except AttributeError:
 \section{時間}
 \label{isafter}
 
-下面是一個自定義類型的示例, 我們定義了一個{\tt Time}類, 
+下面是一個自定義型態的示例, 我們定義了一個{\tt Time}類, 
 用來記錄一天的時間. 
 類的定義如下: 
 \index{programmer-defined type}
@@ -11274,7 +11274,7 @@ time.second = 30
 \index{development plan!prototype and patch}
 
 下面章節中, 我們將編寫兩個函數, 實現時間計算. 
-這兩個函數展示了兩種函數類型: 純函數以及修改器. 
+這兩個函數展示了兩種函數型態: 純函數以及修改器. 
 同時, 也展示了一個我稱之為{\tt 原型和補丁}的開發範式, 
 這是一種通過構建簡單原型, 逐步改進, 從而解決複雜問題的方法. 
 
@@ -11622,7 +11622,7 @@ def add_time(t1, t2):
 
 雖然我們已經接觸了一些Python的面向對象的特性, 
 但前面兩章的內容並不算是真正的面向對象, 
-因為自定義類型與操作它們的函數之間的關係, 並未涉及. 
+因為自定義型態與操作它們的函數之間的關係, 並未涉及. 
 下面會將這些函數轉換為方法, 從而使其關係明晰. 
 
 本章代碼可以從
@@ -11664,7 +11664,7 @@ Python是個{\bf 面向對象編程語言},
 透過觀察, 很自然地引出了{\bf 方法};
 一個方法便是一個與某個類相關聯的函數. 
 我們已經接觸過字符串, 串列, 字典和元組的方法. 
-本章中, 我們將構建自定義類型的方法. 
+本章中, 我們將構建自定義型態的方法. 
 \index{syntax}
 \index{semantics}
 \index{programmer-defined type}
@@ -11965,7 +11965,7 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 \section{運算子重載}
 \label{operator.overloading}
 
-通過定義一些特殊方法, 你可以對自定義類型, 重新定義運算子的行為. 
+通過定義一些特殊方法, 你可以對自定義型態, 重新定義運算子的行為. 
 比如, 你為{\tt Time}類定義了\verb"__add__" 方法, 便可以用{\tt +}運算子操作Time對象. 
 \index{programmer-defined type}
 \index{type!programmer-defined}
@@ -11996,18 +11996,18 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 所以我們看到的, 只是冰山一角而已！
 \index{operator overloading}
 
-對自定義類型, 改變運算子的行為, 這便是{\bf 運算子重載}. 
+對自定義型態, 改變運算子的行為, 這便是{\bf 運算子重載}. 
 對於Python中的每個運算子, 都有一個類似\verb"__add__"的特殊方法與之對應. 
 更多詳細信息, 請參考
 \url{http://docs.python.org/3/reference/datamodel.html#specialnames}.
 
 作為練習, 請為Point類編寫{\tt add}方法. 
 
-\section{類型分發}
+\section{型態分發}
 
 在上一節, 我們將兩個Time對象進行加法操作, 
 但是你可能想將一個整數與Time對象相加. 
-下面是一個\verb"__add__"的新版本, 它會檢驗{\tt other}的類型, 
+下面是一個\verb"__add__"的新版本, 它會檢驗{\tt other}的型態, 
 從而決定調用\verb"add_time" , 還是{\tt increment}方法:
 
 \begin{verbatim}
@@ -12036,12 +12036,12 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 如果{\tt other} 是一個Time對象, 
 \verb"__add__"會調用\verb"add_time". 
 否則, 會認為參數是個數字, 從而調用{\tt increment}方法. 
-這種操作叫做{\tt 類型分發}, 因為它基於參數的類型不同, 
+這種操作叫做{\tt 型態分發}, 因為它基於參數的型態不同, 
 將計算任務分發給不同的方法. 
 \index{type-based dispatch}
 \index{dispatch, type-based}
 
-下面時一個在不同類型上使用{\tt +}運算子的例子:
+下面時一個在不同型態上使用{\tt +}運算子的例子:
 
 \begin{verbatim}
 >>> start = Time(9, 45)
@@ -12101,12 +12101,12 @@ TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 \section{多態性}
 \label{polymorphism}
 
-當需要的時候, 基於類型分發是有用的, 但(幸好)不用總要如此. 
-通常, 你可以編寫適用不同類型參數的函數, 來避免類型分發. 
+當需要的時候, 基於型態分發是有用的, 但(幸好)不用總要如此. 
+通常, 你可以編寫適用不同型態參數的函數, 來避免型態分發. 
 \index{type-based dispatch}
 \index{dispatch!type-based}
 
-我們為字符串操作編寫的很多函數, 對於其他序列類型也適用. 
+我們為字符串操作編寫的很多函數, 對於其他序列型態也適用. 
 比如, 在第~\ref{histogram}節, 我們用{\tt histogram} 來統計單詞中每個字母出現的次數. 
 
 \begin{verbatim}
@@ -12129,7 +12129,7 @@ def histogram(s):
 {'bacon': 1, 'egg': 1, 'spam': 4}
 \end{verbatim}
 %
-能夠處理多種類型的函數, 稱為{\bf 多態}. 
+能夠處理多種型態的函數, 稱為{\bf 多態}. 
 多態性有助於代碼復用. 
 例如, 可以對序列中元素求和的內置函數{\tt sum}, 
 也同樣適用於其他支持加法運算的元素序列. 
@@ -12146,17 +12146,17 @@ def histogram(s):
 23:01:00
 \end{verbatim}
 %
-通常, 如果函數內的所有操作適用於某種類型, 那麼這個函數便同樣適用於此類型. 
+通常, 如果函數內的所有操作適用於某種型態, 那麼這個函數便同樣適用於此型態. 
 
 最好的多態, 是那種不求而得, 
-就像你突然發現你寫的函數, 對於規劃之外的某種類型, 也同樣適用. 
+就像你突然發現你寫的函數, 對於規劃之外的某種型態, 也同樣適用. 
 
 
 \section{調試}
 \index{debugging}
 
 在程式運行的任何時刻, 向對象添加屬性都是可行的, 
-但如果對象類型相同, 屬性不同, 那很容易出錯. 
+但如果對象型態相同, 屬性不同, 那很容易出錯. 
 所以比較好的方法是在init方法中初始化對象的全部屬性. 
 \index{init method}
 \index{attribute!initializing}
@@ -12233,7 +12233,7 @@ def print_attributes(obj):
 
 \begin{description}
 
-\item[面向對象語言(object-oriented language):] 提供自定義類型和方法等特性, 
+\item[面向對象語言(object-oriented language):] 提供自定義型態和方法等特性, 
 以方便麵向對象編程的語言. 
 \index{object-oriented language}
 
@@ -12255,15 +12255,15 @@ def print_attributes(obj):
 \index{argument!positional}
 
 \item[運算子重載(operator overloading):] 修改類似{\tt +}這樣運算子的操作, 
-從而令其適用於自定義類型. 
+從而令其適用於自定義型態. 
 \index{overloading}
 \index{operator!overloading}
 
-\item[類型分發(type-based dispatch):] 一種編程模式, 檢驗操作對象的類型, 
-並根據不同類型, 調用不同的函數. 
+\item[型態分發(type-based dispatch):] 一種編程模式, 檢驗操作對象的型態, 
+並根據不同型態, 調用不同的函數. 
 \index{type-based dispatch}
 
-\item[多態(polymorphic):] 表示函數可以應用於多種類型的特性. 
+\item[多態(polymorphic):] 表示函數可以應用於多種型態的特性. 
 \index{polymorphism}
 
 \end{description}
@@ -12300,7 +12300,7 @@ def print_attributes(obj):
 \item 一個\verb"__init__" 方法, 初始化一個名為\verb"pouch_contents"的屬性, 
 使其為空串列. 
 
-\item 一個名為\verb"put_in_pouch"的方法, 使其接收一個任意類型對象, 並將其放入
+\item 一個名為\verb"put_in_pouch"的方法, 使其接收一個任意型態對象, 並將其放入
 \verb"pouch_contents"中. 
 
 \item 一個\verb"__str__" 方法, 返回一個字符串格式的 Kangaroo 對象和 \verb"pouch_contents" 中的內容. 
@@ -12351,7 +12351,7 @@ A可能比K大, 或者比2小.
 
 如果你想定義個新對象來表示一張牌, 
 很明顯有兩個屬性: {\tt 等級}和{\tt 花色}.
-至於屬性用何類型表示, 就不太明顯了. 
+至於屬性用何型態表示, 就不太明顯了. 
 一種方式是用字符串表示, 比如\verb"'黑桃'"表示花色, 
 \verb"'Q'"表示等級. 
 但這種實現方式有個問題, 比較哪張牌的等級或者花色更高, 便不太容易了. 
@@ -12448,7 +12448,7 @@ queen_of_diamonds = Card(1, 12)
 因為實例屬性和特定實例相關聯. 
 \index{dot notation}
 
-無論何種類型的屬性, 都是通過點標法來獲取. 
+無論何種型態的屬性, 都是通過點標法來獲取. 
 比如, 在\verb"__str__"中, {\tt self}是指卡牌對象, 
 同時{\tt self.rank}是其等級. 同樣, {\tt Card}是個類對象, 
 \verb"Card.rank_names"表示與類相關的字符串串列. 
@@ -12482,9 +12482,9 @@ Jack of Hearts
 \end{figure}
 
 圖~\ref{fig.card1}是{\tt Card}類對象和一個Card實例的對象圖；
-{\tt Card}是個類對象, 其類型是{\tt type}.  
+{\tt Card}是個類對象, 其型態是{\tt type}.  
 {\tt card1}是{\tt Card}的一個實例, 
-所以其類型是{\tt Card}.
+所以其型態是{\tt Card}.
 為了節約空間, 我沒有畫出\verb"suit_names"和\verb"rank_names"的內容. 
 \index{state diagram}
 \index{diagram!state} \index{object diagram} \index{diagram!object}
@@ -12495,9 +12495,9 @@ Jack of Hearts
 \index{operator!relational}
 \index{relational operator}
 
-對於內置類型, 有比較運算子({\tt <}, {\tt >}, {\tt ==}, 等.)
+對於內置型態, 有比較運算子({\tt <}, {\tt >}, {\tt ==}, 等.)
 可以比較值, 並判斷一個值大於, 小於或者等於另一個. 
-對於自定義類型, 我們可以提供一個表示``小於''的\verb"__lt__"方法, 
+對於自定義型態, 我們可以提供一個表示``小於''的\verb"__lt__"方法, 
 來覆蓋內置運算子的操作. 
 \index{programmer-defined type}
 \index{type!programmer-defined}
@@ -12848,7 +12848,7 @@ King of Spades
 或者, 若有很多依賴關係存在, 它們有時候會被省略. 
 
 一個更詳細的類圖, 可能會顯示Deck實際上包含了一個Card{\em 串列}, 
-但是一般類圖中不包含串列和字典這些內置類型. 
+但是一般類圖中不包含串列和字典這些內置型態. 
 
 \section{調試}
 \index{debugging}
@@ -12901,7 +12901,7 @@ def find_defining_class(obj, meth_name):
 
 下面是個設計建議：當你覆蓋一個方法時, 
 新方法的介面, 要和舊的保持一致. 
-它應該接收同樣的參數, 返回相同的類型, 
+它應該接收同樣的參數, 返回相同的型態, 
 同時遵守相同的先決條件和後置條件. 
 如果你遵循上述規則, 你會發現為父類實例, 如Deck, 所設計的函數, 
 也同樣適用於子類實例, 比如Hand和PokerHand. 
@@ -13448,7 +13448,7 @@ def subtract(d1, d2):
 結果就是我們浪費了一些存儲空間. 
 \index{dictionary subtraction}
 
-Python提供了另一種內置類型, 叫做{\tt set}, 
+Python提供了另一種內置型態, 叫做{\tt set}, 
 其效果很像字典中沒有值的鍵的集合. 
 向集合中添加元素是很快的; 檢查成員也很快. 
 同時集合也提供了執行常見操作的方法和運算子. 
@@ -13532,7 +13532,7 @@ def uses_only(word, available):
 
 計數器定義在{\tt collections}標準模塊中, 
 所以你需要先導入. 
-你可以用字符串, 串列或者支持疊代的任意類型來初始化計數器. 
+你可以用字符串, 串列或者支持疊代的任意型態來初始化計數器. 
 \index{collections}
 \index{module!collections}
 
@@ -13588,7 +13588,7 @@ a 1
 
 當你創建默認字典時, 你需要提供一個函數, 以用於創建新值. 
 用來創建對象的函數, 有時也稱為{\bf 工廠}.
-創建串列, 集合, 以及其他類型的內置函數, 都可以稱為工廠:
+創建串列, 集合, 以及其他型態的內置函數, 都可以稱為工廠:
 \index{factory function}
 
 \begin{verbatim}
@@ -13891,7 +13891,7 @@ def binomial_coeff(n, k):
 \chapter{調試}
 \index{debugging}
 
-在調試階段, 你要對不同類型錯誤進行區分, 從而快速定位:
+在調試階段, 你要對不同型態錯誤進行區分, 從而快速定位:
 
 \begin{itemize}
 
@@ -13916,7 +13916,7 @@ def binomial_coeff(n, k):
 \end{itemize}
 
 調試的第一步, 是明確你面對的是何種異常. 
-雖然下面章節都是按照異常類型所組織, 但有些技巧也適用於其他情況. 
+雖然下面章節都是按照異常型態所組織, 但有些技巧也適用於其他情況. 
 
 
 \section{語法異常}
@@ -14144,7 +14144,7 @@ while x > 0 and y < 0 :
 \index{NameError}
 \index{exception!NameError}
 
-\item[類型異常(TypeError):] 有幾種可能原因:
+\item[型態異常(TypeError):] 有幾種可能原因:
 \index{TypeError}
 \index{exception!TypeError}
 
@@ -14160,7 +14160,7 @@ while x > 0 and y < 0 :
 
 \item 向函數傳遞了錯誤數量的參數. 對於方法來說, 查看方法定義, 
 檢查其首個參數是否是{\tt self}.
-然後看方法調用; 確保是在正確類型的對象上調用方法, 
+然後看方法調用; 確保是在正確型態的對象上調用方法, 
 並正確提供了其他參數. 
 
 \end{itemize}
@@ -14308,7 +14308,7 @@ self.hands[i].addCard(pickedCard)
 %
 
 顯然這個版本更易於閱讀, 因為變量名稱提供了額外的文檔說明, 
-同時它也便於調試, 因為你可以檢查中間變量的類型和值. 
+同時它也便於調試, 因為你可以檢查中間變量的型態和值. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -14853,7 +14853,7 @@ class BetterMap:
 
 \verb"find_map"使用內置函數{\tt hash}, 其幾乎可以接收任意Python對象, 
 並返回一個整數.
-但局限之處在於, 只對可哈希化的鍵有效. 對串列和字典這種可變類型, 因其不可哈希化而無效.
+但局限之處在於, 只對可哈希化的鍵有效. 對串列和字典這種可變型態, 因其不可哈希化而無效.
 \index{hash function}
 
 一般認為哈希對象相等, 則返回相同的哈希值,
