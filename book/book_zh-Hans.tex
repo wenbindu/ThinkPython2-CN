@@ -1025,28 +1025,29 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 编程, 尤其是调试, 往往会激怒你. 如果你困扰于一个难题, 那
 往往会经历愤怒, 沮丧和绝望. 
 
-已有证据表明, 人们对待计算机的方式, 和对待他人的方式一样. 
-计算机运行正常, 我们就当其为伙伴, 助手, 如果运行异常了, 就待其为无礼之人. 
+已有证据表明, 人们对待计算机的方式, 和对待人的方式一样. 
+计算机运行正常, 我们视其为队友, 如果运行异常了, 
+就会如对待固执无礼之人一样对待它们. 
  (Reeves and Nass, {\it The Media
  Equation: How People Treat Computers, Television, and New Media
  Like Real People and Places}).
 \index{debugging!emotional response}
 \index{emotional debugging}
 
-对于计算机要有一定心理准备, 把它当作一个计算迅速而精确, 
-但同时缺乏同理心以及大局观的雇员. 
+为这些反应做好心理准备, 可以帮助你应对它们, 一种方法是将它当作一个计算迅速而准确, 
+但同时缺乏同理心以及大局观的员工. 
 
 你需要做好管理之责：扬机器之长而避其短, 做情绪的主人, 而非情绪的奴隶. 
 
 调试过程是令人无比沮丧的, 但这又是编程路上最有用的技能. 
-每章末尾都会有关于调试的一些建议, 希望有所帮助. 
+每章末尾都会有关于调试的一些建议, 希望对你有所帮助. 
 
 
 \section{术语表}
 
 \begin{description}
 
-\item[解决问题(problem solving):] 提出问题, 分析问题, 解决问题的过程. 
+\item[解决问题(problem solving):] 提出问题, 寻找解决方案, 并阐述解决方案的过程. 
 \index{problem solving}
 
 \item[高阶语言(high-level language):] 类似Python这种便于人类读写, 对人友好的编程语言. 
@@ -1064,21 +1065,21 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 \item[提示符(prompt):] 解释器的声明, 用来提示准备接收输入信息. 
 \index{prompt}
 
-\item[程序(program):] 运算指令集合. 
+\item[程序(program):] 指定运算的一组指令. 
 \index{program}
 
-\item[打印语句(print statement):] Python中输出到屏幕的指令. 
+\item[打印语句(print statement):] 一条使Python解释器在屏幕上显示值的指令. 
 \index{print statement}
 \index{statement!print}
 
-\item[运算符(operator):] 类似加减乘除的符号. 
+\item[运算符(operator):] 表示简单计算(如加法乘法和字符串连接)的符号. 
 \index{operator}
 
-\item[值(value):] 程序操作的基本元素, 例如数字或者字符串. 
+\item[值(value):] 数据的基本单位, 比如数字或者字符串, 由程序操作. 
 \index{value}
 
-\item[类型(type):] 值的集合. 目前遇到的有整数集合 (type {\tt int}), 
-浮点数集合 (type {\tt float})以及字符串集合 (type {\tt str}).
+\item[类型(type):] 值的集合. 目前遇到的有整数集合({\tt int}类型), 
+浮点数集合({\tt float}类型)以及字符串集合({\tt str}类型).
 \index{type}
 
 \item[整型(integer):] 整数类型. 
@@ -1090,26 +1091,26 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 \item[字符串(string):] 字符序列类型
 \index{string}
 
-\item[自然语言(natural language):] 人类沟通用的语言. 
+\item[自然语言(natural language):] 人们自然演化而来的任何一种语言. 
 \index{natural language}
 
-\item[形式语言(formal language):] 人类因特定目标而创造的语言. 
+\item[形式语言(formal language):] 人类为特定目的而设计的语言. 
 例如数学语言, 编程语言; 所有的编程语言都是形式语言. 
 \index{formal language}
 
-\item[符号(token):] 程序中的基本元素, 类似自然语言中的单词. 
+\item[标记(token):] 程序语法结构的基本元素, 类似自然语言中的单词. 
 \index{token}
 
 \item[语法(syntax):] 程序的结构规范. 
 \index{syntax}
 
-\item[解析(parse):] 分析语法结构并检验程序. 
+\item[解析(parse):] 检验程序并分析语法结构. 
 \index{parse}
 
 \item[异常(bug):] 程序中的错误. 
 \index{bug}
 
-\item[调试(debugging):] 定位异常并解决的过程. 
+\item[调试(debugging):] 定位异常并将其纠正的过程. 
 \index{debugging}
 
 \end{description}
@@ -1122,23 +1123,23 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 工欲善其事, 必先利其器, 搭配电脑实操来学习本书, 效果更好. 
 
 学习新知识更有效的方式是不断试错, 不断思考. 比如 "Hello, World" 的程序, 
-试一试双引号只写一半是否可以？
-不写双引号, 会怎么样？
+如果您省略了一个引号会发生什么？
+两个都不写, 会怎么样？
 以及 {\tt print} 拼错了, 又会如何？
 \index{error message}
 
 这种学习过程中的大胆假设, 小心求证, 助益颇多. 
-同时能够快速了解编程中的各种错误信息. 
+同时能够帮你快速了解编程中的各种错误信息. 
 所以, 当下有准备地试错, 远胜过将来意外犯错. 
 
 \begin{enumerate}
 
-\item print使用时, 如果丢掉了半个括号, 甚至全部括号, 会怎样?
+\item print使用时, 如果省略了一个括号, 或者两个括号, 会怎样?
 
-\item 当输出字符串时, 遗落了半个双引号, 或者全部双引号, 会如何? 
+\item 当输出字符串时, 遗落了一个, 或者两个引号, 会如何? 
 
 \item 我们可以用{\tt 负号} 表示负数 {\tt -2}. 
-如果像 {\tt 2+-2}在数字前又加上一个加号呢? 
+像 {\tt 2+-2}一样, 如果在数字前加上一个加号, 会怎么样? 
 
 
 \item 数学表示中, 首位补零很正常, 比如 {\tt09}. 
@@ -1162,8 +1163,8 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 
 \item 10千米是多少英里？提示：1英里=1.61千米. 
 
-\item 如果用42分42秒跑了10千米, 那平均速度是多少（每英里的耗时）？
-平均速度又是多少（每小时英里数）？
+\item 如果你用42分42秒跑了10千米, 那平均配速是多少(每英里的耗时, 以分钟和秒计)?
+你的平均速度是每小时多少英里?
 
 \index{calculator}
 \index{running pace}
