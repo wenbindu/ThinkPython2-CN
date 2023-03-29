@@ -1176,17 +1176,17 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 
 \chapter{变量、表达式和语句}
 
-编程语言的强大和高效, 其中一方面便体现在 操作{\bf 变量}. 
-变量名是指向值的一个名字. 
+编程语言的强大和高效, 其中一方面便体现在操作{\bf 变量}. 
+变量是指向值的名称. 
 \index{variable}
 
 
-\section{变量赋值}
+\section{赋值语句}
 \label{variables}
 \index{assignment statement}
 \index{statement!assignment}
 
-创建新的变量, 并给其一个值, 叫做{\bf 赋值}: 
+{\bf 赋值语句} 会创建新的变量, 并给其一个值: 
 
 \begin{verbatim}
 >>> message = 'And now for something completely different'
@@ -1194,16 +1194,16 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 >>> pi = 3.1415926535897932
 \end{verbatim}
 %
-上面的例子提供了三个赋值语句. 
-第一个是将一句话赋值给了名为 {\tt message}的变量；
-第二个是将整数 {\tt 17} 赋值给了 {\tt n}；
-第三个是将 $\pi$ 的近似值赋给了 {\tt pi}. 
+上面的例子进行了三次赋值操作. 
+第一次是将一个字符串赋值给了名为 {\tt message}的变量;
+第二次是将整数 {\tt 17} 赋值给了变量 {\tt n};
+第三次是将 $\pi$ 的近似值赋给了 {\tt pi}. 
 \index{state diagram}
 \index{diagram!state}
 
 一个形象化表示变量的常用手段是, 定义变量, 然后画个箭头指向对应的值. 
-这种形象化展示变量所处状态(所对应的值)的图叫做 {\bf 状态图}, 
-图~\ref{fig.state2} 便是上面代码示例的状态图. 
+这种形象化展示变量所处状态(可看作是变量的心理状态)的图叫做{\bf 状态图}, 
+图~\ref{fig.state2} 便是上面例子的结果. 
 
 \begin{figure}
 \centerline
@@ -1217,16 +1217,16 @@ sentence with invalid t*kens in it. 这个句子每个标记都有效,
 \section{变量名}
 \index{variable}
 
-程序工程师一般会为变量起个容易理解记忆的名字, 使人一看即知其用途. 
+程序工程师一般会为变量选择容易理解的名称, 使人一看即知其用途. 
 
-变量名可长可短, 包含字母和数字, 但不能以数字开头, 
-大小写均可用, 但是方便起见, 建议只用小写字母. 
+变量名可长可短, 可以包含字母和数字, 但不能以数字开头, 
+大小写均可用, 但依惯例来说, 建议只用小写字母. 
 
 变量名也可以使用\verb"_",  多用在形如\verb"your_name" 或 
 \verb"airspeed_of_unladen_swallow" 这种多单词命名的变量名中. 
 \index{underscore character}
 
-如果变量名包含了非法字符, 就会语法错误：
+如果变量名包含了非法字符, 就会报语法错误：
 
 \begin{verbatim}
 >>> 76trombones = 'big parade'
@@ -1237,15 +1237,15 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 \end{verbatim}
 %
-变量名 {\tt 76trombones}  的错误在于数字开头, 
-而{\tt more@} 是因为包含了不合法字符 {\tt @}. 
+变量名 {\tt 76trombones}不合法, 是因为以数字开头, 
+而{\tt more@}不合法是因为包含了非法字符 {\tt @}. 
 那么 {\tt class} 为什么也不正确呢？
 
-这是因为 {\tt class} 是 Python的一个 {\bf 关键字}. 
-解释器用关键字(也称预留字)来识别解析代码, 所以关键字不能作为变量名使用. 
+这是因为 {\tt class}是Python的一个{\bf 关键字}. 
+解释器用关键字(也称预留字)来识别代码结构, 所以它们不能用作变量名. 
 \index{keyword}
 
-Python 3 包含以下关键字:
+Python 3包含以下关键字:
 
 \begin{verbatim}
 False      class      finally    is         return
@@ -1258,14 +1258,14 @@ break      except     in         raise
 \end{verbatim}
 %
 
-你无须刻意背诵这些关键字. 在多数开发环境中, 关键字会以特殊颜色标识, 
-所以如果误用作变量名时, 很容易发觉. 
+你无须记忆这些关键字. 在多数开发环境中, 关键字会以特殊颜色标识, 
+所以如果将其误用作变量名时, 很容易发觉. 
 
 \section{表达式和语句}
 
-{\bf 表达式} 是值, 变量以及运算符的集合. 
-值本身可以认为是表达式, 同样, 变量本身也是. 
-所以下面都可以认为是合法的表达式：
+{\bf 表达式}是值, 变量以及运算符的组合. 
+值本身可以认为是一个表达式, 同样, 变量也可以认为是一个表达式. 
+所以下面都是合法的表达式:
 \index{expression}
 
 \begin{verbatim}
@@ -1277,11 +1277,11 @@ break      except     in         raise
 42
 \end{verbatim}
 %
-当根据提示符输入表达式时, 解释器会进行 {\bf 估算}, 获取表达式的值. 
+当根据提示符输入表达式时, 解释器会进行{\bf 估算}, 也就是说它会找到表达式的值. 
 上例中, {\tt n} 的值是17, {\tt n+25} 的值是42. 
 \index{evaluate}
 
- {\bf 语句} 是代码的基本有效单位, 例如新建变量或者输出值. 
+ {\bf 语句} 是代码的基本有效单位, 例如新建变量或者显示值. 
 \index{statement}
 
 \begin{verbatim}
@@ -1289,9 +1289,9 @@ break      except     in         raise
 >>> print(n)
 \end{verbatim}
 %
-第一行是给 {\tt n} 赋值的赋值语句, 第二行是显示 {\tt n}结果的输出语句. 
+第一行是为{\tt n}赋值的赋值语句, 第二行是显示{\tt n}结果的打印语句. 
 
-键入语句, 解释器根据语句规则{\bf 运行}, 通常, 语句没有值({\bf 注意:表达式有值}). 
+当你键入语句, 解释器根据语句{\bf 执行}, 但通常, 语句是没有值的. 
 \index{execute}
 
 
