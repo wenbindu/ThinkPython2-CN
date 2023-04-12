@@ -1424,32 +1424,36 @@ throatwarbler
 \section{注释}
 \index{comment}
 
-随着代码量越来越庞大, 越来越复杂, 阅读并理解其逻辑也越来越困难. 
-形式语言使用时又写得密密麻麻, 对着满页代码去明白其逻辑和功能, 便异常艰难. 
+随着代码量越来越庞大, 越来越复杂, 
+阅读并理解其逻辑也越来越困难. 
+编程语言使用时又写得密密麻麻, 
+想通过一段代码去明白其逻辑和功能, 无异于海底捞针. 
 
-所以, 在程序代码中加入一些自然语言来进行解释, 说明其作用, 便显得异常重要. 
-这些解释说明, 便叫做{\bf 注释},  一般以井号( \verb"#") 开头：
+所以, 在程序代码中加入一些自然语言备注说明, 
+以解释其作用, 便显得异常重要. 
+这些备注说明, 便叫做{\bf 注释},  一般以井号( \verb"#")开头:
 
 \begin{verbatim}
 # 计算所占一小时的百分比
 percentage = (minute * 100) / 60
 \end{verbatim}
 %
-此例中, 注释独占一行. 你也可以把注释写在代码末尾：
+此例中, 注释独占一行. 你也可以把注释放在代码末尾:
 
 \begin{verbatim}
 percentage = (minute * 100) / 60     # 所占一小时的百分比
 \end{verbatim}
 %
-代码中所有  {\tt \#} 开头的行, 在执行过程中都会被忽略. 
+代码中所有{\tt \#}开头的行, 在执行过程中都会被忽略. 
 
-编码中实现特殊逻辑时, 注释显得尤为重要. 
-要记住, 说明编码的 {\em 缘由} , 远胜于讲述代码的{\em 作用}. 
+在编码中实现特殊逻辑时, 注释尤为重要. 
+但要注意, 说明编码的 {\em 缘由},
+远胜于讲述代码的{\em 作用}. 
 
 下面这条注释便显得多余:
 
 \begin{verbatim}
-v = 5     # assign 5 to v
+v = 5     # 将 5 赋值给 v
 \end{verbatim}
 %
 
@@ -1459,7 +1463,8 @@ v = 5     # assign 5 to v
 v = 5     # 速度(米/秒) 
 \end{verbatim}
 %
-好的变量命名可以减少注释的使用, 但是变量名过长, 又显得代码繁杂而难以阅读, 
+良好的变量命名可以减少注释的使用, 
+但是过长的变量名, 又使得代码繁杂而难以阅读, 
 所以如何取舍, 需要权衡. 
 
 
@@ -1473,35 +1478,39 @@ v = 5     # 速度(米/秒)
 
 \begin{description}
 
-\item[语法错误:] "语法" 指代码结构以及使用规范. 
+\item[语法错误:] ``语法''指的是程序结构以及使用规范. 
 例如, 括号必须成对出现, 
-{\tt (1 + 2)}正确, 而{\tt 8)}便存在语法错误. 
+所以{\tt (1 + 2)}正确, 而{\tt 8)}则是语法错误. 
 \index{syntax error} 
 \index{error!syntax}
 \index{error message}
 \index{syntax} 
 
-如果程序存在语法错误, Python会直接报错并退出执行, 
+如果程序存在语法错误, Python会直接报错并退出, 
 程序便无法继续运行. 
-开始学习编程时, 需要耗费大量精力跟踪语法错误. 
-随着经验增长, 此类错误会越来越少, 而定位也会越来越快. 
+开始学习编程时, 你可能需要耗费大量精力跟踪语法错误. 
+但随着经验的积累, 你犯此类错误将会越来越少, 而定位也会越来越快.
 
 
-\item[运行时错误:] 运行时错误只有在程序开始运行后才会出现. 
-这些错误也叫作{\bf 异常}, 因为一般表示异常或者坏的事情发生了. 
+\item[运行时错误:] 第二类错误是运行时错误, 
+因为这种错误只有在程序开始运行后才会出现. 
+这些错误也叫作{\bf 异常}, 
+因为它们通常表示发生了异常(且不好的)情况. 
 \index{runtime error} \index{error!runtime}
   \index{exception} \index{safe language} \index{language!safe}
 
-本书前面几章的程序较为简单, 运行时错误也较少遇到, 
+本书前几章的程序较为简单, 运行时错误也较少遇到, 
 所以想窥其全貌, 还需一段时间. 
 
-\item[语义错误:] 第三种错误是 "语义错误", 意如其字. 
-如果代码中存在语义错误, 代码不会报错, 只是无法得到预期的结果. 
-具体来说, 便是会按照你的指示去做. 
+\item[语义错误:] 第三种错误是 ``语义错误'', 
+意如其字, 表示含义相关. 
+如果程序中存在语义错误, 它不会报错, 只是不会按照预期的方式执行. 
+具体来说, 便是会按照你的指示去做, 而不是你想要的去做.
 \index{semantic error}
   \index{error!semantic} \index{error message}
 
-语义错误的识别很棘手, 需要观察输出, 回溯代码, 才能确定其逻辑. 
+识别语义错误可能很棘手, 需要你逆向处理, 
+从输出查看, 回溯代码, 才能确定其逻辑. 
 
 \end{description}
 
@@ -1510,38 +1519,41 @@ v = 5     # 速度(米/秒)
 
 \begin{description}
 
-\item[变量(variable):]  标识值的名称. 
+\item[变量(variable):]  用来引用一个值的名称. 
 \index{variable}
 
-\item[赋值(assignment):]  为变量赋值的语句. 
+\item[赋值(assignment):] 为变量赋值的语句. 
 \index{assignment}
 
-\item[状态图(state diagram):]  一堆变量和值的指向图. 
+\item[状态图(state diagram):] 一种图像化表示变量及所引用值的方式. 
 \index{state diagram}
 
-\item[关键字(keyword):]  编程语言用来解析代码的预留字, 像 {\tt if}、{\tt  def} 和 {\tt while}, 
+\item[关键字(keyword):] 编程语言用来解析代码的预留字, 像 {\tt if}、{\tt  def} 和 {\tt while}, 
 均不能作为变量名使用. 
 \index{keyword}
 
-\item[操作数(operand):]  运算符操作的单一值对象. 
+\item[操作数(operand):] 运算符操作的单一值对象. 
 \index{operand}
 
-\item[表达式(expression):]  变量、运算符以及值的集合, 共同来表示单一结果. 
+\item[表达式(expression):] 变量、运算符以及值的组合, 
+共同作用来表示单一结果. 
 \index{expression}
 
-\item[求值(evaluate):]  执行运算产生值, 从而简化表达式的过程. 
+\item[求值(evaluate):] 通过执行运算来简化表达式, 从而得到值的过程. 
 \index{evaluate}
 
-\item[语句(statement):]  表示命令或者操作的代码块. 目前遇到的语句包括赋值语句以及打印语句. 
+\item[语句(statement):] 表示命令或者操作的代码块. 目前遇到的语句是赋值语句以及打印语句. 
 \index{statement}
 
-\item[执行(execute):]  通过执行计算来简化表达式, 从而产生值.
+\item[执行(execute):] 运行语句, 执行其指令.
 \index{execute}
 
-\item[交互模式(interactive mode):] 在Python解释器中根据提示符进行代码输入的模式. 
+\item[交互模式(interactive mode):] 通过在提示符下输入代码
+来使用Python解释器的一种方式. 
 \index{interactive mode}
 
-\item[脚本模式(script mode):] 用Python解释器读取脚本并运行代码的模式. 
+\item[脚本模式(script mode):] 通过从脚本中读取代码并执行, 
+以使用Python解释器的一种方式. 
 \index{script mode}
 
 \item[脚本(script):] 存储代码的文件. 
@@ -1550,22 +1562,22 @@ v = 5     # 速度(米/秒)
 \item[运算次序(order of operations):]  包含多运算符和操作数的表达式执行时所遵循的先后顺序. 
 \index{order of operations}
 
-\item[拼接(concatenate):]  操作数首位相接. 
+\item[拼接(concatenate):] 操作数首位相接. 
 \index{concatenation}
 
-\item[注释(comment):]  帮助他人理解代码的有效信息, 对程序执行无影响. 
+\item[注释(comment):] 帮助他人理解代码的有效信息, 对程序执行无影响. 
 \index{comment}
 
 \item[语法错误(syntax error):] 导致代码无法解析(因此无法解释)的错误. 
 \index{syntax error}
 
-\item[异常(exception):]  程序运行时遇到的错误. 
+\item[异常(exception):] 程序运行时遇到的错误. 
 \index{exception}
 
-\item[语义(semantics):]  代码含义. 
+\item[语义(semantics):] 代码含义. 
 \index{semantics}
 
-\item[语义错误(semantic error):]   未获得预期结果的错误. 
+\item[语义错误(semantic error):] 未获得预期结果的错误. 
 \index{semantic error}
 
 \end{description}
@@ -1580,7 +1592,7 @@ v = 5     # 速度(米/秒)
 
 \begin{itemize}
 
-\item 既然{\tt n = 42} 正确, 那么{\tt 42 = n}呢?
+\item 既然{\tt n = 42}正确, 那么{\tt 42 = n}呢?
 
 \item {\tt x = y = 1}正确与否?
 
@@ -1598,7 +1610,7 @@ v = 5     # 速度(米/秒)
 
 \begin{exercise}
 
-用Pyhton解释器进行运算： 
+使用Pyhton解释器作为计算器进行练习： 
 \index{calculator}
 
 \begin{enumerate}
@@ -1609,9 +1621,9 @@ v = 5     # 速度(米/秒)
 同时邮寄首件需要邮费\$3, 后续每件75美分, 
 如果批发60件, 总费用多少?
 
-\item 如果我6:52离家, 以慢跑方式 (8分15秒/每英里)跑了1英里, 然后以
+\item 如果我早上6:52离家, 以慢跑方式 (8分15秒/每英里)跑了1英里, 然后以
 快跑方式(7分12秒/每英里)跑了3英里, 最后, 又以慢跑方式跑了1英里, 
-那什么时候到家?
+那我什么时候到家吃早餐?
 \index{running pace}
 
 \end{enumerate}
@@ -1621,15 +1633,15 @@ v = 5     # 速度(米/秒)
 \chapter{函数}
 \label{funcchap}
 
-在编程领域, {\bf 函数} 是指执行既定运算的语句组合. 
-定义函数便是确定名称以及语句组合. 然后, 便可以通过函数名来"调用"函数. 
+在编程领域, {\bf 函数}是指执行既定运算的语句组合. 
+定义函数便是确定名称以及语句组合. 然后, 便可以通过函数名来``调用''函数. 
 \index{function}
 
 \section{函数调用}
 \label{functionchap}
 \index{function call}
 
-上文已展示过{\bf 函数调用}
+上文已见过{\bf 函数调用}的例子:
 
 \begin{verbatim}
 >>> type(42)
@@ -1637,10 +1649,10 @@ v = 5     # 速度(米/秒)
 \end{verbatim}
 %
 此函数的名称为{\tt type},  括号中的表达式叫做函数的{\bf 参数}. 
-此处获得的结果, 表示参数的类型. 
+此处获得的结果, 是参数的类型. 
 \index{parentheses!argument in}
 
-通俗来说, 函数的作用便是根据 "输入" 的参数, "返回" 相应的结果. 
+通俗来说, 函数会``接受''一个参数, 并``返回''相应的结果. 
 这个结果也叫做{\bf 返回值}. 
 \index{argument}
 \index{return value}
