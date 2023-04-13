@@ -1813,8 +1813,8 @@ SyntaxError: can't assign to operator
 
 \section{创建函数}
 
-我们在Python编程中一直是使用函数, 现在可以尝试创建一个函数. 
-{\bf 函数定义} 一般指定义函数名以及调用时使用的语句组. 
+到目前, 我们在Python编程中多使用的是内置函数, 但现在可以尝试创建一个函数. 
+{\bf 函数定义} 一般是指定义函数名称以及调用函数时所运行的一系列语句组合. 
 \index{function}
 \index{function definition}
 \index{definition!function}
@@ -1831,32 +1831,32 @@ def print_lyrics():
 {\tt def}关键字表示这是一个函数定义. 
 函数名是 \verb"print_lyrics". 
 函数名的命名规则和变量名命名规则一致: 
-可包含字母, 数字或下划线, 首字母不能为数字. 
+可包含字母, 数字或下划线, 但第一个字符不能为数字. 
 同时不能使用关键字作为函数名, 要避免变量和函数重名. 
 \index{def keyword}
 \index{keyword!def}
 \index{argument}
 
-函数名后的空括号表示没有参数. 
+函数名后的空括号表示这个函数不带任何参数. 
 \index{parentheses!empty}
 \index{header}
 \index{body}
 \index{indentation}
 \index{colon}
 
-函数定义首行一般叫做 {\bf 函数头}, 其他部分叫{\bf 函数体}.
+函数定义首行一般叫做 {\bf 函数头}, 其余部分叫{\bf 函数体}.
 函数头以冒号结尾, 函数体必须缩进. 
 依照惯例, 一个缩进等于四个空格. 
-消息体可以包含任意行语句. 
+函数体可以包含任意行语句. 
 
 print语句中的字符串需要被双引号包着. 
 一般单引号和双引号作用相同, 所以人们多数情况使用单引号, 
 除非字符串中本来就有单引号, 这种情况就要使用双引号了. 
 
-所有的引号（无论单双）都是 ``直引号'', 就是键盘确认键(Enter)旁边的那个, 
-像本句中这种``弯引号'', 在Python使用中就是非法的. 
+所有的引号(无论单双)都是 ``直引号'', 通常位于键盘确认键(Enter)旁边, 
+像本句中这种``弯引号'', 在Python使用中是不合法的. 
 
-在交互模式下定义函数, 解释器会输出省略号({\tt ...}) 来提示函数定义尚未结束:
+在交互模式下定义函数, 解释器会打省略号({\tt ...}) 以表示函数定义尚不完整:
 \index{ellipses}
 
 \begin{verbatim}
@@ -1866,7 +1866,7 @@ print语句中的字符串需要被双引号包着.
 ...
 \end{verbatim}
 %
-想结束函数定义, 需要多敲一个换行. 
+要结束函数定义, 需要多敲一个换行. 
 
 函数定义完成便会创建一个 \verb"function" 类型的 {\bf 函数对象}:
 \index{function type}
@@ -1887,8 +1887,9 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 \end{verbatim}
 %
-一旦函数定义完成, 便可在其他函数中使用. 比如, 为了避免重复, 
-可以直接定义一个\verb"repeat_lyrics"函数:
+一旦定义了一个函数, 便可在其他函数中使用它. 
+例如, 为了重复之前的歌词, 
+我们可以编写一个名为\verb"repeat_lyrics" 的函数:
 
 \begin{verbatim}
 def repeat_lyrics():
@@ -1896,7 +1897,7 @@ def repeat_lyrics():
     print_lyrics()
 \end{verbatim}
 %
-然后调用 \verb"repeat_lyrics":
+然后调用\verb"repeat_lyrics":
 
 \begin{verbatim}
 >>> repeat_lyrics()
@@ -1906,12 +1907,12 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 \end{verbatim}
 %
-当然, 歌词没有这样的. 
+但这并不是歌曲的真正歌词. 
 
 \section{定义和调用}
 \index{function definition}
 
-将上述代码片段整理为一个完整程序:
+将上一节的代码片段组合在一切, 看起来便是这样:
 
 \begin{verbatim}
 def print_lyrics():
