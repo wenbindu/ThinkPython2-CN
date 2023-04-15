@@ -1926,43 +1926,44 @@ def repeat_lyrics():
 repeat_lyrics()
 \end{verbatim}
 %
-此程序包含两个函数: \verb"print_lyrics" 和 \verb"repeat_lyrics". 
+此程序包含两个函数定义: \verb"print_lyrics" 和 \verb"repeat_lyrics". 
 这些函数定义的执行和其他语句一样, 但是会在执行后创建函数对象. 
-函数内的语句只有在函数调用时才会执行, 同时定义函数并不会输出结果. 
+函数内的语句只有在函数被调用时才会执行, 同时函数定义本身并不会输出结果. 
 \index{use before def}
 
-如你所料, 函数运行前必须先定义函数, 也就是说, 
-函数定义语句先执行, 函数才能被调用. 
+如你所料, 函数运行前需要先创建函数, 也就是说, 
+函数定义必须在函数调用之前执行. 
 
-练习一下, 将程序的末行提到开始, 令函数先被调用, 再被定义. 
+做个练习, 将程序的末行提到开始, 令函数先被调用, 再被定义. 
 运行程序, 看看会报什么错误. 
 
-将函数调用再次移回末尾, 然后将 \verb"print_lyrics" 函数定义
-放到 \verb"repeat_lyrics" 函数的后面, 看看程序运行时, 会发生什么?
+将函数调用再次移回末尾, 然后将 \verb"print_lyrics" 的函数定义
+放到 \verb"repeat_lyrics" 的定义之后, 运行程序, 会发生什么?
 
-\section{运行流程}
+\section{执行流程}
 \index{flow of execution}
 
-为保证函数定义先于函数调用, 需要了解语句执行顺序, 
-也叫做{\bf 运行流程 }. 
+为保证函数定义先于函数调用, 你需要了解语句执行顺序, 
+这被称为{\bf 执行流程}. 
 
 程序代码从第一行开始, 从上到下, 逐行运行. 
 
-执行函数的定义不会改变代码逻辑运行顺序, 
+执行函数定义不会改变程序执行流程, 
 但是要谨记, 函数内的语句只会在函数被调用时才执行. 
 
-函数调用就像在代码运行流程中绕路一样, 不会继续向下执行语句, 
-而是跳转到函数体内, 运行内部语句, 完成后再回到离开的地方. 
+函数调用就像执行流程中的绕路, 不会继续向下执行语句, 
+而是跳转到函数体内, 执行其中语句, 完成后再回到离开的地方, 
+继续执行之前的语句. 
 
 听起来很简单, 但是要意识到, 函数可以不断调用函数({\tt 译者注: 类似套娃}).
 甲函数运行中, 可能会调用乙函数, 从而去执行其语句, 
 然后乙函数运行中又可能去调用其他函数!
 
-幸亏Python 解释器能够有效追踪函数的执行流程, 才可以在函数执行完成后, 
-回到函数调用的地方, 从而继续执行, 直到结束. 
+幸亏Python解释器能够有效追踪函数的执行流程, 才可以在函数执行完成后, 
+回到函数被调用的地方, 继续执行, 直到结束. 
 
-所以, 不要简单地从上到下阅读程序, 
-有时候更要关注代码运行流程. 
+总之, 当你阅读程序时, 不要总是自上而下阅读程序, 
+有时候按照执行流程来阅读更便于理解. 
 
 
 \section{形参和实参}
@@ -1976,7 +1977,7 @@ repeat_lyrics()
 还有些函数不止一个参数:{\tt math.pow} 需要两个参数, 分别是底和幂. 
 
 函数内, 实参会被赋值给{\bf 形参}. 
-下面是函数传参（实参赋值给形参）的定义:
+下面是函数传参(实参赋值给形参)的例子:
 \index{parentheses!parameters in}
 
 \begin{verbatim}
@@ -1985,8 +1986,8 @@ def print_twice(bruce):
     print(bruce)
 \end{verbatim}
 %
-此函数会将实参赋值给形参 {\tt bruce}, 当此函数被调用时, 
-会输出两次参数值（无论参数为何）. 
+此函数会将实参赋值给形参{\tt bruce}, 当此函数被调用时, 
+会输出两次参数值(无论参数为何). 
 
 此函数适用于任何可被打印的值. 
 
@@ -2017,11 +2018,11 @@ Spam Spam Spam Spam
 -1.0
 \end{verbatim}
 %
-实参在函数调用前运行, 所以在上例中, 表达式 \verb"'Spam '*4" 和
-{\tt math.cos(math.pi)} 只会运行一次. 
+实参会在函数调用前被计算, 所以在上例中, 表达式 \verb"'Spam '*4" 和
+{\tt math.cos(math.pi)}只会被计算一次. 
 \index{argument}
 
-也可以使用变量作为实参:
+你也可以使用变量作为实参:
 
 \begin{verbatim}
 >>> michael = 'Eric, the half a bee.'
@@ -2030,7 +2031,7 @@ Eric, the half a bee.
 Eric, the half a bee.
 \end{verbatim}
 %
-函数实参的变量命名 ({\tt michael})和函数形参的命名({\tt bruce})毫无关联. 
+函数实参的变量命名({\tt michael})和函数形参的命名({\tt bruce})没有关系. 
 无论外部传递进来的值如何命名, 函数 \verb"print_twice"内部, 我们统称其为 {\tt bruce}. 
 
 
@@ -2060,7 +2061,7 @@ Bing tiddle tiddle bang.
 \end{verbatim}
 %
 \verb"cat_twice"运行结束, 内部变量{\tt cat}便被销毁. 
-如果现在尝试输出它, 会报错:
+如果现在尝试打印它, 会报错:
 \index{NameError}
 \index{exception!NameError}
 
@@ -2069,7 +2070,7 @@ Bing tiddle tiddle bang.
 NameError: name 'cat' is not defined
 \end{verbatim}
 %
-形参都是局部使用的, 例如 {\tt bruce} 变量便不会出现在 \verb"print_twice" 函数之外.
+形参都是局部的, 例如变量{\tt bruce}便不会出现在\verb"print_twice" 函数之外.
 \index{parameter}
 
 
@@ -2086,7 +2087,7 @@ NameError: name 'cat' is not defined
 
 每个函数都用一个{\bf 框} 来表示, 一个框就是一个旁边有函数名, 
 内部是参数以及变量值的箱体图. 
-前述例子的箱体图见图~\ref{fig.stack}. 
+前述例子的栈图见图~\ref{fig.stack}. 
 
 \begin{figure}
 \centerline
@@ -2098,17 +2099,17 @@ NameError: name 'cat' is not defined
 栈图中的各个框的排列方式标示了各个函数的调用关系. 
 此例中, \verb"print_twice"函数被 \verb"cat_twice"调用, 
 \verb"cat_twice" 被\verb"__main__"调用. \verb"__main__"是
-顶层框的一个特殊名字, 任何函数外的变量, 都属于它. 
+顶层框的一个特殊名称, 任何函数外的变量, 都属于它. 
 \index{main}
 
-形参和实参一一对应, 所以{\tt part1} 和{\tt line1}的值相同, 
+形参和实参是一一对应的, 所以{\tt part1} 和{\tt line1}的值相同, 
 {\tt part2} 和{\tt line2}的值也相同, 并且, 
  {\tt bruce} 和{\tt cat}的值也一样. 
 
-如果函数在调用过程中出错, Python会输出此函数名称, 
+如果函数在调用过程中出错, Python会打印出函数名称, 
 以及调用它的上级函数信息, 以及更上级的函数, 一直到 \verb"__main__" 函数.
 
-例如, 如果在\verb"print_twice" 中调用{\tt cat}, 会得到名称异常({\tt NameError}):
+例如, 如果在\verb"print_twice" 中调用{\tt cat}, 会得到名称错误({\tt NameError}):
 
 \begin{verbatim}
 Traceback (innermost last):
@@ -2134,19 +2135,19 @@ NameError: name 'cat' is not defined
 \index{function!fruitful}
 \index{function!void} 
 
-目前用到过的一些函数, 例如数学函数, 都会返回结果, 
+目前用到过的一些函数, 例如math函数, 都会返回结果, 
 一得之见, 暂称{\bf 有值函数}. 其他函数, 像 \verb"print_twice", 
 运行完成, 并不会返回值, 便叫做{\bf 无值函数}. 
 
 当调用有值函数时, 一般是希望对返回结果另行处理, 比如, 
-赋值结果到某个变量, 或者置于表达式中使用:
+将结果赋值给某个变量, 或者作为表达式一部分使用:
 
 \begin{verbatim}
 x = math.cos(radians)
 golden = (math.sqrt(5) + 1) / 2
 \end{verbatim}
 %
-在交互模式调用函数, Python解释器会输出结果:
+在交互模式调用函数, Python解释器总会输出结果:
 
 \begin{verbatim}
 >>> math.sqrt(5)
@@ -2159,7 +2160,7 @@ golden = (math.sqrt(5) + 1) / 2
 math.sqrt(5)
 \end{verbatim}
 %
-这个脚本文件主要计算5的平方根, 但因为没有保存或者显示结果, 所以不是很有用. 
+这个脚本计算5的平方根, 但因为没有保存或者显示结果, 所以不是很有用. 
 \index{interactive mode}
 \index{script mode}
 
@@ -2184,7 +2185,8 @@ None
 <class 'NoneType'>
 \end{verbatim}
 %
-目前我们定义的函数都是无返回值的, 后续章节将开始定义有返回值的函数. 
+截至目前, 我们定义的函数都是无返回值的, 
+后续章节将开始定义有返回值的函数. 
 \index{NoneType type}
 \index{type!NoneType}
 
@@ -2196,13 +2198,14 @@ None
 
 \begin{itemize}
 
-\item 函数可以将一组语句归为一类, 便于阅读和调试. 
+\item 函数可以将一组语句起个名字, 使程序便于阅读和调试. 
 
 \item 函数可以消除重复, 简化代码, 针对功能, 修改一处即可. 
 
 \item 将程序切分为函数, 可以分别调试, 然后组合它们即可. 
 
-\item 设计良好的函数可以编写一次, 调试一次, 多处调用, 有效复用. 
+\item 设计良好的函数对许多程序都有用, 一旦编写调试了一个函数, 
+便可以多次复用. 
 
 \end{itemize}
 
@@ -2210,26 +2213,26 @@ None
 \section{调试}
 
 编程最重要的技能之一就是调试了, 虽往往令人黯然神伤, 愁眉难舒, 
-却是编程中最考验才智, 最富有挑战以及最有趣的地方.
+却是编程中最考验才智, 最富有挑战同时最有趣的地方.
 \index{experimental debugging}
 \index{debugging!experimental}
 
 在某些方面, 调试和侦探工作很像. 面对线索, 有效推理, 确定造就结果的流程和缘由. 
 
-调试又像实验科学, 针对问题, 一旦有所想法, 便可修改程序, 再次尝试. 
+调试也像实验科学, 针对问题, 一旦有所想法, 便可修改程序, 再次尝试. 
 如果假设正确, 便可预期修改后的结果, 向可执行的程序代码推进. 
 如果假设错误, 便要继续探究了. 正如Sherlock Holmes(夏洛克·福尔摩斯)所说, 
-``除去所有不可能因素, 留下来的东西, 无论多么不愿意相信, 但这就是事实
-的真相."(A. Conan Doyle, {\em The Sign of Four})
+``当你排除所有不可能因素, 留下来的东西, 即使看似不可能, 也必定是
+真相."(A. Conan Doyle, {\em The Sign of Four})
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
 对某些人而言, 编程便是调试. 这是因为, 编程便是不断调试程序, 直到实现目标的过程. 
-所以, 建议先写可执行代码, 然后逐步修改并调试程序, 进而实现预定效果. 
+所以, 你应该从一个能够工作的程序开始, 逐步进行小的修改, 并在修改的同时进行调试. 
 
-比如, Linux 操作系统具有数百万行代码,  但它起源于Linus Torvalds
-研究Intel 80386芯片的一段简单代码. 据Larry Greenfield所说, 
-``Linus的早期项目中, 有个程序是在AAAA和BBBB之间交替输出, 而这后来演化为了Linux.''
+比如, Linux 操作系统具有数百万行代码,  但它最初只是一个Linus Torvalds
+探索Intel 80386芯片的简单代码. 根据Larry Greenfield的说法, 
+``Linus的早期项目中, 有个在打印AAAA和BBBB之间切换的程序, 而这后来演化为了Linux.''
 ({\em The Linux Users' Guide} Beta Version 1).
 \index{Linux}
 
@@ -2238,41 +2241,41 @@ None
 
 \begin{description}
 
-\item[函数(function):] 特别命名的一堆语句的组合, 实现特定功能. 可以有参数, 
+\item[函数(function):] 特别命名的一组语句序列, 实现特定功能. 可以有参数, 
 也可以没有参数, 可以返回值, 也可以不返回. 
 \index{function}
 
-\item[函数定义(function definition):]  创建函数的语句, 确定名称, 参数以及内部语句. 
+\item[函数定义(function definition):] 创建函数的语句, 会指定名称, 参数以及内部语句. 
 \index{function definition}
 
-\item[函数对象(function object):]  函数定义运行后的值, 函数名便是指向函数对象的变量. 
+\item[函数对象(function object):] 函数定义创建的值, 函数名便是指向函数对象的变量. 
 \index{function object}
 
 \item[函数头(header):] 函数定义的首行.
 \index{header}
 
-\item[函数体(body):] 函数定义的内部语句.
+\item[函数体(body):] 函数定义的内部语句序列.
 \index{body}
 
-\item[形参(parameter):] 函数内部用于表示传入参数的名称. 
+\item[形参(parameter):] 函数内部用来引用传入值的名称. 
 \index{parameter}
 
 \item[函数调用(function call):] 运行函数的语句, 由函数名, 以及括号中的参数列表构成. 
 \index{function call}
 
-\item[实参(argument):]  函数调用时传入函数的值. 这个值会赋值给函数内部的形参. 
+\item[实参(argument):] 函数调用时传入函数的值. 这个值会赋值给函数内部的形参. 
 \index{argument}
 
-\item[局部变量(local variable):]  函数内部变量, 局部变量只能在函数内部使用. 
+\item[局部变量(local variable):] 函数内部定义的变量, 局部变量只能在其所属函数内部使用. 
 \index{local variable}
 
-\item[返回值(return value):]  函数返回的结果. 如果用函数调用作为表达式, 那么函数返回值, 便是表达式的结果. 
+\item[返回值(return value):] 函数返回的结果. 如果用函数调用作为表达式, 那么函数返回值, 便是表达式的值. 
 \index{return value}
 
 \item[有值返回(fruitful function):] 有返回值的函数. 
 \index{fruitful function}
 
-\item[无值返回(void function:] 返回值为 {\tt None}的函数. 
+\item[无值返回(void function:] 返回值为{\tt None}的函数. 
 \index{void function}
 
 \item[空值({\tt None}):] 无值返回函数返回的结果. 
@@ -2286,27 +2289,27 @@ None
 \index{import statement}
 \index{statement!import}
 
-\item[模块对象(module object):]  {\tt import}语句创建的值, 通过其可以获取模块内部的值. 
+\item[模块对象(module object):] {\tt import}语句创建的值, 通过其可以获取模块内部的值. 
 \index{module object}
 
-\item[点标法(dot notation):]  通过在模块名后紧跟一个点(英文句号)和要调用的函数名, 
+\item[点标法(dot notation):] 通过在模块名后紧跟一个点(英文句号)和要调用的函数名, 
 来调用模块函数的语法. 
 \index{dot notation}
 
 \item[组合(composition):] 采用简单表达式构建复杂表达式, 简单语句塑造复杂模块的方法. 
 \index{composition}
 
-\item[运行流程(flow of execution):] 语句运行的顺序.
+\item[执行流程(flow of execution):] 语句的执行顺序.
 \index{flow of execution}
 
-\item[栈图(stack diagram):]  表示函数,变量,以及值的关系图. 
+\item[栈图(stack diagram):] 表示函数,变量,以及值的关系图. 
 \index{stack diagram}
 
-\item[框(frame):]  栈图中表示函数调用的箱体图,包括局部变量以及参数. 
+\item[框(frame):] 栈图中表示函数调用的方框,包括局部变量以及参数. 
 \index{function frame}
 \index{frame}
 
-\item[溯源(traceback):] 异常发生时, 输出相关运行函数信息的过程. 
+\item[溯源(traceback):] 异常发生时, 打印的正在执行的函数列表. 
 \index{traceback}
 
 
@@ -2319,7 +2322,7 @@ None
 \index{len function}
 \index{function!len}
 
-书写名为 \verb"right_justify" 同时以字符串{\tt s}为参数的函数, 
+编写名为 \verb"right_justify" 同时以字符串{\tt s}为参数的函数, 
 其输出的字符串左侧有足够的空格, 以使输出结果的最后一个字符在第70字符处. 
 
 \begin{verbatim}
@@ -2327,8 +2330,8 @@ None
                                                                  monty
 \end{verbatim}
 
-提示: 使用字符串拼接以及堆叠. 此外, Python提供了内置函数{\tt len}, 可以返回字符串长度, 
-例如, \verb"len('monty')"的结果为5.
+提示: 使用字符串拼接以及堆叠操作. 此外, Python提供了内置函数{\tt len}, 可以返回字符串长度, 
+因此\verb"len('monty')"的结果为5.
 
 \end{exercise}
 
@@ -2338,7 +2341,7 @@ None
 \index{object!function}
 
 函数对象可以赋值给变量, 或者作为实参传递. 
-例如, \verb"do_twice" 便将函数对象作为参数传入, 并调用了两次:
+例如, \verb"do_twice"便是一个接受函数对象作为参数, 并调用两次的函数:
 
 \begin{verbatim}
 def do_twice(f):
@@ -2346,7 +2349,7 @@ def do_twice(f):
     f()
 \end{verbatim}
 
-下面是使用 \verb"do_twice"来调用两次 \verb"print_spam" 的例子. 
+下面是使用\verb"do_twice"来调用函数\verb"print_spam"两次的例子. 
 
 \begin{verbatim}
 def print_spam():
@@ -2359,13 +2362,13 @@ do_twice(print_spam)
 
 \item 将上述代码写入脚本进行测试.
 
-\item 修改 \verb"do_twice", 给其传入两个参数: 函数对象和值, 
+\item 修改 \verb"do_twice", 给其接受两个参数: 函数对象和值, 
 使其调用两次传入的函数对象, 这个函数对象会以传入的值为参数.
 
-\item 将本章\verb"print_twice"代码复制到脚本.
+\item 将先前章节中定义的\verb"print_twice"代码复制到脚本.
 
-\item 用新版 \verb"do_twice"函数调用 \verb"print_twice"两次, 
-并传入参数 \verb"'spam'".
+\item 用修改后的 \verb"do_twice"函数调用 \verb"print_twice"函数两次, 
+同时传入参数 \verb"'spam'".
 
 \item 定义新函数\verb"do_four", 令其接收函数对象和值, 
 并以值为参数调用四次函数对象. 
@@ -2381,7 +2384,7 @@ do_twice(print_spam)
 
 \begin{exercise}
 
-说明: 此习题只涉及已学过的语句和功能. 
+说明: 此习题应该只使用我们学过的语句和特性来完成. 
 
 \begin{enumerate}
 
@@ -2402,13 +2405,13 @@ do_twice(print_spam)
 + - - - - + - - - - +
 \end{verbatim}
 %
-提示: 想要一行输出多个值, 可以向print传入多个值, 将值用逗号分隔:
+提示: 要在一行上打印多个值, 可以通过打印逗号分隔的值序列来实现:
 
 \begin{verbatim}
 print('+', '-')
 \end{verbatim}
 %
-一般{\tt print}函数会附带换行符, 但可以对其进行调整, 
+默认情况, {\tt print}会换到下一行, 但可以覆盖这种行为, 
 使其以空格结尾, 如下:
 
 \begin{verbatim}
@@ -2416,16 +2419,16 @@ print('+', end=' ')
 print('-')
 \end{verbatim}
 %
-上边语句会将\verb"'+ -'"在同一行输出, 如果再有print语句, 则会另起一行. 
+上边语句会将\verb"'+ -'"在同一行输出, 下一个print语句的输出, 则会另起一行. 
 
-\item 编写绘制四行四列类似网格的函数. 
+\item 编写一个函数, 以四行四列的形式绘制类似网格. 
 
 \end{enumerate}
 
 答案: \url{http://thinkpython2.com/code/grid.py}.
-致谢: 此习题基于 Oualline书中的习题
+致谢: 此习题基于Oualline的书
 ({\em Practical C Programming, Third Edition},  
-O'Reilly Media, 1997).
+O'Reilly Media, 1997)中的一个练习.
 
 \end{exercise}
 
