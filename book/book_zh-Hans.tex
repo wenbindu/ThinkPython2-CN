@@ -2439,10 +2439,10 @@ O'Reilly Media, 1997)中的一个练习.
 本章采用案例来讲述, 如何设计可以协同运行的函数. 
 
 主要介绍 {\tt turtle(乌龟)}模块, 可以让你用其绘图功能, 制作图片. 
-大部分Python安装包会预装{\tt turtle} 模块, 但如果你使用的是PythonAnywhere网站, 
-现在还无法执行turtle示例(至少创作本书时还不能). 
+大部分Python安装包会预装{\tt turtle}模块, 但如果你使用的是PythonAnywhere网站, 
+现在还无法执行turtle示例(至少撰写本书时还不能). 
 
-如果你的计算机安装了Python,  便可以直接运行这些实例. 
+如果你的计算机安装了Python, 便可以直接运行这些实例. 
 如果还没有, 那么最好现在安装吧, 可以参看我写的
 操作步骤\url{http://tinyurl.com/thinkpython2e}. 
 
@@ -2452,7 +2452,7 @@ O'Reilly Media, 1997)中的一个练习.
 \section{模块turtle}
 \label{turtle}
 
-打开Python解释器, 键入以下命令, 以检查是否安装 {\tt turtle}模块:
+打开Python解释器, 键入以下命令, 以检查是否安装{\tt turtle}模块:
 
 \begin{verbatim}
 >>> import turtle
@@ -2471,15 +2471,16 @@ print(bob)
 turtle.mainloop()
 \end{verbatim}
 %
- {\tt turtle}模块(小写字母 't')提供了函数{\tt Turtle} (大写字母 'T'), 
-它创建了Turtle 对象, 并将其赋值给名为 {\tt bob} 的变量. 
-输出{\tt bob}信息如下:
+{\tt turtle}模块(小写字母 't')提供了函数{\tt Turtle}(大写字母 'T'), 
+可以用来创建Turtle 对象, 我们将其分配给名为{\tt bob}的变量. 
+输出{\tt bob}会显示如下类似信息:
 
 \begin{verbatim}
 <turtle.Turtle object at 0xb7bfbf4c>
 \end{verbatim}
 %
-这意味着{\tt bob}指向了{\tt turtle}模块中{\tt Turtle}类型的对象.
+这意味着{\tt bob}指向了一个类型为{\tt Turtle}的对象, 
+该对象是在模块{\tt turtle}中定义的.
 
 \verb"mainloop" 会令窗口等待, 以执行其他操作. 但是本例
 只需关闭窗口, 暂不进行其他操作. 
@@ -2494,7 +2495,7 @@ bob.fd(100)
 方法{\tt fd}来自于乌龟对象{\tt bob}. 
 调用方法就好比递交申请: 请求{\tt bob}向前移动. 
 
-{\tt fd} 的参数是像素距离, 实际距离要看屏幕尺寸. 
+{\tt fd} 的参数是像素距离, 实际距离取决于屏幕尺寸. 
 
 其他可以调用的方法还有{\tt bk}, 实现向后移动, 
 {\tt lt}实现左转, {\tt rt}实现右转. 
@@ -2502,10 +2503,10 @@ bob.fd(100)
 
 同时, 每个乌龟都带着笔, 可以抬起或落下;
 如果笔落下, 乌龟移动时会留下痕迹. 
-{\tt pu}和{\tt pd}方法分别代表``抬笔(pen up)''和``落笔(pen down)''.
+{\tt pu}和{\tt pd}方法分别表示``抬笔(pen up)''和``落笔(pen down)''.
 
 将下面代码加入程序, 以实现绘制直角(
-创建{\tt bob}对象后, 调用\verb"mainloop"前):
+在创建{\tt bob}对象后, 以及调用\verb"mainloop"之前):
 
 \begin{verbatim}
 bob.fd(100)
@@ -2513,9 +2514,9 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-运行程序, 可以看到{\tt bob}对象会向东移动, 然后向北移动, 并留下两根垂直线段. 
+运行程序, 可以看到{\tt bob}对象会向东移动, 然后向北移动, 并留下两个线段. 
 
-现在尝试绘制个正方形, 先不要着急学习下面的内容. 
+现在修改程序, 尝试绘制个正方形, 在实现之前, 先不要着急学习下面的内容. 
 
 %\newpage
 
@@ -2523,7 +2524,7 @@ bob.fd(100)
 \label{repetition}
 \index{repetition}
 
-我猜你会写成下面的样子:
+你可能会写成下面的样子:
 
 \begin{verbatim}
 bob.fd(100)
@@ -2538,8 +2539,8 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-用 {\tt for} 语句可以更加简单地实现同样的效果. 
-将下面代码写入 {\tt mypolygon.py} 并运行:
+我们可以用{\tt for}语句更简洁地完成同样的操作. 
+将下面代码写入{\tt mypolygon.py}并再次运行:
 \index{for loop}
 \index{loop!for}
 \index{statement!for}
@@ -2558,11 +2559,11 @@ Hello!
 Hello!
 \end{verbatim}
 %
-这是{\tt for}语句的简单使用, 后面会讲更多用法. 
-但这些已足够令我们重写绘制方块的程序了. 
+这是{\tt for}语句的简单使用, 后面会有更多示例. 
+但这足以让你重写正方形的绘制程序. 
 暂时不要看下面的内容, 先尝试一下. 
 
-以下用{\tt for}语句实现绘制正方形:
+下面是一个绘制正方形的{\tt for}语句示例:
 
 \begin{verbatim}
 for i in range(4):
@@ -2570,49 +2571,50 @@ for i in range(4):
     bob.lt(90)
 \end{verbatim}
 %
-语句{\tt for} 的语法使用类似函数定义. 
+{\tt for}语句的语法使用类似函数定义. 
 以冒号结尾的语句为函数头, 
 缩进的内容为函数体. 
-函数体可以是任意行语句. 
+函数体可以包含任意数量的语句. 
 
- {\tt for} 语句也叫 {\bf 循环}, 因为代码执行流程会重复执行循环体, 
+{\tt for}语句也叫{\bf 循环}, 因为代码执行流程会重复执行循环体, 
 此例中, 会执行四次循环体.
 \index{loop}
 
-这一版代码和上一版略有不同, 绘制完最后一条线后, 会多一次转向. 
-虽然多的这一步操作增加了耗时, 但是利用循环, 使重复操作更加简单. 
-当然, 这也令小乌龟回到了开始的地方, 朝向了开始的方向. 
+这一版代码和上一版略有不同, 绘制完最后一条边后, 会做额外的转向. 
+虽然这额外的旋转需要更多的时间, 但是如果我们每次循环都做同样的事情, 
+可以简化代码. 
+当然, 这个版本也有将小乌龟留在起始位置, 并朝向起始方向的效果. 
 
 \section{习题集}
 以下为一系列操作{\tt turtle} 模块的练习. 
-虽然是为了让大家高兴一下, 但是也有别出心裁的地方, 
-做练习的时候, 要好好思考一下醉翁之意. 
+它们旨在让你玩得开心, 但也有一定的重点. 
+做练习的时候, 要好好思考一下重点是什么. 
 
-习题后面有答案, 但是尽量在完成或者尽力尝试后再看. 
+习题后面有答案, 因此在完成(或至少尝试)之前, 先不要查看. 
 
 \begin{enumerate}
 
 \item 编写{\tt square}函数, 参数是个turtle对象{\tt t}, 用turtle绘制正方形. 
 
-编写函数, 将{\tt bob} 作为参数传给{\tt square}, 然后运行程序. 
+编写一个函数调用, 将{\tt bob} 作为参数传给{\tt square}, 然后运行程序. 
 
-\item 为 {\tt square}添加参数{\tt length}, 令边的长度为{\tt length}, 
-同时修改函数, 令其调用第二个实参. 再次运行程序, 给{\tt length} 赋不同的值进行测试. 
+\item 为{\tt square}添加参数{\tt length}, 修改函数体, 令边的长度为{\tt length}, 
+同时修改函数, 令其调用第二个实参. 再次运行程序, 使用不同的值测试{\tt length}的范围. 
 
-\item 复制{\tt square}并命名为 {\tt polygon} . 添加参数{\tt n},
-令其绘制正n边形. 提示: 正n边形外角角度为$360/n$度. 
+\item 复制{\tt square}并命名为 {\tt polygon}. 添加另一个参数{\tt n},
+并修改函数, 令其绘制正n边形. 提示: 正n边形外角角度为$360/n$度. 
 \index{polygon function} 
 \index{function!polygon}
 
 \item 编写{\tt circle} 函数, 以turtle类型的{\tt t}, 以及半径{\tt r}为参数, 
-通过调用{\tt polygon}函数, 输入适当长度和边数, 绘制一个近似的圆形. 
+通过使用适当长度和边数, 来调用{\tt polygon}函数, 绘制一个近似的圆. 
 用不同的 {\tt r}值, 测试程序. \index{circle function} \index{function!circle}
 
 提示: 确定圆的周长, 使其满足{\tt 边长 * 边数 = 周长}.
 
 \item 升级{\tt circle}版本, 命名为{\tt arc}, 新增参数 {\tt angle}, 
 用此值确定所绘制的圆弧的大小. 
- {\tt angle}以度为单位, 当 {\tt angle=360}, {\tt arc}会绘制一个完整的圆. 
+{\tt angle}以度为单位, 当{\tt angle=360}, {\tt arc}会绘制一个完整的圆. 
 \index{arc function}
 \index{function!arc}
 
@@ -2621,7 +2623,7 @@ for i in range(4):
 
 \section{封装}
 
-第一道题是编写绘制正方形的函数代码, 调用函数, 传递turtle参数. 
+第一道题是编写绘制正方形的函数代码, 然后传递turtle参数, 并调用函数. 
 代码如下:
 
 \begin{verbatim}
@@ -2635,7 +2637,7 @@ square(bob)
 %
 函数内的 {\tt fd} 和 {\tt lt}缩进两次, 表示运行于函数定义里面的{\tt for} 循环中. 
 下一行 {\tt square(bob)}, 左边距对齐同时没有缩进, 
-表示上面的 {\tt for} 循环以及函数定义都已结束. 
+这表示{\tt for} 循环以及函数定义的结束. 
 
 函数内的 {\tt t} 和 {\tt bob}指向的是同一个乌龟对象, 
 因此{\tt t.lt(90)}就好比 {\tt bob.lt(90)}. 
@@ -2650,14 +2652,13 @@ square(alice)
 %
 将一段代码写在函数中, 叫做{\bf 封装}. 
 封装的好处之一在于, 用一个简单的名字来指代一段代码, 类似文档说明. 
-另一个好处是可以复用代码, 复制粘贴大段的代码, 总是
-不如复用代码更显简洁!
+另一个好处是可以复用代码, 调用函数两次总比复制粘贴大段的代码要更简洁!
 \index{encapsulation}
 
 
 \section{泛化}
 
-下一步是给{\tt square}增加参数 {\tt length} , 详见样例:
+下一步是给{\tt square}增加参数 {\tt length} , 详见下例:
 
 \begin{verbatim}
 def square(t, length):
@@ -2669,13 +2670,13 @@ square(bob, 100)
 \end{verbatim}
 %
 给函数增加参数, 叫做{\bf 泛化}. 
-因为可以令函数使用场景更加广泛:
-上版代码中, 正方形的边长总是同一个值, 
-而此版, 边长可以是任意值.
+因为可以令函数更通用:
+上版代码中, 正方形的边长总是相同大小, 
+而此版, 边长可以是任意大小.
 \index{generalization}
 
-下一步也是泛化. 
-不再是只绘制正方形, {\tt polygon} 可以绘制任意多边形, 详见示例:
+下一步也是泛化. 令{\tt polygon}实现绘制任意多边形, 
+而不是只绘制正方形, , 详见示例:
 
 \begin{verbatim}
 def polygon(t, n, length):
@@ -2693,8 +2694,8 @@ polygon(bob, 7, 70)
 有个简单的办法, 便是{\tt angle = 360.0 / n}. 分子为浮点数, 结果便也是浮点数了. 
 \index{Python 2}
 
-当函数有多个数值参数时, 很容易混淆各自代表什么, 以及参数顺序. 
-所以比较好的办法, 便是在传递实参列表时, 附上形参的名字:
+当函数有多个数值参数时, 很容易混淆各自代表什么, 或者参数顺序. 
+这种情况下, 通常最好在传递实参列表时, 附上形参的名字:
 
 \begin{verbatim}
 polygon(bob, n=7, length=70)
@@ -2705,14 +2706,14 @@ polygon(bob, n=7, length=70)
 \index{keyword argument}
 \index{argument!keyword}
 
-这种语法令程序可读性更强. 同时也提示了实参和形参如何生效:
+这种语法令程序可读性更强. 同时也提示了实参和形参的工作原理:
 调用函数时, 实参赋值给了形参. 
 
 
 \section{接口设计}
 
-下一步要编写 {\tt circle}, 此函数以半径{\tt r}为参数. 
-以下是采用{\tt polygon}来绘制正五十边形的代码:
+下一步要编写{\tt circle}, 此函数以半径{\tt r}为参数. 
+以下是采用{\tt polygon}来绘制正五十边形的简单解决方案:
 
 \begin{verbatim}
 import math
@@ -2726,21 +2727,21 @@ def circle(t, r):
 %
 首行根据公式 $2 \pi r$和半径{\tt r} 计算圆的周长. 
 要使用{\tt math.pi},  需要先导入{\tt math}. 
-通常把 {\tt import}语句作为脚本的开始. 
+通常{\tt import}语句位于脚本开头. 
 
 {\tt n}是要逼近圆的正多边形的边数, {\tt length} 表示边长. 
 最后,  {\tt polygon}通过绘制正五十边形, 来逼近半径 {\tt r}的圆. 
 
-此代码的局限性在于, {\tt n} 是一个常量, 这表示绘制大的圆时, 线段过长. 
+此方案的局限性在于, {\tt n} 是一个常量, 这表示绘制非常大的圆时, 线段过长. 
 而绘制小圆时, 需要耗费时间绘制小线段. 
-要想使此函数通用, 可以将{\tt n}作为函数的参数. 
-这样用户( {\tt circle}的调用者)便可以更方便地使用, 但是接口会显得不那么简洁了. 
+要想使此函数通用, 可以将{\tt n}作为参数传入通用化的函数. 
+这将为用户( {\tt circle}的调用者)提供更多控制权, 但是接口会显得不那么简洁了. 
 \index{interface}
 
-函数{\bf 接口} 是函数用途的简介: 参数是什么? 函数做什么? 返回什么? 
-如果一个接口聚焦于特定功能, 而非无关细节, 那么这个接口就是``简洁''的. 
+函数{\bf 接口} 是函数用途的摘要: 参数是什么? 函数做什么? 返回什么? 
+如果一个接口允许调用者执行所需操作, 而无需处理无关的细节, 那么这个接口就是``简洁''的. 
 
-这个案例中, {\tt r}放在接口中合适, 是因为要用它来确定圆的大小. 
+在此示例中, {\tt r}放在接口中合适, 是因为要用它来确定圆的大小. 
 而{\tt n}放进接口则显得不太友好, 是因为它只与{\em 如何}绘制圆的细节有关. 
 
 与其令接口复杂, 不如根据{\tt 周长}来确定一个合适的{\tt n}:
@@ -2766,7 +2767,7 @@ def circle(t, r):
 我们可以复用{\tt polygon}来构造{\tt circle}, 是因为边足够多的正多边形近似于圆. 
 但是, 构造 {\tt arc}就不适合了, 因为没有办法用 {\tt polygon}或者{\tt circle}来绘制一段弧线. 
 
-一个替代策略是复制{\tt polygon} ,  修改为{\tt arc}, 代码如下:
+一个替代策略是复制{\tt polygon}, 将其修改为{\tt arc}, 代码如下:
 
 \begin{verbatim}
 def arc(t, r, angle):
@@ -2781,7 +2782,7 @@ def arc(t, r, angle):
 \end{verbatim}
 %
 函数后半段和 {\tt polygon}很像, 但如果我们不调整接口, 便无法复用 {\tt polygon}. 
-我们需要给 {\tt polygon} 加入角度作为第三个参数, 来使其通用, 
+我们需要给 {\tt polygon} 加入角度作为第三个参数, 来泛化它, 
 那么也不能继续使用 {\tt polygon}作为名字了!
 反而叫{\tt polyline}会更合适些:
 
@@ -2792,7 +2793,7 @@ def polyline(t, n, length, angle):
         t.lt(angle)
 \end{verbatim}
 %
-现在我们可以用 {\tt polyline}来重写{\tt polygon} 和 {\tt arc}了:
+现在我们需要重写{\tt polygon}和{\tt arc}, 以使用{\tt polyline}:
 
 \begin{verbatim}
 def polygon(t, n, length):
@@ -2807,7 +2808,7 @@ def arc(t, r, angle):
     polyline(t, n, step_length, step_angle)
 \end{verbatim}
 %
-最后, 我们再用{\tt arc}来优化 {\tt circle} :
+最后, 我们重写{\tt circle}, 以使用{\tt arc}:
 
 \begin{verbatim}
 def circle(t, r):
@@ -2822,38 +2823,38 @@ def circle(t, r):
 如果早有规划, 我们可能会优先编写{\tt polyline}, 避免后续耗时重构. 
 但一般你很难在项目开始的时候, 便深入了解一切, 规划好所有接口. 
 只有开始编码, 你才会更好地研究并理解其中曲折. 
-所以, 有时候重构的过程也是你学习新知识的历程. 
+所以, 有时候重构便是你学到了一些东西的标志. 
 
 
 \section{开发计划}
 \index{development plan!encapsulation and generalization}
 
-{\bf 开发计划}便是指编码的流程. 以上案例中, 我们采用的流程便是
+{\bf 开发计划}便是指编码的流程. 以上案例中, 我们采用的流程是
 ``封装和泛化'', 详细步骤如下:
 
 \begin{enumerate}
 
-\item 先不考虑函数定义, 写段小程序.
+\item 首先编写一个没有函数定义的小程序.
 
-\item 如果代码可用, 抽离相关代码, 封装进函数, 并命名.
+\item 如果代码可用, 抽离相关代码, 封装进函数, 并为其命名.
 
-\item 增加合适参数, 泛化函数.
+\item 添加适当的参数, 来泛化函数.
 
-\item 重复步骤1-3, 尽量抽离各个函数, 尽量复制粘贴, 减少打字(以及重复调试).
+\item 重复步骤1-3, 直到你拥有一组运行函数. 尽量复制粘贴, 减少打字(以及重复调试).
 
 \item 尝试重构程序. 比如, 在多个地方有相似代码, 试试能否将其
 拆解为恰当的通用函数.
 
 \end{enumerate}
 
-这种流程存在一定的缺点---后续会讲述一些替代方案---但是在你无法提前规划, 
-如何将程序拆解为函数时, 这种方法可以让你再编码的同时优化程序. 
+这种流程存在一定的缺点---后续会讲述一些替代方案---但是在你不知道
+如何将程序拆解为函数时, 这种方法可以让你在开发的同时不断优化程序. 
 
 \section{帮助文档}
 \label{docstring}
 \index{docstring}
-{\bf 帮助文档}是指函数开头部分, 用来对接口(``doc''是``documentation''的简称)
-进行解释说明的文档. 下面是个例子:
+{\bf 帮助文档}是指函数开头的字符串, 一般用来解释接口(``doc''是``documentation''的简称).
+下面是个例子:
 
 \begin{verbatim}
 def polyline(t, n, length, angle):
@@ -2865,40 +2866,40 @@ def polyline(t, n, length, angle):
         t.lt(angle)
 \end{verbatim}
 %
-一般帮助文档都要用三引号引起来, 也叫多行字符串, 
-因为三引号允许字符串跨行. 
+按照惯例, 所有的帮助文档都要用三重引号引起来, 也称为多行字符串, 
+因为三重引号允许字符串跨越多行. 
 \index{quotation mark}
 \index{triple-quoted string}
 \index{string!triple-quoted}
 \index{multiline string}
 \index{string!multiline}
 
-帮助文档虽然简洁, 但是重要, 因为它包含函数使用的相关说明. 
-同时简要概括了函数的功能(无需探查函数细节实现), 
-以及各个参数的类型和作用, 以及应用场景. 
+帮助文档虽然简洁, 但是重要, 因为它包含了使用这个函数所需的基本信息. 
+同时, 它简要概括了函数的功能(不涉及如何操作), 
+并解释了各个参数的类型和作用. 
 
 设计接口, 重要的一步, 便是编写友好的帮助文档. 
 一个设计优良的接口, 应该是易于理解的;
-如果需要耗费大量口舌讲解, 那么这个接口还有待优化. 
+如果需要耗费大量口舌讲解, 那么这个接口还有待改进. 
 
 
 \section{调试}
 \index{debugging}
 \index{interface}
 
-接口类似于调用方和函数之间的中间人. 
-调用方提供特定参数, 函数执行特定操作. 
+接口类似于调用方和函数之间的合同. 
+调用方同意提供某些参数, 同时函数同意执行某些操作. 
 
-例如,  {\tt polyline}需要四个参数 : Turtle对象{\tt t},  整数{\tt n}, 
-正数{\tt length},  以及以度为单位的数字{\tt angle}.
+例如, {\tt polyline}需要四个参数 : Turtle对象{\tt t},  整数{\tt n}, 
+正数{\tt length}, 以及以度为单位的数字{\tt angle}.
 
-这些条件, 叫做 {\bf 前置条件},  因为这些条件满足了, 函数才能执行. 
-相反, 函数结尾的内容叫做{\bf 后置条件}. 后置条件包括函数预期效果
-(比如绘制线段),  以及意外情况(移动Turtle或其他影响).
+这些条件, 叫做 {\bf 前置条件}, 因为这些条件满足了, 函数才能执行. 
+相反, 函数结束时的条件叫做{\bf 后置条件}. 后置条件包括函数预期效果
+(比如绘制线段), 以及意外情况(移动Turtle或其他更改).
 \index{precondition}
 \index{postcondition}
 
-前置条件是调用方的任务. 如果调用方违背(标注详细的)前置条件, 导致函数异常, 
+前置条件是调用方的责任. 如果调用方违背(标注详细的)前置条件, 导致函数异常, 
 那么责任在于调用方, 而不是函数. 
 
 如果前置条件都满足而后置条件未达到预期, 那问题便出在函数中. 
@@ -2908,32 +2909,33 @@ def polyline(t, n, length, angle):
 
 \begin{description}
 
-\item[方法(method):] 用句点于对象连接的函数. 
+\item[方法(method):] 与对象相关联, 并使用点符号调用的函数. 
 \index{method}
 
 \item[循环(loop):] 程序中可以重复执行的部分. 
 \index{loop}
 
-\item[封装(encapsulation):] 将一系列语句放入函数定义中的过程. 
+\item[封装(encapsulation):] 将一系列语句转化为函数定义的过程. 
 \index{encapsulation}
 
-\item[泛化(generalization):] 将不必要的特定的值(比如特定数字)更换为通用内容(变量或参数)的过程. 
+\item[泛化(generalization):] 将过于具体内容(比如数字)
+替换为通用内容(变量或参数)的过程. 
 \index{generalization}
 
-\item[关键字参数(keyword argument):] 一种实参格式, 将形参名字作为``关键字''囊括于内. 
+\item[关键字参数(keyword argument):] 将参数名称作为``关键字''使用的参数. 
 \index{keyword argument}
 \index{argument!keyword}
 
-\item[接口(interface):] 关于如何使用函数的描述, 包括函数名, 实参, 以及返回值信息. 
+\item[接口(interface):] 描述如何使用要给函数, 包括参数和返回值的名称以及描述. 
 \index{interface}
 
 \item[重构(refactoring):] 修改代码, 以优化函数接口, 提升代码质量的流程.
 \index{refactoring}
 
-\item[开发计划(development plan):] 编码流程.
+\item[开发计划(development plan):] 编码过程.
 \index{development plan}
 
-\item[帮助文档(docstring):] 函数定义开头部分的文档, 用来描述函数接口. 
+\item[帮助文档(docstring):] 函数定义顶部的文档字符串, 用来描述函数接口. 
 \index{docstring}
 
 \item[前置条件(precondition):] 函数运行前, 调用方需满足的条件. 
@@ -2970,7 +2972,7 @@ def polyline(t, n, length, angle):
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/flowers.pdf}}
-\caption{花朵.}
+\caption{花.}
 \label{fig.flowers}
 \end{figure}
 
@@ -3007,7 +3009,7 @@ def polyline(t, n, length, angle):
 \index{typewriter, turtle}
 
 字母表中的字母都是由几个基础元素构成, 比如垂直线和水平线, 以及曲线. 
-设计个字母表, 使用种类最少的基本元素, 编写函数绘制字母. 
+设计个字母表, 使用最少数量的基本元素, 编写一个绘制字母的函数. 
 
 你要为每个字母开发函数, 比如 \verb"draw_a", \verb"draw_b",等等, 
 将这些函数放在名为{\tt letters.py}的文件中. 
@@ -3022,7 +3024,7 @@ def polyline(t, n, length, angle):
 \begin{exercise}
 
 去\url{http://en.wikipedia.org/wiki/Spiral}了解一下螺旋线;
-然后编码实现一个阿基米德螺线(或其他种类). 
+然后编码实现一个阿基米德螺线(或其他螺旋线). 
 参阅: \url{http://thinkpython2.com/code/spiral.py}.
 \index{spiral}
 \index{Archimedian spiral} 
