@@ -3035,15 +3035,15 @@ def polyline(t, n, length, angle):
 \chapter{条件和递归}
 
 本章的重点是{\tt if}语句, 
-基于程序的状态不同, 执行不同的代码. 
-但首先我要先介绍两个新的运算符: 向下取整和求模. 
+它会基于程序的不同状态, 执行不同的代码. 
+但首先我要介绍两个新的运算符: 向下取整和求模. 
 
 \section{向下取整和求模}
 
-{\bf 向下取整} 运算符,即 \verb"//", 
-两数相除, 结果向下取整. 
+{\bf 向下取整}运算符,即 \verb"//", 
+它会将两数相除, 结果向下取整. 
 例如, 假设某电影时长105分钟, 你想知道按小时计, 是多长时间. 
-一般除法返回的是浮点数:
+常规除法返回的是浮点数:
 
 \begin{verbatim}
 >>> minutes = 105
@@ -3052,7 +3052,7 @@ def polyline(t, n, length, angle):
 \end{verbatim}
 
 但一般我们表示小时, 不用小数格式. 
-向下取整返回的就是整的小时数, 舍弃了小数部分:
+向下取整会返回小时数的整数部分, 舍弃了小数部分:
 
 \begin{verbatim}
 >>> minutes = 105
@@ -3061,7 +3061,7 @@ def polyline(t, n, length, angle):
 1
 \end{verbatim}
 
-要想知道舍弃的分钟数, 只需减去一小时, 剩下的便是了:
+要得到余数, 只需从总分钟数中减去一小时的分钟数:
 
 \begin{verbatim}
 >>> remainder = minutes - hours * 60
@@ -3077,7 +3077,7 @@ def polyline(t, n, length, angle):
 \index{operator!modulus}
 
 还可以使用 {\bf 求模运算符},  \verb"%",  
-两数相除, 返回余数. 
+它会将两数相除, 返回余数. 
 
 \begin{verbatim}
 >>> remainder = minutes % 60
@@ -3085,13 +3085,14 @@ def polyline(t, n, length, angle):
 45
 \end{verbatim}
 %
-求模运算的用途不止于此. 例如, 看一个数字是否可以被另一个整除--如果
+求模运算的用途不止于此. 例如, 检查一个数字是否可以
+被另一个整除--如果
 {\tt x \% y}结果为0, 则{\tt x}可以被{\tt y}整除.
 \index{divisibility}
 
-你也可以通过求模从数字中提取一位或多位余数. 
-例如,  {\tt x \% 10}获取的便是{\tt x} 除以10后剩下的余数. 
-同样, {\tt x \% 100}获取的就是两位余数. 
+此外, 你也可以通过求模从数字中提取最右边的一个或多个数字. 
+例如,  {\tt x \% 10}可以得到{\tt x}(10进制下) 最右边的一位数字. 
+同样, {\tt x \% 100}可以得到最后两位数字. 
 
 如果你使用的是Python 2, 除法略有不同. 
 其除法运算符, \verb"/",  会在两个整数相除时, 自动向下取整, 
@@ -3105,8 +3106,8 @@ def polyline(t, n, length, angle):
 \index{logical operator}
 \index{operator!logical}
 
-{\bf 布尔表达式} 是用来表示结果是对或错的表达式. 
-下面例子使用运算符{\tt ==},  比较两个操作数, 
+{\bf 布尔表达式} 是用来表示结果为真或为假的表达式. 
+下面例子使用运算符{\tt ==},  它比较两个操作数, 
 如果相等, 则结果为{\tt True}, 否则为{\tt False}:
 
 \begin{verbatim}
@@ -3116,7 +3117,7 @@ True
 False
 \end{verbatim}
 %
-{\tt True} 和 {\tt False} 都是{\tt  布尔}格式的值, 不是字符串:
+{\tt True} 和 {\tt False}都是{\tt 布尔}类型的特殊值, 不是字符串:
 \index{True special value}
 \index{False special value}
 \index{special value!True}
@@ -3143,7 +3144,7 @@ False
 %
 虽然这些运算符对你来说并不陌生, 但是Python中的运算符和数学里的不同. 
 一个很常见的错误就是混淆单等号({\tt =})和双等号({\tt ==}). 
-要知道,  {\tt =}是赋值运算符, 而{\tt ==}是关系运算符. 
+要记住, {\tt =}是赋值运算符, 而{\tt ==}是关系运算符. 
 而且也没有{\tt =<} 和 {\tt =>}这种运算符. 
 \index{relational operator}
 \index{operator!relational}
@@ -3191,7 +3192,7 @@ True
 \index{statement!if}
 \index{conditional execution}
 若想写出实用性强的程序, 就必然需要程序可以根据条件, 进行选择处理. 
-{\bf 条件语句} 便可以解决此难题. 
+{\bf 条件语句} 便为我们提供了这种能力. 
 最简单的便是{\tt if} 语句:
 
 \begin{verbatim}
@@ -3210,7 +3211,7 @@ if x > 0:
 
 缩进体对于语句行数没有限制, 不过至少要有一行. 
 但是有时候, 缩进体暂时不想写语句(类似于待写代码的占位符), 
-这种情况, 可以使用 {\tt pass}语句, 表示不做任何操作.
+这种情况下, 可以使用 {\tt pass}语句, 表示不做任何操作.
 \index{pass statement}
 \index{statement!pass}
 
@@ -3225,9 +3226,9 @@ if x < 0:
 \index{alternative execution}
 \index{else keyword}
 \index{keyword!else}
-{\tt if} 语句第二种使用场景, 便是``选择执行'',
+{\tt if} 语句第二种使用场景, 是``选择执行'',
 一般存在两种选择, 具体执行哪个, 需要根据条件判断. 
-语义结构如下:
+语法如下:
 
 \begin{verbatim}
 if x % 2 == 0:
@@ -3238,16 +3239,15 @@ else:
 %
 如果 {\tt x}对2取余后, 结果为0,则{\tt x}为偶数, 并输出相应信息. 
 如果不为0, 则执行第二组语句. 
-这种条件非真即假, 必然有相应方案会执行. 这些方案, 叫做{\bf 分支}, 
+这种条件非真即假, 所以只有一种情况会运行. 这些选择, 
+被称为{\bf 分支}, 
 因为它们属于执行流程上的分叉. 
 \index{branch}
-
-
 
 \section{链式条件}
 \index{chained conditional}
 \index{conditional!chained}
-有时候, 会遇到多种可能方案, 便需要更多的分支. 
+有时候, 会遇到多种可能性, 便需要更多的分支. 
 一种方式是采用{\bf 链式条件}进行处理:
 
 \begin{verbatim}
@@ -3259,7 +3259,7 @@ else:
     print('x and y are equal')
 \end{verbatim}
 %
-{\tt elif}  是``else if''的缩写. 同样, 上述代码也只有一个分支会运行. 
+{\tt elif} 是``else if''的缩写. 同样, 上述代码也只有一个分支会运行. 
 对于{\tt elif}语句的数量, 没有限制. 
 至于{\tt else}, 不是必须的, 但如果有的话, 则必须放到结尾.
 \index{elif keyword}
@@ -3275,7 +3275,7 @@ elif choice == 'c':
 \end{verbatim}
 %
 这些条件都是顺序检验. 如果一个为假, 则检验下一个, 依此类推. 
-如果条件为真, 则相应分支开始执行, 同时这些判断语句也都不会再执行. 
+如果条件为真, 则相应分支开始执行, 语句结束. 
 即使存在多个条件为真, 那也只会执行第一个为真的分支.  
 
 
@@ -3283,8 +3283,8 @@ elif choice == 'c':
 \index{nested conditional}
 \index{conditional!nested}
 
-条件判断也可以嵌套于其他条件内. 
-可以将上一节的例子改写如下:
+条件判断也可以嵌套于其他条件语句内. 
+可以将上一节的例子改写成下面这样:
 
 \begin{verbatim}
 if x == y:
@@ -3299,8 +3299,8 @@ else:
 外部的条件判断包含两个分支. 
 第一个只包含一个简单语句. 
 第二个则包含另外一个{\tt if}语句, 
-这个语句又包含两个分支, 这两个分支也都很简单, 只是简单语句. 
-同样, 它们的位置也可以继续放条件语句.
+这个语句又包含两个分支, 这两个分支都只是简单语句. 
+不过, 它们也可以继续是条件语句.
 
 虽然语句的缩进可以使代码结构清晰, 但是{\bf 嵌套条件}的语句阅读起来却很麻烦. 
 所以, 最好还是尽量不用. 
@@ -3313,28 +3313,28 @@ if 0 < x:
         print('x is a positive single-digit number.')
 \end{verbatim}
 %
-只有两个条件都满足, {\tt print} 语句才会运行, 这恰恰和{\tt and}运算符的作用一样:
+只有两个条件都满足, {\tt print} 语句才会运行, 因此我们
+可以使用{\tt and}运算符, 得到同样的效果:
 
 \begin{verbatim}
 if 0 < x and x < 10:
     print('x is a positive single-digit number.')
 \end{verbatim}
 
-对于这种条件判断, Python提供了更简洁的方案:
+对于这种类型的条件, Python提供了更简洁的方案:
 
 \begin{verbatim}
 if 0 < x < 10:
     print('x is a positive single-digit number.')
 \end{verbatim}
 
-
 \section{递归}
 \label{recursion}
 \index{recursion}
 
 既然一个函数可以调用另一个函数, 那么, 函数也就可以调用自身. 
-虽然目前还未看到其用途, 但这却是程序最神奇的功能之一了. 
-看看以下示例:
+虽然这可能不是一件好事, 但这却是程序最神奇的功能之一了.
+看看下面的函数:
 
 \begin{verbatim}
 def countdown(n):
@@ -3345,7 +3345,7 @@ def countdown(n):
         countdown(n-1)
 \end{verbatim}
 %
-如果{\tt n} 为0或负数, 输出单词 ``Blastoff!''. 
+如果{\tt n}为0或负数, 输出单词 ``Blastoff!''. 
 否则, 输出{ \tt n} , 然后调用函数自身{\tt countdown}并以{\tt n-1}为实参. 
 
 如果如下一般调用此函数, 会如何?
@@ -3355,29 +3355,28 @@ def countdown(n):
 \end{verbatim}
 %
 
-调用{\tt countdown}, 并且{\tt n=3}, 由于{\tt n}大于0, 输出3并以{\tt n-1}为参数
-调用自身...
+{\tt countdown}的执行从{\tt n=3}开始, 由于{\tt n}大于0, 输出值为3, 然后调用自身...
 
 \begin{quote}
-调用{\tt countdown},  并且{\tt n=2}, 由于{\tt n}大于0, 输出2并调用自身...
+{\tt countdown}的执行从{\tt n=2}开始, 由于{\tt n}大于0, 输出值为2, 然后调用自身...
 
 \begin{quote}
-调用{\tt countdown},  并且{\tt n=1}, 由于{\tt n}大于0, 输出1并调用自身...
+{\tt countdown}的执行从{\tt n=1}开始, 由于{\tt n}大于0, 输出值为1, 然后调用自身...
 
 \begin{quote}
-调用{\tt countdown},  并且{\tt n=0}, 由于{\tt n}不大于0, 输出``Blastoff!'', 
+{\tt countdown}的执行从{\tt n=0}开始, 由于{\tt n}不大于0, 输出``Blastoff!'', 
 然会返回. 
 \end{quote}
 
-{\tt n=1}的 {\tt countdown}执行完结, 返回. 
+{\tt n=1}的 {\tt countdown}返回. 
 \end{quote}
 
-{\tt n=2}的 {\tt countdown}执行完结, 返回. 
+{\tt n=2}的 {\tt countdown}返回. 
 \end{quote}
 
-{\tt n=3}的 {\tt countdown}执行完结, 返回. 
+{\tt n=3}的 {\tt countdown}返回. 
 
-然后会回到 \verb"__main__"中,  所有输出如下:
+然后会回到 \verb"__main__",  所有输出如下:
 \index{main}
 
 \begin{verbatim}
@@ -3392,7 +3391,7 @@ Blastoff!
 \index{recursion}
 \index{function!recursive}
 
-再举个例子, 我们写个输出{\tt n} 次字符串的函数.
+再举个例子, 我们写个将字符串输出{\tt n} 次的函数.
 
 \begin{verbatim}
 def print_n(s, n):
@@ -3402,14 +3401,14 @@ def print_n(s, n):
     print_n(s, n-1)
 \end{verbatim}
 %
-如果{\tt n<=0}, 则 {\bf return 语句}终止函数运行. 
-运行流程立刻返回到调用者, 函数其他代码不执行. 
+如果{\tt n<=0}, 则 {\bf return 语句}退出函数. 
+执行流程立刻返回给调用者, 函数其他部分不执行. 
 \index{return statement}
 \index{statement!return}
 
-函数其余部分代码和{\tt countdown}类似: 
-输出{\tt s},  以 $n-1$ 为参数, 调用自己, 重复$n-1$次. 
-那么, 所有输出的行数便是 {\tt 1 + (n - 1)},  其和为{\tt n}. 
+函数其余部分和{\tt countdown}类似:
+显示{\tt s}, 调用自身, 以再显示{\tt s}另外$n-1$次. 
+因此, 所有输出的行数便是 {\tt 1 + (n - 1)},  加起来为{\tt n}. 
 
 对于这种简单样例, 用{\tt for} 循环可能更加方便. 
 但是后续我们会遇到一些例子, 用{\tt for}循环比较难编写, 而用递归却轻而易举, 
@@ -3424,12 +3423,12 @@ def print_n(s, n):
 \index{function frame}
 \index{frame}
 
-在第~\ref{stackdiagram}节, 我们使用栈图来描述函数调用时
+在第~\ref{stackdiagram}节, 我们使用栈图来描述函数调用过程中
 程序的状态. 
-同样, 栈图也有助于我们更好理解递归函数. 
+相同类型的图表也有助于更好地解释递归函数. 
 
-一旦函数被调用, Python都会创建一个包含函数局部变量以及参数的框. 
-所以对于递归函数, 可能会同时创建多个框. 
+每次函数被调用, Python都会创建一个包含函数局部变量以及参数的框. 
+所以对于递归函数, 可能会在同一时间有多个框存在于堆栈上. 
 
 图~\ref{fig.stack2}便是以{\tt n = 3}为参数, 调用{\tt countdown}所产生的栈图. 
 
@@ -3448,8 +3447,8 @@ def print_n(s, n):
 四个{\tt countdown}的框分别对应不同的{\tt n}值, 最底层{\tt n=0}的栈, 叫做
 {\tt 边界条件},  也就是不再进行递归调用的栈, 所以下面也不会再有其他框了. 
 
-做个练习, 以\verb"s = 'Hello'"和{\tt n=2}为参数, 绘制\verb"print_n"调用的栈图. 
-然后编写名为 \verb"do_n" 的函数, 参数为一个函数对象, 和一个数值{\tt n}. 
+做个练习, 以\verb"s = 'Hello'"和{\tt n=2}为参数, 绘制调用\verb"print_n"的栈图. 
+然后编写名为\verb"do_n"的函数, 参数为一个函数对象, 和一个数值{\tt n}. 
 使其调用{\tt n}次给定的函数. 
 
 
@@ -3470,7 +3469,7 @@ def recurse():
 \end{verbatim}
 %
 多数编程环境中, 无穷递归的程序不会一直运行. 
-在Python中, 当达到了最大递归深度, 便会报错:
+当达到了最大递归深度, Python便会报错:
 \index{exception!RuntimeError}
 \index{RuntimeError}
 
@@ -3487,7 +3486,7 @@ RuntimeError: Maximum recursion depth exceeded
 %
 这次的追踪信息比以往的要长一些. 这个错误发生时, 栈中已经有1000个{\tt 递归}框了!
 
-如若不幸遇到无穷递归, 最好重新审视一下你的函数, 确保存在不再递归调用的边界条件. 
+如若不幸遇到无穷递归, 最好重新审视一下你的函数, 确保存在不再进行递归调用的边界条件. 
 如果已有边界条件, 请检查是否可以保证其被触达. 
 
 
@@ -3496,7 +3495,7 @@ RuntimeError: Maximum recursion depth exceeded
 
 到目前为止, 我们编写的程序,基本都没有涉及用户输入, 它们每次执行都一样. 
 
-Python提供了内置函数{\tt input},  可以暂停程序运行, 等待用户键入信息. 
+Python提供了内置函数{\tt input}, 可以暂停程序运行, 等待用户键入信息. 
 当用户敲击{\sf  Return} 或 {\sf Enter}键时, 程序恢复运行, 
 同时\verb"input"将用户输入作为字符串返回. 
 在Python 2中, 同样作用的函数叫做\verb"raw_input".
@@ -3512,7 +3511,7 @@ What are you waiting for?
 \end{verbatim}
 %
 在接收用户输入时, 最好给用户以提示, 使其知晓要输入的内容. 
- \verb"input" 的参数便是提示信息内容:
+\verb"input"会把参数作为提示信息:
 \index{prompt}
 
 \begin{verbatim}
@@ -3523,11 +3522,11 @@ Arthur, King of the Britons!
 'Arthur, King of the Britons!'
 \end{verbatim}
 %
-提示信息末尾的\verb"\n"是个{\bf 换行符},  表示另起一行的特殊字符. 
+提示信息末尾的\verb"\n"是个{\bf 换行符}, 表示另起一行的特殊字符. 
 所以用户的输入信息会处于提示信息下面.  
 \index{newline}
 
-如果想要一个整数, 那就要将返回值转为{\tt int}:
+若想得到一个整数, 便要将返回值转为{\tt int}:
 
 \begin{verbatim}
 >>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
@@ -3565,12 +3564,12 @@ ValueError: invalid literal for int() with base 10
 
 \item 哪种错误
 
-\item 发生何处
+\item 出于何处
 
 \end{itemize}
 
-语法错误通常容易识别, 但是有些则会误导我们. 
-空格异常通常比较麻烦, 因为空格和制表({\tt Tab})符都看不到, 所以容易被忽视. 
+语法错误通常容易定位, 但是有些情况需要注意. 
+空格异常可能比较棘手, 因为空格和制表({\tt Tab})符是不可见的, 所以容易被忽视. 
 \index{whitespace}
 
 \begin{verbatim}
@@ -3583,13 +3582,13 @@ IndentationError: unexpected indent
 \end{verbatim}
 %
 此例中, 问题在于, 第二行多了一个空格. 
-但是错误信息指向 {\tt y}, 便舞蹈了我们. 
-通常, 错误信息只标识了错误发生的位置, 但是问题代码可能在
-此位置之前甚至是前行代码. 
+但是错误信息指向 {\tt y}, 便误导了我们. 
+通常, 错误信息只标识错误发生的位置, 但是问题代码可能在
+此位置之前, 甚至是前行代码. 
 \index{error!runtime}
 \index{runtime error}
 
-运行时错误也如此, 假设以分贝为单位, 计算信噪比. 
+运行时错误也如此, 假设你要计算分贝的信噪比. 
 公式是$SNR_{db} = 10 \log_{10} (P_{signal} / P_{noise})$. 
 在Python中, 编码如下:
 
@@ -3617,7 +3616,7 @@ ValueError: math domain error
 错误信息显示, 问题出在第5行, 
 但是这行代码看不出任何问题. 
 为了确定具体问题, 可以输出{\tt ratio}值, 显示是0.
-那问题便出在第4行, 本应用浮点数除法, 却误用了整除.
+那问题便出在第4行, 本应使用浮点数除法, 却误用了整除.
 \index{floor division}
 \index{division!floor}
 
@@ -3628,11 +3627,12 @@ ValueError: math domain error
 
 \begin{description}
 
+
 \item[向下取整(floor division):] 运算符{\tt //}, 将两数相除, 结果向下(负无穷方向)取整.
   \index{floor division} 
   \index{division!floor}
 
-\item[求模运算符(modulus operator):]  百分号({\tt \%})表示的运算符, 用于整数, 表示两数相除后的余数. 
+\item[求模运算符(modulus operator):]  一个运算符, 用百分号({\tt \%})表示, 作用于整数并返回两数相除后的余数. 
 \index{modulus operator}
 \index{operator!modulus}
 
@@ -3640,11 +3640,11 @@ ValueError: math domain error
 \index{boolean expression}
 \index{expression!boolean}
 
-\item[关系运算符(relational operator):] 比较操作数的运算符: 
-{\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, 和 {\tt <=}.
+\item[关系运算符(relational operator):] 比较操作数的运算符, 包括 
+{\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=} 和 {\tt <=}.
 
-\item[逻辑运算符(logical operator):]  拼接布尔表达式的运算符: 
-{\tt and}, {\tt or}, 以及 {\tt not}.
+\item[逻辑运算符(logical operator):] 组合布尔表达式的运算符, 包括 
+{\tt and}, {\tt or} 以及 {\tt not}.
 
 \item[条件语句(conditional statement):]  根据条件, 确定程序运行流程的语句.
 \index{conditional statement}
@@ -3657,14 +3657,14 @@ ValueError: math domain error
 缩进体相对头部需要缩进.
 \index{compound statement}
 
-\item[分支(branch):] 条件语句中可选的语句序列中的一种. 
+\item[分支(branch):] 条件语句中一个可选的语句序列. 
 \index{branch}
 
 \item[链式条件(chained conditional):] 一系列可选分支构成的条件语句. 
 \index{chained conditional}
 \index{conditional!chained}
 
-\item[嵌套条件(nested conditional):]  出现在条件语句的分支中的条件语句. 
+\item[嵌套条件(nested conditional):] 出现在条件语句的分支中的条件语句. 
 \index{nested conditional}
 \index{conditional!nested}
 
@@ -3674,7 +3674,7 @@ ValueError: math domain error
 \item[递归(recursion):]  函数调用自身的过程. 
 \index{recursion}
 
-\item[边界条件(base case):]  递归函数中不再进行递归调用的条件分支. 
+\item[边界条件(base case):]  递归函数中不再进行递归调用的条件. 
 \index{base case}
 
 \item[无穷递归(infinite recursion):]  不存在或者永远无法触及边界条件的递归, 最终, 无穷递归会报运行时异常.
@@ -3687,7 +3687,7 @@ ValueError: math domain error
 \begin{exercise}
 
 {\tt time}模块提供同样名为{\tt time}的函数, 此函数以某个``时间点''为基准, 
-返回当前格林威治时间戳. 理论上, 可以以任意时间为参考点, 而在Unix系统中, 
+返回当前格林威治时间戳. 在Unix系统中, 
 一般以1970年1月1日为参考``时间点''. 
 
 \begin{verbatim}
@@ -3696,7 +3696,7 @@ ValueError: math domain error
 1437746094.5735958
 \end{verbatim}
 
-编写脚本, 实现将当前时间转换为一天中的时间(以时分秒为格式), 
+编写一个脚本, 读取当前时间并将其转换为日期时间(以时分秒格式表示), 
 以及基准时间点以来的天数. 
 
 \end{exercise}
@@ -3705,7 +3705,7 @@ ValueError: math domain error
 \begin{exercise}
 \index{Fermat's Last Theorem}
 
-费马大定理说, 没有任何正整数
+费马大定理表明, 不存在任何正整数
 $a$, $b$, 和 $c$ 满足
 
 \[ a^n + b^n = c^n \]
@@ -3714,17 +3714,17 @@ $a$, $b$, 和 $c$ 满足
 
 \begin{enumerate}
 
-\item 编写函数 \verb"check_fermat" , 四个入参---{\tt a}, {\tt b}, {\tt c} 和 {\tt n}---
-以检验费马大定理是否成立. 
+\item 编写函数 \verb"check_fermat" , 它接受四个入参---{\tt a}, {\tt b}, {\tt c} 和 {\tt n}---
+并检验费马大定理是否成立. 
 如果$n$大于2同时满足
 
 \[a^n + b^n = c^n \]
 %
-那么程序应输出,  ``Holy smokes, Fermat was wrong!'', 
+那么程序应输出, ``Holy smokes, Fermat was wrong!'', 
 否则, 输出``No, that doesn't work.''
 
-\item 编写函数, 令用户输入 {\tt a}, {\tt b}, {\tt c} 和 {\tt n}, 
-并将其转换为整数, 然后用\verb"check_fermat" 来检验是否违背了费马大定理. 
+\item 编写一个函数, 提示用户输入 {\tt a}, {\tt b}, {\tt c} 和 {\tt n}, 
+并将其转换为整数, 然后用\verb"check_fermat" 来检验它们是否违背了费马大定理. 
 
 \end{enumerate}
 
@@ -3734,12 +3734,12 @@ $a$, $b$, 和 $c$ 满足
 \begin{exercise}
 \index{triangle}
 
-给你三根木棍, 你不一定可以将其拼成三角形, 比如, 一根12英寸长, 
+给你三根木棍, 你可能无法将其拼成三角形, 比如, 一根12英寸长, 
 其余两根1英寸长, 这两根太短, 以至于都到不了长的那根的中间. 
-所以, 对于三根任意长度的木棍, 有个简单方案, 可以检验其是否可以拼成三角形:
+所以, 对于三根任意长度的木棍, 都有一个简单方法, 可以确定其是否可以拼成三角形:
 
 \begin{quotation}
-三根木棍中, 如果有任意一根长度大于另外两根之和, 便拼不成三角形. 
+三根木棍中, 如果有任意一根长度大于另外两根之和, 则无法组成三角形. 
 否则, 便可以拼成三角形. (如果两边之和等于第三边, 便称其为``退化''三角形. )
 \end{quotation}
 
@@ -3748,8 +3748,8 @@ $a$, $b$, 和 $c$ 满足
 \item 编写\verb"is_triangle" 函数, 以三个整数变量为入参, 
 同时根据三个特定长度的木棍是否可以拼成三角形, 来输出 ``Yes'' 或 ``No''. 
 
-\item 编写函数, 提示用户输入三个木棍的长度, 并将其转换为整数, 
-然后用\verb"is_triangle"检测这三个值是否可以拼成三角形. 
+\item 编写一个函数, 提示用户输入三个木棍的长度, 并将其转换为整数, 
+并使用\verb"is_triangle"函数检测这三个值是否可以拼成三角形. 
 \end{enumerate}
 
 \end{exercise}
@@ -3769,7 +3769,7 @@ recurse(3, 0)
 
 \begin{enumerate}
 
-\item 调用 {\tt  recurse(-1, 0)}, 会发生什么?
+\item 如果像这样{\tt  recurse(-1, 0)}, 调用函数会发生什么?
 
 \item 为此函数编写帮助文档, 告知使用函数所须了解的相关信息(仅此而已).
 
@@ -3782,7 +3782,7 @@ recurse(3, 0)
 
 \begin{exercise}
 阅读下面函数, 看看是否能明白其功能(参阅第~\ref{turtlechap}节的案例). 
-运行并看看是否正确. 
+运行并看看是否理解正确. 
 
 \begin{verbatim}
 def draw(t, length, n):
@@ -3811,8 +3811,8 @@ def draw(t, length, n):
 \begin{exercise}
 \index{Koch curve}
 
-科赫曲线(The Koch curve) 是类似图~\ref{fig.koch}的一种分形几何. 
-要想绘制长度为$x$的曲线, 下面是需要做的:
+科赫曲线(The Koch curve)是类似图~\ref{fig.koch}的一种分形几何. 
+要想绘制长度为$x$的曲线, 你需要如此这般:
 
 \begin{enumerate}
 
@@ -3832,7 +3832,7 @@ def draw(t, length, n):
 
 \end{enumerate}
 
-当$x$小于3时, 会有所不同:  在此情况下, 绘制所得为长$x$的一段直线. 
+当$x$小于3时, 会有所不同: 在此情况下, 绘制所得为长$x$的一段直线. 
 
 \begin{enumerate}
 
