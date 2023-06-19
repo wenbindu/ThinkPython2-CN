@@ -1,5 +1,6 @@
 # ThinkPython2-CN
 《ThinkPython2》中文译本, 希望能令你的Python学习之路简单一些。
+当前, 笔者在重新修订简体中文版, 繁体版本目前差异较多, 请多担待.
 
 ## 结构
 
@@ -11,13 +12,14 @@
 #### pdf 文件:
 
 - [x] 中文简体: ThinkPython-SimplifiedChinese.pdf
-- [x] 中文繁体: ThinkPython-TraditionalChinese.pdf
+- [x] 中文繁体(待完善): ThinkPython-TraditionalChinese.pdf
 
 
 ## 感谢
 
 感谢原书对于我的帮助以及影响，谢谢Allen Downey。
 本书在翻译过程中，力求在维持原文表述含义的同时，追求简单明了，通顺易懂。翻译过程中多有不足之处，请多提意见，谢谢。
+
 
 ## 提示
 
