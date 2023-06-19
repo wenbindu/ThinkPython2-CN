@@ -3863,7 +3863,7 @@ def draw(t, length, n):
 \section{返回值}
 \index{return value}
 
-调用函数便会产生返回值, 一般被赋值给变量或者作为表达式的一部分使用. 
+调用函数便会产生返回值, 一般我们将其赋值给变量或者作为表达式的一部分使用. 
 
 \begin{verbatim}
 e = math.exp(1.0)
@@ -3871,10 +3871,10 @@ height = radius * math.sin(radians)
 \end{verbatim}
 %
 目前写的函数, 多是无返回值的. 笼统讲, 是没有返回值, 然而, 
-更准确地说, 返回值是空({\tt None}).
+更准确地说, 返回值是{\tt None}.
 
 本章, 我们总算要写一些有返回值的函数了. 
-第一个例子是 {\tt area}, 根据给定的半径, 返回面积:
+第一个例子是 {\tt area}函数, 根据给定的半径, 返回面积:
 
 \begin{verbatim}
 def area(radius):
@@ -3908,7 +3908,7 @@ def absolute_value(x):
         return x
 \end{verbatim}
 %
-这些{\tt return}语句都处于可选条件分支中, 而且, 只有一个会执行. 
+这些{\tt return}语句位于条件语句的不同分支中, 而且, 只有一个会执行. 
 
 一旦返回语句执行, 函数不再执行后续语句, 立刻终止运行. 
 {\tt return}语句后的代码, 或者任何不被触及的代码, 都叫做{\bf 无效代码}.
@@ -3927,7 +3927,7 @@ def absolute_value(x):
 
 这个函数错误之处在于, 如果{\tt x}恰好是0,
 便没有条件为真, 也就不会触及任何{\tt return}语句. 
-即使运行到函数最后, 返回值也会是{\tt None}, 而不会是0的绝对值. 
+如果运行到函数最后, 返回值将是{\tt None}, 而不是0的绝对值. 
 \index{None special value}
 \index{special value!None}
 
@@ -3954,33 +3954,33 @@ None
 
 随着编写的函数越来越长, 你会发现, 调试时间也越来越恐怖. 
 
-若想解决越来越复杂的程序, 可以试试新的方法, 即{\bf 增量开发}.
-增量开发是通过每次只编写并测试少量代码, 从而避免
+为了处理越来越复杂的程序, 您可能想尝试一种新的方法, 即{\bf 增量开发}.
+增量开发的目标是通过每次只添加并测试少量代码, 从而避免
 长时间的连续开发调试. 
 \index{testing!incremental development}
 \index{Pythagorean theorem}
 
-比如, 若想计算两坐标 $(x_1, y_1)$ 和 $(x_2, y_2)$之间的距离, 
-根据勾股定理, 可以得到距离为:
+比如, 若想得到两坐标 $(x_1, y_1)$ 和 $(x_2, y_2)$之间的距离, 
+根据勾股定理, 距离为:
 
 \begin{displaymath}
 \mathrm{distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \end{displaymath}
 %
-首先考虑 {\tt distance}函数是什么样子. 换句话说, 就是何为输入(形参), 
+首先考虑在Python中 {\tt distance}函数是什么样子. 换句话说, 就是何为输入(形参), 
 何为输出(返回值)?
 
 此例中, 输入为两个点, 即四个值表示的坐标. 返回值为两点的距离, 用浮点数表示. 
 
-马上你便可以写出函数的大致轮廓:
+你可以立刻写出函数的大致轮廓:
 
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
     return 0.0
 \end{verbatim}
 %
-显然, 此函数无法计算距离, 因为其总是返回0.
-但是, 此函数语法正确, 所以可以运行, 
+显然, 这个版本无法计算距离, 因为其总是返回0.
+但是, 它的语法正确, 同时可以运行, 
 这意味着, 在其变复杂之前, 你能够对其进行测试. 
 
 用实例参数调用此函数, 看看效果:
@@ -3995,8 +3995,9 @@ def distance(x1, y1, x2, y2):
 在测试函数过程中, 知道预期结果, 尤为重要. 
 \index{testing!knowing the answer}
 
-我们已经确认此函数语法正确, 现在便可以补充完善代码了. 
-首先, 我们计算$x_2 - x_1$ 和 $y_2 - y_1$的值, 保存为临时变量, 并输出. 
+我们已经确认此函数语法正确, 现在便可以向函数体添加代码了. 
+合理的下一步是计算$x_2 - x_1$ 和 $y_2 - y_1$的值, 
+下一个版本会将其保存为临时变量, 并输出. 
 
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
@@ -4011,7 +4012,7 @@ def distance(x1, y1, x2, y2):
 这样, 我们便知道函数入参正确, 同时前期的计算无误. 
 如果发生异常, 那么我们只需要仔细检查这几行代码. 
 
-下一步, 计算{\tt dx} 和 {\tt dy}的平方和:
+接下来, 我们计算{\tt dx} 和 {\tt dy}的平方和:
 
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
@@ -4022,8 +4023,8 @@ def distance(x1, y1, x2, y2):
     return 0.0
 \end{verbatim}
 %
-再次运行代码, 并检查输出(输出值应为25). 
-最后, 使用 {\tt math.sqrt} 计算最终的返回值:
+同样, 你要在此阶段运行代码, 并检查输出(输出值应为25). 
+最后, 你可以使用{\tt math.sqrt}来计算并返回结果:
 \index{sqrt}
 \index{function!sqrt}
 
@@ -4037,62 +4038,60 @@ def distance(x1, y1, x2, y2):
 \end{verbatim}
 %
 如果运行正常, 意味着程序正确. 
-否则, 就要输出返回语句前的 {\tt result} 的值, 仔细排查. 
+否则, 就要在返回语句前打印{\tt result}的值, 仔细排查. 
 
 最终版本的函数, 除了返回一个值, 不会输出任何信息. 
 {\tt print} 语句只是为了便于调试代码, 一旦确认程序无误, 就应将其移除. 
-类似这种代码, 一般叫做{\bf 脚手架代码},  主要用来辅助构建程序, 而并不应
+这种代码, 一般叫做{\bf 脚手架},  主要用来辅助构建程序, 而不应
 忝列最终成品之中. 
 \index{scaffolding}
 
 开始时, 一般每次只增加一两行代码. 但随着经验增长, 慢慢你便可以驾驭大段代码了. 
 无论如何, 增量开发都能节约大量调试时间.
 
-此流程的主要步骤如下:
+此方法的关键在于:
 
 \begin{enumerate}
 
-\item 首先写个可运行的程序, 然后逐步增加. 任何时候遇到错误, 都要弄清缘由, 尽快解决. 
+\item 从一个小的可运行程序开始, 并进行小的增量变化. 任何时候遇到错误, 都要弄清缘由, 尽快解决. 
 
-\item 利用变量保存中间状态值, 以便展示和检验. 
+\item 利用变量保存中间值, 以便展示和检验. 
 
-\item 一旦程序运行正常, 便可以移除冗余代码, 并精简繁琐的语句. 
-但是要警惕不要使代码难以阅读和理解. 
+\item 一旦程序运行正常, 便可以移除脚手架代码, 或将多个语句合并为复合表达式, 从而精简代码. 
+但前提是不会令代码难以阅读. 
 
 \end{enumerate}
 
 做个练习, 用增量开发的方式, 写个函数{\tt hypotenuse}, 
 给定直角三角形的两个直角边, 返回斜边长度. 
-开发时, 记录开发流程的各个阶段. 
+同时在开发过程中记录各个阶段的进展. 
 \index{hypotenuse}
-
 
 
 \section{组合}
 \index{composition}
 \index{function composition}
 
-如你所想, 函数可以调用函数. 
-例如, 编写函数, 输入两个坐标, 一个是圆心, 一个是圆周上的点, 
+如你所想, 你可以在一个函数中调用另外的函数. 
+例如, 编写一个函数, 其接收两个坐标, 一个是圆心, 一个是圆周上的点, 
 计算圆的面积. 
 
 假设圆心坐标为变量{\tt xc} 和
 {\tt yc}, 圆周上点的坐标为{\tt xp} 和 {\tt yp}.
 首先要计算圆的半径, 也就是两点之间的距离. 
-便可以借用之前写过的 {\tt
-distance}的函数, 如下:
+便可以借用之前写过的 {\tt distance}的函数, 如下:
 
 \begin{verbatim}
 radius = distance(xc, yc, xp, yp)
 \end{verbatim}
 %
-下一步便是根据半径, 计算面积, 借用之前函数:
+下一步便是根据半径, 计算面积, 我们刚刚也写过:
 
 \begin{verbatim}
 result = area(radius)
 \end{verbatim}
 %
-将上述步骤封装为一个函数, 得到如下:
+将上述步骤封装在一个函数中, 我们得到:
 \index{encapsulation}
 
 \begin{verbatim}
@@ -4103,7 +4102,7 @@ def circle_area(xc, yc, xp, yp):
 \end{verbatim}
 %
 临时变量{\tt radius} 和 {\tt result} 在开发和调试时有用, 但是程序一旦正常运行, 
-便可以通过组合函数调用, 精简如下:
+便可以通过组合函数调用, 使其更简洁:
 
 \begin{verbatim}
 def circle_area(xc, yc, xp, yp):
@@ -4126,9 +4125,10 @@ def is_divisible(x, y):
 \end{verbatim}
 %
 给布尔函数命名, 通常采用类似是/否提问的词语; 
-\verb"is_divisible" 返回 {\tt True} 或 {\tt False}, 
-以表明{\tt x}是否被{\tt y}整除. 
-比如:
+\verb"is_divisible" 返回{\tt True}或{\tt False}, 
+以标识{\tt x}是否可以被{\tt y}整除. 
+
+这是个示例:
 
 \begin{verbatim}
 >>> is_divisible(6, 4)
@@ -4137,7 +4137,7 @@ False
 True
 \end{verbatim}
 %
- 既然{\tt ==}运算符的结果为布尔值, 
+既然{\tt ==}运算符的结果为布尔值, 
 我们便可以直接返回, 从而精简函数:
 
 \begin{verbatim}
@@ -4161,9 +4161,9 @@ if is_divisible(x, y) == True:
     print('x is divisible by y')
 \end{verbatim}
 %
-但这个比较就显得多余了. 
+但这个比较就显得多余了.
 
-做个练习, 编写函数 \verb"is_between(x, y, z)", 
+做个练习, 编写函数\verb"is_between(x, y, z)", 
 如果$x \le y \le z$, 返回{\tt True}, 否则返回{\tt False}.
 
 
@@ -4182,13 +4182,13 @@ if is_divisible(x, y) == True:
 的命令, 比如管理鼠标, 硬盘等, 但是也仅需要这些).
 
 最早证明了上述伟大结论的是艾兰图灵(Alan Turing), 最早的计算机科学家之一
-(有人会计较其是数学家, 但是早期的计算机科学家, 基本都是数学家). 
+(有人会计较其是数学家, 但是早期的计算机科学家, 起初都是数学家). 
 因此, 这个理论也叫做图灵论断(Turing Thesis). 
 关于图灵论断, 如果想更加详细深入了解, 我推荐 Michael Sipser 所写
  {\em 计算理论导引(Introduction to the Theory of Computation)} 一书.
 
 为了展示目前所学的威力, 我们分析几个递归数学函数. 
-递归定义和循环定义类似, 某种意义上说, 函数定义体内包含了对定义体的引用. 
+递归定义类似于循环定义, 某种意义上说, 函数定义体内包含了对定义体的引用. 
 通常一个完全循环的定义, 是无用的:
 
 \begin{description}
@@ -4200,24 +4200,24 @@ if is_divisible(x, y) == True:
 
 \end{description}
 
-如果在辞典中看到这样的定义, 一定郁闷. 
-但你如果查询一下用符号$!$表示的阶乘运算, 
-会看到以下内容:
+如果在辞典中看到这样的定义, 可能会感到恼火. 
+但你如果查询一下用符号$!$表示的阶乘函数的定义, 
+可能会看到以下内容:
 %
 \begin{eqnarray*}
 &&  0! = 1 \\
 &&  n! = n (n-1)!
 \end{eqnarray*}
 %
-这个定义声明0的阶乘为1, 同时对于任意$n$值的阶乘, 便是$n$乘以$n-1$的阶乘. 
+这个定义声明0的阶乘为1, 同时对于任意$n$, 阶乘$n$等于$n$乘以阶乘$n-1$. 
 
-所以$3!$表示3乘以$2!$,  而$2!$表示2乘以$1!$, $1!$又是1乘以
-$0!$. 整理一下, $3!$ 等于3乘以2乘以1再乘以1,也就是6.
+所以$3!$等于3乘以$2!$,  而$2!$等于2乘以$1!$, $1!$又是1乘以
+$0!$. 整理一下, $3!$ 等于3乘以2乘以1再乘以1,结果是6.
 \index{factorial function}
 \index{function!factorial}
 \index{recursive definition}
 
-如果你可以编写其递归定义, 那便可以编写Python实现它. 
+如果你可以写出某个东西的递归定义, 那便可以编写个Python程序来计算它. 
 首先要确定参数. 很显然, 此处{\tt factorial}函数的参数为整数:
 
 \begin{verbatim}
@@ -4286,7 +4286,7 @@ countdown}极为相似. 如果以3为参数调用{\tt factorial}:
 \index{frame}
 
 最后的框中, 没有局部变量{\tt recurse}和{\tt result} , 是因为
-没有走第二分支. 
+创建它们的分支没有执行. 
 
 \section{置信迁移}
 \index{recursion}
