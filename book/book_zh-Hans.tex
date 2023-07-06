@@ -4297,24 +4297,24 @@ countdown}极为相似. 如果以3为参数调用{\tt factorial}:
 不是根据执行流程深入跟踪, 
 而是{\em 假设}这个函数工作正常, 可以返回正确结果. 
 
-实际你在使用内置函数时, 就在实践置信迁移了. 调用
-{\tt math.cos} 或 {\tt math.exp}时, 并没有深入检查其函数执行体. 
+实际当你使用内置函数时, 就已经在实践置信迁移了. 调用
+{\tt math.cos} 或 {\tt math.exp}时, 并不会查看其具体实现. 
 这是因为你相信写出这些内置函数的人是优秀的编程人员, 
 所以相信这些函数可以正确运行. 
 
 对于你来说, 调用自己的函数也是同理. 例如第~\ref{boolean}节, 
 我们编写了\verb"is_divisible"函数, 用来判断一个数是否可以被另一个数
-整除. 如果我们自己相信这些函数是正确的--分析代码并测试都通过--
+整除. 如果我们确信这些函数是正确的--代码检查以及测试都通过--
 我们便可以直接使用它, 而无需再探究细节. 
 \index{testing!leap of faith}
 
 递归程序也一样. 当你进行递归调用时, 
-无需一步步跟踪运行流程, 你应该相信递归调用运行正常
+无需一步步跟踪执行流程, 而是假设递归调用工作正常
 (会返回正确的结果), 然后问问自己, ``既然我可以计算出 $n-1$的阶乘, 那么
 是不是我也可以计算出$n$的阶乘?'' 很显然你可以, 乘以$n$即可. 
 
-当然, 没有完成函数编写, 便假设其正常运行, 是有点奇怪, 
-所以这也是我们称其为置信迁移的原因!
+当然, 当你还没有完成函数编写, 便假设其正常运行, 是有点奇怪, 
+所以这也是为何我们称其为置信迁移的原因!
 
 
 \section{另例}
@@ -4345,7 +4345,7 @@ def fibonacci(n):
 \end{verbatim}
 %
 若你尝试跟踪其流转, 那即使一个很小的$n$值, 都能令你头疼. 
-但是, 基于置信迁移, 如果两个递归调用都运行正常, 那么很显然, 
+但是, 基于置信迁移, 如果假设两个递归调用都运行正常, 那么很显然, 
 将其相加, 便能得到正确结果. 
 \index{flow of execution}
 
@@ -4353,7 +4353,7 @@ def fibonacci(n):
 \section{类型检查}
 \label{guardian}
 
-试试给 {\tt factorial}函数传递个1.5的参数, 会发生什么?
+试试调用{\tt factorial}函数并将1.5作为参数传递, 会发生什么?
 \index{type checking}
 \index{error checking}
 \index{factorial function}
@@ -4364,8 +4364,8 @@ def fibonacci(n):
 RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
-看起来陷入了无穷递归. 怎么会这样? 此函数有个边界条件--当 {\tt n == 0}时. 
-但如果{\tt n}不是整数, 那便会{\em 掠过} 边界条件, 一直递归下去. 
+看起来陷入了无限递归. 怎么会这样? 此函数有个边界条件--当 {\tt n == 0}时. 
+但如果{\tt n}不是整数, 那便会{\em 掠过}边界条件, 一直递归下去. 
 \index{infinite recursion}
 \index{recursion!infinite}
 
@@ -4374,12 +4374,12 @@ RuntimeError: Maximum recursion depth exceeded
 也就永远不可能再成为0.
 
 我们有两种方案. 一种是尝试改进{\tt factorial}函数, 使其支持浮点数, 
-或者使其检验参数类型. 
+或者使其检验其参数类型. 
 第一种方案会写出伽玛函数, 超出了本书的范畴. 所以选择方案二. 
 \index{gamma function}
 
-我们可以使用内置 {\tt isinstance} 函数来检验参数类型. 
-同时, 我们也需要保证参数是正数:
+我们可以使用内置函数{\tt isinstance}来检验参数类型. 
+同时, 我们也需要确保参数是正数:
 \index{isinstance function}
 \index{function!isinstance}
 
@@ -4438,22 +4438,22 @@ None
 
 \end{itemize}
 
-若要避免第一种异常, 可以在函数开始用{\tt  print}语句, 打印参数值(以及类型). 
-或者编写代码, 校验前置条件. 
+若要避免第一种异常, 可以在函数开头添加{\tt print}语句, 打印参数值(以及类型). 
+或者编写代码, 显示校验前置条件. 
 \index{precondition}
 \index{postcondition}
 
 如果参数没问题, 那在每个{\tt return}语句前, 增加{\tt print}语句, 打印返回值. 
-如果可以的话, 最好亲自检查结果. 同时尽量在调用函数时, 传入合适的参数, 
+如果可以的话, 最好手动检查结果. 同时尽量在调用函数时, 传入合适的参数, 
 以使返回结果便于校验
-(如第~\ref{incremental.development}节). 
+(如第~\ref{incremental.development}节中所示). 
 
 如果函数都正常, 那检验一下函数调用方式, 看看是否正确使用了返回值
 (或者至少用到了返回值!)
 \index{flow of execution}
 
-在函数开头和结尾添加打印语句, 有助于更直观地观察运行流程. 例如, 下面是
-包括打印语句的{\tt factorial}版本:
+在函数开头和结尾添加打印语句, 有助于更直观地观察执行流程. 例如, 下面是一个
+带有打印语句的{\tt factorial}版本:
 
 \begin{verbatim}
 def factorial(n):
@@ -4484,7 +4484,7 @@ def factorial(n):
                  returning 24
 \end{verbatim}
 %
-若惑于其函数执行流程, 那么, 此输出相比有助于理解. 
+若惑于其函数执行流程, 那么, 此输出可能会有助于理解. 
 有时候, 增加脚手架需要耗费一点时间, 
 但是, 这一点时间的花费, 往往能够节约大量的调试时间. 
 
@@ -4496,11 +4496,11 @@ def factorial(n):
 \index{temporary variable}
 \index{variable!temporary}
 
-\item[无效代码(dead code):]  程序永远不会运行的语句, 通常在{\tt return}语句之后. 
+\item[无效代码(dead code):]  程序永远不会运行的语句, 通常出现在{\tt return}语句之后. 
 \index{dead code}
 
-\item[增量开发(incremental development):]  一次仅仅开发并测试少量代码的开发方案, 
-小步慢跑, 从而防止费时调试. 
+\item[增量开发(incremental development):]  一种每次仅添加并测试少量代码的开发方案, 
+小步慢跑, 从而避免调试. 
 \index{incremental development}
 
 \item[脚手架(scaffolding):]  程序开发中起辅助作用的代码, 但不会留在最终程序中. 
@@ -4545,7 +4545,7 @@ print(c(x, y+3, x+y))
 \begin{exercise}
 \label{ackermann}
 
-阿克曼(Ackermann)函数 $A(m, n)$定义如下:
+阿克曼(Ackermann)函数$A(m, n)$定义如下:
 
 \begin{eqnarray*}
 A(m, n) = \begin{cases} 
@@ -4555,11 +4555,11 @@ A(m-1, A(m, n-1)) & \mbox{if } m > 0 \mbox{ and } n > 0.
 \end{cases} 
 \end{eqnarray*}
 %
-参考 \url{http://en.wikipedia.org/wiki/Ackermann_function}.
-编写{\tt ack}函数代码, 实现Ackermann函数. 
-用此代码执行 {\tt ack(3, 4)}, 结果应该为125. 
-同时, 换较大的{\tt m} 和{\tt n}, 看看结果有何不同? 
-答案参见: \url{http://thinkpython2.com/code/ackermann.py}.
+参考\url{http://en.wikipedia.org/wiki/Ackermann_function}.
+编写{\tt ack}函数代码, 计算Ackermann函数. 
+用此代码执行{\tt ack(3, 4)}, 结果应该为125. 
+同时, 当{\tt m} 和{\tt n}较大时, 看看结果有何不同? 
+答案参见:\url{http://thinkpython2.com/code/ackermann.py}.
 \index{Ackermann function}
 \index{function!ack}
 
@@ -4592,11 +4592,11 @@ def middle(word):
 \begin{enumerate}
 
 \item 将这些函数代码, 写入文件{\tt palindrome.py}, 并测试输出. 
-用两个字母, 测试 {\tt middle} 函数, 看看会怎么样? 一个字母呢?  
+用两个字母, 测试{\tt middle}函数, 看看会怎么样? 一个字母呢?  
 尝试传入不包含任何字母的空字符串\verb"''",  会如何?
 
 \item 编写\verb"is_palindrome"函数, 如果传入参数为回文字符串, 
-则返回{\tt True},  否则返回{\tt False}. 
+则返回{\tt True}, 否则返回{\tt False}. 
 提示一下, 你可以使用内置函数{\tt len}检验字符串长度. 
 
 \end{enumerate}
@@ -4609,7 +4609,7 @@ def middle(word):
 
 如果$a$可以被$b$整除, 同时$a/b$也是$b$的幂次方, 那么$a$便是$b$是幂次方. 
 编写函数\verb"is_power", 
-以 {\tt a} 和 {\tt b}为参数, 如果{\tt a}是{\tt b}的幂次放, 则返回{\tt True}. 
+接收参数{\tt a}和{\tt b}, 如果{\tt a}是{\tt b}的幂次方, 则返回{\tt True}. 
 提示:注意边界条件. 
 
 \end{exercise}
@@ -4619,17 +4619,16 @@ def middle(word):
 \index{greatest common divisor (GCD)}
 \index{GCD (greatest common divisor)}
 
- $a$ 和 $b$ 的最大公约数(GCD), 是指能同时被整除的所有约数中的最大
-的一个. 
+两个数$a$和$b$的最大公约数(GCD), 是指能同时被整除且没有余数的最大数. 
 
-寻找最大公约数的一种方法便是观察, 如果$r$ 是$a$除以$b$的余数, 
+寻找最大公约数的一种方法便是基于观察, 如果$r$ 是$a$除以$b$的余数, 
 那么$gcd(a, b) = gcd(b, r)$, 边界条件是$gcd(a, 0) = a$.
 
-编写函数\verb"gcd", 以{\tt a} 和 {\tt b}为参数, 返回其最大公约数. 
+编写函数\verb"gcd", 接收参数{\tt a}和{\tt b}, 并返回其最大公约数. 
 
 
-致谢: 此习题借鉴了 Abelson 和
-Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的样例.
+致谢: 此习题借鉴了Abelson和
+Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 
 \end{exercise}
 
