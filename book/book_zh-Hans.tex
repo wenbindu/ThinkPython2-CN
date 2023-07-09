@@ -4635,7 +4635,7 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 
 \chapter{迭代}
 
-本章主讲迭代, 其主要实现重复执行一段语句. 
+本章主讲迭代, 其主要实现重复执行一组语句. 
 在第~\ref{recursion}节的递归, 便是一种迭代. 
 在第~\ref{repetition}节的{\tt for}循环, 也是一种迭代. 
 本章, 我们会接触另一种迭代, {\tt while} 语句. 
@@ -4646,7 +4646,7 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 \index{statement!assignment}
 \index{reassignment}
 
-你也许已经注意到, 相同的变量可以被多次赋值. 
+你可能已经注意到, 相同的变量可以被多次赋值. 
 重新赋值会将已存在的变量指向新的值(并且不再指向旧的值).
 
 \begin{verbatim}
@@ -4658,9 +4658,9 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 7
 \end{verbatim}
 %
-第一次输出{ \tt x}, 值为5, 第二次输出, 值为7.
+第一次输出{\tt x}, 值为5, 第二次输出, 值为7.
 
-图~\ref{fig.assign2}  展示了栈图中{\bf 重新赋值}
+图~\ref{fig.assign2}展示了栈图中{\bf 重新赋值}
 的过程. \index{state diagram} \index{diagram!state}
 
 在此, 我想澄清一下大家的困惑.
@@ -4671,11 +4671,11 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 \index{equality and assignment}
 
 首先, 等式是对称关系, 而赋值不是. 
-例如, 数学中, 如果 $a=7$, 那么$7=a$.但是在Python中, 
-{\tt a = 7}正确, 但是 {\tt 7 = a}则不然. 
+例如, 数学中, 如果$a=7$, 那么$7=a$. 但是在Python中, 
+{\tt a = 7}正确, 但是{\tt 7 = a}则不然. 
 
 同样, 在数学领域, 等式结果要么真要么假. 
-如果$a=b$, 那么 $a$总是等于$b$. 
+如果$a=b$成立, 那么 $a$始终等于$b$. 
 而在Python中, 虽然赋值语句可以使两变量相等, 但是无法保证其一直相等:
 
 \begin{verbatim}
@@ -4689,7 +4689,7 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 第三行代码, 改变了{\tt a}的值, 但是没有改变{\tt b}, 所以他们不再相等. 
 
 很多时候我们需要给变量重新赋值, 但是要谨慎使用. 
-如果变量的值变动过于频繁, 代码后续将难以理解, 同时调试困难. 
+如果变量的值变动过于频繁, 代码后续将难以理解, 同时调试也困难. 
 
 \begin{figure}
 \centerline
@@ -4706,7 +4706,7 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 \index{update}
 \index{variable!updating}
 
-最常见的一种重新赋值, 便是{\bf 变量更新},
+一种常见的重新赋值, 是{\bf 变量更新},
 通常是基于前值进行修改而得到新值. 
 
 \begin{verbatim}
@@ -4716,14 +4716,14 @@ Sussman的{\em Structure and Interpretation of Computer Programs}中的样例.
 这句代码表示``获取{\tt x}的值, 然后加一, 得到新值, 继而用新值更新{\tt x}.'' 
 
 如果你尝试更新未定义变量, 会遇到错误, 
-因为Python会在赋值{\tt x} 前执行右侧表达式:
+因为Python会在赋值{\tt x} 前会先计算右侧表达式:
 
 \begin{verbatim}
 >>> x = x + 1
 NameError: name 'x' is not defined
 \end{verbatim}
 %
-更新变量前, 一定要{\bf 初始化}, 通常采用简单赋值来实现:
+更新变量前, 一定要先{\bf 初始化}, 通常采用简单赋值来实现:
 \index{initialization (before update)}
 
 \begin{verbatim}
@@ -4747,13 +4747,12 @@ NameError: name 'x' is not defined
 这也是计算机精擅之处, 却恰恰是人类最不擅长的. 
 在计算机编程中, 这种重复, 便称作{\bf 迭代}.
 
-我们已经遇到过两个函数,  {\tt countdown} 和
+我们已经遇到过两个函数, {\tt countdown} 和
 \verb"print_n",  它们都是使用递归进行迭代. 
 因迭代操作很普遍, Python提供了一些内置功能来便捷使用. 
-一个便是在第~\ref{repetition}节见到的{\tt for}语句, 后续再讲. 
+一个便是在第~\ref{repetition}节见到的{\tt for}语句, 我们后续再讲. 
 
-另一个便是{\tt while}语句, 下面是{\tt
-countdown}的 {\tt while}语句版本:
+另一个便是{\tt while}语句, 下面是{\tt countdown}的{\tt while}语句版本:
 
 \begin{verbatim}
 def countdown(n):
@@ -4774,7 +4773,7 @@ def countdown(n):
 
 \item 确定条件之真假.
 
-\item 如果为假, 退出{\tt while}语句, 执行其后语句. 
+\item 如果为假, 退出{\tt while}语句, 执行后续语句. 
 
 \item 如果为真, 运行执行体, 回到第一步. 
 
@@ -4793,11 +4792,11 @@ def countdown(n):
 \index{infinite loop}
 \index{loop!infinite}
 
-在{\tt countdown}例子中, 我们如此保证循环终止:
+在{\tt countdown}例子中, 我们如此来确保循环终止:
 如果{\tt n}小于或等于0,循环不再运行. 
-由于{\tt n}每循环一次, 就会变小, 终究会变成0.
+由于{\tt n}每循环一次, 就会变小, 终究会达到0.
 
-而有些循环, 则不太容易判断, 比如:
+而有些循环, 则不太容易判断是否会终止, 比如:
 
 \begin{verbatim}
 def sequence(n):
@@ -4831,11 +4830,11 @@ def sequence(n):
 \section{{\tt break}语句}
 \index{break statement}
 \index{statement!break}
-有时, 想要出红尘, 就需要先入红尘, 只有进入循环体, 
+有时, 想要出世, 就需要先入世, 只有进入循环体, 
 才知道何时应当终止循环. 
 这时, 我们可以用{\tt break}语句跳出循环. 
 
-例如, 想要获取用户的输入, 直到用户输入{\tt done}, 才跳出循环, 可以这样写:
+例如, 想要获取用户的输入, 直到用户输入{\tt done}为止, 可以这样写:
 
 \begin{verbatim}
 while True:
@@ -4863,8 +4862,8 @@ Done!
 %
 这种写法在{\tt while}循环中很常见, 
 因为你能够随时检验其条件(而不仅仅在头部验证), 
-同时也可以主动地去终止循环(``发生时停止''), 
-而不是被动地等待结束(``执行到停止'').
+同时也可以主动地去终止循环(``当发生某种情况时停止''), 
+而不是被动地等待结束(``一直执行, 直到发生某种情况停止'').
 
 
 \section{平方根}
