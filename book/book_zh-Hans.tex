@@ -4731,8 +4731,8 @@ NameError: name 'x' is not defined
 >>> x = x + 1
 \end{verbatim}
 %
-对变量进行加1来使其更新, 叫做{\bf 自增};
-执行减1更新变量, 叫做{\bf 自减}. 
+对变量进行加1来使其更新, 叫做{\bf 递增};
+执行减1更新变量, 叫做{\bf 递减}. 
 \index{increment}
 \index{decrement}
 
@@ -4870,15 +4870,23 @@ Done!
 \label{squareroot}
 \index{square root}
 
-在编程中, 循环通常用来进行数值计算, 通过用近似值逼近真实值来实现. 
+%Loops are often used in programs that compute
+%numerical results by starting with an approximate answer and
+%iteratively improving it.
+在编程中, 循环通常用来进行数值计算, 通过近似值逼近真实值来实现. 
 \index{Newton's method}
 
+%For example, one way of computing square roots is Newton's method.
+%Suppose that you want to know the square root of $a$.  If you start
+%with almost any estimate, $x$, you can compute a better
+%estimate with the following formula:
 例如, 牛顿公式(Newton's method)便是一种计算平方根的方法. 
 若要计算$a$的平方根, 可以先确定一个任意的估计值, $x$, 
-然后通过下面公式, 可以得到一个更优的值:
+然后通过下面公式, 得到一个更优的值:
 
 \[ y = \frac{x + a/x}{2} \]
 %
+%For example, if $a$ is 4 and $x$ is 3:
 比如, 如果$a$为 4, 且$x$为 3:
 
 \begin{verbatim}
@@ -4889,6 +4897,8 @@ Done!
 2.16666666667
 \end{verbatim}
 %
+%The result is closer to the correct answer ($\sqrt{4} = 2$).  If we
+%repeat the process with the new estimate, it gets even closer:
 结果很接近正确答案($\sqrt{4} = 2$).
 如果我们用得到的近似值, 重复刚才的流程, 结果会更接近:
 
@@ -4898,7 +4908,7 @@ Done!
 >>> y
 2.00641025641
 \end{verbatim}
-%
+% After a few more updates, the estimate is almost exact:
 多重复几次, 结果便更准确:
 \index{update}
 
@@ -4912,7 +4922,10 @@ Done!
 >>> y
 2.00000000003
 \end{verbatim}
-%
+%In general we don't know ahead of time how many steps it takes
+%to get to the right answer, but we know when we get there
+%because the estimate
+%stops changing:
 通常, 我们很难预知, 重复多少次, 才能得到正确结果. 
 但是, 我们知道, 一旦结果不再改变, 便是停止的时候:
 
@@ -4926,7 +4939,9 @@ Done!
 >>> y
 2.0
 \end{verbatim}
-%
+%When {\tt y == x}, we can stop.  Here is a loop that starts
+%with an initial estimate, {\tt x}, and improves it until it
+%stops changing:
 当{\tt y == x}时, 我们便可以停止循环了. 
 下面的循环, 以估计值{\tt x}开始并不断逼近真实值, 在结果不再变化时终止:
 
@@ -4938,8 +4953,12 @@ while True:
         break
     x = y
 \end{verbatim}
-%
-对于大部分的{\tt a} 值, 此方法都有效. 
+%For most values of {\tt a} this works fine, but in general it is
+%dangerous to test {\tt float} equality.
+%Floating-point values are only approximately right:
+%most rational numbers, like $1/3$, and irrational numbers, like
+%$\sqrt{2}$, can't be represented exactly with a {\tt float}.
+对于大部分的{\tt a}值, 此方法都有效. 
 但涉及到{\tt 浮点数}等式, 便很麻烦. 
 浮点值一般认为是近似正确:
 大部分的有理数, 比如$1/3$, 
@@ -4947,6 +4966,9 @@ while True:
 \index{floating-point}
 \index{epsilon}
 
+%Rather than checking whether {\tt x} and {\tt y} are exactly equal, it
+%is safer to use the built-in function {\tt abs} to compute the
+%absolute value, or magnitude, of the difference between them:
 与其费劲比较 {\tt x} 和 {\tt y} 是否相等, 不如用{\tt abs}计算
 其差值的绝对值大小:
 
@@ -4954,20 +4976,38 @@ while True:
     if abs(y-x) < epsilon:
         break
 \end{verbatim}
-%
-在\verb"epsilon" 为{\tt 0.0000001}时, 表达式为真, 
-那便说明两个值已经足够接近. 
+%Where \verb"epsilon" has a value like {\tt 0.0000001} that
+%determines how close is close enough.
+其中\verb"epsilon"是一个值, 比如{\tt 0.0000001}, 用于确定两个值
+多接近才是足够接近. 
 
 
+%\section{Algorithms}
 \section{算法}
 \index{algorithm}
+
+
+%Newton's method is an example of an {\bf algorithm}: it is a
+%mechanical process for solving a category of problems (in this
+%case, computing square roots).
 牛顿公式可以认为是一种{\bf 算法}:
 通过既定步骤来解决一类问题(此例中为计算平方根). 
 
+%To understand what an algorithm is, it might help to start with
+%something that is not an algorithm.  When you learned to multiply
+%single-digit numbers, you probably memorized the multiplication table.
+%In effect, you memorized 100 specific solutions.  That kind of
+%knowledge is not algorithmic.
 要理解何为算法, 先要明白什么不属于算法. 
 当你学习乘法时, 往往需要记忆乘法表. 
 实际, 你记忆了100个特定答案. 这种知识不属于算法. 
 
+
+%But if you were ``lazy'', you might have learned a few
+%tricks.  For example, to find the product of $n$ and 9, you can
+%write $n-1$ as the first digit and $10-n$ as the second
+%digit.  This trick is a general solution for multiplying any
+%single-digit number by 9.  That's an algorithm!
 但如果你想``偷懒'', 你可能会发现一些小技巧. 
 比如, 你想计算$n$和9的乘积, 只需把$n-1$, 作为第一个数字. 
 $10-n$作为第二个数字即可. 这个小技巧对于任何数字乘以9都有效. 
@@ -4976,40 +5016,79 @@ $10-n$作为第二个数字即可. 这个小技巧对于任何数字乘以9都�
 \index{carrying, addition with}
 \index{subtraction!with borrowing}
 \index{borrowing, subtraction with}
-同样地, 你学过的需进位的加法, 需借位的减法, 以及长除法, 
+
+%Similarly, the techniques you learned for addition with carrying,
+%subtraction with borrowing, and long division are all algorithms.  One
+%of the characteristics of algorithms is that they do not require any
+%intelligence to carry out.  They are mechanical processes where
+%each step follows from the last according to a simple set of rules.
+同样地, 你学过的进位加法, 借位减法, 以及长除法, 
 都是算法. 这些算法的一个共性便是, 都无需费力思考. 
 它们都是机械的过程, 
 遵循简单的规则, 一步步操作, 便可得到结果. 
 
+%Executing algorithms is boring, but designing them is interesting,
+%intellectually challenging, and a central part of computer science.
 执行算法固然无聊, 但其设计过程却既有趣又挑战智力, 
 同时也是计算机科学的核心. 
 
-有些事情, 对于人们来说很自然, 无难度, 且下意识便可完成, 
+%Some of the things that people do naturally, without difficulty or
+%conscious thought, are the hardest to express algorithmically.
+%Understanding natural language is a good example.  We all do it, but
+%so far no one has been able to explain {\em how} we do it, at least
+%not in the form of an algorithm.
+有些事情, 对于人们来说很自然, 豪无难度, 且下意识便可完成, 
 而算法却很难解决. 
 比如, 理解自然语言. 我们所有人都能轻易做到, 
 但目前为止, 还没有人能阐明我们是{\em 如何}理解的, 
 更不用说用算法的形式来解释. 
 
+%\section{Debugging}
 \section{调试}
 \label{bisectbug}
+
+%As you start writing bigger programs, you might find yourself
+%spending more time debugging.  More code means more chances to
+%make an error and more places for bugs to hide.
 随着程序代码规模的增长, 你会发现需要耗费更多时间在
 调试上. 一般更多的代码, 也就意味着更多的出错机会, 
 以及更多的潜在问题. 
 \index{debugging!by bisection}
 \index{bisection, debugging by}
+%One way to cut your debugging time is ``debugging by bisection''.
+%For example, if there are 100 lines in your program and you
+%check them one at a time, it would take 100 steps.
 一种有效节约调试时间的方法便是``二分调试''.
-比如, 有100行代码, 一次检查一行, 需要100次. 
+比如, 有100行代码, 逐行检查, 需要100个步骤. 
 
-或者, 将程序对半切分. 找到程序的中间位置, 或者靠近中间的位置, 
+%Instead, try to break the problem in half.  Look at the middle
+%of the program, or near it, for an intermediate value you
+%can check.  Add a {\tt print} statement (or something else
+%that has a verifiable effect) and run the program.
+相反, 将程序对半切分. 找到程序的中间位置, 或者靠近中间的位置, 
 以便从中间开始检查. 添加{\tt print}语句(或者其他可验证效果的东西), 
 然后运行代码. 
 
+%If the mid-point check is incorrect, there must be a problem in the
+%first half of the program.  If it is correct, the problem is
+%in the second half.
 如果中间检查点出现异常, 那代码前半部分有问题. 
 如果中间没有出错, 那么问题便在后半部分了. 
 
-每次如此检验代码, 将待检验的代码行数不断减半. 大约六步之后(远远小于100), 
+%Every time you perform a check like this, you halve the number of
+%lines you have to search.  After six steps (which is fewer than 100),
+%you would be down to one or two lines of code, at least in theory.
+每次如此检验代码, 将待检验的代码行数不断减半. 大约六步之后(远远小于100步), 
 理论上, 便只剩下一两行代码需要检查了. 
 
+%In practice it is not always clear what
+%the ``middle of the program'' is and not always possible to
+%check it.  It doesn't make sense to count lines and find the
+%exact midpoint.  Instead, think about places
+%in the program where there might be errors and places where it
+%is easy to put a check.  Then choose a spot where you
+%think the chances are about the same that the bug is before
+%or after the check.
 实际上, 很难清晰界定``代码中间位置'', 同时也很难在其位置检验. 
 所以没必要计较于行数, 执着于中点. 
 反而, 你需要多思考代码的哪些位置容易出错, 哪些地方又容易验证. 
@@ -5021,42 +5100,65 @@ $10-n$作为第二个数字即可. 这个小技巧对于任何数字乘以9都�
 
 \begin{description}
 
-\item[重新赋值(reassignment):] 给已存在的变量赋新值的过程. 
+%\item[reassignment:] Assigning a new value to a variable that
+%already exists.
+\item[重新赋值(reassignment):] 给已存在的变量分配一个新值的过程. 
 \index{reassignment}
 
+%\item[update:] An assignment where the new value of the variable
+%depends on the old.
 \item[变量更新(update):] 基于前值, 计算新值, 更新变量的过程. 
 \index{update}
 
+%\item[initialization:] An assignment that gives an initial value to
+%a variable that will be updated.
 \item[初始化(initialization):] 给变量赋初始值, 以待后续更新. 
 \index{initialization!variable}
 
-\item[自增(increment):] 不断增加某个值的变量更新(通常为1). 
+%\item[increment:] An update that increases the value of a variable
+%(often by one).
+\item[递增(increment):] 使变量的值增加的更新操作(通常为1). 
 \index{increment}
 
-\item[自减(decrement):] 不断减少某个值的变量更新. 
+
+%\item[decrement:] An update that decreases the value of a variable.
+\item[递减(decrement):] 使变量的值减少的更新操作. 
 \index{decrement}
 
+%\item[iteration:] Repeated execution of a set of statements using
+%either a recursive function call or a loop.
 \item[迭代(iteration):] 采用递归或者循环, 重复执行一段语句. 
 \index{iteration}
 
+%\item[infinite loop:] A loop in which the terminating condition is
+%never satisfied.
 \item[无限循环(infinite loop):] 终止条件一直不能抵达的循环. 
 \index{infinite loop}
 
-\item[算法(algorithm):]  解决一类问题的通用步骤. 
+%\item[algorithm:]  A general process for solving a category of
+%problems.
+\item[算法(algorithm):]  解决一类问题的通用过程. 
 \index{algorithm}
 
 \end{description}
 
-
+%\section{Exercises}
 \section{习题集}
 
 \begin{exercise}
 \index{algorithm!square root}
 
+%Copy the loop from Section~\ref{squareroot}
+%and encapsulate it in a function called
+%\verb"mysqrt" that takes {\tt a} as a parameter, chooses a
+%reasonable value of {\tt x}, and returns an estimate of the square
+%root of {\tt a}.  \index{encapsulation}
 复制第~\ref{squareroot}节的循环, 封装为\verb"mysqrt" 函数, 
 令其以{\tt a}为参数, 选择一个合适的值{\tt x}, 返回{\tt a}的
 近似平方根.  \index{encapsulation}
 
+%To test it, write a function named \verb"test_square_root"
+%that prints a table like this:
 若要测试, 需要编写一个名为\verb"test_square_root"的函数, 
 输出下面的表格:
 
@@ -5074,6 +5176,10 @@ a   mysqrt(a)     math.sqrt(a)  diff
 9.0 3.0           3.0           0.0
 \end{verbatim}
 %
+%The first column is a number, $a$; the second column is the square
+%root of $a$ computed with \verb"mysqrt"; the third column is the
+%square root computed by {\tt math.sqrt}; the fourth column is the
+%absolute value of the difference between the two estimates.
 第一列是数值$a$; 第二列是 \verb"mysqrt"函数计算出的$a$的平方根;
 第三列是通过{\tt math.sqrt}计算出的平方根;
 第四列是两者的差值绝对值. 
@@ -5083,7 +5189,9 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \begin{exercise}
 \index{eval function}
 \index{function!eval}
-内置函数 {\tt eval} 以字符串为输入, 并用Python解释器执行. 
+%The built-in function {\tt eval} takes a string and evaluates
+%it using the Python interpreter.  For example:
+内置函数{\tt eval}以字符串为输入, 并用Python解释器执行. 
 如下:
 
 \begin{verbatim}
@@ -5096,9 +5204,14 @@ a   mysqrt(a)     math.sqrt(a)  diff
 <class 'float'>
 \end{verbatim}
 %
+%Write a function called \verb"eval_loop" that iteratively
+%prompts the user, takes the resulting input and evaluates
+%it using {\tt eval}, and prints the result.
 编写函数\verb"eval_loop", 不停提示用户, 获取输入并用{\tt eval}执行, 
 同时打印结果. 
 
+%It should continue until the user enters \verb"'done'", and then
+%return the value of the last expression it evaluated.
 直到用户输入 \verb"'done'"才终止, 
 同时返回最后一次表达式的结果. 
 
@@ -5107,6 +5220,10 @@ a   mysqrt(a)     math.sqrt(a)  diff
 
 \begin{exercise}
 \index{Ramanujan, Srinivasa}
+%The mathematician Srinivasa Ramanujan found an
+%infinite series
+%that can be used to generate a numerical
+%approximation of $1 / \pi$:
 数学家Srinivasa Ramanujan发现了一个无穷级数, 
 可以用来计算$1 / \pi$的近似值:
 \index{pi}
@@ -5114,16 +5231,22 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \[ \frac{1}{\pi} = \frac{2\sqrt{2}}{9801} 
 \sum^\infty_{k=0} \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} \]
 
-编写函数 \verb"estimate_pi", 使用上述公式计算 $\pi$的近似值, 
+%Write a function called \verb"estimate_pi" that uses this formula
+%to compute and return an estimate of $\pi$.  It should use a {\tt while}
+%loop to compute terms of the summation until the last term is
+%smaller than {\tt 1e-15} (which is Python notation for $10^{-15}$).
+%You can check the result by comparing it to {\tt math.pi}.
+编写函数\verb"estimate_pi", 使用上述公式计算$\pi$的近似值, 
 同时返回结果. 用{\tt while}循环计算各个项并求和, 直到最后一项小于{\tt 1e-15}
-($10^{-15}$的python表示法)为止. 
-同时可以和 {\tt math.pi}比较结果, 检验效果. 
+(Python中$10^{-15}$的表示法)为止. 
+同时可以和{\tt math.pi}比较结果, 检验效果. 
 
+%Solution: \url{http://thinkpython2.com/code/pi.py}.
 答案参见: \url{http://thinkpython2.com/code/pi.py}
 
 \end{exercise}
 
-
+%\chapter{Strings}
 \chapter{字符串}
 \label{strings}
 
