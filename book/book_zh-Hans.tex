@@ -5250,31 +5250,46 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \chapter{字符串}
 \label{strings}
 
+%Strings are not like integers, floats, and booleans.  A string
+%is a {\bf sequence}, which means it is
+%an ordered collection of other values.  In this chapter you'll see
+%how to access the characters that make up a string, and you'll
+%learn about some of the methods strings provide.
 字符串和整数, 浮点数以及布尔值不同. 
-一个字符串就是一个{\bf 序列}, 也就是说, 字符串是一组有序排列的值. 
-本章你将学习如何通过字符构造字符串, 以及字符操作相关方法. 
+一个字符串就是一个{\bf 序列}, 也就是说, 字符串是一个有序的值集合. 
+本章你将学习如何访问构造字符串的字符, 以及字符串提供的相关方法. 
 \index{sequence}
 
-
+%\section{A string is a sequence}
 \section{字符串即序列}
 
 \index{sequence}
 \index{character}
 \index{bracket operator}
 \index{operator!bracket}
+%A string is a sequence of characters.  
+%You can access the characters one at a time with the
+%bracket operator:
 字符串便是字符系列. 
-通过中括号, 可以获取其中的字符:
+你可以通过方括号运算符, 逐个访问其中的字符:
 
 \begin{verbatim}
 >>> fruit = 'banana'
 >>> letter = fruit[1]
 \end{verbatim}
 %
-第二句表达式会从{\tt fruit}中选择在位置1处的字符, 并赋给{\tt letter}. 
+%The second statement selects character number 1 from {\tt
+%	fruit} and assigns it to {\tt letter}. 
+第二句表达式会从{\tt fruit}中选择在位置1处的字符, 并赋给变量{\tt letter}. 
 \index{index}
-括号中的表达式, 叫做{\bf 索引}.
-索引标识了你将从序列中获取哪个字符(类似名字).
 
+%The expression in brackets is called an {\bf index}.  
+%The index indicates which character in the sequence you
+%want (hence the name).
+方括号中的表达式, 叫做{\bf 索引}.
+索引标识了你将从序列中获取哪个字符(因此得名).
+
+%But you might not get what you expect:
 但有时候你所得非所愿:
 
 \begin{verbatim}
@@ -5282,9 +5297,12 @@ a   mysqrt(a)     math.sqrt(a)  diff
 'a'
 \end{verbatim}
 %
-如众人所知,  \verb"'banana'" 的第一个字母是{\tt b}, 
+%For most people, the first letter of \verb"'banana'" is {\tt b}, not
+%{\tt a}.  But for computer scientists, the index is an offset from the
+%beginning of the string, and the offset of the first letter is zero.
+对大部分人来说, \verb"'banana'" 的第一个字母是{\tt b}, 
 而不是{\tt a}. 但是, 对于计算机科学家来说, 索引是从字符串开始位置的偏移量, 
-所以第一个字符的偏移量是0.
+而第一个字符的偏移量是0.
 
 \begin{verbatim}
 >>> letter = fruit[0]
@@ -5292,10 +5310,15 @@ a   mysqrt(a)     math.sqrt(a)  diff
 'b'
 \end{verbatim}
 %
-所以{\tt b}是\verb"'banana'"的第0个字母,  {\tt a}是第1个, {\tt n}是第2个. 
-\index{index!starting at zero} \index{zero, index
-  starting at}
+%So {\tt b} is the 0th letter (``zero-eth'') of \verb"'banana'", {\tt
+%	a} is the 1th letter (``one-eth''), and {\tt n} is the 2th letter
+%(``two-eth'').  
+所以{\tt b}是\verb"'banana'"的第0个字母, {\tt a}是第1个, {\tt n}是第2个. 
+\index{index!starting at zero} 
+\index{zero, index starting at}
 
+%As an index you can use an expression that contains variables and
+%operators:
 你可以使用包括变量和操作符的表达式作为索引:
 \index{index}
 
@@ -5307,6 +5330,8 @@ a   mysqrt(a)     math.sqrt(a)  diff
 'n'
 \end{verbatim}
 %
+%But the value of the index has to be an integer.  Otherwise you
+%get:
 但索引的值必须是整数. 否则, 会报错:
 \index{exception!TypeError}
 \index{TypeError}
@@ -5317,10 +5342,13 @@ TypeError: string indices must be integers
 \end{verbatim}
 %
 
+%\section{{\tt len}}
 \section{{\tt len}函数}
 \index{len function}
 \index{function!len}
 
+%{\tt len} is a built-in function that returns the number of characters
+%in a string:
 {\tt len} 是内置函数, 可以返回字符串中的字符数量:
 
 \begin{verbatim}
@@ -5329,6 +5357,8 @@ TypeError: string indices must be integers
 6
 \end{verbatim}
 %
+%To get the last letter of a string, you might be tempted to try something
+%like this:
 想要获得字符串最后一个字符, 可以尝试下面的操作:
 \index{exception!IndexError}
 \index{IndexError}
@@ -5339,8 +5369,12 @@ TypeError: string indices must be integers
 IndexError: string index out of range
 \end{verbatim}
 %
-报出{\tt IndexError} 的原因是 {\tt 'banana'}中索引6的位置没有字母. 
-因为索引从0开始, 那6个字母对应的数字是0至5.
+%The reason for the {\tt IndexError} is that there is no letter in {\tt
+%	'banana'} with the index 6.  Since we started counting at zero, the
+%six letters are numbered 0 to 5.  To get the last character, you have
+%to subtract 1 from {\tt length}:
+报出{\tt IndexError}的原因是{\tt 'banana'}中不存在索引为6的字母. 
+因为索引从0开始计数, 那六个字母的索引应该是从0至5.
 想获取最后一个字符, 需要字符串{\tt 长度}减1:
 
 \begin{verbatim}
@@ -5349,13 +5383,16 @@ IndexError: string index out of range
 'a'
 \end{verbatim}
 %
-你也可以使用负数索引, 由尾至头统计. 
+%Or you can use negative indices, which count backward from
+%the end of the string.  The expression {\tt fruit[-1]} yields the last
+%letter, {\tt fruit[-2]} yields the second to last, and so on.
+你也可以使用负数索引, 由尾至头计数. 
 表达式{\tt fruit[-1]}给出最后一个字母, 
 {\tt fruit[-2]} 给出了倒数第二个字母, 以此类推. 
 \index{index!negative}
 \index{negative index}
 
-
+%\section{Traversal with a {\tt for} loop}
 \section{{\tt for}循环}
 \label{for}
 \index{traversal}
@@ -5364,10 +5401,15 @@ IndexError: string index out of range
 \index{loop!for}
 \index{statement!for}
 \index{traversal}
-很多操作一次仅操作字符串中的一个字符. 
-一般从头部开始, 顺序逐个获取字符, 做些操作, 直到末尾结束. 
+%A lot of computations involve processing a string one character at a
+%time.  Often they start at the beginning, select each character in
+%turn, do something to it, and continue until the end.  This pattern of
+%processing is called a {\bf traversal}.  One way to write a traversal
+%is with a {\tt while} loop:
+很多计算会涉及逐个处理字符串中的字符. 
+通常从头部开始, 顺序逐个获取字符, 做些操作, 直到末尾结束. 
 这种处理模式叫做{\bf 遍历}.
-一般可以用{\tt while}循环进行遍历:
+一种方式是使用{\tt while}循环进行遍历:
 
 \begin{verbatim}
 index = 0
@@ -5377,13 +5419,22 @@ while index < len(fruit):
     index = index + 1
 \end{verbatim}
 %
+%This loop traverses the string and displays each letter on a line by
+%itself.  The loop condition is {\tt index < len(fruit)}, so
+%when {\tt index} is equal to the length of the string, the
+%condition is false, and the body of the loop doesn't run.  The
+%last character accessed is the one with the index {\tt len(fruit)-1},
+%which is the last character in the string.
 上面循环会遍历字符串, 并每行打印一个字符. 
 循环条件是{\tt index < len(fruit)}, 
 所以当{\tt index} 等于字符串长度时, 条件为假, 循环体终止. 
 最后获取的字符, 索引为{\tt len(fruit)-1}, 也就是最后一个字符. 
 
+%As an exercise, write a function that takes a string as an argument
+%and displays the letters backward, one per line.
 做个练习, 写个函数, 以字符串为入参, 倒序输出每个字符, 每行一个. 
 
+%Another way to write a traversal is with a {\tt for} loop:
 遍历字符串的另一种方法是用{\tt for}循环:
 
 \begin{verbatim}
@@ -5391,18 +5442,27 @@ for letter in fruit:
     print(letter)
 \end{verbatim}
 %
-每次循环后, 字符串中下一个字符会赋值给变量{\tt letter}. 
+%Each time through the loop, the next character in the string is assigned
+%to the variable {\tt letter}.  The loop continues until no characters are
+%left.
+每次循环中, 字符串中下一个字符被赋值给变量{\tt letter}. 
 直到没有字符可用, 循环便终止. 
 \index{concatenation}
 \index{abecedarian}
 \index{McCloskey, Robert}
 
+%The following example shows how to use concatenation (string addition)
+%and a {\tt for} loop to generate an abecedarian series (that is, in
+%alphabetical order).  In Robert McCloskey's book {\em Make
+%	Way for Ducklings}, the names of the ducklings are Jack, Kack, Lack,
+%Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in
+%order:
 下面的例子, 展示了如何用拼接(字符串相加)以及{\tt for}循环, 来构建
-一个简单序列(按照字母顺序). 
+一个字母序列(按照字母顺序). 
 在Robert McCloskey的书{\em Make Way for Ducklings}中, 
 小鸭子们的名字分别是Jack, Kack, Lack,
 Mack, Nack, Ouack, Pack, 和 Quack.
-循环依次输出名字:
+下面循环会依次输出这些名字:
 
 \begin{verbatim}
 prefixes = 'JKLMNOPQ'
@@ -5412,6 +5472,7 @@ for letter in prefixes:
     print(letter + suffix)
 \end{verbatim}
 %
+%The output is:
 输出如下:
 
 \begin{verbatim}
@@ -5425,11 +5486,12 @@ Pack
 Qack
 \end{verbatim}
 %
+%Of course, that's not quite right because ``Ouack'' and ``Quack'' are
+%misspelled.  As an exercise, modify the program to fix this error.
 显然, 上面结果并不是全部正确, 因为 ``Ouack'' 和 ``Quack'' 都拼错了. 
-做个练习, 修改程序, 使其正常. 
+作为练习, 请修改程序,修复错误. 
 
-
-
+%\section{String slices}
 \section{字符串切片}
 \label{slice}
 \index{slice operator} \index{operator!slice} \index{index!slice}
