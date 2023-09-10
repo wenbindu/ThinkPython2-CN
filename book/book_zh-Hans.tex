@@ -5497,8 +5497,10 @@ Qack
 \index{slice operator} \index{operator!slice} \index{index!slice}
 \index{string!slice} \index{slice!string}
 
+%A segment of a string is called a {\bf slice}.  Selecting a slice is
+%similar to selecting a character:
 字符串的一个片段, 叫做{\bf 切片}.
-选择切片和从字符串中选择字符很像:
+选择切片类似于从字符串中选择字符:
 
 \begin{verbatim}
 >>> s = 'Monty Python'
@@ -5508,9 +5510,14 @@ Qack
 'Python'
 \end{verbatim}
 %
+%The operator {\tt [n:m]} returns the part of the string from the 
+%``n-eth'' character to the ``m-eth'' character, including the first but
+%excluding the last.  This behavior is counterintuitive, but it might
+%help to imagine the indices pointing {\em between} the
+%characters, as in Figure~\ref{fig.banana}.
 操作符{\tt [n:m]}, 会返回字符串从第n个位置到第m个位置的字符, 
 包括开头位置的字符, 但是不包括最后位置的字符. 
-这有点违反直觉, 但若将索引想象为指向字符{\em 中间}, 如图~\ref{fig.banana}所示,
+这有点违反直觉, 但若将索引想象为指向字符{\em 之间}, 如图~\ref{fig.banana}所示,
 可能会容易理解. 
 
 \begin{figure}
@@ -5519,6 +5526,9 @@ Qack
 \caption{切片的索引.}
 \label{fig.banana}
 \end{figure}
+%If you omit the first index (before the colon), the slice starts at
+%the beginning of the string.  If you omit the second index, the slice
+%goes to the end of the string:
 如果缺失第一个索引(冒号前), 则切片从字符串头部开始. 
 如果忽略了第二个索引, 切片到末尾结束:
 
@@ -5530,6 +5540,9 @@ Qack
 'ana'
 \end{verbatim}
 %
+%If the first index is greater than or equal to the second the result
+%is an {\bf empty string}, represented by two quotation marks:
+%\index{quotation mark}
 若第一个索引值大于或等于第二个, 则结果为{\bf 空字符串}, 用两个单引号表示:
 \index{quotation mark}
 
@@ -5539,15 +5552,19 @@ Qack
 ''
 \end{verbatim}
 %
+
+%An empty string contains no characters and has length 0, but other
+%than that, it is the same as any other string.
 空字符串一般不包括任何字符, 同时长度为0, 除此之外, 
 和其他字符串一样. 
 
+%Continuing this example, what do you think 
+%{\tt fruit[:]} means?  Try it and see.
 继续上面的例子, 思考一下{\tt fruit[:]}表示什么? 试试吧. 
 \index{copy!slice}
 \index{slice!copy}
 
-
-
+%\section{Strings are immutable}
 \section{字符串不可变}
 \index{mutability}
 \index{immutability}
