@@ -5570,6 +5570,10 @@ Qack
 \index{immutability}
 \index{string!immutable}
 
+
+%It is tempting to use the {\tt []} operator on the left side of an
+%assignment, with the intention of changing a character in a string.
+%For example:
 尝试在赋值等式左侧用 {\tt []}操作符修改字符串中的字符. 
 例如:
 \index{TypeError}
@@ -5581,18 +5585,26 @@ Qack
 TypeError: 'str' object does not support item assignment
 \end{verbatim}
 %
+%The ``object'' in this case is the string and the ``item'' is
+%the character you tried to assign.  For now, an object is
+%the same thing as a value, but we will refine that definition
+%later (Section~\ref{equivalence}). 
 这里的``object''指字符串, ``item''指试图赋值的字符. 
-到目前为止, 你可以认为对象和值一样, 但是后续
-(在第~\ref{equivalence}节), 我们会完善此定义. 
+当前, 你可以认为对象和值一样, 但是后续
+(在第~\ref{equivalence}节), 我们会对该定义进行细化. 
 \index{object}
 \index{item}
 \index{item assignment}
 \index{assignment!item}
 \index{immutability}
 
+%The reason for the error is that
+%strings are {\bf immutable}, which means you can't change an
+%existing string.  The best you can do is create a new string
+%that is a variation on the original:
 错误的原因在于字符串是{\bf 不可变的}, 
 也就是说, 你无法改变一个既有的字符串. 
-你能做的, 是基于原来字符串做些操作, 创建一个不同的字符串:
+你能做的, 是基于原来字符串做些操作, 创建一个新的字符串:
 
 \begin{verbatim}
 >>> greeting = 'Hello, world!'
@@ -5601,13 +5613,17 @@ TypeError: 'str' object does not support item assignment
 'Jello, world!'
 \end{verbatim}
 %
+%This example concatenates a new first letter onto
+%a slice of {\tt greeting}.  It has no effect on
+%the original string.
 上述代码是用新的首字母和{\tt greeting}的切片进行了拼接, 
 而这并不会改变原来的字符串. 
 \index{concatenation}
 
-
+%\section{Searching}
 \section{检索}
 \label{find}
+%What does the following function do?
 下面的函数什么用途?
 \index{find function}
 \index{function!find}
@@ -5622,32 +5638,51 @@ def find(word, letter):
     return -1
 \end{verbatim}
 %
+%In a sense, {\tt find} is the inverse of the {\tt []} operator.
+%Instead of taking an index and extracting the corresponding character,
+%it takes a character and finds the index where that character
+%appears.  If the character is not found, the function returns {\tt
+%-1}.
 可以认为, {\tt find}是{\tt []}操作符的逆运算. 
 此操作不同于根据索引获取对应字符, 
 而是根据字符, 查找其索引. 如果字符没有检索到, 
 则返回{\tt -1}. 
 
+%This is the first example we have seen of a {\tt return} statement
+%inside a loop.  If {\tt word[index] == letter}, the function breaks
+%out of the loop and returns immediately.
+%
+%If the character doesn't appear in the string, the program
+%exits the loop normally and  returns {\tt -1}.
+%
+%This pattern of computation---traversing a sequence and returning
+%when we find what we are looking for---is called a {\bf search}.
 这是我们第一次见到, 在循环内使用{\tt return}语句. 
 如果{\tt word[index] == letter}, 函数会跳出循环, 并立刻返回结果. 
 
-如果字符串中没有想要的字符, 程序会一直执行到循环结束, 并
+如果字符串中不存在该字符, 程序会一直执行到循环结束, 并
 返回{\tt -1}.
 
-这种算法--遍历序列并返回预期结果--叫做{\bf 检索}. 
+这种算法--遍历序列并在找到预期结果时返回--叫做{\bf 检索}. 
 \index{traversal}
 \index{search pattern}
 \index{pattern!search}
 
-做个练习, 为{\tt find}函数加入第三个参数, 一个索引值, 
-使其从{\tt word}的此索引处开始检索.
+%As an exercise, modify {\tt find} so that it has a
+%third parameter, the index in {\tt word} where it should start
+%looking.
+做个练习, 为{\tt find}函数加入第三个参数, 
+即在{\tt word}中开始查找的索引位置. 
 
-
+%\section{Looping and counting}
 \section{循环和计数}
 \label{counter}
 \index{counter}
 \index{counting and looping}
 \index{looping and counting}
 \index{looping!with strings}
+%The following program counts the number of times the letter {\tt a}
+%appears in a string:
 以下程序会统计字符串中{\tt a}出现的次数:
 
 \begin{verbatim}
@@ -5659,28 +5694,46 @@ for letter in word:
 print(count)
 \end{verbatim}
 %
+%This program demonstrates another pattern of computation called a {\bf
+%counter}.  The variable {\tt count} is initialized to 0 and then
+%incremented each time an {\tt a} is found.
+%When the loop exits, {\tt count}
+%contains the result---the total number of {\tt a}'s.
 此程序描述了另一种算法, 称之为{\bf 计数器}.
 初始化变量{\tt count}为0, 其后每找到一次{\tt a}, 就加1.
 循环结束后,  {\tt count}便包含了结果-- {\tt a}的全部数量.
 
 \index{encapsulation}
-做个练习, 封装以上代码为{\tt count}函数, 使其以字符串和字母
-为参数, 从而更加通用. 
+%As an exercise, encapsulate this code in a function named {\tt
+%count}, and generalize it so that it accepts the string and the
+%letter as arguments.
+做个练习, 封装以上代码为{\tt count}函数, 使其以字符串和要计数
+的字母为参数, 从而更加通用. 
 
-然后重写函数, 用上一节的{\tt find}函数的三参数版本, 替换字符串遍历操作. 
+%Then rewrite the function so that instead of
+%traversing the string, it uses the three-parameter version of {\tt
+%find} from the previous section.
+然后重写该函数, 用上一节的{\tt find}函数的三参数版本, 替换字符串遍历操作. 
 
-
+%\section{String methods}
 \section{字符串方法}
 \label{optional}
-字符串提供了诸多有用的方法, 方法类似于函数--输入参数并返回结果--但是
-语法有些不同. 
+%Strings provide methods that perform a variety of useful operations.
+%A method is similar to a function---it takes arguments and
+%returns a value---but the syntax is different.  For example, the
+%method {\tt upper} takes a string and returns a new string with
+%all uppercase letters.
+字符串提供了诸多有用的方法, 方法类似于函数--接受参数
+并返回结果--但是语法有些不同. 
 例如, {\tt upper}方法, 接收字符串, 
 并返回一个全部字母大写后的字符串. 
 \index{method}
 \index{string!method}
 
-与函数的语法{\tt upper(word)}不同之处在于, 
-方法的语法写作 {\tt word.upper()}.
+%Instead of the function syntax {\tt upper(word)}, it uses
+%the method syntax {\tt word.upper()}.
+与函数的语法{\tt upper(word)}不同, 
+它使用方法的语法 {\tt word.upper()}.
 
 \begin{verbatim}
 >>> word = 'banana'
@@ -5689,9 +5742,13 @@ print(count)
 'BANANA'
 \end{verbatim}
 %
+%This form of dot notation specifies the name of the method, {\tt
+%upper}, and the name of the string to apply the method to, {\tt
+%word}.  The empty parentheses indicate that this method takes no
+%arguments.
 这种点标法, 声明了方法的名字, {\tt upper}, 
 和要使用此方法的字符串的名字, {\tt word}. 
-括号为空表明此方法没有参数. 
+括号为空表明此方法未接受任何参数. 
 \index{parentheses!empty}
 \index{dot notation}
 
