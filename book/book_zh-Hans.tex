@@ -5748,15 +5748,19 @@ print(count)
 %arguments.
 这种点标法, 声明了方法的名字, {\tt upper}, 
 和要使用此方法的字符串的名字, {\tt word}. 
-括号为空表明此方法未接受任何参数. 
+括号为空, 表明此方法未接受任何参数. 
 \index{parentheses!empty}
 \index{dot notation}
 
-令函数运行, 叫做{\bf 调用};
-此例中, 我们说调用{\tt word}的{\tt upper}方法. 
+%A method call is called an {\bf invocation}; in this case, we would
+%say that we are invoking {\tt upper} on {\tt word}.
+方法调用, 通常叫做{\bf 调用};
+此例中, 我们会说我们正在对{\tt word}调用{\tt upper}方法. 
 \index{invocation}
 
-你会发现, 字符串实际内置了{\tt find}方法, 但和我们写的函数
+%As it turns out, there is a string method named {\tt find} that
+%is remarkably similar to the function we wrote:
+事实证明, 有一个叫{\tt find}的字符串方法, 和我们写的函数
 惊人相似:
 
 \begin{verbatim}
@@ -5766,8 +5770,12 @@ print(count)
 1
 \end{verbatim}
 %
+%In this example, we invoke {\tt find} on {\tt word} and pass
+%the letter we are looking for as a parameter.
 此例中, 我们调用{\tt word}的{\tt find}方法, 将要查找的字母作为入参. 
 
+%Actually, the {\tt find} method is more general than our function;
+%it can find substrings, not just characters:
 实际上, {\tt find}方法比我们写的函数要更通用;
 它不仅可以定位字符, 也能定位字符串片段:
 
@@ -5776,8 +5784,9 @@ print(count)
 2
 \end{verbatim}
 %
-默认情况, {\tt find} 从字符串开头进行查找, 不过也可以给其传入索引值
-作为第二个参数, 
+%By default, {\tt find} starts at the beginning of the string, but
+%it can take a second argument, the index where it should start:
+默认情况, {\tt find} 从字符串开头开始查找, 不过它也可以接受第二个参数作为索引, 
 使其从既定位置开始:
 \index{optional argument}
 \index{argument!optional}
@@ -5787,6 +5796,9 @@ print(count)
 4
 \end{verbatim}
 %
+%This is an example of an {\bf optional argument};
+%{\tt find} can
+%also take a third argument, the index where it should stop:
 这是一个{\bf 可选参数}的例子;
 {\tt find}方法也可以接收第三个索引参数, 以标识结束位置:
 
@@ -5796,11 +5808,15 @@ print(count)
 -1
 \end{verbatim}
 %
-{\tt b}没有出现在字符串索引{\tt 1}和{\tt 2}且不包括{\tt 2}的范围内, 
+%This search fails because {\tt b} does not
+%appear in the index range from {\tt 1} to {\tt 2}, not including {\tt
+%2}.  Searching up to, but not including, the second index makes
+%{\tt find} consistent with the slice operator.
+因为{\tt b}没有出现在字符串索引{\tt 1}和{\tt 2}且不包括{\tt 2}的范围内, 
 所以搜索失败. 
 而这种到达第二个索引位但不包括此索引的规则, 和切片操作一样. 
 
-
+%\section{The {\tt in} operator}
 \section{操作符 {\tt in}}
 \label{inboth}
 \index{in operator}
@@ -5808,6 +5824,8 @@ print(count)
 \index{boolean operator}
 \index{operator!boolean}
 
+%The word {\tt in} is a boolean operator that takes two strings and
+%returns {\tt True} if the first appears as a substring in the second:
 单词 {\tt in}是一个布尔运算符, 其比较两个字符串, 
 如果前者是后者的一部分, 
 则返回{\tt True}:
@@ -5819,6 +5837,8 @@ True
 False
 \end{verbatim}
 %
+%For example, the following function prints all the
+%letters from {\tt word1} that also appear in {\tt word2}:
 例如, 下面的函数会输出同时出现在{\tt word1}和{\tt word2}中的字母:
 
 \begin{verbatim}
@@ -5829,10 +5849,15 @@ def in_both(word1, word2):
 \end{verbatim}
 %
 
+%With well-chosen variable names,
+%Python sometimes reads like English.  You could read
+%this loop, ``for (each) letter in (the first) word, if (the) letter 
+%(appears) in (the second) word, print (the) letter.''
 变量名选择得足够好的话, Python读起来便如同英语. 
 读一下这个循环, ``for (each) letter in (the first) word, if (the) letter 
 (appears) in (the second) word, print (the) letter.''
 
+%Here's what you get if you compare apples and oranges:
 下面是apples和oranges比较的结果:
 
 \begin{verbatim}
@@ -5843,10 +5868,12 @@ s
 \end{verbatim}
 %
 
+%\section{String comparison}
 \section{字符串比较}
 \index{string!comparison}
 \index{comparison!string}
 
+%The relational operators work on strings.  To see if two strings are equal:
 关系运算符同样适用于字符串. 
 比如要判断两字符串是否相等:
 
@@ -5855,7 +5882,8 @@ if word == 'banana':
     print('All right, bananas.')
 \end{verbatim}
 %
-
+%Other relational operations are useful for putting words in alphabetical
+%order:
 其他的关系运算符也适用于按照字母顺序进行比较:
 
 \begin{verbatim}
@@ -5867,6 +5895,9 @@ else:
     print('All right, bananas.')
 \end{verbatim}
 %
+%Python does not handle uppercase and lowercase letters the same way
+%people do.  All the uppercase letters come before all the
+%lowercase letters, so:
 Python处理大小写的方式同人类思维不同, 在其看来, 大写字母都排在小写字母之前, 
 所以:
 
@@ -5874,10 +5905,15 @@ Python处理大小写的方式同人类思维不同, 在其看来, 大写字母�
  Pineapple 在前,  banana 在后.
 \end{verbatim}
 %
-解决此问题的通常做法是, 在比较前先统一字符串的格式, 比如都转小写. 
+%A common way to address this problem is to convert strings to a
+%standard format, such as all lowercase, before performing the
+%comparison.  Keep that in mind in case you have to defend yourself
+%against a man armed with a Pineapple.
+解决此问题的常见做法是, 在比较前先统一字符串的格式, 比如都转小写. 
 谨记这一点, 以免遇到Pineapple时, 变得一团糟. 
 
 
+%\section{Debugging}
 \section{调试}
 \index{debugging}
 \index{traversal}
