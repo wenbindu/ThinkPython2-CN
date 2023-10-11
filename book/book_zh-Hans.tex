@@ -5918,7 +5918,12 @@ Python处理大小写的方式同人类思维不同, 在其看来, 大写字母�
 \index{debugging}
 \index{traversal}
 
-想要用索引来遍历序列中的值, 难点在于确定遍历的起点和终点. 
+%When you use indices to traverse the values in a sequence,
+%it is tricky to get the beginning and end of the traversal
+%right.  Here is a function that is supposed to compare two
+%words and return {\tt True} if one of the words is the reverse
+%of the other, but it contains two errors:
+若想用索引来遍历序列中的值, 难点在于确定遍历的起点和终点. 
 下面是一个比较单词的函数, 如果一个单词恰好是另一个单词的倒序排列, 
 则返回{\tt True}, 但这里有两处错误:
 
@@ -5939,20 +5944,32 @@ def is_reverse(word1, word2):
     return True
 \end{verbatim}
 %
+%The first {\tt if} statement checks whether the words are the
+%same length.  If not, we can return {\tt False} immediately.
+%Otherwise, for the rest of the function, we can assume that the words
+%are the same length.  This is an example of the guardian pattern
+%in Section~\ref{guardian}.
 第一个 {\tt if} 语句会判断两个单词的长度是否一样. 
 如果不同, 立刻返回{\tt False}. 
 然而为了执行后续代码, 我们先假设单词长度相同. 
-这是一个哨兵模式, 在第~\ref{guardian}节已经介绍过. 
+这是一个哨兵模式的示例, 在第~\ref{guardian}节已经介绍过. 
 \index{guardian pattern}
 \index{pattern!guardian}
 \index{index}
 
-{\tt i} 和 {\tt j}是索引: {\tt i} 正向遍历{\tt word1}, 同时{\tt j} 倒序遍历
+%{\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
+%forward while {\tt j} traverses {\tt word2} backward.  If we find
+%two letters that don't match, we can return {\tt False} immediately.
+%If we get through the whole loop and all the letters match, we
+%return {\tt True}.
+{\tt i} 和 {\tt j}是索引: {\tt i} 正向遍历{\tt word1}, 同时{\tt j} 反向遍历
 {\tt word2}. 如果遇到两个字母不同, 则即刻返回{\tt False}. 
-如果可以通过循环检验, 则所有字母都匹配, 返回{\tt True}. 
+如果我们遍历整个循环, 并且所有字母都匹配, 返回{\tt True}. 
 
-如果用``pots'' 和 ``stop'' 测试函数, 我们期望得到的时{\tt True}, 
-但是遇到了索引错误:
+%If we test this function with the words ``pots'' and ``stop'', we
+%expect the return value {\tt True}, but we get an IndexError:
+如果用``pots'' 和 ``stop'' 测试函数, 我们期望得到的是{\tt True}, 
+但我们却得到了索引错误:
 \index{IndexError}
 \index{exception!IndexError}
 
@@ -5964,7 +5981,10 @@ def is_reverse(word1, word2):
 IndexError: string index out of range
 \end{verbatim}
 %
-调试此种异常, 第一步就是在错误出现位置前, 先输出索引的值. 
+%For debugging this kind of error, my first move is to
+%print the values of the indices immediately before the line
+%where the error appears.
+调试此种异常, 第一步就是在出现错误的行之前, 先打印索引的值. 
 
 \begin{verbatim}
     while j > 0:
@@ -5976,7 +5996,8 @@ IndexError: string index out of range
         j = j-1
 \end{verbatim}
 %
-再次运行程序, 得到如下信息:
+%Now when I run the program again, I get more information:
+现在当我再次运行程序, 获得了更多信息:
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -5985,11 +6006,17 @@ IndexError: string index out of range
 IndexError: string index out of range
 \end{verbatim}
 %
+%The first time through the loop, the value of {\tt j} is 4,
+%which is out of range for the string \verb"'pots'".
+%The index of the last character is 3, so the
+%initial value for {\tt j} should be {\tt len(word2)-1}.
 首次循环,  {\tt j} 的值是4,
 超出了\verb"'pots'"的索引范围. 
 最后一个字符的索引应该是3,
-所以{\tt j} 的初始值应该是{\tt len(word2)-1}.
+因此{\tt j} 的初始值应该是{\tt len(word2)-1}.
 
+
+%If I fix that error and run the program again, I get:
 如果修复此错误, 并再次执行, 输出如下:
 
 \begin{verbatim}
@@ -6000,6 +6027,11 @@ IndexError: string index out of range
 True
 \end{verbatim}
 %
+%This time we get the right answer, but it looks like the loop only ran
+%three times, which is suspicious.  To get a better idea of what is
+%happening, it is useful to draw a state diagram.  During the first
+%iteration, the frame for \verb"is_reverse" is shown in
+%Figure~\ref{fig.state4}.
 这次我们的到了正确结果, 但是循环只运行了三次, 有点奇怪. 
 为了弄清怎么回事, 可以绘制栈图来辅助理解. 
 第一次迭代, \verb"is_reverse"的状态框见图~\ref{fig.state4}.  
@@ -6012,31 +6044,47 @@ True
 \label{fig.state4}
 \end{figure}
 
-我尝试在框中对齐变量, 并用虚线标识{\tt i} 和
-{\tt j}的值, 用来标识{\tt word1} 和 {\tt word2}中的字符, 
+%I took some license by arranging the variables in the frame
+%and adding dotted lines to show that the values of {\tt i} and
+%{\tt j} indicate characters in {\tt word1} and {\tt word2}.
+我尝试在框中排列变量, 并用虚线标识{\tt i} 和
+{\tt j}的值, 用来表示在{\tt word1} 和 {\tt word2}中的字符, 
 从而帮助理解. 
 
-从此状态框开始, 在纸上执行程序, 每次迭代时修改{\tt i} 和 {\tt j}值. 
+
+%Starting with this diagram, run the program on paper, changing the
+%values of {\tt i} and {\tt j} during each iteration.  Find and fix the
+%second error in this function.
+从这个图开始, 尝试在纸上执行程序, 逐次迭代更改{\tt i} 和 {\tt j}值. 
 然后找到并修复函数中的第二个错误. 
 \label{isreverse}
 
 
 \section{术语表}
+%\section{Glossary}
 
 \begin{description}
 
+%\item[object:] Something a variable can refer to.  For now,
+%you can use ``object'' and ``value'' interchangeably.
 \item[对象(object):] 变量引用的东西, 目前, 可以将
 ``对象'' 与 ``值'' 同样看待. 
 \index{object}
 
-\item[序列(sequence):] 一些值的有序集合, 每个值都对应一个整数索引. 
+%\item[sequence:] An ordered collection of
+%values where each value is identified by an integer index.
+\item[序列(sequence):] 一组有序的值, 每个值由整数索引标识. 
 \index{sequence}
 
+%\item[item:] One of the values in a sequence.
 \item[元素(item):] 序列中的一个值.
 \index{item}
 
+%\item[index:] An integer value used to select an item in
+%a sequence, such as a character in a string.  In Python
+%indices start from 0.
 \item[索引(index):] 一个整数值, 用来选择序列中的元素, 
-比如选择字符串中某个字符. Python中的索引都是从0开始. 
+比如选择字符串中某个字符. 在Python中, 索引都是从0开始. 
 \index{index}
 
 \item[切片(slice):] 字符串中一部分, 通过索引范围确定. 
