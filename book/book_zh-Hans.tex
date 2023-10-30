@@ -6087,28 +6087,42 @@ True
 比如选择字符串中某个字符. 在Python中, 索引都是从0开始. 
 \index{index}
 
-\item[切片(slice):] 字符串中一部分, 通过索引范围确定. 
+%\item[slice:] A part of a string specified by a range of indices.
+\item[切片(slice):] 字符串中一部分, 通过索引范围指定. 
 \index{slice}
 
-\item[空字符串(empty string):] 没有字符并且长度为0,同时用两个引号表示的字符串. 
+%\item[empty string:] A string with no characters and length 0, represented
+%by two quotation marks.
+\item[空字符串(empty string):] 不包含任何字符且长度为0的字符串, 用两个引号表示. 
 \index{empty string}
 
-\item[不可变(immutable):] 序列中元素不可改变的特性. 
+%\item[immutable:] The property of a sequence whose items cannot
+%be changed.
+\item[不可变(immutable):] 序列内元素不可改变的特性. 
 \index{immutability}
 
-\item[遍历(traverse):] 迭代序列中每个元素, 同时对其执行相似操作的过程. 
+%\item[traverse:] To iterate through the items in a sequence,
+%performing a similar operation on each.
+\item[遍历(traverse):] 遍历序列中每个元素, 同时对其执行相似操作的过程. 
 \index{traversal}
 
-\item[检索(search):] 找到预期目标才停止的遍历模式. 
+%\item[search:] A pattern of traversal that stops
+%when it finds what it is looking for.
+\item[检索(search):] 找到预期目标便停止的一种遍历模式. 
 \index{search pattern}
 \index{pattern!search}
 
+%\item[counter:] A variable used to count something, usually initialized
+%to zero and then incremented.
 \item[计数器(counter):] 用来计数的变量, 一般始于0, 不断递增. 
 \index{counter}
 
-\item[调用(invocation):] 运行方法的语句.
+%\item[invocation:] A statement that calls a method.
+\item[调用(invocation):] 调用方法的语句.
 \index{invocation}
 
+%\item[optional argument:] A function or method argument that is not
+%required.
 \item[可选参数(optional argument):] 函数或者方法中的不必要参数. 
 \index{optional argument}
 \index{argument!optional}
@@ -6116,17 +6130,28 @@ True
 \end{description}
 
 
+%\section{Exercises}
 \section{习题集}
 
 \begin{exercise}
 \index{string method}
 \index{method!string}
 
-阅读文档\url{http://docs.python.org/3/library/stdtypes.html#string-methods}
-中的字符串方法, 
+%Read the documentation of the string methods at
+%\url{http://docs.python.org/3/library/stdtypes.html#string-methods}.
+%You might want to experiment with some of them to make sure you
+%understand how they work.  {\tt strip} and {\tt replace} are
+%particularly useful.
+阅读位于 \url{http://docs.python.org/3/library/stdtypes.html#string-methods}
+的文档中的字符串方法, 
 可能你会想试试其中一些方法, 尽量弄明白它们的工作原理. 
-{\tt strip} 和 {\tt replace} 特别有用. 
+其中{\tt strip} 和 {\tt replace} 特别有用. 
 
+%The documentation uses a syntax that might be confusing.
+%For example, in \verb"find(sub[, start[, end]])", the brackets
+%indicate optional arguments.  So {\tt sub} is required, but
+%{\tt start} is optional, and if you include {\tt start},
+%then {\tt end} is optional.
 文档中的某种语法可能难以理解. 
 比如\verb"find(sub[, start[, end]])"方法, 方括号标识了可选参数. 
  {\tt sub} 是必需的, 但是{\tt start}是可选的, 
@@ -6141,9 +6166,15 @@ True
 \index{count method}
 \index{method!count}
 
+
+%There is a string method called {\tt count} that is similar
+%to the function in Section~\ref{counter}.  Read the documentation
+%of this method
+%and write an invocation that counts the number of {\tt a}'s
+%in \verb"'banana'".
 有个叫{\tt count}的字符串方法, 和第~\ref{counter}节的函数很相似. 
 阅读此方法文档, 编写调用此方法的代码, 实现对\verb"'banana'"中
-{\tt a}的个数的统计.
+{\tt a}的数量的统计.
 \end{exercise}
 
 
@@ -6152,31 +6183,42 @@ True
 \index{slice operator}
 \index{operator!slice}
 
-字符串切片也可以有第三个参数, 叫做``步长'';
-也就是, 在连续字符中, 字符间的间距. 
+%A string slice can take a third index that specifies the ``step
+%size''; that is, the number of spaces between successive characters.
+%A step size of 2 means every other character; 3 means every third,
+%etc.
+字符串切片也可以使用第三个参数, 叫做``步长'';
+即相邻字符之间的间隔数. 
 步长为2表示每隔一个字符取一个;
-步长为3表示每第三个取一个, 以此类推. 
+步长为3表示每第三个取一个, 依此类推. 
 
 \begin{verbatim}
 >>> fruit = 'banana'
 >>> fruit[0:5:2]
 'bnn'
 \end{verbatim}
-步长为-1,则表示倒序读取, 所以 \verb"[::-1]" 切片, 
-便会产生一个倒序的字符串. 
+%A step size of -1 goes through the word backwards, so
+%the slice \verb"[::-1]" generates a reversed string.
+步长为-1,则表示倒序读取, 所以切片 \verb"[::-1]" , 
+便会产生一个反转的字符串. 
 \index{palindrome}
 
-用这个神奇魔法, 将习题~\ref{palindrome}中的 \verb"is_palindrome"
+%Use this idiom to write a one-line version of \verb"is_palindrome"
+%from Exercise~\ref{palindrome}.
+用这个神奇的方法, 将习题~\ref{palindrome}中的 \verb"is_palindrome"
 修改为一行代码的版本吧. 
 \end{exercise}
 
 
 \begin{exercise}
-
+%The following functions are all {\em intended} to check whether a
+%string contains any lowercase letters, but at least some of them are
+%wrong.  For each function, describe what the function actually does
+%(assuming that the parameter is a string).
 下面的函数都是{\em 试图}检验字符串中是否包含小写字母, 
-但是肯定有函数存在问题. 
+但其中有些函数存在问题. 
 仔细分析每个函数并明了其用途
-(假设入参都是字符串).
+(假设入参都是一个字符串).
 
 \begin{verbatim}
 def any_lowercase1(s):
@@ -6219,11 +6261,19 @@ def any_lowercase5(s):
 \index{rotation, letter}
 
 \label{exrotate}
-凯撒加密(Caesar cypher )是一种通过对每个字母进行特定数值的``移位''操作, 
-而实现的简单加密方案. 
+%A Caesar cypher is a weak form of encryption that involves ``rotating'' each
+%letter by a fixed number of places.  To rotate a letter means
+%to shift it through the alphabet, wrapping around to the beginning if
+%necessary, so 'A' rotated by 3 is 'D' and 'Z' rotated by 1 is 'A'.
+凯撒加密(Caesar cypher )是一种通过对每个字母
+进行特定数值的``移位''操作, 而实现的弱加密方案. 
 对字母移位, 也就是按照字母顺序, 进行移动, 必要时需要回到开头,  
 所以'A'移位3, 得到 'D' ,   'Z' 移位1,得到'A'. 
 
+%To rotate a word, rotate each letter by the same amount.
+%For example, ``cheer'' rotated by 7 is ``jolly'' and ``melon'' rotated
+%by -10 is ``cubed''.  In the movie {\em 2001: A Space Odyssey}, the 
+%ship computer is called HAL, which is IBM rotated by -1.
 对一个单词移位, 就是对每个字母采用相同的移位数量. 
 例如``cheer'' 移位7,则为``jolly'',  ``melon''移位-10, 则为 ``cubed''. 
 在电影{\em 2001: A Space Odyssey}中, 飞船上的计算机名叫HAL, 
@@ -6232,9 +6282,17 @@ def any_lowercase5(s):
 %For example ``sleep''
 %rotated by 9 is ``bunny'' and ``latex'' rotated by 7 is ``shale''.
 
-编写\verb"rotate_word"函数, 接收一个字符串和一个整数, 作为参数, 
+%Write a function called \verb"rotate_word"
+%that takes a string and an integer as parameters, and returns
+%a new string that contains the letters from the original string
+%rotated by the given amount.  
+编写名为\verb"rotate_word"的函数, 接收一个字符串和一个整数, 作为参数, 
 对字符串中的字符进行数值移位, 得到新字符串, 并返回. 
 
+%You might want to use the built-in function {\tt ord}, which converts
+%a character to a numeric code, and {\tt chr}, which converts numeric
+%codes to characters.  Letters of the alphabet are encoded in alphabetical
+%order, so for example:
 你可能需要用内置的{\tt ord}函数, 此函数可以将字符转为数字码, 
 而{\tt chr}则可以将数字码转回字符. 
 字母表中的字母会按顺序进行编码, 比如:
@@ -6243,19 +6301,31 @@ def any_lowercase5(s):
 >>> ord('c') - ord('a')
 2
 \end{verbatim}
+%Because \verb"'c'" is the two-eth letter of the alphabet.  But
+%beware: the numeric codes for upper case letters are different.
 因为\verb"'c'"在字母表中是第2个(从0开始)字母. 
-但要注意:大写字母的数字码和小写的不同. 
+但要注意: 大写字母的数字码和小写的不同. 
 
-网络上一些嘲弄有时会采用ROT13编码, 也就是移位数量为13的凯撒加密. 
+%Potentially offensive jokes on the Internet are sometimes encoded in
+%ROT13, which is a Caesar cypher with rotation 13.  If you are not
+%easily offended, find and decode some of them.  Solution:
+%\url{http://thinkpython2.com/code/rotate.py}.
+网络上一些冒犯性的笑话有时会采用ROT13编码, 也就是移位数量为13的凯撒加密. 
 如果你不会太介意, 试试解密它们吧. 参阅:
 \url{http://thinkpython2.com/code/rotate.py}.
 
 \end{exercise}
 
-
+%\chapter{Case study: word play}
 \chapter{案例学习: 单词游戏}
 \label{wordplay}
 
+%This chapter presents the second case study, which involves
+%solving word puzzles by searching for words that have certain
+%properties.  For example, we'll find the longest palindromes
+%in English and search for words whose letters appear in
+%alphabetical order.  And I will present another program development
+%plan: reduction to a previously solved problem.
 本章学习第二个案例, 主要研究如何通过搜索特定词汇, 进行猜迷. 
 比如, 查找最长回字文, 以及寻找按照字母表顺序排列的单词. 
 同时, 我将介绍一种新的程序开发模式: 抽离纷纷扰扰, 回归已有方案. 
