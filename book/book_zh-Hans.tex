@@ -6333,22 +6333,36 @@ def any_lowercase5(s):
 
 \section{读取单词列表}
 \label{wordlist}
-本章的练习, 需要准备一个英文单词列表. 
-网上有很多可用的单词列表, 但是对我们来说, 最理想的莫过于
-Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词列表
+%For the exercises in this chapter we need a list of English words.
+%There are lots of word lists available on the Web, but the one most
+%suitable for our purpose is one of the word lists collected and
+%contributed to the public domain by Grady Ward as part of the Moby
+%lexicon project (see \url{http://wikipedia.org/wiki/Moby_Project}).  It
+%is a list of 113,809 official crosswords; that is, words that are
+%considered valid in crossword puzzles and other word games.  In the
+%Moby collection, the filename is {\tt 113809of.fic}; you can download
+%a copy, with the simpler name {\tt words.txt}, from
+%\url{http://thinkpython2.com/code/words.txt}.
+本章的练习, 需要准备一个英文单词表. 
+网上有很多可用的单词表, 但是对我们来说, 最理想的莫过于
+Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词表
 (详见\url{http://wikipedia.org/wiki/Moby_Project}). 这是
-包含 113,809 个填词游戏的单词列表; 也就是说, 这些单词, 已经被
-填词游戏和其他单词游戏证明了有效. 
+包含 113,809 个填词游戏的单词表; 也就是说, 这些单词, 已经在
+填词游戏和其他单词游戏中证明了是有效单词. 
 在Moby项目中, 这个文件名为 {\tt 113809of.fic};
 你可以从\url{http://thinkpython2.com/code/words.txt} 下载一个副本, 
 其名字简称 {\tt words.txt}. 
 \index{Moby Project}
 \index{crosswords}
 
-此文件为纯文本文件, 你可以用文本编辑器打开, 
-但你也可以用Python读取. 
+%This file is in plain text, so you can open it with a text
+%editor, but you can also read it from Python.  The built-in
+%function {\tt open} takes the name of the file as a parameter
+%and returns a {\bf file object} you can use to read the file.
+此文件为纯文本文件, 因此你可以用文本编辑器打开, 
+但也可以用Python读取. 
 内置函数{\tt open}, 以文件名为入参, 返回一个 {\bf 文件对象}, 
-可以用来读取文件内容. 
+你可以用来读取文件内容. 
 \index{open function}
 \index{function!open}
 \index{plain text}
@@ -6360,9 +6374,15 @@ Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词�
 >>> fin = open('words.txt')
 \end{verbatim}
 %
-{\tt fin} 是表示输入的文件对象的通用名称. 
-文件对象针对读取提供了多个方法, 包括 {\tt readline}, 此方法会读取文件的一整行
-字符, 并作为字符串返回: \index{readline method}
+%{\tt fin} is a common name for a file object used for input.  The file
+%object provides several methods for reading, including {\tt readline},
+%which reads characters from the file until it gets to a newline and
+%returns the result as a string:
+{\tt fin} 是用于输入的文件对象的通用名称. 
+文件对象提供了多个读取方法, 包括 {\tt readline}, 
+此方法会读取文件的一整行
+字符, 并作为字符串返回: 
+\index{readline method}
 \index{method!readline}
 
 \begin{verbatim}
@@ -6370,10 +6390,15 @@ Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词�
 'aa\n'
 \end{verbatim}
 %
+%The first word in this particular list is ``aa'', which is a kind of
+%lava.  The sequence \verb"\n" represents the newline character that 
+%separates this word from the next.
 单词列表中第一个单词是``aa'', 这是一种岩浆. 
-后面的\verb"\n" 是换行符, 用来断行. 
+后面的\verb"\n" 是换行符, 用来断行(将当前单词和后面分隔开). 
 
-文件对象会跟踪目前读到哪里了, 从而, 再次运行
+%The file object keeps track of where it is in the file, so
+%if you call {\tt readline} again, you get the next word:
+文件对象会跟踪它在文件的位置(也就是读到了哪里), 从而, 如果再次运行
 {\tt readline}, 会得到后面的单词:
 
 \begin{verbatim}
@@ -6381,7 +6406,11 @@ Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词�
 'aah\n'
 \end{verbatim}
 %
-下一个单词是``aah'',  这是个绝对正确的单词, 所以别那样看我. 
+%The next word is ``aah'', which is a perfectly legitimate
+%word, so stop looking at me like that.
+%Or, if it's the newline character that's bothering you,
+%we can get rid of it with the string method {\tt strip}:
+下一个单词是``aah'',  这是个绝对正确的单词, 所以别那样看着我了. 
 另外, 如果换行符令你厌烦, 可以用字符串方法{\tt strip}移除:
 \index{strip method}
 \index{method!strip}
@@ -6393,6 +6422,9 @@ Grady Ward 收集整理, 作为Moby词典项目, 贡献给公共领域的单词�
 'aahed'
 \end{verbatim}
 %
+%You can also use a file object as part of a {\tt for} loop.
+%This program reads {\tt words.txt} and prints each word, one
+%per line:
 你也可以将文件对象置于{\tt for}循环中. 
 这样程序便会读取 {\tt words.txt}, 然后逐行输出每个单词:
 \index{open function}
@@ -6407,7 +6439,10 @@ for line in fin:
 %
 
 \section{练习}
-下一节有这些习题的答案, 但尽量在看答案之前尽力一试吧. 
+%\section{Exercises}
+%There are solutions to these exercises in the next section.
+%You should at least attempt each one before you read the solutions.
+下一节有这些习题的答案, 但在看答案之前最好尽力一试. 
 
 \begin{exercise}
 编写程序, 读取{\tt words.txt}, 仅打印多于20个字符的单词
