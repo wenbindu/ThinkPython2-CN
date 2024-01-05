@@ -6452,43 +6452,66 @@ for line in fin:
 \end{exercise}
 
 \begin{exercise}
-
-1939年Ernest Vincent Wright出版了一部 50,000 单词的小说, 名叫
+%In 1939 Ernest Vincent Wright published a 50,000 word novel called
+%{\em Gadsby} that does not contain the letter ``e''.  Since ``e'' is
+%the most common letter in English, that's not easy to do.
+Ernest Vincent Wright在1939年出版了一部 50,000 单词的小说, 名叫
 {\em Gadsby}, 本书不包括字母``e''. 而英文中最常用的便是``e'', 所以
-太难得了. 
+这是很难做到的. 
 
+%In fact, it is difficult to construct a solitary thought without using
+%that most common symbol.  It is slow going at first, but with caution
+%and hours of training you can gradually gain facility.
 事实上, 若不使用常用的字符, 一般很难表达出一个观点. 
 不过, 开始虽然进展缓慢, 但是, 通过保持谨慎并训练几个小时, 
-你也可以慢慢适应. 
+你便可以慢慢适应. 
 
+%All right, I'll stop now.
+%
+%Write a function called \verb"has_no_e" that returns {\tt True} if
+%the given word doesn't have the letter ``e'' in it.
 好了, 闲言少叙. 
 
 编写 \verb"has_no_e" 函数, 如果输入的单词不包括``e'',  则返回{\tt True}. 
 
+%Write a program that reads {\tt words.txt} and prints only the words
+%that have no ``e''.  Compute the percentage of words in the list
+%that have no ``e''.
 编写程序, 读取{\tt words.txt}, 只打印不包含``e''的单词. 
 统计列表中, 不包含``e''的单词所占比例. 
 \index{lipogram}
 
 \end{exercise}
 
-
 \begin{exercise} 
 
-编写{\tt avoids}函数, 以单词和禁用字母字符串为输入, 当单词不包含任何禁用字母时, 
-返回 {\tt True}. 
+%Write a function named {\tt avoids}
+%that takes a word and a string of forbidden letters, and
+%that returns {\tt True} if the word doesn't use any of the forbidden
+%letters.
+编写{\tt avoids}函数, 以单词和一个包含禁用字母的字符串为输入, 
+当单词不包含任何禁用字母时, 返回 {\tt True}. 
 
-编写程序, 使用户输入禁用字母字符串, 
-然后输出不含有这些字母的单词数量. 
+%Write a program that prompts the user to enter a string
+%of forbidden letters and then prints the number of words that
+%don't contain any of them.
+%Can you find a combination of 5 forbidden letters that
+%excludes the smallest number of words?
+编写程序, 提示用户输入一个包含禁用字母的字符串, 
+然后输出不含有任何禁用字母的单词数量. 
 看看你是否可以找出一个包含5个禁用字母的组合, 
-使被排除的单词数最少?
+使得被排除的单词数最少?
 
 \end{exercise}
 
 
 \begin{exercise}
-
-编写函数\verb"uses_only" , 以一个单词和一串字母为输入, 
-如果单词的字母都在这串字母中, 则返回{\tt True}.
+%Write a function named \verb"uses_only" that takes a word and a
+%string of letters, and that returns {\tt True} if the word contains
+%only letters in the list.  Can you make a sentence using only the
+%letters {\tt acefhlo}?  Other than ``Hoe alfalfa''?
+编写\verb"uses_only"函数 , 以一个单词和一串字母字符串为输入, 
+如果单词的字母都在这串字母字符串中, 则返回{\tt True}.
 你是否可以只用{\tt acefhlo}这些字母, 构造出句子?
 换成 ``Hoe alfalfa''这些字母呢?
 
@@ -6496,30 +6519,37 @@ for line in fin:
 
 
 \begin{exercise} 
-
-编写函数\verb"uses_all" , 输入为一个单词和一串必需字母, 
-如果单词对这串必需字母, 都至少使用了一次, 则返回{\tt True}. 
+%Write a function named \verb"uses_all" that takes a word and a
+%string of required letters, and that returns {\tt True} if the word
+%uses all the required letters at least once.  How many words are there
+%that use all the vowels {\tt aeiou}?  How about {\tt aeiouy}?
+编写\verb"uses_all"函数 , 接受一个单词和一串必需字母作为输入, 
+如果单词对这些必需字母, 都至少使用了一次, 则返回{\tt True}. 
 看看有多少单词同时包含{\tt aeiou}? 又有多少同时包含 {\tt aeiouy}呢?
 
 \end{exercise}
 
 
 \begin{exercise}
-编写函数\verb"is_abecedarian", 如果单词中的字母是按照字母表顺序排列, 
+%Write a function called \verb"is_abecedarian" that returns
+%{\tt True} if the letters in a word appear in alphabetical order
+%(double letters are ok).  
+%How many abecedarian words are there?
+编写\verb"is_abecedarian"函数, 如果单词中的字母是按照字母表顺序排列, 
 则返回 {\tt True}(字母相同, 视为顺序). 看看有多少这种单词?
 
 \index{abecedarian}
 
 \end{exercise}
 
-
+%\section{Search}
 \section{检索}
 \label{search}
 \index{search pattern}
 \index{pattern!search}
 
 上一章节中, 所有的练习, 都有个共通之处;
-它们都可以采用第~\ref{find}节的检索方法来解决. 
+它们都可以采用第~\ref{find}节的检索模式来解决. 
 举个简单例子:
 
 \begin{verbatim}
