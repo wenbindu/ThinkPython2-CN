@@ -6548,6 +6548,9 @@ Ernest Vincent Wright在1939年出版了一部 50,000 单词的小说, 名叫
 \index{search pattern}
 \index{pattern!search}
 
+%All of the exercises in the previous section have something
+%in common; they can be solved with the search pattern we saw
+%in Section~\ref{find}.  The simplest example is:
 上一章节中, 所有的练习, 都有个共通之处;
 它们都可以采用第~\ref{find}节的检索模式来解决. 
 举个简单例子:
@@ -6560,20 +6563,29 @@ def has_no_e(word):
     return True
 \end{verbatim}
 %
+%The {\tt for} loop traverses the characters in {\tt word}.  If we find
+%the letter ``e'', we can immediately return {\tt False}; otherwise we
+%have to go to the next letter.  If we exit the loop normally, that
+%means we didn't find an ``e'', so we return {\tt True}.
 {\tt for}循环会遍历 {\tt word}中所有字母. 
 如果遇到 ``e'', 则即刻返回{\tt False};
-否则继续下一个字母. 
+否则继续查找下一个字母. 
 如果循环正常结束, 也就是说没有遇到``e'',  则返回{\tt True}.
 \index{traversal}
 
 \index{in operator}
 \index{operator!in}
+%You could write this function more concisely using the {\tt in}
+%operator, but I started with this version because it 
+%demonstrates the logic of the search pattern.
 你也可以使用{\tt in}运算符来精简程序, 
-我先介绍上述版本, 主要是阐述清楚检索算法的内在逻辑. 
+我先介绍上述版本, 主要是它展示了检索模式的内在逻辑. 
 
 \index{generalization}
+%{\tt avoids} is a more general version of \verb"has_no_e" but it
+%has the same structure:
 {\tt avoids} 函数相比 \verb"has_no_e" 版本, 功能更加通用, 
-但结构相同:
+但结构是相同的:
 
 \begin{verbatim}
 def avoids(word, forbidden):
@@ -6583,10 +6595,14 @@ def avoids(word, forbidden):
     return True
 \end{verbatim}
 %
+%We can return {\tt False} as soon as we find a forbidden letter;
+%if we get to the end of the loop, we return {\tt True}.
 在此函数中, 一旦遇到禁止字母, 即刻返回{\tt False}, 
-如果循环终了, 则返回{\tt True}. 
+如果循环正常结束, 则返回{\tt True}. 
 
-\verb"uses_only" 与之极为相似, 无非条件相反:
+%\verb"uses_only" is similar except that the sense of the condition
+%is reversed:
+\verb"uses_only" 与之极为相似, 无非条件的含义相反:
 
 \begin{verbatim}
 def uses_only(word, available):
@@ -6596,11 +6612,16 @@ def uses_only(word, available):
     return True
 \end{verbatim}
 %
+%Instead of a list of forbidden letters, we have a list of available
+%letters.  If we find a letter in {\tt word} that is not in
+%{\tt available}, we can return {\tt False}.
 这里不再是禁用字母列表了, 而是可用字母列表. 
-如果 {\tt word}中出现了不在可用列表中的字母, 返回{\tt False}.
+如果在 {\tt word}中找到了不在{\tt available}中的字母, 返回{\tt False}.
 
+%\verb"uses_all" is similar except that we reverse the role
+%of the word and the string of letters:
 \verb"uses_all"和上述函数也较为相似, 不同之处在于, 
-我们交换了单词和字母序列的角色:
+我们颠倒了单词和字母序列的角色:
 
 \begin{verbatim}
 def uses_all(word, required):
@@ -6610,11 +6631,17 @@ def uses_all(word, required):
     return True
 \end{verbatim}
 %
+%Instead of traversing the letters in {\tt word}, the loop
+%traverses the required letters.  If any of the required letters
+%do not appear in the word, we can return {\tt False}.
 不再是遍历 {\tt word}中的字母, 
 而是遍历必需字母列表. 
 如果字母列表中有字母未出现在单词中, 返回{\tt False}.
 \index{traversal}
 
+%If you were really thinking like a computer scientist, you would
+%have recognized that \verb"uses_all" was an instance of a
+%previously solved problem, and you would have written:
 如若你已像计算机科学家一样去思考, 你便会注意到 \verb"uses_all" 
 是以前一个已解决的问题的另一种表达, 你便会这么写:
 
@@ -6623,6 +6650,10 @@ def uses_all(word, required):
     return uses_only(required, word)
 \end{verbatim}
 %
+%This is an example of a program development plan called {\bf
+%  reduction to a previously solved problem}, which means that you
+%recognize the problem you are working on as an instance of a solved
+%problem and apply an existing solution. 
 此案例便是一个{\bf 抽离纷扰, 回归已知}的程序开发模式的实践, 
 这种模式是将遇到的问题, 映射为已解决的问题, 
 从而用已有的解决方案来解决当前问题.   
@@ -6630,14 +6661,20 @@ def uses_all(word, required):
 \index{development plan!reduction}
 
 
+%\section{Looping with indices}
 \section{索引循环}
 \index{looping!with indices}
 \index{index!looping with}
-前一章节中, 我用{\tt for}循环编写了大量函数, 这是因为我
-只关注字符串中的字符; 所以无需关注索引. 
+%I wrote the functions in the previous section with {\tt for}
+%loops because I only needed the characters in the strings; I didn't
+%have to do anything with the indices.
+前一章节中, 我用{\tt for}循环编写函数, 这是因为我
+只需要字符串中的字符; 所以不必理会索引. 
 
+%For \verb"is_abecedarian" we have to compare adjacent letters,
+%which is a little tricky with a {\tt for} loop:
 但\verb"is_abecedarian"函数中, 我们不得不比较相邻的字母, 
-用{\tt for}循环便不太方便:
+用{\tt for}循环便有些棘手:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6649,7 +6686,8 @@ def is_abecedarian(word):
     return True
 \end{verbatim}
 
-用递归来实现:
+%An alternative is to use recursion:
+另一种方案是使用递归:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6660,6 +6698,7 @@ def is_abecedarian(word):
     return is_abecedarian(word[1:])
 \end{verbatim}
 
+%Another option is to use a {\tt while} loop:
 还可以使用 {\tt while} 循环:
 
 \begin{verbatim}
@@ -6672,20 +6711,38 @@ def is_abecedarian(word):
     return True
 \end{verbatim}
 %
+%The loop starts at {\tt i=0} and ends when {\tt i=len(word)-1}.  Each
+%time through the loop, it compares the $i$th character (which you can
+%think of as the current character) to the $i+1$th character (which you
+%can think of as the next).
 此循环始于 {\tt i=0}, 终于{\tt i=len(word)-1}. 
-每次循环都会比较第$i$个字符(可以看作当前字符)
-和第$i+1$个字符(可以看作后一个字符). 
+每次循环都会比较第$i$个字符(可以视为当前字符)
+和第$i+1$个字符(可以视为下一个字符). 
 
-如果后一个字符小于(在字母表顺序中先于)当前字符, 
-我们会发现这和要求不符, 便返回{\tt False}.
+%If the next character is less than (alphabetically before) the current
+%one, then we have discovered a break in the abecedarian trend, and
+%we return {\tt False}.
+如果下一个字符小于(按字母顺序居前)当前字符, 
+我们发现这会破坏顺序递增的趋势, 从而返回{\tt False}.
 
-如果直到循环末尾, 仍然无异常, 则单词合格. 
+%If we get to the end of the loop without finding a fault, then the
+%word passes the test.  To convince yourself that the loop ends
+%correctly, consider an example like \verb"'flossy'".  The
+%length of the word is 6, so
+%the last time the loop runs is when {\tt i} is 4, which is the
+%index of the second-to-last character.  On the last iteration,
+%it compares the second-to-last character to the last, which is
+%what we want.
+如果直到循环结束, 仍然无异常, 则单词通过检验. 
 为确信循环正常结束, 可以试试\verb"'flossy'". 
 单词长度为6, 所以{\tt i} 为 4时, 便是最后一次循环, 
 因为这是倒数第二个字符的索引. 最后一次循环中, 
 比较了倒数第二个和倒数第一个字符, 这恰恰符合预期. 
 \index{palindrome}
 
+%Here is a version of \verb"is_palindrome" (see
+%Exercise~\ref{palindrome}) that uses two indices; one starts at the
+%beginning and goes up; the other starts at the end and goes down.
 下面是\verb"is_palindrome" 函数(参看习题~\ref{palindrome})的另一个版本, 
 其使用了两个索引; 一个从开头到结尾, 顺序前进;
 另一个从结尾到开头, 倒序进行.
@@ -6704,7 +6761,9 @@ def is_palindrome(word):
     return True
 \end{verbatim}
 
-或者, 我们映射到以前解决过的难题, 进行重写:
+%Or we could reduce to a previously solved
+%problem and write:
+或者, 我们也可以缩减为先前已解决的难题, 写成:
 \index{reduction to a previously solved problem}
 \index{development plan!reduction}
 
@@ -6713,16 +6772,21 @@ def is_palindrome(word):
     return is_reverse(word, word)
 \end{verbatim}
 %
+%Using \verb"is_reverse" from Section~\ref{isreverse}.
 此处使用了第~\ref{isreverse}节的\verb"is_reverse"函数.
 
-
+%\section{Debugging}
 \section{调试}
 \index{debugging}
 \index{testing!is hard}
 \index{program testing}
 
-程序测试很难. 本章的函数相对容易测试, 因为你可以用手算来检验结果. 
-即便如此, 要选择一批单词, 测试所有可能错误, 那便难上加难了. 
+%Testing programs is hard.  The functions in this chapter are
+%relatively easy to test because you can check the results by hand.
+%Even so, it is somewhere between difficult and impossible to choose a
+%set of words that test for all possible errors.
+程序测试是很难的. 本章的函数相对容易测试, 因为你可以用手算来检验结果. 
+即便如此, 想要选择一组可以测试所有可能错误的单词, 也是困难重重. 
 
 以\verb"has_no_e"为例, 需要检验两种情景: 一种是含有`e'的单词, 返回{\tt False}, 
 另一种是不含有`e'的单词, 返回{\tt True}. 
