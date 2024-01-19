@@ -6785,57 +6785,93 @@ def is_palindrome(word):
 %relatively easy to test because you can check the results by hand.
 %Even so, it is somewhere between difficult and impossible to choose a
 %set of words that test for all possible errors.
-程序测试是很难的. 本章的函数相对容易测试, 因为你可以用手算来检验结果. 
+程序测试是很难的. 本章的函数相对容易测试, 
+因为你可以用手算来检验结果. 
 即便如此, 想要选择一组可以测试所有可能错误的单词, 也是困难重重. 
 
-以\verb"has_no_e"为例, 需要检验两种情景: 一种是含有`e'的单词, 返回{\tt False}, 
-另一种是不含有`e'的单词, 返回{\tt True}. 
-对此, 你应该很容易针对每种情景, 都想出一个单词. 
 
-对于每种情景, 存在一些不太明显的子用例. 
-对于包含 ``e''的单词, 你需要检验 ``e''在开头的, 在结尾的, 甚至中间某些位置的单词. 
-你要检验长单词, 短单词, 甚至非常短的单词, 比如空字符串. 
-空字符串是{\bf 特例}的一种, 也就是那种容易被忽视, 却往往是错误频发之处的用例. 
+%Taking \verb"has_no_e" as an example, there are two obvious
+%cases to check: words that have an `e' should return {\tt False}, and
+%words that don't should return {\tt True}.  You should have no
+%trouble coming up with one of each.
+以\verb"has_no_e"为例, 有两个明显的情况需要检查: 
+一种是含有`e'的单词, 返回{\tt False}, 
+另一种是不含有`e'的单词, 返回{\tt True}. 
+对此, 你应该可以针对每种情景, 轻松想出一个单词. 
+
+%Within each case, there are some less obvious subcases.  Among the
+%words that have an ``e'', you should test words with an ``e'' at the
+%beginning, the end, and somewhere in the middle.  You should test long
+%words, short words, and very short words, like the empty string.  The
+%empty string is an example of a {\bf special case}, which is one of
+%the non-obvious cases where errors often lurk.
+对于每种情景, 都存在一些不太明显的子用例. 
+对于包含 ``e'' 的单词, 你需要检验在单词开头, 结尾, 
+以及中间某处带有 ``e'' 的单词. 
+你需要检验长单词, 短单词, 甚至非常短的单词, 比如空字符串. 
+空字符串是{\bf 特例}的一种, 也就是那种容易被忽视, 
+却往往导致错误频发的情况. 
 \index{special case}
 
+
+%In addition to the test cases you generate, you can also test
+%your program with a word list like {\tt words.txt}.  By scanning
+%the output, you might be able to catch errors, but be careful:
+%you might catch one kind of error (words that should not be
+%included, but are) and not another (words that should be included,
+%but aren't).
 除了自己构建测试用例, 你也可以用类似{\tt words.txt}的单词列表检验程序. 
 通过扫描输出, 你可能会发现错误, 但要注意: 
-你可能发现了某种错误(包括了不应包含的单词), 而忽略了其他错误
+你可能发现了一种错误(包括了不应包含的单词), 而忽略了另一种错误
 (没有包括应该包含的单词). 
 
-通常, 程序测试可以帮助你发现错误, 但要制作出好的测试用例, 
+%In general, testing can help you find bugs, but it is not easy to
+%generate a good set of test cases, and even if you do, you can't
+%be sure your program is correct.
+%According to a legendary computer scientist:
+通常, 程序测试可以帮助你发现错误, 但要生成好的测试用例, 
 往往很难, 即使通过了这些测试, 你也不能百分百地确认你的程序正确. 
 一位传奇的计算机科学家说过:
 \index{testing!and absence of bugs}
 
 \begin{quote}
 
+%Program testing can be used to show the presence of bugs, but never to
+%show their absence!
 程序测试只能表明错误的存在, 却永远无法保证其不存在!
 
 --- Edsger W. Dijkstra
 \end{quote}
 \index{Dijkstra, Edsger}
 
-
+%\section{Glossary}
 \section{术语表}
 
 \begin{description}
 
-\item[文件对象(file object):] 用来标识被打开的文件的一个值.
+%\item[file object:] A value that represents an open file.
+\item[文件对象(file object):] 标识一个已打开文件的值.
 \index{file object}
 \index{object!file}
 
+
+%\item[reduction to a previously solved problem:] A way of solving a
+%  problem by expressing it as an instance of a previously solved
+%  problem. 
 \item[抽离纷绕, 回归已知(reduction to a previously solved problem):] 一种将当前问题简化为已解决问题, 进而解决问题的方式.
 \index{reduction to a previously solved problem}
 \index{development plan!reduction}
 
+
+%\item[special case:] A test case that is atypical or non-obvious
+%(and less likely to be handled correctly).
 \item[特例(special case):] 非典型或者不明显的测试用例
 (往往容易犯错的地方).
 \index{special case}
 
 \end{description}
 
-
+%\section{Exercises}
 \section{习题集}
 
 \begin{exercise}
