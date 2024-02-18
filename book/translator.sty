@@ -1,0 +1,32 @@
+\ProvidesPackage{translator}
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[framemethod=TikZ]{mdframed}
+
+
+\mdfdefinestyle{commentboxstyle}{
+	skipabove=1.5\topskip,
+	skipbelow=.5\topskip,
+	rightmargin=0pt,
+	leftmargin=0pt,
+	innerrightmargin=7pt,
+	innerleftmargin=7pt,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	frametitlerule=true,
+	linecolor=black,
+	fontcolor=black,
+%	frametitlebackgroundcolor=RoyalBlue,
+}
+
+\newmdenv[
+	style=commentboxstyle,
+	frametitle=译者注,
+	backgroundcolor=RoyalBlue!25!White,
+	frametitlebackgroundcolor=RoyalBlue!25!White,
+]{note}
+
+
