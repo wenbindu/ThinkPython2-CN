@@ -30,6 +30,7 @@
 \usepackage{appendix}
 \usepackage[bookmarks]{hyperref}
 \usepackage[center]{titlesec}
+\usepackage{translator}
 \titleformat{\chapter}{\raggedright\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
 
 
@@ -100,6 +101,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
+%{\huge Think Python}\\
+%{\Large How to Think Like a Computer Scientist}
 {\huge Python沉思錄}\\
 {\Large 像計算機專家一樣思考}
 \end{spacing}
@@ -224,49 +227,93 @@ The \LaTeX\ source for this book is available from
 \fi
 % END OF THE PART WE SKIP FOR PLASTEX
 
-
+%\chapter{Preface}
 \chapter{序}
 
 \section*{本書由來}
 
-1999年1月, 我準備以Java教學生編程入門, 
+%In January 1999 I was preparing to teach an introductory programming
+%class in Java.  I had taught it three times and I was getting
+%frustrated.  The failure rate in the class was too high and, even for
+%students who succeeded, the overall level of achievement was too low.
+1999年1月, 我準備通過Java教學生程式設計入門, 
 課程已講過三次, 但我沮喪依舊. 
-這門課的失敗率太高, 即使是那些優秀的學生, 其整體成績水平也不理想.
+這門課的失敗率太高了, 即使是那些優秀的學生, 
+其整體成績水平也並不理想.
 
+%One of the problems I saw was the books.  
+%They were too big, with too much unnecessary detail about Java, and
+%not enough high-level guidance about how to program.  And they all
+%suffered from the trap door effect: they would start out easy,
+%proceed gradually, and then somewhere around Chapter 5 the bottom would
+%fall out.  The students would get too much new material, too fast,
+%and I would spend the rest of the semester picking up the pieces.
 據我觀察, 問題出在書本教案上, 
-書籍厚重, 畫蛇添足, 細枝末節過多, 關於如何編程, 缺乏更多的指導.
-因此學生總是容易陷入困境: 起步易, 行進難, 半途而廢.
+書籍厚重, 畫蛇添足, 細枝末節過多, 關於如何程式設計, 缺乏更多的指導.
+因此學生總是輕易陷入困局: 起步易, 行進難, 半途而廢.
 學生學得囫圇吞棗, 而我則要花費整個學期, 收拾殘局.
 
+\begin{note}
+我們使用的許多教材, 是否也有此通病, 誠學生之痛, 教師之難, 教育之悲.
+\end{note}
+
+%Two weeks before the first day of classes, I decided to write my
+%own book.  My goals were:
 開課前兩週, 我決定自己寫本書, 目標如下：
 
 \begin{itemize}
 
+%\item Keep it short.  It is better for students to read 10 pages
+%than not read 50 pages.
+%
+%\item Be careful with vocabulary.  I tried to minimize jargon
+%and define each term at first use.
+%
+%\item Build gradually. To avoid trap doors, I took the most difficult
+%topics and split them into a series of small steps. 
+%
+%\item Focus on programming, not the programming language.  I included
+%the minimum useful subset of Java and left out the rest.
 \item 少. 十頁易解, 百頁難通.
 
 \item 精. 詞彙早解釋, 術語早提煉.
 
-\item 緩. 將困難部分大而化小, 小步慢跑.
+\item 緩. 將困難部分大而化小, 小而能學.
 
 \item 專. 聚焦編程思想, 精簡程式代碼.
 
 \end{itemize}
 
+%I needed a title, so on a whim I chose {\em How to Think Like
+%a Computer Scientist}.
+%
+%My first version was rough, but it worked.  Students did the reading,
+%and they understood enough that I could spend class time on the hard
+%topics, the interesting topics and (most important) letting the
+%students practice.
+%
+%I released the book under the GNU Free Documentation License,
+%which allows users to copy, modify, and distribute the book.
 莫名其妙地選擇了個題目 {\em 像計算機專家一樣思考
 (How to Think Like a Computer Scientist)}.
 
 首版雖然略顯粗略, 但是效果不錯. 
 學生知其然, 並知其所以然, 我也可聚焦課堂於難點, 趣題以及操作實踐. 
 
-我基於GNU自由文檔許可證發布此書, 
-也就是說, 任何人都可以複製, 修改, 分享此書. 
+我基於GNU自由文件許可證發布此書, 
+也就是說, 任何人都可以複製, 修改, 分散此書. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-後續的事情很有趣, 弗吉尼亞州的Jeff Elkner高中教師採用了本書, 
-並翻譯為了Python教材. 他給我發送了他的翻譯版本, 
+%What happened next is the cool part.  Jeff Elkner, a high school
+%teacher in Virginia, adopted my book and translated it into
+%Python.  He sent me a copy of his translation, and I had the
+%unusual experience of learning Python by reading my own book.
+%As Green Tea Press, I published the first Python version in 2001.
+後續的事情很有趣, 弗吉尼亞州的高中教師Jeff Elkner採用了本書, 
+並翻譯為了Python教材. 他將他的翻譯版本發送給了我, 
 我便有了一段不尋常得經歷, 通過閱讀自己的書來學習Python.  
-同時依靠 Green Tea Press, 於2001年, 我首次發布了Python版. 
+同時依托 Green Tea Press, 於2001年, 我出版了第一个Python版本. 
 \index{Elkner, Jeff}
 
 2003年, 我開始在歐林學院教書, 並且首次教授Python. 

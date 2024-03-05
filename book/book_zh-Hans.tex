@@ -101,6 +101,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
+%{\huge Think Python}\\
+%{\Large How to Think Like a Computer Scientist}
 {\huge Python沉思录}\\
 {\Large 像计算机专家一样思考}
 \end{spacing}
@@ -225,34 +227,73 @@ The \LaTeX\ source for this book is available from
 \fi
 % END OF THE PART WE SKIP FOR PLASTEX
 
-
+%\chapter{Preface}
 \chapter{序}
-
+%\section*{The strange history of this book}
 \section*{本书由来}
 
-1999年1月, 我准备以Java教学生编程入门, 
-课程已讲过三次, 但我沮丧依旧. 
-这门课的失败率太高, 即使是那些优秀的学生, 其整体成绩水平也不理想.
+%In January 1999 I was preparing to teach an introductory programming
+%class in Java.  I had taught it three times and I was getting
+%frustrated.  The failure rate in the class was too high and, even for
+%students who succeeded, the overall level of achievement was too low.
+1999年1月, 我准备通过Java教学生编程入门, 
+课程已讲过三次, 但我依旧很沮丧. 
+这门课的失败率太高了, 即使是那些优秀的学生, 
+其整体成绩水平也并不理想.
 
+%One of the problems I saw was the books.  
+%They were too big, with too much unnecessary detail about Java, and
+%not enough high-level guidance about how to program.  And they all
+%suffered from the trap door effect: they would start out easy,
+%proceed gradually, and then somewhere around Chapter 5 the bottom would
+%fall out.  The students would get too much new material, too fast,
+%and I would spend the rest of the semester picking up the pieces.
 据我观察, 问题出在书本教案上, 
-书籍厚重, 画蛇添足, 细枝末节过多, 关于如何编程, 缺乏更多的指导.
-因此学生总是容易陷入困境: 起步易, 行进难, 半途而废.
+书籍厚重, 画蛇添足, 细枝末节过多, 而关于如何编程, 则缺乏更多的指导.
+因此学生总是轻易陷入困局: 起步易, 行进难, 半途而废.
 学生学得囫囵吞枣, 而我则要花费整个学期, 收拾残局.
 
+\begin{note}
+我们使用的诸多教材, 是不是也有此通病, 诚学生之痛, 教师之难, 教育之悲. 
+\end{note}
+
+%Two weeks before the first day of classes, I decided to write my
+%own book.  My goals were:
 开课前两周, 我决定自己写本书, 目标如下: 
 
 \begin{itemize}
 
+%\item Keep it short.  It is better for students to read 10 pages
+%than not read 50 pages.
+%
+%\item Be careful with vocabulary.  I tried to minimize jargon
+%and define each term at first use.
+%
+%\item Build gradually. To avoid trap doors, I took the most difficult
+%topics and split them into a series of small steps. 
+%
+%\item Focus on programming, not the programming language.  I included
+%the minimum useful subset of Java and left out the rest.
 \item 少. 十页易解, 百页难通.
 
 \item 精. 词汇早解释, 术语早提炼.
 
-\item 缓. 将困难部分大而化小, 小步慢跑.
+\item 缓. 将困难部分大而化小, 小而能学.
 
 \item 专. 聚焦编程思想, 精简程序代码.
 
 \end{itemize}
 
+%I needed a title, so on a whim I chose {\em How to Think Like
+%a Computer Scientist}.
+%
+%My first version was rough, but it worked.  Students did the reading,
+%and they understood enough that I could spend class time on the hard
+%topics, the interesting topics and (most important) letting the
+%students practice.
+%
+%I released the book under the GNU Free Documentation License,
+%which allows users to copy, modify, and distribute the book.
 莫名其妙地选择了个题目 {\em 像计算机专家一样思考
 (How to Think Like a Computer Scientist)}.
 
@@ -260,14 +301,19 @@ The \LaTeX\ source for this book is available from
 学生知其然, 并知其所以然, 我也可聚焦课堂于难点, 趣题以及操作实践. 
 
 我基于GNU自由文档许可证发布此书, 
-也就是说, 任何人都可以复制, 修改, 分享此书. 
+也就是说, 任何人都可以复制, 修改, 分发此书. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-后续的事情很有趣, 弗吉尼亚州的Jeff Elkner高中教师采用了本书, 
-并翻译为了Python教材. 他给我发送了他的翻译版本, 
-我便有了一段不寻常得经历, 通过阅读自己的书来学习Python.  
-同时依靠 Green Tea Press, 于2001年, 我首次发布了Python版. 
+%What happened next is the cool part.  Jeff Elkner, a high school
+%teacher in Virginia, adopted my book and translated it into
+%Python.  He sent me a copy of his translation, and I had the
+%unusual experience of learning Python by reading my own book.
+%As Green Tea Press, I published the first Python version in 2001.
+后续的事情很有趣, 弗吉尼亚州的高中教师Jeff Elkner采用了本书, 
+同时翻译为了Python教材. 他将他的翻译版本发送给了我, 
+我便有了一段不寻常的经历, 通过阅读自己的书来学习Python.  
+同时依托 Green Tea Press, 于2001年, 我出版了第一个Python版本. 
 \index{Elkner, Jeff}
 
 2003年, 我开始在欧林学院教书, 并且首次教授Python. 
