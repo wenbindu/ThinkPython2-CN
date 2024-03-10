@@ -227,27 +227,15 @@ The \LaTeX\ source for this book is available from
 \fi
 % END OF THE PART WE SKIP FOR PLASTEX
 
-%\chapter{Preface}
 \chapter{序}
 
 \section*{本書由來}
 
-%In January 1999 I was preparing to teach an introductory programming
-%class in Java.  I had taught it three times and I was getting
-%frustrated.  The failure rate in the class was too high and, even for
-%students who succeeded, the overall level of achievement was too low.
 1999年1月, 我準備通過Java教學生程式設計入門, 
 課程已講過三次, 但我沮喪依舊. 
 這門課的失敗率太高了, 即使是那些優秀的學生, 
 其整體成績水平也並不理想.
 
-%One of the problems I saw was the books.  
-%They were too big, with too much unnecessary detail about Java, and
-%not enough high-level guidance about how to program.  And they all
-%suffered from the trap door effect: they would start out easy,
-%proceed gradually, and then somewhere around Chapter 5 the bottom would
-%fall out.  The students would get too much new material, too fast,
-%and I would spend the rest of the semester picking up the pieces.
 據我觀察, 問題出在書本教案上, 
 書籍厚重, 畫蛇添足, 細枝末節過多, 關於如何程式設計, 缺乏更多的指導.
 因此學生總是輕易陷入困局: 起步易, 行進難, 半途而廢.
@@ -257,23 +245,11 @@ The \LaTeX\ source for this book is available from
 我們使用的許多教材, 是否也有此通病, 誠學生之痛, 教師之難, 教育之悲.
 \end{note}
 
-%Two weeks before the first day of classes, I decided to write my
-%own book.  My goals were:
+
 開課前兩週, 我決定自己寫本書, 目標如下：
 
 \begin{itemize}
 
-%\item Keep it short.  It is better for students to read 10 pages
-%than not read 50 pages.
-%
-%\item Be careful with vocabulary.  I tried to minimize jargon
-%and define each term at first use.
-%
-%\item Build gradually. To avoid trap doors, I took the most difficult
-%topics and split them into a series of small steps. 
-%
-%\item Focus on programming, not the programming language.  I included
-%the minimum useful subset of Java and left out the rest.
 \item 少. 十頁易解, 百頁難通.
 
 \item 精. 詞彙早解釋, 術語早提煉.
@@ -284,16 +260,6 @@ The \LaTeX\ source for this book is available from
 
 \end{itemize}
 
-%I needed a title, so on a whim I chose {\em How to Think Like
-%a Computer Scientist}.
-%
-%My first version was rough, but it worked.  Students did the reading,
-%and they understood enough that I could spend class time on the hard
-%topics, the interesting topics and (most important) letting the
-%students practice.
-%
-%I released the book under the GNU Free Documentation License,
-%which allows users to copy, modify, and distribute the book.
 莫名其妙地選擇了個題目 {\em 像計算機專家一樣思考
 (How to Think Like a Computer Scientist)}.
 
@@ -305,22 +271,17 @@ The \LaTeX\ source for this book is available from
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-%What happened next is the cool part.  Jeff Elkner, a high school
-%teacher in Virginia, adopted my book and translated it into
-%Python.  He sent me a copy of his translation, and I had the
-%unusual experience of learning Python by reading my own book.
-%As Green Tea Press, I published the first Python version in 2001.
 後續的事情很有趣, 弗吉尼亞州的高中教師Jeff Elkner採用了本書, 
 並翻譯為了Python教材. 他將他的翻譯版本發送給了我, 
 我便有了一段不尋常得經歷, 通過閱讀自己的書來學習Python.  
 同時依托 Green Tea Press, 於2001年, 我出版了第一个Python版本. 
 \index{Elkner, Jeff}
 
-2003年, 我開始在歐林學院教書, 並且首次教授Python. 
-和Java相比, 驚喜非凡, 學生樂於學習且樂在其中. 
+2003年, 我開始在歐林學院教書, 併且首次教授Python. 
+和Java相比, 效果出人意料, 學生們樂於學習且樂在其中. 
 \index{Olin College}
 
-自此, 我不斷優化此書, 校正錯誤, 提高案例水準, 
+自此, 我不斷優化此書, 校對錯誤, 提高範例水準, 
 並不斷增加一些新的例子和練習. 
 
 現在標題不再那麼誇張, 改為了{\em Think Python}. 
@@ -328,21 +289,21 @@ The \LaTeX\ source for this book is available from
 
 \begin{itemize}
 
-\item 每章結尾增加了調試部分. 
+\item 每章結尾增加了除錯部分. 
 重點講解如何發現問題, 減少錯誤, 謹防紕漏. 
 
-\item 增加了一些習題. 從簡單測驗到項目實操, 
-均有涉及, 同時, 給出了我的解決方案. 
+\item 增加了一些習題. 從簡單測驗到專案實操, 
+均有涉及, 同時, 給出了我的方案. 
 
-\item 增加了一系列的案例：涵蓋練習-解答-討論三個階段的訓練. 
+\item 增加了一系列的案例：涵蓋試驗-解答-討論的長篇實例. 
 
-\item 擴展了對程式開發流程以及基礎設計模式的探討. 
+\item 擴展了對程式開發計畫以及基礎型樣設計的探討. 
 
-\item 添加了關於調試和算法分析的附錄. 
+\item 添加了關於除錯和演算法分析的附錄. 
 
 \end{itemize}
 
-{\em Think Python}第二版有如下變化：
+第二版{\em Think Python}有如下特徵：
 
 \begin{itemize}
 
@@ -537,7 +498,7 @@ Allen B. Downey \\
 
 \item Andrew Cheung 修正了"使用先於定義."的兩個錯誤.
 
-\item C. Corey Capel 指出 "調試章節中第三定理" 部分遺漏的詞彙, 
+\item C. Corey Capel 指出 "除錯章節中第三定理" 部分遺漏的詞彙, 
 以及第4章的一個錯詞. 
 
 \item Alessandra 澄清了一些"Turtle"歧義. 
@@ -571,7 +532,7 @@ Allen B. Downey \\
 \item Daryl Hammond 和 Sarah Zimmerman 指出我過早使用 {\tt math.pi}, 
 同時 Zim 修正了一個拼寫錯誤. 
 
-\item George Sass 修復了調試這一章節的一處錯誤. 
+\item George Sass 修復了除錯這一章節的一處錯誤. 
 
 \item Brian Bingham 提供了~\ref{exrotatepairs}的習題. 
 
@@ -1059,16 +1020,16 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 最後, 要格外關注細節, 單詞錯誤, 標點缺失, 這些問題在自然語言的使用中
 可能影響不大, 但在形式語言中, 卻是致命錯誤. 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
 是人就會犯錯. 由於一些歷史原因, 編程中的異常或者錯誤, 叫做 {\bf bugs(臭蟲)}, 
 這裡用到了比喻, 一般解釋為 {\bf 異常}. 
-而跟蹤異常, 定位問題的過程叫做 {\bf debugging(調試)}. 
+而跟蹤異常, 定位問題的過程叫做 {\bf debugging(除錯)}. 
 \index{debugging}
 \index{bug}
 
-編程, 尤其是調試, 往往會激怒你. 如果你困擾於一個難題, 那
+編程, 尤其是除錯, 往往會激怒你. 如果你困擾於一個難題, 那
 往往會經歷憤怒, 沮喪和絕望. 
 
 已有證據表明, 人們對待計算機的方式, 和對待他人的方式一樣. 
@@ -1084,8 +1045,8 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 
 你需要做好管理之責：揚機器之長而避其短, 做情緒的主人, 而非情緒的奴隸. 
 
-調試過程是令人無比沮喪的, 但這又是編程路上最有用的技能. 
-每章末尾都會有關於調試的一些建議, 希望有所幫助. 
+除錯過程是令人無比沮喪的, 但這又是編程路上最有用的技能. 
+每章末尾都會有關於除錯的一些建議, 希望有所幫助. 
 
 
 \section{術語表}
@@ -1155,7 +1116,7 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \item[異常(bug):] 程式中的錯誤. 
 \index{bug}
 
-\item[調試(debugging):] 定位異常並解決的過程. 
+\item[除錯(debugging):] 定位異常並解決的過程. 
 \index{debugging}
 
 \end{description}
@@ -1504,7 +1465,7 @@ v = 5     # 速度(米/秒)
 所以如何取捨, 需要權衡. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{bug}
 
@@ -2218,27 +2179,27 @@ None
 
 \begin{itemize}
 
-\item 函數可以將一組語句歸為一類, 便於閱讀和調試. 
+\item 函數可以將一組語句歸為一類, 便於閱讀和除錯. 
 
 \item 函數可以消除重複, 簡化代碼, 針對功能, 修改一處即可. 
 
-\item 將程式切分為函數, 可以分別調試, 然後組合它們即可. 
+\item 將程式切分為函數, 可以分別除錯, 然後組合它們即可. 
 
-\item 設計良好的函數可以編寫一次, 調試一次, 多處調用, 有效復用. 
+\item 設計良好的函數可以編寫一次, 除錯一次, 多處調用, 有效復用. 
 
 \end{itemize}
 
 
-\section{調試}
+\section{除錯}
 
-編程最重要的技能之一就是調試了, 雖往往令人黯然神傷, 愁眉難舒, 
+編程最重要的技能之一就是除錯了, 雖往往令人黯然神傷, 愁眉難舒, 
 卻是編程中最考驗才智, 最富有挑戰以及最有趣的地方.
 \index{experimental debugging}
 \index{debugging!experimental}
 
-在某些方面, 調試和偵探工作很像. 面對線索, 有效推理, 確定造就結果的流程和緣由. 
+在某些方面, 除錯和偵探工作很像. 面對線索, 有效推理, 確定造就結果的流程和緣由. 
 
-調試又像實驗科學, 針對問題, 一旦有所想法, 便可修改程式, 再次嘗試. 
+除錯又像實驗科學, 針對問題, 一旦有所想法, 便可修改程式, 再次嘗試. 
 如果假設正確, 便可預期修改後的結果, 向可執行的程式代碼推進. 
 如果假設錯誤, 便要繼續探究了. 正如Sherlock Holmes(夏洛克·福爾摩斯)所說, 
 ``除去所有不可能因素, 留下來的東西, 無論多麼不願意相信, 但這就是事實
@@ -2246,12 +2207,12 @@ None
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
-對某些人而言, 編程便是調試. 這是因為, 編程便是不斷調試程式, 直到實現目標的過程. 
-所以, 建議先寫可執行代碼, 然後逐步修改並調試程式, 進而實現預定效果. 
+對某些人而言, 編程便是除錯. 這是因為, 編程便是不斷除錯程式, 直到實現目標的過程. 
+所以, 建議先寫可執行代碼, 然後逐步修改並除錯程式, 進而實現預定效果. 
 
 比如, Linux 操作系統具有數百萬行代碼,  但它起源於Linus Torvalds
 研究Intel 80386芯片的一段簡單代碼. 據Larry Greenfield所說, 
-``Linus的早期項目中, 有個程式是在AAAA和BBBB之間交替輸出, 而這後來演化為了Linux.''
+``Linus的早期專案中, 有個程式是在AAAA和BBBB之間交替輸出, 而這後來演化為了Linux.''
 ({\em The Linux Users' Guide} Beta Version 1).
 \index{Linux}
 
@@ -2838,7 +2799,7 @@ def circle(t, r):
 \index{refactoring}
 
 如果早有規劃, 我們可能會優先編寫{\tt polyline}, 避免後續耗時重構. 
-但一般你很難在項目開始的時候, 便深入了解一切, 規劃好所有介面. 
+但一般你很難在專案開始的時候, 便深入了解一切, 規劃好所有介面. 
 只有開始編碼, 你才會更好地研究並理解其中曲折. 
 所以, 有時候重構的過程也是你學習新知識的歷程. 
 
@@ -2857,7 +2818,7 @@ def circle(t, r):
 
 \item 增加合適參數, 泛化函數.
 
-\item 重複步驟1-3, 盡量抽離各個函數, 盡量複製黏貼, 減少打字(以及重複調試).
+\item 重複步驟1-3, 盡量抽離各個函數, 盡量複製黏貼, 減少打字(以及重複除錯).
 
 \item 嘗試重構程式. 比如, 在多個地方有相似代碼, 試試能否將其
 拆解為恰當的通用函數.
@@ -2900,7 +2861,7 @@ def polyline(t, n, length, angle):
 如果需要耗費大量口舌講解, 那麼這個介面還有待優化. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{interface}
 
@@ -2920,7 +2881,7 @@ def polyline(t, n, length, angle):
 那麼責任在於調用方, 而不是函數. 
 
 如果前置條件都滿足而後置條件未達到預期, 那問題便出在函數中. 
-如果前置和後置條件都清晰明了, 那麼調試會方便很多. 
+如果前置和後置條件都清晰明了, 那麼除錯會方便很多. 
 
 \section{術語表}
 
@@ -3569,7 +3530,7 @@ ValueError: invalid literal for int() with base 10
 \index{exception!ValueError}
 
 
-\section{調試}
+\section{除錯}
 \label{whitespace}
 \index{debugging}
 \index{traceback}
@@ -3910,7 +3871,7 @@ def area(radius):
     return math.pi * radius**2
 \end{verbatim}
 %
-但是, 使用類似{\tt a}這樣的{\bf 臨時變量}, 更加清晰明了, 便於調試. 
+但是, 使用類似{\tt a}這樣的{\bf 臨時變量}, 更加清晰明了, 便於除錯. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -3968,11 +3929,11 @@ None
 \label{incremental.development}
 \index{development plan!incremental}
 
-隨著編寫的函數越來越長, 你會發現, 調試時間也越來越恐怖. 
+隨著編寫的函數越來越長, 你會發現, 除錯時間也越來越恐怖. 
 
 若想解決越來越複雜的程式, 可以試試新的方法, 即{\bf 增量開發}.
 增量開發是通過每次只編寫並測試少量代碼, 從而避免
-長時間的連續開發調試. 
+長時間的連續開發除錯. 
 \index{testing!incremental development}
 \index{Pythagorean theorem}
 
@@ -4056,13 +4017,13 @@ def distance(x1, y1, x2, y2):
 否則, 就要輸出返回語句前的 {\tt result} 的值, 仔細排查. 
 
 最終版本的函數, 除了返回一個值, 不會輸出任何信息. 
-{\tt print} 語句只是為了便於調試代碼, 一旦確認程式無誤, 就應將其移除. 
+{\tt print} 語句只是為了便於除錯代碼, 一旦確認程式無誤, 就應將其移除. 
 類似這種代碼, 一般叫做{\bf 腳手架代碼},  主要用來輔助構建程式, 而並不應
 忝列最終成品之中. 
 \index{scaffolding}
 
 開始時, 一般每次只增加一兩行代碼. 但隨著經驗增長, 慢慢你便可以駕馭大段代碼了. 
-無論如何, 增量開發都能節約大量調試時間.
+無論如何, 增量開發都能節約大量除錯時間.
 
 此流程的主要步驟如下:
 
@@ -4118,7 +4079,7 @@ def circle_area(xc, yc, xp, yp):
     return result
 \end{verbatim}
 %
-臨時變量{\tt radius} 和 {\tt result} 在開發和調試時有用, 但是程式一旦正常運行, 
+臨時變量{\tt radius} 和 {\tt result} 在開發和除錯時有用, 但是程式一旦正常運行, 
 便可以通過組合函數調用, 精簡如下:
 
 \begin{verbatim}
@@ -4438,9 +4399,9 @@ None
 在第~\ref{raise}節, 我們會看到一種更靈活的方案來輸出錯誤信息: 上報異常. 
 
 
-\section{調試}
+\section{除錯}
 \label{factdebug}
-將程式大而化小, 也就天然地為調試創造了一個個的檢查點. 
+將程式大而化小, 也就天然地為除錯創造了一個個的檢查點. 
 如果程式運行異常, 需要考慮以下三種可能原因:
 \index{debugging} 
 
@@ -4502,7 +4463,7 @@ def factorial(n):
 %
 若惑於其函數執行流程, 那麼, 此輸出相比有助於理解. 
 有時候, 增加腳手架需要耗費一點時間, 
-但是, 這一點時間的花費, 往往能夠節約大量的調試時間. 
+但是, 這一點時間的花費, 往往能夠節約大量的除錯時間. 
 
 \section{術語表}
 
@@ -4516,7 +4477,7 @@ def factorial(n):
 \index{dead code}
 
 \item[增量開發(incremental development):]  一次僅僅開發並測試少量代碼的開發方案, 
-小步慢跑, 從而防止費時調試. 
+小步慢跑, 從而防止費時除錯. 
 \index{incremental development}
 
 \item[腳手架(scaffolding):]  程式開發中起輔助作用的代碼, 但不會留在最終程式中. 
@@ -4706,7 +4667,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 第三行代碼, 改變了{\tt a}的值, 但是沒有改變{\tt b}, 所以他們不再相等. 
 
 很多時候我們需要給變量重新賦值, 但是要謹慎使用. 
-如果變量的值變動過於頻繁, 代碼後續將難以理解, 同時調試困難. 
+如果變量的值變動過於頻繁, 代碼後續將難以理解, 同時除錯困難. 
 
 \begin{figure}
 \centerline
@@ -4977,45 +4938,45 @@ while True:
 那便說明兩個值已經足夠接近. 
 
 
-\section{算法}
+\section{演算法}
 \index{algorithm}
-牛頓公式可以認為是一種{\bf 算法}:
+牛頓公式可以認為是一種{\bf 演算法}:
 通過既定步驟來解決一類問題(此例中為計算平方根). 
 
-要理解何為算法, 先要明白什麼不屬於算法. 
+要理解何為演算法, 先要明白什麼不屬於演算法. 
 當你學習乘法時, 往往需要記憶乘法表. 
-實際, 你記憶了100個特定答案. 這種知識不屬於算法. 
+實際, 你記憶了100個特定答案. 這種知識不屬於演算法. 
 
 但如果你想``偷懶'', 你可能會發現一些小技巧. 
 比如, 你想計算$n$和9的乘積, 只需把$n-1$, 作為第一個數字. 
 $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都有效. 
-這便是算法!
+這便是演算法!
 \index{addition with carrying}
 \index{carrying, addition with}
 \index{subtraction!with borrowing}
 \index{borrowing, subtraction with}
 同樣地, 你學過的需進位的加法, 需借位的減法, 以及長除法, 
-都是算法. 這些算法的一個共性便是, 都無需費力思考. 
+都是演算法. 這些演算法的一個共性便是, 都無需費力思考. 
 它們都是機械的過程, 
 遵循簡單的規則, 一步步操作, 便可得到結果. 
 
-執行算法固然無聊, 但其設計過程卻既有趣又挑戰智力, 
+執行演算法固然無聊, 但其設計過程卻既有趣又挑戰智力, 
 同時也是電腦科學的核心. 
 
 有些事情, 對於人們來說很自然, 無難度, 且下意識便可完成, 
-而算法卻很難解決. 
+而演算法卻很難解決. 
 比如, 理解自然語言. 我們所有人都能輕易做到, 
 但目前為止, 還沒有人能闡明我們是{\em 如何}理解的, 
-更不用說用算法的形式來解釋. 
+更不用說用演算法的形式來解釋. 
 
-\section{調試}
+\section{除錯}
 \label{bisectbug}
 隨著程式代碼規模的增長, 你會發現需要耗費更多時間在
-調試上. 一般更多的代碼, 也就意味著更多的出錯機會, 
+除錯上. 一般更多的代碼, 也就意味著更多的出錯機會, 
 以及更多的潛在問題. 
 \index{debugging!by bisection}
 \index{bisection, debugging by}
-一種有效節約調試時間的方法便是``二分調試''.
+一種有效節約除錯時間的方法便是``二分除錯''.
 比如, 有100行代碼, 一次檢查一行, 需要100次. 
 
 或者, 將程式對半切分. 找到程式的中間位置, 或者靠近中間的位置, 
@@ -5060,7 +5021,7 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 \item[無限迴圈(infinite loop):] 終止條件一直不能抵達的迴圈. 
 \index{infinite loop}
 
-\item[算法(algorithm):]  解決一類問題的通用步驟. 
+\item[演算法(algorithm):]  解決一類問題的通用步驟. 
 \index{algorithm}
 
 \end{description}
@@ -5449,7 +5410,7 @@ def find(word, letter):
 如果字符串中沒有想要的字符, 程式會一直執行到迴圈結束, 並
 返回{\tt -1}.
 
-這種算法--遍歷序列並返回預期結果--叫做{\bf 檢索}. 
+這種演算法--遍歷序列並返回預期結果--叫做{\bf 檢索}. 
 \index{traversal}
 \index{search pattern}
 \index{pattern!search}
@@ -5475,7 +5436,7 @@ for letter in word:
 print(count)
 \end{verbatim}
 %
-此程式描述了另一種算法, 稱之為{\bf 計數器}.
+此程式描述了另一種演算法, 稱之為{\bf 計數器}.
 初始化變量{\tt count}為0, 其後每找到一次{\tt a}, 就加1.
 迴圈結束後,  {\tt count}便包含了結果-- {\tt a}的全部數量.
 
@@ -5637,7 +5598,7 @@ Python處理大小寫的方式同人類思維不同, 在其看來, 大寫字母�
 謹記這一點, 以免遇到Pineapple時, 變得一團糟. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{traversal}
 
@@ -5687,7 +5648,7 @@ def is_reverse(word1, word2):
 IndexError: string index out of range
 \end{verbatim}
 %
-調試此種異常, 第一步就是在錯誤出現位置前, 先輸出索引的值. 
+除錯此種異常, 第一步就是在錯誤出現位置前, 先輸出索引的值. 
 
 \begin{verbatim}
     while j > 0:
@@ -5940,11 +5901,11 @@ def any_lowercase5(s):
 \label{wordlist}
 本章的練習, 需要準備一個英文單詞串列. 
 網上有很多可用的單詞串列, 但是對我們來說, 最理想的莫過於
-Grady Ward 收集整理, 作為Moby詞典項目, 貢獻給公共領域的單詞串列
+Grady Ward 收集整理, 作為Moby詞典專案, 貢獻給公共領域的單詞串列
 (詳見\url{http://wikipedia.org/wiki/Moby_Project}). 這是
 包含 113,809 個填詞遊戲的單詞串列; 也就是說, 這些單詞, 已經被
 填詞遊戲和其他單詞遊戲證明了有效. 
-在Moby項目中, 這個文件名為 {\tt 113809of.fic};
+在Moby專案中, 這個文件名為 {\tt 113809of.fic};
 你可以從\url{http://thinkpython2.com/code/words.txt} 下載一個副本, 
 其名字簡稱 {\tt words.txt}. 
 \index{Moby Project}
@@ -6109,7 +6070,7 @@ def has_no_e(word):
 \index{in operator}
 \index{operator!in}
 你也可以使用{\tt in}運算子來精簡程式, 
-我先介紹上述版本, 主要是闡述清楚檢索算法的內在邏輯. 
+我先介紹上述版本, 主要是闡述清楚檢索演算法的內在邏輯. 
 
 \index{generalization}
 {\tt avoids} 函數相比 \verb"has_no_e" 版本, 功能更加通用, 
@@ -6256,7 +6217,7 @@ def is_palindrome(word):
 此處使用了第~\ref{isreverse}節的\verb"is_reverse"函數.
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{testing!is hard}
 \index{program testing}
@@ -7217,10 +7178,10 @@ def tail(t):
 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
-若使用串列(和其他可變對象)時不夠小心謹慎, 很容易導致長達數小時的調試跟蹤. 
+若使用串列(和其他可變對象)時不夠小心謹慎, 很容易導致長達數小時的除錯跟蹤. 
 這裡有一些常見陷阱以及如何避免:
 
 \begin{enumerate}
@@ -7558,7 +7519,7 @@ False
 \chapter{字典}
 
 本章講述另一個內置型態, 字典. 
-字典是Python最優秀的特性之一; 同時也是諸多高效且優雅算法的基石. 
+字典是Python最優秀的特性之一; 同時也是諸多高效且優雅演算法的基石. 
 
 
 \section{字典即映射}
@@ -7680,7 +7641,7 @@ False
 True
 \end{verbatim}
 %
-運算子{\tt in}在串列和字典中使用的算法不同. 
+運算子{\tt in}在串列和字典中使用的演算法不同. 
 對於串列來說, 它會如第~\ref{find}節一樣, 按照順序搜索串列中的元素. 
 隨著串列變長, 確定目標的耗時也會更長. 
 
@@ -8143,13 +8104,13 @@ def example5():
 \end{verbatim}
 %
 全局變量是很有用, 但如果你到處使用, 並且還頻繁修改, 那麼程式往往會
-難以調試. 
+難以除錯. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
-隨著數據集越來越大, 僅僅使用打印輸出以及手工校驗結果的手段進行調試, 略顯不便. 
-下面是調試大型數據集的一些建議:
+隨著數據集越來越大, 僅僅使用打印輸出以及手工校驗結果的手段進行除錯, 略顯不便. 
+下面是除錯大型數據集的一些建議:
 
 \begin{description}
 
@@ -8164,7 +8125,7 @@ def example5():
 比如, 字典中項的個數, 或者串列中數字總數量. 
 
 值型態錯誤, 是產生運行時錯誤的常見原因. 
-所以調試此類錯誤, 通常打印值的型態即可. 
+所以除錯此類錯誤, 通常打印值的型態即可. 
 
 \item[編寫自檢代碼:]  有時候, 你可以編寫代碼, 自動檢驗異常. 
 例如, 你要計算數字串列的平均值, 你可以檢驗一下, 結果是否
@@ -8176,7 +8137,7 @@ def example5():
 另一種檢驗方法是比較兩種不同解法的結果, 看是否一致. 
 這叫做``一致性檢驗''. 
 
-\item[格式化輸出:] 格式化調試的輸出, 可以更直觀地展示錯誤. 
+\item[格式化輸出:] 格式化除錯的輸出, 可以更直觀地展示錯誤. 
 在第~\ref{factdebug}節, 我們曾展示過樣例. 另一個好用的工具是 {\tt pprint} 模塊, 
 它提供了{\tt pprint}函數, 可以將內置型態輸出為更適合人類閱讀的格式({\tt pprint}
 是``pretty pprint'' 的縮寫).
@@ -8186,7 +8147,7 @@ def example5():
 
 \end{description}
 
-再次強調, 構建腳手架花費時間越長, 調試耗費時間越少. 
+再次強調, 構建腳手架花費時間越長, 除錯耗費時間越少. 
 \index{scaffolding}
 
 
@@ -8216,7 +8177,7 @@ def example5():
 \item[實現(implementation):] 一種執行計算的方式. 
 \index{implementation}
 
-\item[雜湊表(hashtable):] 實現Python字典的算法. 
+\item[雜湊表(hashtable):] 實現Python字典的演算法. 
 \index{hashtable}
 
 \item[哈希函數(hash function):] 雜湊表使用的函數, 用來計算鍵的位置. 
@@ -8953,7 +8914,7 @@ for last, first in directory:
 \index{iterator}
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{data structure}
 \index{shape error}
@@ -8969,7 +8930,7 @@ for last, first in directory:
 \index{structshape module}
 \index{module!structshape}
 
-為了調試這種異常, 我寫了一個叫作 {\tt structshape} 的模塊, 
+為了除錯這種異常, 我寫了一個叫作 {\tt structshape} 的模塊, 
 其提供了一個{\tt structshape}函數, 可以接收任意資料結構作為參數, 
 返回一個其格式的概述. 
 你可以從 \url{http://thinkpython2.com/code/structshape.py} 下載. 
@@ -9179,8 +9140,8 @@ for last, first in directory:
 \chapter{案例學習: 資料結構選擇}
 
 截止當前, 你已學習了Python最核心的資料結構, 
-同時也已熟悉了與之相關的一些算法. 
-若想後續深入了解算法知識, 可以學習章節~\ref{algorithms}. 
+同時也已熟悉了與之相關的一些演算法. 
+若想後續深入了解演算法知識, 可以學習章節~\ref{algorithms}. 
 但現在不用太急切; 後續時間方便了, 可以耐心學習. 
 
 本章通過多道習題, 一個案例來讓你思考如何選擇和應用資料結構. 
@@ -9222,7 +9183,7 @@ for last, first in directory:
 \begin{exercise}
 \index{Project Gutenberg}
 
-前往Gutenberg項目 (\url{http://gutenberg.org}), 然後下載一個你最喜歡的書籍, 
+前往Gutenberg專案 (\url{http://gutenberg.org}), 然後下載一個你最喜歡的書籍, 
 要下載無版權書籍的純文本格式. 
 \index{plain text}
 \index{text!plain}
@@ -9267,7 +9228,7 @@ for last, first in directory:
 遊戲就是一個很好的例子, 也有很多其他的應用場景. 
 
 想讓一個程式完全隨機, 是很難的, 但是可以讓其看起來隨機. 
-一種方法是使用算法生成{\bf 偽隨機}數.
+一種方法是使用演算法生成{\bf 偽隨機}數.
 偽隨機數不是真正隨機的, 因為它們是用一個確定的運算生成的, 
 但只是從數字來看, 很難與真隨機進行區分. 
 \index{random module}
@@ -9580,7 +9541,7 @@ def random_word(h):
 表達式{\tt [word] * freq}會將{\tt word}複製{\tt freq}份. 
 {\tt extend}方法和{\tt append}作用相似, 只是前者參數是個序列. 
 
-這個算法有效, 但不夠有效率; 每次選擇隨機單詞, 
+這個演算法有效, 但不夠有效率; 每次選擇隨機單詞, 
 都需要重新構建和原書一樣大的串列. 
 顯然, 更優的方案是只建立一次串列, 然後多次選擇, 但串列依然很大.
 
@@ -9604,7 +9565,7 @@ def random_word(h):
 \label{randhist}
 \index{algorithm}
 
-採用上面的算法, 編寫程式, 從書中隨機獲取單詞. 參考:
+採用上面的演算法, 編寫程式, 從書中隨機獲取單詞. 參考:
 \url{http://thinkpython2.com/code/analyze_book3.py}.
 
 \end{exercise}
@@ -9779,10 +9740,10 @@ def shift(prefix, word):
 那這種方案便有利可圖. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
-調試一個程式時, 尤其是面對嚴重問題時, 一定要做好以下五個步驟:
+除錯一個程式時, 尤其是面對嚴重問題時, 一定要做好以下五個步驟:
 
 \begin{description}
 
@@ -9798,7 +9759,7 @@ def shift(prefix, word):
 \item[小黃鴨(Rubberducking):] 如果你向另一個人闡述問題, 有時候在問完問題之前, 
 便找到了答案. 
 通常, 你不需要找別人;你只需要對一個橡皮鴨喃喃自語. 
-這便是眾所周知的{\bf 小黃鴨調試法}的來源. 這不是我瞎編的, 你可以
+這便是眾所周知的{\bf 小黃鴨除錯法}的來源. 這不是我瞎編的, 你可以
 看\url{https://en.wikipedia.org/wiki/Rubber_duck_debugging}.
 
 \item[回撤(Retreating):] 有時候, 最好的辦法是回退, 
@@ -9822,12 +9783,12 @@ def shift(prefix, word):
 \index{development plan!random walk programming}
 
 你要多花時間思考. 
-調試就像實驗科學. 
+除錯就像實驗科學. 
 對於問題所在, 你至少要有一種假設. 
 如果有兩種或者多種可能性, 想辦法設計個測試, 排除其中可能假設. 
 
 但如果錯誤過多, 或者嘗試修復的程式過於龐大複雜, 
-那即使再好的調試方案, 都會失效. 
+那即使再好的除錯方案, 都會失效. 
 有時候, 最好的選擇便是回退代碼, 簡化程式, 直到其正常且你能理解. 
 
 新手程式師往往不願意回退代碼, 因為他們無法忍受刪除一行代碼(即使是錯誤代碼). 
@@ -9845,7 +9806,7 @@ def shift(prefix, word):
 \item[確定性(deterministic):] 給定相同輸入, 程式執行相同操作的特性. 
 \index{deterministic}
 
-\item[偽隨機數(pseudorandom):] 由確定算法生成, 只是看起來像是隨機的數字序列. 
+\item[偽隨機數(pseudorandom):] 由確定演算法生成, 只是看起來像是隨機的數字序列. 
 \index{pseudorandom}
 
 \item[默認值(default value):] 當可選參數未被賦值, 默認提供給可選參數的值. 
@@ -9858,8 +9819,8 @@ def shift(prefix, word):
 並用可能的輸入作為樣本進行測試. 
 \index{benchmarking}
 
-\item[小黃鴨調試法(rubber duck debugging):] 通過對一個無生命對象, 比如小黃鴨, 闡述你的問題, 
-從而調試的方法. 雖然小黃鴨不懂Python, 但是將問題描述清楚, 將有助於你解決問題. 
+\item[小黃鴨除錯法(rubber duck debugging):] 通過對一個無生命對象, 比如小黃鴨, 闡述你的問題, 
+從而除錯的方法. 雖然小黃鴨不懂Python, 但是將問題描述清楚, 將有助於你解決問題. 
 \index{rubber duck debugging}
 \index{debugging!rubber duck}
 
@@ -10516,7 +10477,7 @@ if __name__ == '__main__':
 如果你想重載模塊, 可以使用內置函數{\tt reload}, 
 但這個不太靠譜, 最安全的方法應該是重啟解釋器, 然後再次導入模塊. 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 \index{whitespace}
 
@@ -10542,7 +10503,7 @@ if __name__ == '__main__':
 '1 2\t 3\n 4'
 \end{verbatim}
 
-這個對於調試來說, 非常有用. 
+這個對於除錯來說, 非常有用. 
 
 另一個你可能遇到的難題是, 不同的系統會用不同的字符表示行尾. 
 有些系統用換行符\verb"\n"表示, 有些系統用返回字符 \verb"\r"表示. 
@@ -11102,7 +11063,7 @@ False
 做個練習, 編寫一個 \verb"move_rectangle"新版本, 
 使其創建並返回新的矩形對象, 而不是修改傳入的對象. 
 
-\section{調試}
+\section{除錯}
 \label{hasattr}
 \index{debugging}
 
@@ -11518,7 +11479,7 @@ def add_time(t1, t2):
 而時間處理更符合我們的直觀感受. 
 
 但如果我們注意到時間不過是60進制的數字, 並預先編寫轉換函數 (\verb"time_to_int"
-和 \verb"int_to_time"), 便可以得到一個更精簡, 易讀, 易調試, 也更可靠的程式. 
+和 \verb"int_to_time"), 便可以得到一個更精簡, 易讀, 易除錯, 也更可靠的程式. 
 
 同時這也更利於後續添加新的功能. 
 比如, 假如要對兩個Time對象相減, 獲取其時間間隔. 
@@ -11532,7 +11493,7 @@ def add_time(t1, t2):
 出錯概率也會更低).
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
 如果{\tt minute}和{\tt second}在0到60之間(包括0但不包括60),
@@ -12003,7 +11964,7 @@ init方法(``initialization''的簡稱)是一個特殊的方法,
 \end{verbatim}
 %
 當編寫新類時, 我總是先寫\verb"__init__"方法, 這樣更容易初始化對象, 
-同時編寫\verb"__str__"方法, 以方便調試. 
+同時編寫\verb"__str__"方法, 以方便除錯. 
 
 試著為{\tt Point}類編寫{\tt str}方法. 
 創建一個Point對象, 並打印輸出. 
@@ -12199,7 +12160,7 @@ def histogram(s):
 就像你突然發現你寫的函數, 對於規劃之外的某種型態, 也同樣適用. 
 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
 在程式運行的任何時刻, 向對象添加屬性都是可行的, 
@@ -12225,7 +12186,7 @@ def histogram(s):
 \end{verbatim}
 %
 
-對於調試而言, 你會發現保留下面的函數, 會很有用:
+對於除錯而言, 你會發現保留下面的函數, 會很有用:
 
 \begin{verbatim}
 def print_attributes(obj):
@@ -12897,10 +12858,10 @@ King of Spades
 一個更詳細的類圖, 可能會顯示Deck實際上包含了一個Card{\em 串列}, 
 但是一般類圖中不包含串列和字典這些內置型態. 
 
-\section{調試}
+\section{除錯}
 \index{debugging}
 
-繼承可能會令調試變得困難, 因為當你調用對象的方法時, 
+繼承可能會令除錯變得困難, 因為當你調用對象的方法時, 
 可能很難確定是調用的哪個方法. 
 \index{inheritance}
 
@@ -13363,7 +13324,7 @@ def only_upper(t):
 而且, 它們相比同樣的for迴圈, 要更快, 甚至有時快很多. 
 所以如果你因為我沒有更早提及而生氣, 我理解. 
 
-但是, 我要申辯一下, 串列推導式通常更難調試, 
+但是, 我要申辯一下, 串列推導式通常更難除錯, 
 因為你不能在迴圈內部放置一個打印語句. 
 我建議你只在計算足夠簡單的情況, 也就是你上手便能正確完成的時候使用. 
 對於新手來說, 盡量別用. 
@@ -13935,10 +13896,10 @@ def binomial_coeff(n, k):
 
 \appendix
 
-\chapter{調試}
+\chapter{除錯}
 \index{debugging}
 
-在調試階段, 你要對不同型態錯誤進行區分, 從而快速定位:
+在除錯階段, 你要對不同型態錯誤進行區分, 從而快速定位:
 
 \begin{itemize}
 
@@ -13962,7 +13923,7 @@ def binomial_coeff(n, k):
 
 \end{itemize}
 
-調試的第一步, 是明確你面對的是何種異常. 
+除錯的第一步, 是明確你面對的是何種異常. 
 雖然下面章節都是按照異常型態所組織, 但有些技巧也適用於其他情況. 
 
 
@@ -14148,7 +14109,7 @@ while x > 0 and y < 0 :
 
 如果你懷疑某個函數存在無盡遞歸, 那要確保函數有基線條件. 
 也就是有條件令函數可以返回而不是繼續遞歸調用. 
-如果沒有基線條件, 那你需要重構算法, 定義一個基線條件. 
+如果沒有基線條件, 那你需要重構演算法, 定義一個基線條件. 
 
 如果有基線條件, 但是程式看起來沒有觸及, 
 可以在函數起始位置添加({\tt print}語句, 輸出參數. 
@@ -14243,7 +14204,7 @@ while x > 0 and y < 0 :
 
 \end{description}
 
-Python調試器({\tt pdb})對於追蹤異常非常有用, 
+Python除錯器({\tt pdb})對於追蹤異常非常有用, 
 因為它可以讓你檢查異常發生前, 程式的狀態. 
 你可以閱讀\url{https://docs.python.org/3/library/pdb.html}, 來深入了解{\tt pdb}.
 \index{debugger (pdb)}
@@ -14254,7 +14215,7 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 \index{print statement}
 \index{statement!print}
 
-使用{\tt print}語句調試程式的一大難題在於, 你將被大量輸出所淹沒. 
+使用{\tt print}語句除錯程式的一大難題在於, 你將被大量輸出所淹沒. 
 有兩種解決途徑：簡化輸出, 或簡化程式. 
 
 若是簡化輸出, 你可以移除或者注釋掉無用的{\tt print}語句, 或者將其合併, 或者
@@ -14284,7 +14245,7 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 
 \section{語義錯誤}
 
-在某些方面, 語義錯誤是最難調試的, 
+在某些方面, 語義錯誤是最難除錯的, 
 因為解釋器無法提供錯誤的有效信息. 
 只有你才知道程式應該如何運行. 
 \index{semantic error}
@@ -14292,11 +14253,11 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 
 第一步是在程式代碼和你之所見之間, 建立連接. 
 你需要先假設程式做了某些事情. 
-令調試如此困難的一方面, 在於計算機運行太快了. 
+令除錯如此困難的一方面, 在於計算機運行太快了. 
 
 你會期望可以減慢程式運行速度, 從而滿足人類的速度, 
-確實有些調試器可以滿足你. 
-但相比較設置調試器, 插入或移除斷點, 以及``步進''程式到錯誤出現的位置, 其所耗費時間, 
+確實有些除錯器可以滿足你. 
+但相比較設置除錯器, 插入或移除斷點, 以及``步進''程式到錯誤出現的位置, 其所耗費時間, 
 不如放置一些恰到好處的{\tt print}語句, 更加快捷. 
 
 \subsection{我的程式不能運行.}
@@ -14336,7 +14297,7 @@ Python調試器({\tt pdb})對於追蹤異常非常有用,
 \index{big, hairy expression}
 
 編寫複雜的表達式, 代碼長一些, 但可讀性高的話, 也沒問題.
-只是調試就不方便了. 
+只是除錯就不方便了. 
 通常更好的做法是, 將複雜表達式拆解為一系列對臨時變量賦值的語句. 
 
 比如:
@@ -14355,7 +14316,7 @@ self.hands[i].addCard(pickedCard)
 %
 
 顯然這個版本更易於閱讀, 因為變量名稱提供了額外的文檔說明, 
-同時它也便於調試, 因為你可以檢查中間變量的型態和值. 
+同時它也便於除錯, 因為你可以檢查中間變量的型態和值. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -14372,7 +14333,7 @@ y = x / 2 * math.pi
 \index{order of operations}
 \index{precedence}
 
-調試表達式的一個好策略是添加括號來明確執行順序:
+除錯表達式的一個好策略是添加括號來明確執行順序:
 
 \begin{verbatim}
  y = x / (2 * math.pi)
@@ -14470,7 +14431,7 @@ return count
 要記住, 目標不僅僅是讓程式正常工作, 更是要學會如何令程式正常工作. 
 
 
-\chapter{算法分析}
+\chapter{演算法分析}
 \label{algorithms}
 
 \begin{quote}
@@ -14478,12 +14439,12 @@ return count
 當你讀完此書, 可以讀讀它. 
 \end{quote}
 
-{\bf 算法分析}是電腦科學的一個分支, 主要研究算法的性能, 特別是其運行時間和所需空間. 
+{\bf 演算法分析}是電腦科學的一個分支, 主要研究演算法的性能, 特別是其運行時間和所需空間. 
 請參閱
 \url{http://en.wikipedia.org/wiki/Analysis_of_algorithms}.
 \index{algorithm} \index{analysis of algorithms}
 
-算法分析的實際目標是預測不同算法的性能, 以指導設計決策. 
+演算法分析的實際目標是預測不同演算法的性能, 以指導設計決策. 
 
 2008年美國大選期間, 候選人Barack Obama在訪問谷歌時, 被要求進行即興問題分析. 
 首席執行官Eric Schmidt開玩笑地問他, ``對一百萬個32位整數排序的最高效的方法是什麼.''
@@ -14498,42 +14459,42 @@ Schmidt所期望的答案可能是
 是``基數排序''(\url{http://en.wikipedia.org/wiki/Radix_sort}). \footnote{
 但如果你是在一個像這樣的採訪中遇到這個問題, 我認為
 更好的答案是, ``對一百萬個整數進行排序的最快的方法是, 
-用我正使用的編程語言所提供的任意排序算法先實現. 
+用我正使用的編程語言所提供的任意排序演算法先實現. 
 其性能對於大部分應用來說已經足夠了, 但如果我的應用程式確實太慢, 
 我會用性能分析器來查看時間耗費在哪裡. 
-如果更快的排序算法對性能確實影響顯著, 那我會用一個較好的基線排序算法去實現''}.
+如果更快的排序演算法對性能確實影響顯著, 那我會用一個較好的基線排序演算法去實現''}.
 \index{radix sort}
 
-算法分析的目標是在算法之間進行有意義的比較, 但面臨一些問題:
+演算法分析的目標是在演算法之間進行有意義的比較, 但面臨一些問題:
 \index{comparing algorithms}
 
 \begin{itemize}
 
-\item 算法的相對性能, 可能取決於硬件的特性, 所以一個算法在機器A上可能更快, 
-但另一個算法可能在機器B上更快. 
+\item 演算法的相對性能, 可能取決於硬件的特性, 所以一個演算法在機器A上可能更快, 
+但另一個演算法可能在機器B上更快. 
 通常的方案是指定一個{\bf 機器模型}, 並分析在給定模型下, 
-算法所需的步驟或運算的次數. 
+演算法所需的步驟或運算的次數. 
 \index{machine model}
 
-\item 算法的相對性能, 也可能取決於數據集的細節. 
-比如, 數據已被部分排序, 則某些排序算法運行更快, 
-但有些算法則會運行較慢. 
+\item 演算法的相對性能, 也可能取決於數據集的細節. 
+比如, 數據已被部分排序, 則某些排序演算法運行更快, 
+但有些演算法則會運行較慢. 
 為了避免這種影響, 通常是分析{\tt 最壞情況}. 
 有時候, 分析平均情況的性能, 可能更有用, 但是通常也會更難, 
 需要對哪些情景進行平均, 並不是那麼顯而易見. 
 \index{worst case}
 \index{average case}
 
-\item 算法的性能也取決於問題的規模. 
-某種排序算法, 可能在小串列下排序快, 但對於長串列, 則排序慢. 
+\item 演算法的性能也取決於問題的規模. 
+某種排序演算法, 可能在小串列下排序快, 但對於長串列, 則排序慢. 
 對於這種問題, 一個通用的方案是將運行時間(或操作數)表示為問題規模的函數, 
 然後根據其隨著問題規模的增加, 而速度增長的不同, 將這些函數進行歸類. 
 
 \end{itemize}
 
-進行這種比較, 好處在於可以方便對算法進行簡單分類. 
-比如, 若我知道算法A的運行時間和輸入數據的規模, $n$, 是成比例變化, 
-而算法B的運行時間, 和$n^2$成比例, 
+進行這種比較, 好處在於可以方便對演算法進行簡單分類. 
+比如, 若我知道演算法A的運行時間和輸入數據的規模, $n$, 是成比例變化, 
+而演算法B的運行時間, 和$n^2$成比例, 
 那麼我便可以預期, 起碼對於較大的$n$值, A要比B運行更快. 
 
 這種分析需要關注一些注意事項, 但我們稍後再討論. 
@@ -14541,15 +14502,15 @@ Schmidt所期望的答案可能是
 
 \section{增長趨勢}
 
-設想你分析了兩個算法, 並用輸入的規模來表示運行時間:
-算法A在解決規模為$n$的問題時, 需要$100n+1$步, 而算法B則需要$n^2 + n + 1$步. 
+設想你分析了兩個演算法, 並用輸入的規模來表示運行時間:
+演算法A在解決規模為$n$的問題時, 需要$100n+1$步, 而演算法B則需要$n^2 + n + 1$步. 
 \index{order of growth}
 
-下表展示了這些算法在不同問題規模下的運行時間:
+下表展示了這些演算法在不同問題規模下的運行時間:
 
 \begin{tabular}{|r|r|r|}
 \hline
-輸入     &  算法A     & 算法B \\
+輸入     &  演算法A     & 演算法B \\
 規模      &   運行時間     & 運行時間 \\
 \hline
 10        &   1 001           & 111         \\
@@ -14559,8 +14520,8 @@ Schmidt所期望的答案可能是
 \hline
 \end{tabular}
 
-當$n=10$時, 算法A看起來表現不佳; 花費時間是算法B的10倍有餘. 
-但當$n=100$時, 兩者表現一致, 而對於更大的規模, 算法A表現要更優. 
+當$n=10$時, 演算法A看起來表現不佳; 花費時間是演算法B的10倍有餘. 
+但當$n=100$時, 兩者表現一致, 而對於更大的規模, 演算法A表現要更優. 
 
 根本原因在於對於大的$n$值來說, 任何含有主導項$n^2$的函數, 都會比主導項
 為$n$的函數, 增長得更快. 
@@ -14568,23 +14529,23 @@ Schmidt所期望的答案可能是
 \index{leading term}
 \index{exponent}
 
-對於算法A來說, 主導項有一個較大的係數, 100, 這也是算法B在較小的$n$時, 
+對於演算法A來說, 主導項有一個較大的係數, 100, 這也是演算法B在較小的$n$時, 
 優於A的原因. 但無論係數為何, 
 總會有某個$n$值令任何的$a$和$b$, 都滿足$a n^2 > b n$. 
 \index{leading coefficient}
 
 同理, 這個邏輯對於無主導項的也同樣適用. 
-即使算法A的運行時間為$n+1000000$, 但對於足夠大的$n$, 它仍然要優於算法B. 
+即使演算法A的運行時間為$n+1000000$, 但對於足夠大的$n$, 它仍然要優於演算法B. 
 
-通常, 對於大規模問題, 我們可預期擁有小的主導項的算法要更優, 
-但是對於小規模問題, 一般會有另一個算法更優的{\bf 交點}. 
-而這個交點的位置取決於算法, 輸入以及硬件的細節, 
-因此通常在算法分析時會忽略其影響. 但這不意味著你可以忽視其存在. 
+通常, 對於大規模問題, 我們可預期擁有小的主導項的演算法要更優, 
+但是對於小規模問題, 一般會有另一個演算法更優的{\bf 交點}. 
+而這個交點的位置取決於演算法, 輸入以及硬件的細節, 
+因此通常在演算法分析時會忽略其影響. 但這不意味著你可以忽視其存在. 
 \index{crossover point}
 
-如果兩個算法有同樣的階數主導項, 很難說哪個更好；
+如果兩個演算法有同樣的階數主導項, 很難說哪個更好；
 同樣, 答案取決於細節. 
-對於算法分析來說, 一般認為具有同樣階數主導項的函數是等價的, 
+對於演算法分析來說, 一般認為具有同樣階數主導項的函數是等價的, 
 即使它們有不同的係數. 
 
 所謂{\bf 增長量級}, 是指其增長行為相同的函數集合. 
@@ -14597,7 +14558,7 @@ Schmidt所期望的答案可能是
 所有具有$n^2$主導項的函數, 都是$O(n^2)$複雜度; 也被叫做{\bf 二次時間}. 
 \index{quadratic growth}
 
-下面的表展示了一些算法分析中最常用的增長量級, 
+下面的表展示了一些演算法分析中最常用的增長量級, 
 按照複雜度遞增排列. 
 \index{badness}
 
@@ -14621,7 +14582,7 @@ $O(c^n)$           & 指數時間(對於任意$c$)  \\
 而這不會改變增長量級. 
 同樣, 所有的指數函數, 無論其底是大是小, 都具有相同的增長量級. 
 
-指數函數增長得非常快, 所以指數算法僅適用於小規模問題. 
+指數函數增長得非常快, 所以指數演算法僅適用於小規模問題. 
 \index{logarithmic growth}
 \index{exponential growth}
 
@@ -14653,11 +14614,11 @@ $af+b$的複雜度如何?
 有時硬件的細節, 編程的語言, 輸入的特徵, 也會造成很大的差異. 
 而對於小規模的問題來說, 複雜度的增長量級無關緊要. 
 
-但如果你牢記這些注意事項, 那算法分析對你便是一個很有用的工具. 
-至少對於大規模問題來說, ``更優''的算法通常便是更優的效率, 有時候, 
+但如果你牢記這些注意事項, 那演算法分析對你便是一個很有用的工具. 
+至少對於大規模問題來說, ``更優''的演算法通常便是更優的效率, 有時候, 
 甚至要優出{\em 很多}. 
-兩個同樣增長量級的算法之間的差異, 至多也是一個常量因子的差異, 
-但一個高效算法和一個糟糕算法之間的差異, 那是有無限的可能!
+兩個同樣增長量級的演算法之間的差異, 至多也是一個常量因子的差異, 
+但一個高效演算法和一個糟糕演算法之間的差異, 那是有無限的可能!
 
 
 \section{基礎Python運算分析}
@@ -14668,7 +14629,7 @@ Python中, 多數的算數運算都是常數時間;
 非常大的整數是個例外; 如果在這種情況, 那運行時間會隨著數字位數增大而增加. 
 \index{analysis of primitives}
 
-索引算法--讀寫序列或字典中的元素--是常數時間, 無論資料結構大小如何. 
+索引演算法--讀寫序列或字典中的元素--是常數時間, 無論資料結構大小如何. 
 \index{indexing}
 
 遍歷序列或字典的{\tt for}迴圈通常是線性時間, 前提是
@@ -14682,7 +14643,7 @@ Python中, 多數的算數運算都是常數時間;
 \end{verbatim}
 
 內置函數{\tt sum}也是一個線性時間, 因為其內部做的事情一樣, 
-但其效率更高, 因為它是一個更加高效的實現; 用算法分析的語言來說, 
+但其效率更高, 因為它是一個更加高效的實現; 用演算法分析的語言來說, 
 就是它有較小的前導係數.
 
 經驗來說, 如果迴圈體內的複雜度是$O(n^a)$, 那麼整個迴圈的複雜度便是
@@ -14744,14 +14705,14 @@ $O(1)$.
 
 \begin{exercise}
 
-前往\url{http://en.wikipedia.org/wiki/Sorting_algorithm}閱讀關於排序算法的網頁, 
+前往\url{http://en.wikipedia.org/wiki/Sorting_algorithm}閱讀關於排序演算法的網頁, 
 並回答以下問題:
 \index{sorting}
 
 \begin{enumerate}
 
 \item 什麼是``比較排序?'' 最糟糕情況下比較排序中最好的增長量級是什麼? 
-最糟糕情況下排序算法中最好的增長量級又是什麼?
+最糟糕情況下排序演算法中最好的增長量級又是什麼?
 \index{comparison sort}
 
 \item 冒泡排序的增長量級是多少, 為何Barack Obama認為它是``糟糕的選擇''?
@@ -14761,12 +14722,12 @@ $O(1)$.
 \item 什麼是穩定排序, 為何實際應用中很重要?
 \index{stable sort}
 
-\item 最差的排序算法是什麼(給出名字)?
+\item 最差的排序演算法是什麼(給出名字)?
 
-\item C庫用的什麼排序算法? Python用的哪種排序算法? 這些算法穩定嗎?
+\item C庫用的什麼排序演算法? Python用的哪種排序演算法? 這些演算法穩定嗎?
 你可能需要用Google以找到答案.
 
-\item 既然很多非比較排序的算法耗時都是線性的, 
+\item 既然很多非比較排序的演算法耗時都是線性的, 
 那為何Python使用複雜度為$O(n \log n)$的比較排序?
 
 \end{enumerate}
@@ -14774,13 +14735,13 @@ $O(1)$.
 \end{exercise}
 
 
-\section{檢索算法分析}
+\section{檢索演算法分析}
 
-{\bf 檢索}是一種根據集合和目標對象, 判斷目標是否在集合中的算法, 
+{\bf 檢索}是一種根據集合和目標對象, 判斷目標是否在集合中的演算法, 
 通常返回目標的索引. 
 \index{search}
 
-最簡單的檢索算法是``線性檢索'', 它會順序遍歷集合中的數據項, 直到找到目標為止. 
+最簡單的檢索演算法是``線性檢索'', 它會順序遍歷集合中的數據項, 直到找到目標為止. 
 最糟糕的情況下需要遍歷整個集合, 所以其運行耗時是線性的.
 \index{linear search}
 
@@ -14802,7 +14763,7 @@ $O(1)$.
 而這往往需要額外的工作. 
 
 還有一種資料型態, 叫做{\bf 雜湊表}, 檢索更快---它可以
-在常數時間內進行檢索---同時不需要對項目排序. 
+在常數時間內進行檢索---同時不需要對專案排序. 
 Python字典便是使用雜湊表實現, 這也是為什麼大量字典操作, 包括{\tt in}操作, 
 都是常數時間的原因. 
 
@@ -15010,7 +14971,7 @@ class HashMap:
 如果你推倒這些塔, 將調整空間大小的成本分攤到所有添加操作上, 
 你可以從圖中明顯看到, $n$次添加操作的總成本為$2n-n$.
 
-這個算法的一個重要特性是, 當我們調整雜湊表大小時, 其耗時呈幾何方式增長;
+這個演算法的一個重要特性是, 當我們調整雜湊表大小時, 其耗時呈幾何方式增長;
 也就是說, 其大小乘以一個常數.
 如果你增大其規模---每次增加固定數量---每次{\tt add}的平均耗時便是線性的.
 \index{geometric resizing}
@@ -15022,22 +14983,22 @@ class HashMap:
 
 \begin{description}
 
-\item[算法分析(analysis of algorithms):] 一種基於算法運行時間和/或所需空間, 比較算法優劣的方法. 
+\item[演算法分析(analysis of algorithms):] 一種基於演算法運行時間和/或所需空間, 比較演算法優劣的方法. 
 \index{analysis of algorithms}
 
-\item[機器模型(machine model):] 一種計算機的簡化表達方式, 用來描述算法.
+\item[機器模型(machine model):] 一種計算機的簡化表達方式, 用來描述演算法.
 \index{machine model}
 
-\item[最糟糕情況(worst case):] 令給定算法運行最慢(或耗費空間最大)的輸入.
+\item[最糟糕情況(worst case):] 令給定演算法運行最慢(或耗費空間最大)的輸入.
 \index{worst case}
 
 \item[主導項(leading term):] 多項式中, 具有最高次冪的項.
 \index{leading term}
 
-\item[交點(crossover point):] 兩種算法需要相同運行時間或空間的問題規模.
+\item[交點(crossover point):] 兩種演算法需要相同運行時間或空間的問題規模.
 \index{crossover point}
 
-\item[增長量級(order of growth):] 在算法分析中, 可以看作相同增長模式的函數集合.
+\item[增長量級(order of growth):] 在演算法分析中, 可以看作相同增長模式的函數集合.
 比如, 所有耗時為線性變化的函數, 都屬於同樣的增長量級.
 \index{order of growth}
 
@@ -15045,11 +15006,11 @@ class HashMap:
 比如, $O(n)$表示耗時線性增長的函數集合. 
 \index{Big-Oh notation}
 
-\item[線性的(linear):] 一種運行時間和問題規模成比例變化的算法,
+\item[線性的(linear):] 一種運行時間和問題規模成比例變化的演算法,
 至少對大規模問題是如此.
 \index{linear}
 
-\item[二次方(quadratic):] 運行時間是$n^2$的算法, 其中$n$是問題規模的一個度量. 
+\item[二次方(quadratic):] 運行時間是$n^2$的演算法, 其中$n$是問題規模的一個度量. 
 \index{quadratic}
 
 \item[檢索(search):] 定位集合(串列或字典)中的元素或確認其不存在的過程.
