@@ -266,7 +266,7 @@ The \LaTeX\ source for this book is available from
 首版雖然略顯粗略, 但是效果不錯. 
 學生知其然, 並知其所以然, 我也可聚焦課堂於難點, 趣題以及操作實踐. 
 
-我基於GNU自由文件許可證發布此書, 
+我基於GNU自由檔案許可證發布此書, 
 也就是說, 任何人都可以複製, 修改, 分散此書. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
@@ -311,15 +311,14 @@ The \LaTeX\ source for this book is available from
 
 \item 網頁版功能更加豐富, 使初學者可以無需安裝 Python 便可在瀏覽器運行. 
 
-\item 對於第~\ref{turtle}節, 我將自己的海龜繪圖包Swampy 更標準的Python模塊{\tt turtle}. 
+\item 對於第~\ref{turtle}節, 我將自己的海龜繪圖組件 Swampy 更標準的Python模塊{\tt turtle}. 
 
-\item 增加了新章節 "利器", 主要介紹一些Python不必需卻非常有用的功能. 
+\item 增加了新章節 "利器", 主要介紹一些Python中不必需卻非常有用的功能. 
 
 \end{itemize}
 
-希望您喜歡本書, 同時對您在學習編程知識, 以及培養計算機專家一樣的思維模式
-方面有所裨益. 
-
+願您喜歡此書, 同時希望對您學習程式設計, 以及培養計算機專家
+一樣的思維模式有所裨益. 
 
 
 Allen B. Downey \\
@@ -338,9 +337,9 @@ Allen B. Downey \\
 \index{Meyers, Chris}
 
 
-感謝自由軟體基金開發的GNU自由文檔許可證, 
-這令我和Jeff 以及 Chris 的合作成為可能,
-也感謝我正在使用其許可證的知識共享組織. 
+感謝免費軟體基金會開發的GNU自由檔案許可證, 
+這令我和Jeff 以及 Chris 的協作成為可能,
+也感謝我正在使用其許可證的創意共享機構. 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 \index{Creative Commons}
@@ -351,7 +350,7 @@ Allen B. Downey \\
 
 感謝耐心編輯 {\em Think Python}的O'Reilly Media的朋友. 
 
-感謝所有使用本書早期版本的學生們, 以及所有為本書提供更正和建議的貢獻者(如下所列). 
+感謝所有使用本書早期版本的學生們, 以及所有為本書提供修正和建議的貢獻者(如下所列). 
 
 
 \section*{貢獻者名單}
@@ -391,7 +390,7 @@ Allen B. Downey \\
 
 \item David Kershaw 修正了3.10節的 {\tt catTwice} 函數錯誤. 
 
-\item Eddie Lam修正了第1,2,3章大量錯誤, 同時修復了Makefile文件, 
+\item Eddie Lam修正了第1,2,3章大量錯誤, 同時修復了Makefile檔案, 
 從而我們可以創建索引. 同時幫助我們設置了版本控制方案. 
 
 \item Man-Yong 修正了2.4節的一個樣例. 
@@ -412,7 +411,7 @@ Allen B. Downey \\
 
 \item David Pool 對本書給予了善意的鼓勵, 並指出了第一章詞彙表中的一個錯字. 
 
-\item Michael Schmitt 修正了文件和異常這一章節中的一個錯誤. 
+\item Michael Schmitt 修正了檔案和異常這一章節中的一個錯誤. 
 
 \item Robin Shaw 指出13.1節中, 使用了沒有預先定義的printTime函數. 
 
@@ -695,9 +694,9 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 
 \begin{description}
 
-\item[輸入:] 從鍵盤, 文件, 網絡或者其他設備中獲取數據. 
+\item[輸入:] 從鍵盤, 檔案, 網絡或者其他設備中獲取數據. 
 
-\item[輸出:] 將數據顯示於屏幕, 保存至文件, 通過網絡發送等. 
+\item[輸出:] 將數據顯示於屏幕, 保存至檔案, 通過網絡發送等. 
 
 \item[數學計算:] 加減乘除等數學運算. 
 
@@ -1309,8 +1308,8 @@ break      except     in         raise
 但代碼行數一旦增多, 使用就會很麻煩. 
 \index{interactive mode}
 
-替代方案是將代碼保存至{\bf 腳本}文件, 然後解釋器在{\bf 腳本模式}
-運行文件. 通俗來說, Python腳本以 {\tt .py} 結尾. 
+替代方案是將代碼保存至{\bf 腳本}檔案, 然後解釋器在{\bf 腳本模式}
+運行檔案. 通俗來說, Python腳本以 {\tt .py} 結尾. 
 \index{script}
 \index{script mode}
 
@@ -1546,7 +1545,7 @@ v = 5     # 速度(米/秒)
 \item[腳本模式(script mode):] 用Python解釋器讀取腳本並運行代碼的模式. 
 \index{script mode}
 
-\item[腳本(script):] 存儲代碼的文件. 
+\item[腳本(script):] 存儲代碼的檔案. 
 \index{script}
 
 \item[運算次序(order of operations):]  包含多運算子和操作數的表達式執行時所遵循的先後順序. 
@@ -1698,7 +1697,7 @@ ValueError: invalid literal for int(): Hello
 \index{function!math}
 
 Pyhton內置了數學模塊, 可以提供大部分的數學計算函數. 
-{\bf 模塊}是指包含一類函數的文件. 
+{\bf 模塊}是指包含一類函數的檔案. 
 \index{module}
 \index{module object}
 
@@ -2104,7 +2103,7 @@ Traceback (innermost last):
 NameError: name 'cat' is not defined
 \end{verbatim}
 %
-這一系列跟蹤函數的信息叫做{\bf 溯源}, 這些信息會顯示是哪個文件出錯, 哪行出錯, 
+這一系列跟蹤函數的信息叫做{\bf 溯源}, 這些信息會顯示是哪個檔案出錯, 哪行出錯, 
 以及運行時函數, 甚至引起錯誤的代碼行號. 
 \index{traceback}
 
@@ -2142,7 +2141,7 @@ golden = (math.sqrt(5) + 1) / 2
 math.sqrt(5)
 \end{verbatim}
 %
-這個腳本文件主要計算5的平方根, 但因為沒有保存或者顯示結果, 所以不是很有用. 
+這個腳本檔案主要計算5的平方根, 但因為沒有保存或者顯示結果, 所以不是很有用. 
 \index{interactive mode}
 \index{script mode}
 
@@ -2262,10 +2261,10 @@ None
 \index{None special value}
 \index{special value!None}
 
-\item[模塊(module):] 包含相關函數以及定義的文件. 
+\item[模塊(module):] 包含相關函數以及定義的檔案. 
 \index{module}
 
-\item[導入語句(import statement):] 讀取模塊文件並創建模塊對象的語句. 
+\item[導入語句(import statement):] 讀取模塊檔案並創建模塊對象的語句. 
 \index{import statement}
 \index{statement!import}
 
@@ -2442,7 +2441,7 @@ O'Reilly Media, 1997).
 運行此代碼, 會創建一個窗口, 此窗口包含一個箭頭, 代表一隻小烏龜. 
 關閉窗口. 
 
-創建名為{\tt mypolygon.py} 的文件, 並輸入以下代碼:
+創建名為{\tt mypolygon.py} 的檔案, 並輸入以下代碼:
 
 \begin{verbatim}
 import turtle
@@ -2989,7 +2988,7 @@ def polyline(t, n, length, angle):
 設計個字母表, 使用種類最少的基本元素, 編寫函數繪製字母. 
 
 你要為每個字母開發函數, 比如 \verb"draw_a", \verb"draw_b",等等, 
-將這些函數放在名為{\tt letters.py}的文件中. 
+將這些函數放在名為{\tt letters.py}的檔案中. 
 你可以從 \url{http://thinkpython2.com/code/typewriter.py}下載個``turtle typewriter'', 
 來校驗代碼. 
 
@@ -4568,7 +4567,7 @@ def middle(word):
 
 \begin{enumerate}
 
-\item 將這些函數代碼, 寫入文件{\tt palindrome.py}, 並測試輸出. 
+\item 將這些函數代碼, 寫入檔案{\tt palindrome.py}, 並測試輸出. 
 用兩個字母, 測試 {\tt middle} 函數, 看看會怎麼樣? 一個字母呢?  
 嘗試傳入不包含任何字母的空字符串\verb"''",  會如何?
 
@@ -5905,16 +5904,16 @@ Grady Ward 收集整理, 作為Moby詞典專案, 貢獻給公共領域的單詞�
 (詳見\url{http://wikipedia.org/wiki/Moby_Project}). 這是
 包含 113,809 個填詞遊戲的單詞串列; 也就是說, 這些單詞, 已經被
 填詞遊戲和其他單詞遊戲證明了有效. 
-在Moby專案中, 這個文件名為 {\tt 113809of.fic};
+在Moby專案中, 這個檔案名為 {\tt 113809of.fic};
 你可以從\url{http://thinkpython2.com/code/words.txt} 下載一個副本, 
 其名字簡稱 {\tt words.txt}. 
 \index{Moby Project}
 \index{crosswords}
 
-此文件為純文本文件, 你可以用文本編輯器打開, 
+此檔案為純文本檔案, 你可以用文本編輯器打開, 
 但你也可以用Python讀取. 
-內置函數{\tt open}, 以文件名為入參, 返回一個 {\bf 文件對象}, 
-可以用來讀取文件內容. 
+內置函數{\tt open}, 以檔案名為入參, 返回一個 {\bf 檔案對象}, 
+可以用來讀取檔案內容. 
 \index{open function}
 \index{function!open}
 \index{plain text}
@@ -5926,8 +5925,8 @@ Grady Ward 收集整理, 作為Moby詞典專案, 貢獻給公共領域的單詞�
 >>> fin = open('words.txt')
 \end{verbatim}
 %
-{\tt fin} 是表示輸入的文件對象的通用名稱. 
-文件對象針對讀取提供了多個方法, 包括 {\tt readline}, 此方法會讀取文件的一整行
+{\tt fin} 是表示輸入的檔案對象的通用名稱. 
+檔案對象針對讀取提供了多個方法, 包括 {\tt readline}, 此方法會讀取檔案的一整行
 字符, 並作為字符串返回: \index{readline method}
 \index{method!readline}
 
@@ -5939,7 +5938,7 @@ Grady Ward 收集整理, 作為Moby詞典專案, 貢獻給公共領域的單詞�
 單詞串列中第一個單詞是``aa'', 這是一種岩漿. 
 後面的\verb"\n" 是換行符, 用來斷行. 
 
-文件對象會跟蹤目前讀到哪裡了, 從而, 再次運行
+檔案對象會跟蹤目前讀到哪裡了, 從而, 再次運行
 {\tt readline}, 會得到後面的單詞:
 
 \begin{verbatim}
@@ -5959,7 +5958,7 @@ Grady Ward 收集整理, 作為Moby詞典專案, 貢獻給公共領域的單詞�
 'aahed'
 \end{verbatim}
 %
-你也可以將文件對象置於{\tt for}迴圈中. 
+你也可以將檔案對象置於{\tt for}迴圈中. 
 這樣程式便會讀取 {\tt words.txt}, 然後逐行輸出每個單詞:
 \index{open function}
 \index{function!open}
@@ -6258,7 +6257,7 @@ def is_palindrome(word):
 
 \begin{description}
 
-\item[文件對象(file object):] 用來標識被打開的文件的一個值.
+\item[檔案對象(file object):] 用來標識被打開的檔案的一個值.
 \index{file object}
 \index{object!file}
 
@@ -8114,9 +8113,9 @@ def example5():
 
 \begin{description}
 
-\item[降低輸入規模:] 如果可能, 降低數據集大小. 比如, 讀取文本文件, 
+\item[降低輸入規模:] 如果可能, 降低數據集大小. 比如, 讀取文本檔案, 
 只讀取前10行, 或者使用你能找到的最簡樣例. 
-可以重新編輯文件, 或者(更優的做法是)修改程式, 只讀取前{\tt n}行. 
+可以重新編輯檔案, 或者(更優的做法是)修改程式, 只讀取前{\tt n}行. 
 
 如果報錯, 可以將{\tt n}減小為剛好會報錯的最小值, 
 然後修正異常, 並逐步增大{\tt n}值, 如此迴圈往復. 
@@ -8327,7 +8326,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 這個詞典可以從\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict}
 或\url{http://thinkpython2.com/code/c06d}下載. 
 或者下載\url{http://thinkpython2.com/code/pronounce.py}代碼, 
-這個文件提供了一個 \verb"read_dictionary"函數, 
+這個檔案提供了一個 \verb"read_dictionary"函數, 
 可以讀取發音詞典並返回一個Python字典, 此字典將每個單詞映射到了
 表示發音的字符串. 
 
@@ -9042,7 +9041,7 @@ for last, first in directory:
 
 \begin{enumerate}
 
-\item 編寫程式, 從文件中讀取單詞串列(參見第~\ref{wordlist}節), 
+\item 編寫程式, 從檔案中讀取單詞串列(參見第~\ref{wordlist}節), 
 並且輸出所有的變位詞集合. 
 
 下面是個輸出樣例:
@@ -9154,7 +9153,7 @@ for last, first in directory:
 
 \begin{exercise}
 
-寫個程式, 讀取文件, 把每行拆分成單詞, 去掉空格和標點, 並將其轉為小寫. 
+寫個程式, 讀取檔案, 把每行拆分成單詞, 去掉空格和標點, 並將其轉為小寫. 
 \index{string module}
 \index{module!string}
 
@@ -9300,9 +9299,9 @@ for i in range(10):
 
 繼續下面章節前, 先盡量完成上面的練習. 
 你可以從 \url{http://thinkpython2.com/code/analyze_book1.py}下載
-我的解決方案. 此外, 你也會需要\url{http://thinkpython2.com/code/emma.txt}這個文件.
+我的解決方案. 此外, 你也會需要\url{http://thinkpython2.com/code/emma.txt}這個檔案.
 
-下面是一個讀取文件, 並基於其中單詞構建詞頻統計的程式:
+下面是一個讀取檔案, 並基於其中單詞構建詞頻統計的程式:
 \index{histogram!word frequencies}
 
 \begin{verbatim}
@@ -9329,7 +9328,7 @@ hist = process_file('emma.txt')
 這個程式會讀取 {\tt emma.txt}, 其中包括了Jane Austen的{\em Emma}小說. 
 \index{Austen, Jane}
 
-\verb"process_file" 遍歷文件中的每一行, 同時將每行內容逐次傳給\verb"process_line". 
+\verb"process_file" 遍歷檔案中的每一行, 同時將每行內容逐次傳給\verb"process_line". 
 詞頻{\tt hist} 在此處作為累加器使用. 
 \index{accumulator!histogram}
 \index{traversal}
@@ -9343,7 +9342,7 @@ hist = process_file('emma.txt')
 最終, \verb"process_line" 會通過新建項或者累加已有項, 更新詞頻統計.
 \index{update!histogram}
 
-若想統計文件中全部單詞數量, 可以將詞頻統計中的所有頻數相加求和即可:
+若想統計檔案中全部單詞數量, 可以將詞頻統計中的所有頻數相加求和即可:
 
 \begin{verbatim}
 def total_words(hist):
@@ -9851,7 +9850,7 @@ Zipf定律(\url{http://en.wikipedia.org/wiki/Zipf's_law})
 %
 如果繪製log $f$和log $r$的關係圖, 你會得到一個斜率是$-s$, 截距為log $c$的斜線. 
 
-編寫程式, 讀取文件中文本, 
+編寫程式, 讀取檔案中文本, 
 統計單詞頻次, 按照頻次降序, 逐行輸出每個單詞, 以及
 log $f$和log $r$. 
 採用繪圖程式, 繪製結果曲線, 檢驗是否構成一條直線. 
@@ -9867,10 +9866,10 @@ log $f$和log $r$.
 
 
 
-\chapter{文件}
+\chapter{檔案}
 
 本章介紹程式將數據保存在永久存儲中的``持久化''概念, 同時展示如何
-使用不同型態的永久存儲, 比如文件和資料庫. 
+使用不同型態的永久存儲, 比如檔案和資料庫. 
 
 
 \section{持久化}
@@ -9889,9 +9888,9 @@ log $f$和log $r$.
 操作系統便是一個持久化程式的例子, 計算機一旦啟動, 便要執行諸多操作;
 再比如網絡服務器, 需要一直運行, 等待接收來自網絡的請求. 
 
-程式管理數據的一個最簡單方法是讀寫文本文件. 
-之前, 我們已經接觸過讀取文本文件了, 
-本章將學習如何使用程式, 將文本寫入文件. 
+程式管理數據的一個最簡單方法是讀寫文本檔案. 
+之前, 我們已經接觸過讀取文本檔案了, 
+本章將學習如何使用程式, 將文本寫入檔案. 
 
 此外, 我們也可以將程式狀態存儲到資料庫中. 
 本章將介紹一個簡單的資料庫, 以及模塊{\tt pickle}, 
@@ -9903,22 +9902,22 @@ log $f$和log $r$.
 \section{讀和寫}
 \index{file!reading and writing}
 
-文本文件是存儲在永久介質, 比如硬盤, 閃存, 或光盤中的一系列字符. 
-在第~\ref{wordlist}節, 我們已經學習了如何打開和讀取文件. 
+文本檔案是存儲在永久介質, 比如硬盤, 閃存, 或光盤中的一系列字符. 
+在第~\ref{wordlist}節, 我們已經學習了如何打開和讀取檔案. 
 \index{open function}
 \index{function!open}
 
-若要寫入文件, 需要在打開文件時, 用模式\verb"'w'"作為第二個參數:
+若要寫入檔案, 需要在打開檔案時, 用模式\verb"'w'"作為第二個參數:
 
 \begin{verbatim}
 >>> fout = open('output.txt', 'w')
 \end{verbatim}
 %
-如果文件已存在, 採用寫入模式打開文件會清除原有內容, 重新寫入, 所以要格外謹慎！
-如果文件不存在, 則會新建一個. 
+如果檔案已存在, 採用寫入模式打開檔案會清除原有內容, 重新寫入, 所以要格外謹慎！
+如果檔案不存在, 則會新建一個. 
 
-{\tt open} 函數會返回一個文件對象, 此對象提供了各種操作文件的方法. 
-{\tt write}方法可以將數據寫入文件. 
+{\tt open} 函數會返回一個檔案對象, 此對象提供了各種操作檔案的方法. 
+{\tt write}方法可以將數據寫入檔案. 
 
 \begin{verbatim}
 >>> line1 = "This here's the wattle,\n"
@@ -9928,8 +9927,8 @@ log $f$和log $r$.
 %
 
 返回值是已寫入的字符數量. 
-文件對象會跟蹤其位置, 所以如果你再次調用{\tt write}方法, 
-它會在文件末尾追加內容. 
+檔案對象會跟蹤其位置, 所以如果你再次調用{\tt write}方法, 
+它會在檔案末尾追加內容. 
 
 \begin{verbatim}
 >>> line2 = "the emblem of our land.\n"
@@ -9937,7 +9936,7 @@ log $f$和log $r$.
 24
 \end{verbatim}
 %
-寫入完成, 需要關閉文件. 
+寫入完成, 需要關閉檔案. 
 
 \begin{verbatim}
 >>> fout.close()
@@ -9946,14 +9945,14 @@ log $f$和log $r$.
 \index{close method}
 \index{method!close}
 %
-如果你沒有關閉文件, 程式運行結束, 便會自動關閉. 
+如果你沒有關閉檔案, 程式運行結束, 便會自動關閉. 
 
 
 \section{格式運算子}
 \index{format operator}
 \index{operator!format}
 
-{\tt write}的參數需要是字符串, 所以, 若要向文件寫入其他型態, 
+{\tt write}的參數需要是字符串, 所以, 若要向檔案寫入其他型態, 
 需要先轉換為字符串. 最簡單的方法是使用{\tt str}:
 
 \begin{verbatim}
@@ -10038,20 +10037,20 @@ TypeError: %d format: a number is required, not str
 % digits after the decimal point.  
 
 
-\section{文件名和路徑}
+\section{檔案名和路徑}
 \label{paths}
 \index{filename}
 \index{path}
 \index{directory}
 \index{folder}
 
-文件是按照{\bf 目錄}(也叫``文件夾'')來組織存放的. 
+檔案是按照{\bf 目錄}(也叫``檔案夾'')來組織存放的. 
 每個運行的程式都有一個``當前目錄'', 也是大多數運算的默認目錄. 
-比如, 當你要打開一個文件讀取內容時, Python會在當前目錄尋找此文件. 
+比如, 當你要打開一個檔案讀取內容時, Python會在當前目錄尋找此檔案. 
 \index{os module}
 \index{module!os}
 
-{\tt os}模塊(``os'' 即 ``operating system'')提供了操作文件和目錄的函數. 
+{\tt os}模塊(``os'' 即 ``operating system'')提供了操作檔案和目錄的函數. 
 {\tt os.getcwd} 會返回當前目錄的名稱:
 \index{getcwd function}
 \index{function!getcwd}
@@ -10068,26 +10067,26 @@ TypeError: %d format: a number is required, not str
 \index{working directory}
 \index{directory!working}
 
-像\verb"'/home/dinsdale'" 這樣表示文件或者目錄的字符串叫做{\bf 路徑}. 
+像\verb"'/home/dinsdale'" 這樣表示檔案或者目錄的字符串叫做{\bf 路徑}. 
 
-一個簡單的文件名, 比如{\tt memo.txt} 也可以認為是一個路徑, 
+一個簡單的檔案名, 比如{\tt memo.txt} 也可以認為是一個路徑, 
 只是, 這是一個{\bf 相對路徑}, 因為它和當前目錄相關. 
-如果當前目錄是{\tt /home/dinsdale}, 那麼文件名{\tt memo.txt} 便
+如果當前目錄是{\tt /home/dinsdale}, 那麼檔案名{\tt memo.txt} 便
 指的是 {\tt /home/dinsdale/memo.txt}這個路徑. 
 \index{relative path} \index{path!relative}
 \index{absolute path} \index{path!absolute}
 
 以{\tt /} 開頭的路徑, 不依賴於當前目錄;
 所以叫做{\bf 絕對路徑}.
-若要找到一個文件的絕對路徑, 可以使用 {\tt os.path.abspath}:
+若要找到一個檔案的絕對路徑, 可以使用 {\tt os.path.abspath}:
 
 \begin{verbatim}
 >>> os.path.abspath('memo.txt')
 '/home/dinsdale/memo.txt'
 \end{verbatim}
 %
-{\tt os.path} 提供了處理文件名和路徑的其他一些方法. 
-比如, {\tt os.path.exists}會檢查文件或目錄是否存在:
+{\tt os.path} 提供了處理檔案名和路徑的其他一些方法. 
+比如, {\tt os.path.exists}會檢查檔案或目錄是否存在:
 \index{exists function}
 \index{function!exists}
 
@@ -10105,9 +10104,9 @@ False
 True
 \end{verbatim}
 %
-同理, {\tt os.path.isfile}可以判斷路徑是否是一個文件. 
+同理, {\tt os.path.isfile}可以判斷路徑是否是一個檔案. 
 
-{\tt os.listdir} 會返回指定目錄下的文件串列(以及其他目錄):
+{\tt os.listdir} 會返回指定目錄下的檔案串列(以及其他目錄):
 
 \begin{verbatim}
 >>> os.listdir(cwd)
@@ -10115,7 +10114,7 @@ True
 \end{verbatim}
 %
 為了展示這些函數的用法, 下面的``walks''示例會遍歷一個目錄, 
-輸出所有文件的名稱, 同時遞歸遍歷自己所有目錄. 
+輸出所有檔案的名稱, 同時遞歸遍歷自己所有目錄. 
 \index{walk, directory}
 \index{directory!walk}
 
@@ -10131,18 +10130,18 @@ def walk(dirname):
 \end{verbatim}
 %
 
-{\tt os.path.join} 會接收一個目錄和一個文件名, 將其拼接為一個完整路徑. 
+{\tt os.path.join} 會接收一個目錄和一個檔案名, 將其拼接為一個完整路徑. 
 
 {\tt os} 模塊也提供了一個名為{\tt walk}的函數, 和上面例子相似, 但更通用. 
-做個練習, 閱讀其文檔, 並使用此函數輸出給定目錄以及其子目錄下的所有文件的名稱. 
+做個練習, 閱讀其文檔, 並使用此函數輸出給定目錄以及其子目錄下的所有檔案的名稱. 
 可以從\url{http://thinkpython2.com/code/walk.py}下載我的答案. 
 
 
 \section{捕獲異常}
 \label{catch}
 
-當你讀寫文件時, 很多意外會發生. 
-如果嘗試打開一個不存在的文件, 通常會得到{\tt FileNotFoundError}:
+當你讀寫檔案時, 很多意外會發生. 
+如果嘗試打開一個不存在的檔案, 通常會得到{\tt FileNotFoundError}:
 \index{open function}
 \index{function!open}
 \index{exception!IOError}
@@ -10154,7 +10153,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'bad_file'
 
 \end{verbatim}
 %
-如果你沒有權限訪問文件, 也會異常:
+如果你沒有權限訪問檔案, 也會異常:
 \index{file!permission}
 \index{permission, file}
 
@@ -10200,18 +10199,18 @@ Python 會先執行{\tt try}語句區塊.
 \section{資料庫}
 \index{database}
 
-{\bf 資料庫}是用來存儲數據的文件. 
+{\bf 資料庫}是用來存儲數據的檔案. 
 很多資料庫都是像字典一樣構建, 從鍵映射到值, 進行數據存儲. 
 資料庫和字典之間最大的區別, 在於資料庫存儲在磁盤(或者其他永久存儲中), 
 所以程式結束後, 數據依然存在. 
 \index{dbm module} \index{module!dbm}
 
- {\tt dbm} 模塊提供了一個創建和更新資料庫文件的介面. 
-下面的例子中, 我將創建一個資料庫來存儲圖片文件的描述. 
+ {\tt dbm} 模塊提供了一個創建和更新資料庫檔案的介面. 
+下面的例子中, 我將創建一個資料庫來存儲圖片檔案的描述. 
 \index{open function}
 \index{function!open}
 
-打開資料庫便如打開文件一樣:
+打開資料庫便如打開檔案一樣:
 
 \begin{verbatim}
 >>> import dbm
@@ -10224,7 +10223,7 @@ Python 會先執行{\tt try}語句區塊.
 \index{database object}
 \index{object!database}
 
-當創建新的項, {\tt dbm}便會更新資料庫文件.
+當創建新的項, {\tt dbm}便會更新資料庫檔案.
 \index{update!database}
 
 \begin{verbatim}
@@ -10263,7 +10262,7 @@ for key in db:
     print(key, db[key])
 \end{verbatim}
 %
-和操作其他文件一樣, 用完之後, 需要關閉資料庫:
+和操作其他檔案一樣, 用完之後, 需要關閉資料庫:
 
 \begin{verbatim}
 >>> db.close()
@@ -10329,7 +10328,7 @@ False
 \index{pipe}
 
 多數操作系統都提供了命令行介面, 一般稱為 {\bf shell}.
-Shells 通常提供了大量命令, 以定位文件系統, 以及運行應用. 
+Shells 通常提供了大量命令, 以定位檔案系統, 以及運行應用. 
 比如, 在Unix中, 你可以用{\tt cd}命令切換目錄, 
 使用{\tt ls}命令顯示目錄下的內容, 以及(比如)鍵入{\tt firefox} 來啟動瀏覽器. 
 \index{ls (Unix command)}
@@ -10337,7 +10336,7 @@ Shells 通常提供了大量命令, 以定位文件系統, 以及運行應用.
 
 任何你能通過shell啟動的程式, 都可以通過Python, 使用{\bf 管道對象}來啟動, 這個對象表示了一個運行中的程式. 
 
-比如, Unix命令{\tt ls -l}通常會用長文件名格式來顯示當前目錄內容. 
+比如, Unix命令{\tt ls -l}通常會用長檔案名格式來顯示當前目錄內容. 
 在Python中, 可以用{\tt os.popen}\footnote{{\tt popen}模塊目前已經廢棄, 
 也就是說, 我們應該避免使用它, 而盡量使用{\tt subprocess}模塊. 
 但因為{\tt subprocess}模塊相對更複雜, 為了簡便, 
@@ -10351,7 +10350,7 @@ Shells 通常提供了大量命令, 以定位文件系統, 以及運行應用.
 \end{verbatim}
 %
 參數是個包含shell命令的字符串. 
-返回值是一個對象, 使用方式和打開的文件對象一樣. 
+返回值是一個對象, 使用方式和打開的檔案對象一樣. 
 你可以用{\tt readline} 來逐行獲取{\tt ls}進程的輸出, 
 或者用{\tt read}來一次獲取全部內容:
 \index{readline method}
@@ -10363,7 +10362,7 @@ Shells 通常提供了大量命令, 以定位文件系統, 以及運行應用.
 >>> res = fp.read()
 \end{verbatim}
 %
-當讀取結束, 和操作文件一樣, 需要關閉通道:
+當讀取結束, 和操作檔案一樣, 需要關閉通道:
 \index{close method}
 \index{method!close}
 
@@ -10377,10 +10376,10 @@ None
 {\tt None}表示正常結束(沒有錯誤).
 
 比如, 多數Unix系統都提供了一個{\tt md5sum}命令, 
-來讀取文件內容, 並計算一個``校驗值''. 
+來讀取檔案內容, 並計算一個``校驗值''. 
 可以通過 \url{http://en.wikipedia.org/wiki/Md5}了解更多MD5的知識. 
-這個命令提供了一種有效的方法, 可以檢驗兩個文件是否內容一樣. 
-不同文件產生相同校驗值的概率極低(可以說, 在宇宙崩塌之前都不太可能). 
+這個命令提供了一種有效的方法, 可以檢驗兩個檔案是否內容一樣. 
+不同檔案產生相同校驗值的概率極低(可以說, 在宇宙崩塌之前都不太可能). 
 \index{md5}
 \index{checksum}
 
@@ -10404,8 +10403,8 @@ None
 \label{modules}
 \index{module, writing}
 \index{word count}
-任何包含Python代碼的文件, 都可以作為模塊導入使用. 
-例如, 假設你有一個名為{\tt wc.py}的文件, 文件包含以下代碼:
+任何包含Python代碼的檔案, 都可以作為模塊導入使用. 
+例如, 假設你有一個名為{\tt wc.py}的檔案, 檔案包含以下代碼:
 
 \begin{verbatim}
 def linecount(filename):
@@ -10417,7 +10416,7 @@ def linecount(filename):
 print(linecount('wc.py'))
 \end{verbatim}
 %
-如果運行程式, 代碼會讀取自身, 並輸出文件中內容的行數, 也就是7.
+如果運行程式, 代碼會讀取自身, 並輸出檔案中內容的行數, 也就是7.
 你也可以像下面這樣導入這個模塊:
 
 \begin{verbatim}
@@ -10464,12 +10463,12 @@ if __name__ == '__main__':
 \index{name built-in variable}
 \index{main}
 
-做個練習, 將上面代碼寫入{\tt wc.py}文件中, 將其作為腳本, 直接運行. 
+做個練習, 將上面代碼寫入{\tt wc.py}檔案中, 將其作為腳本, 直接運行. 
 然後運行Python解釋器, 並{\tt import wc}. 
 當作為模塊導入時, \verb"__name__"的值是什麼?
 
 警告：如果你導入一個已經導入過的模塊, Python不會做任何操作. 
-即使文件變了, Python也不會重新讀取文件. 
+即使檔案變了, Python也不會重新讀取檔案. 
 \index{module!reload}
 \index{reload function}
 \index{function!reload}
@@ -10481,7 +10480,7 @@ if __name__ == '__main__':
 \index{debugging}
 \index{whitespace}
 
-當讀寫文件時, 可能會遇到一些空白導致的問題. 
+當讀寫檔案時, 可能會遇到一些空白導致的問題. 
 這些問題很難被發現, 因為空格, 製表符和換行符都是不可見的:
 
 \begin{verbatim}
@@ -10508,7 +10507,7 @@ if __name__ == '__main__':
 另一個你可能遇到的難題是, 不同的系統會用不同的字符表示行尾. 
 有些系統用換行符\verb"\n"表示, 有些系統用返回字符 \verb"\r"表示. 
 有的系統又兩者都用. 
-如果在不同系統間移動文件, 這些不兼容的地方, 便是引發問題之處. 
+如果在不同系統間移動檔案, 這些不兼容的地方, 便是引發問題之處. 
 \index{end of line character}
 
 對於多數系統來說, 有諸多程式可以實現格式轉換. 
@@ -10536,25 +10535,25 @@ if __name__ == '__main__':
 比如{\tt \%d}, 規定了值應被格式化為哪種格式.
 \index{format sequence}
 
-\item[文本文件(text file):] 保存在類似硬盤一樣永久存儲介質上的字符序列. 
+\item[文本檔案(text file):] 保存在類似硬盤一樣永久存儲介質上的字符序列. 
 \index{text file}
 
-\item[目錄(directory):] 文件集合的名稱, 也被稱為文件夾.
+\item[目錄(directory):] 檔案集合的名稱, 也被稱為檔案夾.
 \index{directory}
 
-\item[路徑(path):] 定位文件的字符串. 
+\item[路徑(path):] 定位檔案的字符串. 
 \index{path}
 
 \item[相對路徑(relative path):] 從當前目錄開始的路徑. 
 \index{relative path}
 
-\item[絕對路徑(absolute path):] 從文件系統中的根目錄開始的路徑. 
+\item[絕對路徑(absolute path):] 從檔案系統中的根目錄開始的路徑. 
 \index{absolute path}
 
 \item[捕獲異常(catch):] 使用 {\tt try} 和 {\tt except} 語句來防止異常中斷程式執行. 
 \index{catch}
 
-\item[資料庫(database):] 一個文件, 其內容以類似字典的鍵值對應的方式來管理. 
+\item[資料庫(database):] 一個檔案, 其內容以類似字典的鍵值對應的方式來管理. 
 \index{database}
 
 \item[字節對象(bytes object):] 和字符串相似的一種對象.
@@ -10576,11 +10575,11 @@ if __name__ == '__main__':
 
 \begin{exercise}
 
-編寫一個名為{\tt sed}的函數, 接收一個模式字符串, 一個替換字符串, 以及兩個文件名;
-這個函數需要讀取第一個文件, 然後把內容寫入第二個文件(如果沒有, 需要創建).
-如果文件中出現模式字符串, 則用替換字符串進行替換. 
+編寫一個名為{\tt sed}的函數, 接收一個模式字符串, 一個替換字符串, 以及兩個檔案名;
+這個函數需要讀取第一個檔案, 然後把內容寫入第二個檔案(如果沒有, 需要創建).
+如果檔案中出現模式字符串, 則用替換字符串進行替換. 
 
-如果在打開, 讀取, 寫入或者關閉文件過程中發生異常, 
+如果在打開, 讀取, 寫入或者關閉檔案過程中發生異常, 
 你的程式需要捕獲異常, 輸出錯誤信息, 安全退出. 
 參考: \url{http://thinkpython2.com/code/sed.py}.
 
@@ -10610,7 +10609,7 @@ if __name__ == '__main__':
 \label{checksum}
 \index{MP3}
 
-在一個極大的MP3文件集合中, 可能會有重複的歌曲, 可能存儲在不同目錄, 
+在一個極大的MP3檔案集合中, 可能會有重複的歌曲, 可能存儲在不同目錄, 
 或者保存的名字不同. 
 這個練習的目標在於查找重複歌曲. 
 
@@ -10618,17 +10617,17 @@ if __name__ == '__main__':
 
 \item 編寫一個程式, 搜索目錄, 並遞歸其所有子目錄, 
 返回一個包括所有給定後綴 (比如 {\tt .mp3})的完整路徑的串列. 
-提示: {\tt os.path}提供了一些有用函數, 可以用來處理文件和路徑名稱. 
+提示: {\tt os.path}提供了一些有用函數, 可以用來處理檔案和路徑名稱. 
 \index{duplicate}
 \index{MD5 algorithm}
 \index{algorithm!MD5}
 \index{checksum}
 
-\item 若要識別重複文件, 可以用{\tt md5sum}來計算每個文件的``校驗值''. 
-如果兩個文件的校驗值相同, 則可以認為其內容相同. 
+\item 若要識別重複檔案, 可以用{\tt md5sum}來計算每個檔案的``校驗值''. 
+如果兩個檔案的校驗值相同, 則可以認為其內容相同. 
 \index{md5sum}
 
-\item 可以用Unix命令{\tt diff}再次確認兩個文件是否相同. 
+\item 可以用Unix命令{\tt diff}再次確認兩個檔案是否相同. 
 \index{diff}
 
 \end{enumerate}
@@ -13139,7 +13138,7 @@ pong.add_ping(ping)
 
 \begin{enumerate}
 
-\item 從\url{http://thinkpython2.com/code}下載以下文件:
+\item 從\url{http://thinkpython2.com/code}下載以下檔案:
 
 \begin{description}
 
@@ -14004,16 +14003,16 @@ def binomial_coeff(n, k):
 
 \begin{itemize}
 
-\item 修改了文件, 但再次運行前忘記保存更改. 有些編程環境可以自動保存, 但有些不會. 
+\item 修改了檔案, 但再次運行前忘記保存更改. 有些編程環境可以自動保存, 但有些不會. 
 
-\item 修改了文件名, 但仍用舊的文件名運行. 
+\item 修改了檔案名, 但仍用舊的檔案名運行. 
 
 \item 開發環境設置不正確. 
 
 \item 如果你編寫了個模塊, 並使用了{\tt import}語句, 一定要確保
 沒有和標準Python模塊同名. 
 
-\item 如果用{\tt import}來加載模塊, 要記住, 對於修改過的文件, 要重啟
+\item 如果用{\tt import}來加載模塊, 要記住, 對於修改過的檔案, 要重啟
 編譯器或者使用{\tt reload}重載模塊. 
 如果你只是再次用{\tt import}加載模塊, 那不起作用. 
 \index{module!reload}
@@ -14036,7 +14035,7 @@ def binomial_coeff(n, k):
 
 \subsection{我的程式什麼也不做.}
 
-這種情況, 往往由於你的文件雖然有函數和類, 但卻沒有調用函數來執行程式. 
+這種情況, 往往由於你的檔案雖然有函數和類, 但卻沒有調用函數來執行程式. 
 這也可能是你有意為之, 因為你只是需要導入模塊, 提供類和函數而已. 
 
 如果不是有意而為, 那便要確保程式中有調用函數的地方, 同時保證執行流程能
