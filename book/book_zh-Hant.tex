@@ -402,7 +402,7 @@ Allen B. Downey \\
 
 \item Matthew J. Moelter 作為一個長期貢獻者, 為本書提供了大量更正和建議. 
 
-\item Simon Dicon Montford 發現了第3章的一個函數定義的遺漏和幾個變量的命名錯誤. 
+\item Simon Dicon Montford 發現了第3章的一個函數定義的遺漏和幾個變數的命名錯誤. 
 同時指出第13章的{\tt increment}函數錯誤. 
 
 \item John Ouzts 修正了第三章的 "return value" 的定義. 
@@ -419,7 +419,7 @@ Allen B. Downey \\
 以及Jonah Cohen 從LaTex生成HTML的Prel腳本中的一個錯誤. 
 
 \item Craig T. Snydal 在 Drew University 使用本書教學, 
-並為變量命名和修正提供了寶貴意見. 
+並為變數命名和修正提供了寶貴意見. 
 
 \item Ian Thomas 和他的學生在編程課程中使用本書, 
 他們是首批檢驗本書後半部分的貢獻者, 同時他們修訂了諸多錯誤, 提供了大量建議. 
@@ -535,7 +535,7 @@ Allen B. Downey \\
 
 \item Brian Bingham 提供了~\ref{exrotatepairs}的習題. 
 
-\item Leah Engelbert-Fenton 指出我誤用 {\tt tuple} 為變量名的問題, 
+\item Leah Engelbert-Fenton 指出我誤用 {\tt tuple} 為變數名的問題, 
 以及大量類似問題, 以及一些 "使用先於定義" 的問題
 
 \item Joe Funke 指出一個拼寫錯誤. 
@@ -1179,19 +1179,19 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \end{exercise}
 
 
-\chapter{變量、表達式和語句}
+\chapter{變數、表達式和語句}
 
-編程語言的強大和高效, 其中一方面便體現在 操作{\bf 變量}. 
-變量名是指向值的一個名字. 
+編程語言的強大和高效, 其中一方面便體現在 操作{\bf 變數}. 
+變數名是指向值的一個名字. 
 \index{variable}
 
 
-\section{變量賦值}
+\section{變數賦值}
 \label{variables}
 \index{assignment statement}
 \index{statement!assignment}
 
-創建新的變量, 並給其一個值, 叫做{\bf 賦值}: 
+創建新的變數, 並給其一個值, 叫做{\bf 賦值}: 
 
 \begin{verbatim}
 >>> message = 'And now for something completely different'
@@ -1200,14 +1200,14 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 \end{verbatim}
 %
 上面的例子提供了三個賦值語句. 
-第一個是將一句話賦值給了名為 {\tt message}的變量；
+第一個是將一句話賦值給了名為 {\tt message}的變數；
 第二個是將整數 {\tt 17} 賦值給了 {\tt n}；
 第三個是將 $\pi$ 的近似值賦給了 {\tt pi}. 
 \index{state diagram}
 \index{diagram!state}
 
-一個形象化表示變量的常用手段是, 定義變量, 然後畫個箭頭指向對應的值. 
-這種形象化展示變量所處狀態(所對應的值)的圖叫做 {\bf 狀態圖}, 
+一個形象化表示變數的常用手段是, 定義變數, 然後畫個箭頭指向對應的值. 
+這種形象化展示變數所處狀態(所對應的值)的圖叫做 {\bf 狀態圖}, 
 圖~\ref{fig.state2} 便是上面代碼示例的狀態圖. 
 
 \begin{figure}
@@ -1219,19 +1219,19 @@ sentence with invalid t*kens in it. 這句話每個字母(符號)都正確,
 
 
 
-\section{變量名}
+\section{變數名}
 \index{variable}
 
-程式工程師一般會為變量起個容易理解記憶的名字, 使人一看即知其用途. 
+程式工程師一般會為變數起個容易理解記憶的名字, 使人一看即知其用途. 
 
-變量名可長可短, 包含字母和數字, 但不能以數字開頭, 
+變數名可長可短, 包含字母和數字, 但不能以數字開頭, 
 大小寫均可用, 但是方便起見, 建議只用小寫字母. 
 
-變量名也可以使用\verb"_",  多用在形如\verb"your_name" 或 
-\verb"airspeed_of_unladen_swallow" 這種多單詞命名的變量名中. 
+變數名也可以使用\verb"_",  多用在形如\verb"your_name" 或 
+\verb"airspeed_of_unladen_swallow" 這種多單詞命名的變數名中. 
 \index{underscore character}
 
-如果變量名包含了非法字符, 就會語法錯誤：
+如果變數名包含了非法字符, 就會語法錯誤：
 
 \begin{verbatim}
 >>> 76trombones = 'big parade'
@@ -1242,12 +1242,12 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 \end{verbatim}
 %
-變量名 {\tt 76trombones}  的錯誤在於數字開頭, 
+變數名 {\tt 76trombones}  的錯誤在於數字開頭, 
 而{\tt more@} 是因為包含了不合法字符 {\tt @}. 
 那麼 {\tt class} 為什麼也不正確呢？
 
 這是因為 {\tt class} 是 Python的一個 {\bf 關鍵字}. 
-解釋器用關鍵字(也稱預留字)來識別解析代碼, 所以關鍵字不能作為變量名使用. 
+解釋器用關鍵字(也稱預留字)來識別解析代碼, 所以關鍵字不能作為變數名使用. 
 \index{keyword}
 
 Python 3 包含以下關鍵字:
@@ -1264,12 +1264,12 @@ break      except     in         raise
 %
 
 你無須刻意背誦這些關鍵字. 在多數開發環境中, 關鍵字會以特殊顏色標識, 
-所以如果誤用作變量名時, 很容易發覺. 
+所以如果誤用作變數名時, 很容易發覺. 
 
 \section{表達式和語句}
 
-{\bf 表達式} 是值, 變量以及運算子的集合. 
-值本身可以認為是表達式, 同樣, 變量本身也是. 
+{\bf 表達式} 是值, 變數以及運算子的集合. 
+值本身可以認為是表達式, 同樣, 變數本身也是. 
 所以下面都可以認為是合法的表達式：
 \index{expression}
 
@@ -1286,7 +1286,7 @@ break      except     in         raise
 上例中, {\tt n} 的值是17, {\tt n+25} 的值是42. 
 \index{evaluate}
 
- {\bf 語句} 是代碼的基本有效單位, 例如新建變量或者輸出值. 
+ {\bf 語句} 是代碼的基本有效單位, 例如新建變數或者輸出值. 
 \index{statement}
 
 \begin{verbatim}
@@ -1460,7 +1460,7 @@ v = 5     # assign 5 to v
 v = 5     # 速度(米/秒) 
 \end{verbatim}
 %
-好的變量命名可以減少注釋的使用, 但是變量名過長, 又顯得代碼繁雜而難以閱讀, 
+好的變數命名可以減少注釋的使用, 但是變數名過長, 又顯得代碼繁雜而難以閱讀, 
 所以如何取捨, 需要權衡. 
 
 
@@ -1511,23 +1511,23 @@ v = 5     # 速度(米/秒)
 
 \begin{description}
 
-\item[變量(variable):]  標識值的名稱. 
+\item[變數(variable):]  標識值的名稱. 
 \index{variable}
 
-\item[賦值(assignment):]  為變量賦值的語句. 
+\item[賦值(assignment):]  為變數賦值的語句. 
 \index{assignment}
 
-\item[狀態圖(state diagram):]  一堆變量和值的指向圖. 
+\item[狀態圖(state diagram):]  一堆變數和值的指向圖. 
 \index{state diagram}
 
 \item[關鍵字(keyword):]  編程語言用來解析代碼的預留字, 像 {\tt if}、{\tt  def} 和 {\tt while}, 
-均不能作為變量名使用. 
+均不能作為變數名使用. 
 \index{keyword}
 
 \item[操作數(operand):]  運算子操作的單一值對象. 
 \index{operand}
 
-\item[表達式(expression):]  變量、運算子以及值的集合, 共同來表示單一結果. 
+\item[表達式(expression):]  變數、運算子以及值的集合, 共同來表示單一結果. 
 \index{expression}
 
 \item[求值(evaluate):]  執行運算產生值, 從而簡化表達式的過程. 
@@ -1715,7 +1715,7 @@ Pyhton內置了數學模塊, 可以提供大部分的數學計算函數.
 <module 'math' (built-in)>
 \end{verbatim}
 %
-模塊對象包含所有模塊中的函數和變量. 想調用相應函數, 需要調用模塊名和函數名, 
+模塊對象包含所有模塊中的函數和變數. 想調用相應函數, 需要調用模塊名和函數名, 
 中間用點(也可以當作英文中的句號)來分隔. 這種調用方法, 就是{\bf 點標法}. 
 \index{dot notation}
 
@@ -1748,7 +1748,7 @@ math 模塊也提供了{\tt log}函數, 此函數是以{\tt e}為底.
 0.707106781187
 \end{verbatim}
 %
-{\tt math.pi} 表達式是從math模塊獲取變量 {\tt pi}, 這是一個 $\pi$的浮點格式近似值, 
+{\tt math.pi} 表達式是從math模塊獲取變數 {\tt pi}, 這是一個 $\pi$的浮點格式近似值, 
 精確到小數點後15位. 
 \index{pi}
 
@@ -1765,7 +1765,7 @@ math 模塊也提供了{\tt log}函數, 此函數是以{\tt e}為底.
 \section{組合}
 \index{composition}
 
-目前, 我們學習了編程涉及的各個元素---變量, 表達式以及語句. 
+目前, 我們學習了編程涉及的各個元素---變數, 表達式以及語句. 
 但都是分開來講, 並未整合在一起. 
 
 編程語言的強大之處在於, 可以構建眾多的小積木, 然後 {\bf 組合}起來. 
@@ -1782,7 +1782,7 @@ x = math.exp(math.log(x+1))
 \end{verbatim}
 %
 任何可以使用值的地方, 都可以使用表達式來替換, 除了一種情況：
-賦值語句的左側必須是變量名. 
+賦值語句的左側必須是變數名. 
 左側出現表達式會報語法錯誤(相關信息見後續章節). 
 
 \begin{verbatim}
@@ -1814,9 +1814,9 @@ def print_lyrics():
 
 {\tt def}關鍵字表示這是一個函數定義. 
 函數名是 \verb"print_lyrics". 
-函數名的命名規則和變量名命名規則一致：
+函數名的命名規則和變數名命名規則一致：
 可包含字母, 數字或下劃線, 首字母不能為數字. 
-同時不能使用關鍵字作為函數名, 要避免變量和函數重名. 
+同時不能使用關鍵字作為函數名, 要避免變數和函數重名. 
 \index{def keyword}
 \index{keyword!def}
 \index{argument}
@@ -2004,7 +2004,7 @@ Spam Spam Spam Spam
 {\tt math.cos(math.pi)} 只會運行一次. 
 \index{argument}
 
-也可以使用變量作為實參:
+也可以使用變數作為實參:
 
 \begin{verbatim}
 >>> michael = 'Eric, the half a bee.'
@@ -2013,15 +2013,15 @@ Eric, the half a bee.
 Eric, the half a bee.
 \end{verbatim}
 %
-函數實參的變量命名 ({\tt michael})和函數形參的命名({\tt bruce})毫無關聯. 
+函數實參的變數命名 ({\tt michael})和函數形參的命名({\tt bruce})毫無關聯. 
 無論外部傳遞進來的值如何命名, 函數 \verb"print_twice"內部, 我們統稱其為 {\tt bruce}. 
 
 
-\section{局部變量和參數}
+\section{局部變數和參數}
 \index{local variable}
 \index{variable!local}
 
-函數內部定義的變量都是{\bf 局部}的, 也就是說, 只能作用於函數內部, 例如：
+函數內部定義的變數都是{\bf 局部}的, 也就是說, 只能作用於函數內部, 例如：
 \index{parentheses!parameters in}
 
 \begin{verbatim}
@@ -2041,7 +2041,7 @@ Bing tiddle tiddle bang.
 Bing tiddle tiddle bang.
 \end{verbatim}
 %
-\verb"cat_twice"運行結束, 內部變量{\tt cat}便被銷毀. 
+\verb"cat_twice"運行結束, 內部變數{\tt cat}便被銷毀. 
 如果現在嘗試輸出它, 會報錯:
 \index{NameError}
 \index{exception!NameError}
@@ -2051,7 +2051,7 @@ Bing tiddle tiddle bang.
 NameError: name 'cat' is not defined
 \end{verbatim}
 %
-形參都是局部使用的, 例如 {\tt bruce} 變量便不會出現在 \verb"print_twice" 函數之外.
+形參都是局部使用的, 例如 {\tt bruce} 變數便不會出現在 \verb"print_twice" 函數之外.
 \index{parameter}
 
 
@@ -2060,14 +2060,14 @@ NameError: name 'cat' is not defined
 \index{stack diagram}
 \index{function frame}
 \index{frame}
-若想跟蹤變量使用情況, 一般繪製{\bf 堆疊圖}比較有效. 
-和狀態圖類似, 堆疊圖也會標識每個變量的值, 不同之處是, 
-堆疊圖會標識變量所屬函數. 
+若想跟蹤變數使用情況, 一般繪製{\bf 堆疊圖}比較有效. 
+和狀態圖類似, 堆疊圖也會標識每個變數的值, 不同之處是, 
+堆疊圖會標識變數所屬函數. 
 \index{stack diagram}
 \index{diagram!stack}
 
 每個函數都用一個{\bf 框} 來表示, 一個框就是一個旁邊有函數名, 
-內部是參數以及變量值的箱體圖. 
+內部是參數以及變數值的箱體圖. 
 前述例子的箱體圖見圖~\ref{fig.stack}. 
 
 \begin{figure}
@@ -2080,7 +2080,7 @@ NameError: name 'cat' is not defined
 堆疊圖中的各個框的排列方式標示了各個函數的調用關係. 
 此例中, \verb"print_twice"函數被 \verb"cat_twice"調用, 
 \verb"cat_twice" 被\verb"__main__"調用. \verb"__main__"是
-頂層框的一個特殊名字, 任何函數外的變量, 都屬於它. 
+頂層框的一個特殊名字, 任何函數外的變數, 都屬於它. 
 \index{main}
 
 形參和實參一一對應, 所以{\tt part1} 和{\tt line1}的值相同, 
@@ -2121,7 +2121,7 @@ NameError: name 'cat' is not defined
 運行完成, 並不會返回值, 便叫做{\bf 無值函數}. 
 
 當調用有值函數時, 一般是希望對返回結果另行處理, 比如, 
-賦值結果到某個變量, 或者置於表達式中使用:
+賦值結果到某個變數, 或者置於表達式中使用:
 
 \begin{verbatim}
 x = math.cos(radians)
@@ -2146,8 +2146,8 @@ math.sqrt(5)
 \index{script mode}
 
 無值函數可以在屏幕顯示信息或者製造其他效果, 
-只是不會有返回值. 如果將函數運行結果賦值到某個變量, 
-那變量會指向一個特殊的值：{\tt None}.
+只是不會有返回值. 如果將函數運行結果賦值到某個變數, 
+那變數會指向一個特殊的值：{\tt None}.
 \index{None special value}
 \index{special value!None}
 
@@ -2227,7 +2227,7 @@ None
 \item[函數定義(function definition):]  創建函數的語句, 確定名稱, 參數以及內部語句. 
 \index{function definition}
 
-\item[函數對象(function object):]  函數定義運行後的值, 函數名便是指向函數對象的變量. 
+\item[函數對象(function object):]  函數定義運行後的值, 函數名便是指向函數對象的變數. 
 \index{function object}
 
 \item[函數頭(header):] 函數定義的首行.
@@ -2245,7 +2245,7 @@ None
 \item[實參(argument):]  函數調用時傳入函數的值. 這個值會賦值給函數內部的形參. 
 \index{argument}
 
-\item[局部變量(local variable):]  函數內部變量, 局部變量只能在函數內部使用. 
+\item[局部變數(local variable):]  函數內部變數, 局部變數只能在函數內部使用. 
 \index{local variable}
 
 \item[返回值(return value):]  函數返回的結果. 如果用函數調用作為表達式, 那麼函數返回值, 便是表達式的結果. 
@@ -2281,10 +2281,10 @@ None
 \item[運行流程(flow of execution):] 語句運行的順序.
 \index{flow of execution}
 
-\item[堆疊圖(stack diagram):]  表示函數,變量,以及值的關係圖. 
+\item[堆疊圖(stack diagram):]  表示函數,變數,以及值的關係圖. 
 \index{stack diagram}
 
-\item[框(frame):]  堆疊圖中表示函數調用的箱體圖,包括局部變量以及參數. 
+\item[框(frame):]  堆疊圖中表示函數調用的箱體圖,包括局部變數以及參數. 
 \index{function frame}
 \index{frame}
 
@@ -2319,7 +2319,7 @@ None
 \index{function object}
 \index{object!function}
 
-函數對象可以賦值給變量, 或者作為實參傳遞. 
+函數對象可以賦值給變數, 或者作為實參傳遞. 
 例如, \verb"do_twice" 便將函數對象作為參數傳入, 並調用了兩次:
 
 \begin{verbatim}
@@ -2451,7 +2451,7 @@ turtle.mainloop()
 \end{verbatim}
 %
  {\tt turtle}模塊(小寫字母 't')提供了函數{\tt Turtle} (大寫字母 'T'), 
-它創建了Turtle 對象, 並將其賦值給名為 {\tt bob} 的變量. 
+它創建了Turtle 對象, 並將其賦值給名為 {\tt bob} 的變數. 
 輸出{\tt bob}信息如下:
 
 \begin{verbatim}
@@ -2618,7 +2618,7 @@ square(bob)
 
 函數內的 {\tt t} 和 {\tt bob}指向的是同一個烏龜對象, 
 因此{\tt t.lt(90)}就好比 {\tt bob.lt(90)}. 
-那麼為何不直接用變量 {\tt bob}呢？
+那麼為何不直接用變數 {\tt bob}呢？
 這是因為{\tt t}可以代指任意烏龜對象, 而不僅僅是 {\tt bob}, 
 因此也可以再創建一個烏龜對象, 並作為參數傳入 {\tt square}:
 
@@ -2895,7 +2895,7 @@ def polyline(t, n, length, angle):
 \item[封裝(encapsulation):] 將一系列語句放入函數定義中的過程. 
 \index{encapsulation}
 
-\item[泛化(generalization):] 將不必要的特定的值(比如特定數字)更換為通用內容(變量或參數)的過程. 
+\item[泛化(generalization):] 將不必要的特定的值(比如特定數字)更換為通用內容(變數或參數)的過程. 
 \index{generalization}
 
 \item[關鍵字參數(keyword argument):] 一種實參格式, 將形參名字作為``關鍵字''囊括於內. 
@@ -3404,7 +3404,7 @@ def print_n(s, n):
 程式的狀態. 
 同樣, 堆疊圖也有助於我們更好理解遞歸函數. 
 
-一旦函數被調用, Python都會創建一個包含函數局部變量以及參數的框. 
+一旦函數被調用, Python都會創建一個包含函數局部變數以及參數的框. 
 所以對於遞歸函數, 可能會同時創建多個框. 
 
 圖~\ref{fig.stack2}便是以{\tt n = 3}為參數, 調用{\tt countdown}所產生的堆疊圖. 
@@ -3417,7 +3417,7 @@ def print_n(s, n):
 \end{figure}
 
 通常, 最頂層的框屬於\verb"__main__". 
-其為空, 是因為沒有在\verb"__main__"內創建變量或者傳入參數. 
+其為空, 是因為沒有在\verb"__main__"內創建變數或者傳入參數. 
 \index{base case}
 \index{recursion!base case}
 
@@ -3721,7 +3721,7 @@ $a$, $b$, 和 $c$ 滿足
 
 \begin{enumerate}
 
-\item 編寫\verb"is_triangle" 函數, 以三個整數變量為入參, 
+\item 編寫\verb"is_triangle" 函數, 以三個整數變數為入參, 
 同時根據三個特定長度的木棍是否可以拼成三角形, 來輸出 ``Yes'' 或 ``No''. 
 
 \item 編寫函數, 提示用戶輸入三個木棍的長度, 並將其轉換為整數, 
@@ -3839,7 +3839,7 @@ def draw(t, length, n):
 \section{返回值}
 \index{return value}
 
-調用函數便會產生返回值, 一般被賦值給變量或者作為表達式的一部分使用. 
+調用函數便會產生返回值, 一般被賦值給變數或者作為表達式的一部分使用. 
 
 \begin{verbatim}
 e = math.exp(1.0)
@@ -3870,7 +3870,7 @@ def area(radius):
     return math.pi * radius**2
 \end{verbatim}
 %
-但是, 使用類似{\tt a}這樣的{\bf 臨時變量}, 更加清晰明了, 便於除錯. 
+但是, 使用類似{\tt a}這樣的{\bf 臨時變數}, 更加清晰明了, 便於除錯. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -3972,7 +3972,7 @@ def distance(x1, y1, x2, y2):
 \index{testing!knowing the answer}
 
 我們已經確認此函數語法正確, 現在便可以補充完善代碼了. 
-首先, 我們計算$x_2 - x_1$ 和 $y_2 - y_1$的值, 保存為臨時變量, 並輸出. 
+首先, 我們計算$x_2 - x_1$ 和 $y_2 - y_1$的值, 保存為臨時變數, 並輸出. 
 
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
@@ -4030,7 +4030,7 @@ def distance(x1, y1, x2, y2):
 
 \item 首先寫個可運行的程式, 然後逐步增加. 任何時候遇到錯誤, 都要弄清緣由, 盡快解決. 
 
-\item 利用變量保存中間狀態值, 以便展示和檢驗. 
+\item 利用變數保存中間狀態值, 以便展示和檢驗. 
 
 \item 一旦程式運行正常, 便可以移除冗餘代碼, 並精簡繁瑣的語句. 
 但是要警惕不要使代碼難以閱讀和理解. 
@@ -4052,7 +4052,7 @@ def distance(x1, y1, x2, y2):
 例如, 編寫函數, 輸入兩個坐標, 一個是圓心, 一個是圓周上的點, 
 計算圓的面積. 
 
-假設圓心坐標為變量{\tt xc} 和
+假設圓心坐標為變數{\tt xc} 和
 {\tt yc}, 圓周上點的坐標為{\tt xp} 和 {\tt yp}.
 首先要計算圓的半徑, 也就是兩點之間的距離. 
 便可以借用之前寫過的 {\tt
@@ -4078,7 +4078,7 @@ def circle_area(xc, yc, xp, yp):
     return result
 \end{verbatim}
 %
-臨時變量{\tt radius} 和 {\tt result} 在開發和除錯時有用, 但是程式一旦正常運行, 
+臨時變數{\tt radius} 和 {\tt result} 在開發和除錯時有用, 但是程式一旦正常運行, 
 便可以通過組合函數調用, 精簡如下:
 
 \begin{verbatim}
@@ -4261,7 +4261,7 @@ countdown}極為相似. 如果以3為參數調用{\tt factorial}:
 \index{function frame}
 \index{frame}
 
-最後的框中, 沒有局部變量{\tt recurse}和{\tt result} , 是因為
+最後的框中, 沒有局部變數{\tt recurse}和{\tt result} , 是因為
 沒有走第二分支. 
 
 \section{置信遷移}
@@ -4468,7 +4468,7 @@ def factorial(n):
 
 \begin{description}
 
-\item[臨時變量(temporary variable):] 複雜運算中, 暫存中間值的變量. 
+\item[臨時變數(temporary variable):] 複雜運算中, 暫存中間值的變數. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -4616,15 +4616,15 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 在第~\ref{recursion}節的遞歸, 便是一種疊代. 
 在第~\ref{repetition}節的{\tt for}迴圈, 也是一種疊代. 
 本章, 我們會接觸另一種疊代, {\tt while} 語句. 
-但這裡要先講一下變量賦值. 
+但這裡要先講一下變數賦值. 
 
 \section{重新賦值}
 \index{assignment}
 \index{statement!assignment}
 \index{reassignment}
 
-你也許已經注意到, 相同的變量可以被多次賦值. 
-重新賦值會將已存在的變量指向新的值(並且不再指向舊的值).
+你也許已經注意到, 相同的變數可以被多次賦值. 
+重新賦值會將已存在的變數指向新的值(並且不再指向舊的值).
 
 \begin{verbatim}
 >>> x = 5
@@ -4653,7 +4653,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 
 同樣, 在數學領域, 等式結果要麼真要麼假. 
 如果$a=b$, 那麼 $a$總是等於$b$. 
-而在Python中, 雖然賦值語句可以使兩變量相等, 但是無法保證其一直相等:
+而在Python中, 雖然賦值語句可以使兩變數相等, 但是無法保證其一直相等:
 
 \begin{verbatim}
 >>> a = 5
@@ -4665,8 +4665,8 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 %
 第三行代碼, 改變了{\tt a}的值, 但是沒有改變{\tt b}, 所以他們不再相等. 
 
-很多時候我們需要給變量重新賦值, 但是要謹慎使用. 
-如果變量的值變動過於頻繁, 代碼後續將難以理解, 同時除錯困難. 
+很多時候我們需要給變數重新賦值, 但是要謹慎使用. 
+如果變數的值變動過於頻繁, 代碼後續將難以理解, 同時除錯困難. 
 
 \begin{figure}
 \centerline
@@ -4677,13 +4677,13 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 
 
 
-\section{變量更新}
+\section{變數更新}
 \label{update}
 
 \index{update}
 \index{variable!updating}
 
-最常見的一種重新賦值, 便是{\bf 變量更新},
+最常見的一種重新賦值, 便是{\bf 變數更新},
 通常是基於前值進行修改而得到新值. 
 
 \begin{verbatim}
@@ -4692,7 +4692,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 %
 這句代碼表示``獲取{\tt x}的值, 然後加一, 得到新值, 繼而用新值更新{\tt x}.'' 
 
-如果你嘗試更新未定義變量, 會遇到錯誤, 
+如果你嘗試更新未定義變數, 會遇到錯誤, 
 因為Python會在賦值{\tt x} 前執行右側表達式:
 
 \begin{verbatim}
@@ -4700,7 +4700,7 @@ Sussman 的 {\em Structure and Interpretation of Computer Programs} 中的樣例
 NameError: name 'x' is not defined
 \end{verbatim}
 %
-更新變量前, 一定要{\bf 初始化}, 通常採用簡單賦值來實現:
+更新變數前, 一定要{\bf 初始化}, 通常採用簡單賦值來實現:
 \index{initialization (before update)}
 
 \begin{verbatim}
@@ -4708,8 +4708,8 @@ NameError: name 'x' is not defined
 >>> x = x + 1
 \end{verbatim}
 %
-對變量進行加1來使其更新, 叫做{\bf 自增};
-執行減1更新變量, 叫做{\bf 自減}. 
+對變數進行加1來使其更新, 叫做{\bf 自增};
+執行減1更新變數, 叫做{\bf 自減}. 
 \index{increment}
 \index{decrement}
 
@@ -4762,7 +4762,7 @@ def countdown(n):
 \index{loop}
 \index{body}
 
-迴圈體通常會修改一個或多個變量的值, 從而令條件最終為假, 終止迴圈. 
+迴圈體通常會修改一個或多個變數的值, 從而令條件最終為假, 終止迴圈. 
 否則, 迴圈會一直重複, 成為{\bf 無限迴圈}. 
 對電腦科學家們, 有個樂此不疲的玩笑, 
 便是觀察洗髮水的使用說明, 
@@ -4999,19 +4999,19 @@ $10-n$作為第二個數字即可. 這個小技巧對於任何數字乘以9都�
 
 \begin{description}
 
-\item[重新賦值(reassignment):] 給已存在的變量賦新值的過程. 
+\item[重新賦值(reassignment):] 給已存在的變數賦新值的過程. 
 \index{reassignment}
 
-\item[變量更新(update):] 基於前值, 計算新值, 更新變量的過程. 
+\item[變數更新(update):] 基於前值, 計算新值, 更新變數的過程. 
 \index{update}
 
-\item[初始化(initialization):] 給變量賦初始值, 以待後續更新. 
+\item[初始化(initialization):] 給變數賦初始值, 以待後續更新. 
 \index{initialization!variable}
 
-\item[自增(increment):] 不斷增加某個值的變量更新(通常為1). 
+\item[自增(increment):] 不斷增加某個值的變數更新(通常為1). 
 \index{increment}
 
-\item[自減(decrement):] 不斷減少某個值的變量更新. 
+\item[自減(decrement):] 不斷減少某個值的變數更新. 
 \index{decrement}
 
 \item[疊代(iteration):] 採用遞歸或者迴圈, 重複執行一段語句. 
@@ -5151,7 +5151,7 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \index{index!starting at zero} \index{zero, index
   starting at}
 
-你可以使用包括變量和操作符的表達式作為索引:
+你可以使用包括變數和操作符的表達式作為索引:
 \index{index}
 
 \begin{verbatim}
@@ -5246,7 +5246,7 @@ for letter in fruit:
     print(letter)
 \end{verbatim}
 %
-每次迴圈後, 字符串中下一個字符會賦值給變量{\tt letter}. 
+每次迴圈後, 字符串中下一個字符會賦值給變數{\tt letter}. 
 直到沒有字符可用, 迴圈便終止. 
 \index{concatenation}
 \index{abecedarian}
@@ -5436,7 +5436,7 @@ print(count)
 \end{verbatim}
 %
 此程式描述了另一種演算法, 稱之為{\bf 計數器}.
-初始化變量{\tt count}為0, 其後每找到一次{\tt a}, 就加1.
+初始化變數{\tt count}為0, 其後每找到一次{\tt a}, 就加1.
 迴圈結束後,  {\tt count}便包含了結果-- {\tt a}的全部數量.
 
 \index{encapsulation}
@@ -5548,7 +5548,7 @@ def in_both(word1, word2):
 \end{verbatim}
 %
 
-變量名選擇得足夠好的話, Python讀起來便如同英語. 
+變數名選擇得足夠好的話, Python讀起來便如同英語. 
 讀一下這個迴圈, ``for (each) letter in (the first) word, if (the) letter 
 (appears) in (the second) word, print (the) letter.''
 
@@ -5695,7 +5695,7 @@ True
 \label{fig.state4}
 \end{figure}
 
-我嘗試在框中對齊變量, 並用虛線標識{\tt i} 和
+我嘗試在框中對齊變數, 並用虛線標識{\tt i} 和
 {\tt j}的值, 用來標識{\tt word1} 和 {\tt word2}中的字符, 
 從而幫助理解. 
 
@@ -5708,7 +5708,7 @@ True
 
 \begin{description}
 
-\item[對象(object):] 變量引用的東西, 目前, 可以將
+\item[對象(object):] 變數引用的東西, 目前, 可以將
 ``對象'' 與 ``值'' 同樣看待. 
 \index{object}
 
@@ -5738,7 +5738,7 @@ True
 \index{search pattern}
 \index{pattern!search}
 
-\item[計數器(counter):] 用來計數的變量, 一般始於0, 不斷遞增. 
+\item[計數器(counter):] 用來計數的變數, 一般始於0, 不斷遞增. 
 \index{counter}
 
 \item[調用(invocation):] 運行方法的語句.
@@ -6403,7 +6403,7 @@ def is_palindrome(word):
 \index{empty list}
 \index{list!empty}
 
-如你所想, 串列也可以賦給變量:
+如你所想, 串列也可以賦給變數:
 
 \begin{verbatim}
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -6737,7 +6737,7 @@ def add_all(t):
 \end{verbatim}
 %
 隨著迴圈運行, {\tt total} 會累積元素求和;
-這樣的變量有時也稱為{\bf 累加器}. 
+這樣的變數有時也稱為{\bf 累加器}. 
 \index{accumulator!sum}
 對串列元素求和, 使用比較普遍, 所以Python提供了內置函數{\tt sum}:
 
@@ -6872,9 +6872,9 @@ def only_upper(t):
 ['s', 'p', 'a', 'm']
 \end{verbatim}
 %
-因{\tt list}是一個內置函數的名字, 所以盡量避免將其作為變量名. 
+因{\tt list}是一個內置函數的名字, 所以盡量避免將其作為變數名. 
 我通常也不建議使用{\tt l} , 因為和{\tt 1}太像了. 這便是我用
-{\tt t}作為變量名的緣由. 
+{\tt t}作為變數名的緣由. 
 
 {\tt list}函數可以將字符串拆解為單獨的字母. 
 如果你想將字符串分拆為一個個單詞, 則可以使用{\tt split}方法:
@@ -6954,7 +6954,7 @@ b = 'banana'
 \index{is operator}
 \index{operator!is}
 
-若想判斷兩個變量是否指向了同一個對象, 可以用{\tt is}運算子.
+若想判斷兩個變數是否指向了同一個對象, 可以用{\tt is}運算子.
 
 \begin{verbatim}
 >>> a = 'banana'
@@ -7008,7 +7008,7 @@ False
 \index{reference!aliasing}
 
 如果 {\tt a} 指向一個對象, 同時令{\tt b = a},
-那麼, 兩個變量都指向了同一個對象:
+那麼, 兩個變數都指向了同一個對象:
 
 \begin{verbatim}
 >>> a = [1, 2, 3]
@@ -7028,7 +7028,7 @@ True
 \label{fig.list3}
 \end{figure}
 
-變量和對像的這種關聯, 叫做{\bf 引用}.
+變數和對像的這種關聯, 叫做{\bf 引用}.
 上例中, 兩個引用指向了同一個對象. 
 \index{reference}
 
@@ -7087,7 +7087,7 @@ def delete_head(t):
 ['b', 'c']
 \end{verbatim}
 %
-形參{\tt t}和變量{\tt letters}是同一個變量的別稱. 
+形參{\tt t}和變數{\tt letters}是同一個變數的別稱. 
 堆疊圖如圖~\ref{fig.stack5}所示.
 \index{stack diagram}
 \index{diagram!stack}
@@ -7282,10 +7282,10 @@ t = t + x              # WRONG!
 \item[嵌套串列(nested list):] 串列中的元素是另外的串列. 
 \index{nested list}
 
-\item[累加器(accumulator):] 在迴圈中用於累加或累積結果的變量.
+\item[累加器(accumulator):] 在迴圈中用於累加或累積結果的變數.
 \index{accumulator}
 
-\item[增強賦值(augmented assignment):] 使用 \verb"+=" 這樣的操作符更新變量值的
+\item[增強賦值(augmented assignment):] 使用 \verb"+=" 這樣的操作符更新變數值的
 賦值語句.
 \index{assignment!augmented}
 \index{augmented assignment}
@@ -7303,7 +7303,7 @@ t = t + x              # WRONG!
 \index{filter pattern}
 \index{pattern!filter}
 
-\item[對象(object):] 變量之指向. 對象擁有特定型態以及值.
+\item[對象(object):] 變數之指向. 對象擁有特定型態以及值.
 \index{object}
 
 \item[相等(equivalent):] 擁有相同的值.
@@ -7312,10 +7312,10 @@ t = t + x              # WRONG!
 \item[相同(identical):] 指向同一個對象(也就意味著相等).
 \index{identical}
 
-\item[引用(reference):] 變量和其指向的值之間的關係.
+\item[引用(reference):] 變數和其指向的值之間的關係.
 \index{reference}
 
-\item[別稱(aliasing):] 多個變量指向同一個對象的情況.
+\item[別稱(aliasing):] 多個變數指向同一個對象的情況.
 \index{aliasing}
 
 \item[分隔符(delimiter):] 用來界定長字符串分隔位置的字符和字符串.
@@ -7543,7 +7543,7 @@ False
 那麼, 鍵和值便都是字符串. 
 
 函數{\tt dict}用來創建一個新的空字典. 
-由於{\tt dict}是內置函數名, 你要盡量避免將其用作變量名. 
+由於{\tt dict}是內置函數名, 你要盡量避免將其用作變數名. 
 \index{dict function}
 \index{function!dict}
 
@@ -7657,7 +7657,7 @@ Python中的字典則使用了叫做{\bf 雜湊表}的資料結構, 使其具有
 
 \begin{enumerate}
 
-\item 你可以新建26個變量, 對應字母表中的每個字母. 
+\item 你可以新建26個變數, 對應字母表中的每個字母. 
 然後遍歷字符串, 遇到哪個字母, 相應計數器就加一, 
 可能會用到鏈式條件. 
 
@@ -7998,20 +7998,20 @@ def fibonacci(n):
 你會發現, 快了很多. 
 
 
-\section{全局變量}
+\section{全局變數}
 \index{global variable}
 \index{variable!global}
 上例中, {\tt known} 是在函數外創建, 
 所以它屬於\verb"__main__"函數的框內, 這是一個特殊的框. 
-\verb"__main__"函數中的變量, 有時也被認為是{\bf 全局的}, 
+\verb"__main__"函數中的變數, 有時也被認為是{\bf 全局的}, 
 因為可以從任意函數訪問它們. 
-不像局部變量, 其運行的函數一旦結束, 便會消失, 
-全局變量可以在一個函數執行到另一個函數時, 也保持存在. 
+不像局部變數, 其運行的函數一旦結束, 便會消失, 
+全局變數可以在一個函數執行到另一個函數時, 也保持存在. 
 \index{flag}
 \index{main}
 
-全局變量, 一個常用的地方, 便是作為{\bf 標識}使用;
-也就是作為布爾變量, 來表示(``標識'')條件是否成立. 
+全局變數, 一個常用的地方, 便是作為{\bf 標識}使用;
+也就是作為布爾變數, 來表示(``標識'')條件是否成立. 
 比如, 有些程式會使用 {\tt verbose}作為標識, 來控制輸出信息的
 詳細程度:
 
@@ -8023,8 +8023,8 @@ def example1():
         print('Running example1')
 \end{verbatim}
 %
-如果嘗試重新賦值全局變量, 可能會得到意外結果. 
-下面的例子, 用全局變量來跟蹤函數是否被調用過:
+如果嘗試重新賦值全局變數, 可能會得到意外結果. 
+下面的例子, 用全局變數來跟蹤函數是否被調用過:
 \index{reassignment}
 
 \begin{verbatim}
@@ -8035,13 +8035,13 @@ def example2():
 \end{verbatim}
 %
 運行此程式, 你會注意到\verb"been_called"的值沒有改變. 
-問題在於 {\tt example2} 內部又創建了名為\verb"been_called"的局部變量. 
-而局部變量會在函數結束後釋放, 並不會對全局變量產生影響. 
+問題在於 {\tt example2} 內部又創建了名為\verb"been_called"的局部變數. 
+而局部變數會在函數結束後釋放, 並不會對全局變數產生影響. 
 \index{global statement}
 \index{statement!global}
 \index{declaration}
 
-如果想在函數內部修改全局變量, 你需要在賦值前, {\bf 聲明}這是全局變量:
+如果想在函數內部修改全局變數, 你需要在賦值前, {\bf 聲明}這是全局變數:
 
 \begin{verbatim}
 been_called = False
@@ -8052,11 +8052,11 @@ def example2():
 \end{verbatim}
 %
 這個{\bf global 聲明}會告訴解釋器,  ``在這個函數中, 當我說\verb"been_called", 
-我指的是那個全局變量;而不是新建一個局部變量. ''
+我指的是那個全局變數;而不是新建一個局部變數. ''
 \index{update!global variable}
 \index{global variable!update}
 
-下面是段修改全局變量的代碼:
+下面是段修改全局變數的代碼:
 
 \begin{verbatim}
 count = 0
@@ -8073,8 +8073,8 @@ def example3():
 UnboundLocalError: local variable 'count' referenced before assignment
 \end{verbatim}
 %
-Python假設{\tt count}是局部的, 據此假設, 需要在更新變量前先讀取變量. 
-解決方法依然是, 聲明{\tt count}為全局變量. 
+Python假設{\tt count}是局部的, 據此假設, 需要在更新變數前先讀取變數. 
+解決方法依然是, 聲明{\tt count}為全局變數. 
 \index{counter}
 
 \begin{verbatim}
@@ -8083,7 +8083,7 @@ def example3():
     count += 1
 \end{verbatim}
 %
-如果全局變量指向了可變的值, 那你在修改前, 無需聲明全局變量:
+如果全局變數指向了可變的值, 那你在修改前, 無需聲明全局變數:
 \index{mutability}
 
 \begin{verbatim}
@@ -8094,7 +8094,7 @@ def example4():
 \end{verbatim}
 %
 所以你可以在全局的串列或字典中, 添加, 移除以及替換元素, 
-但是你若想對變量重新賦值, 需要提前聲明全局變量:
+但是你若想對變數重新賦值, 需要提前聲明全局變數:
 
 \begin{verbatim}
 def example5():
@@ -8102,7 +8102,7 @@ def example5():
     known = dict()
 \end{verbatim}
 %
-全局變量是很有用, 但如果你到處使用, 並且還頻繁修改, 那麼程式往往會
+全局變數是很有用, 但如果你到處使用, 並且還頻繁修改, 那麼程式往往會
 難以除錯. 
 
 
@@ -8208,19 +8208,19 @@ def example5():
 \item[備忘(memo):] 存儲計算過的值, 避免後續重複計算的操作. 
 \index{memo}
 
-\item[全局變量(global variable):] 定義在函數之外的變量. 
-全局變量可以被任何函數獲取使用. 
+\item[全局變數(global variable):] 定義在函數之外的變數. 
+全局變數可以被任何函數獲取使用. 
 \index{global variable}
 
-\item[global語句(global statement):] 聲明變量是全局變量的語句.
+\item[global語句(global statement):] 聲明變數是全局變數的語句.
 \index{global statement}
 \index{statement!global}
 
-\item[標識(flag):] 標識條件是否為真的布爾變量. 
+\item[標識(flag):] 標識條件是否為真的布爾變數. 
 \index{flag}
 
 \item[聲明(declaration):] 像{\tt global}一樣的語句, 用來告知解釋器
-變量的有關信息. 
+變數的有關信息. 
 \index{declaration}
 
 \end{description}
@@ -8411,7 +8411,7 @@ It must have been a nine-pointer!' 發音完全一樣.
 \end{verbatim}
 %
 因為{\tt tuple} 是一個內置函數名, 
-所以要盡量避免用作變量名. 
+所以要盡量避免用作變數名. 
 
 多數串列運算子同樣適用於元組. 
 所以用方括號也可以索引元組元素:
@@ -8479,8 +8479,8 @@ True
 \index{assignment!tuple}
 \index{swap pattern}
 \index{pattern!swap}
-交換變量的值經常會用到. 
-比較傳統的方法, 是使用中間變量. 
+交換變數的值經常會用到. 
+比較傳統的方法, 是使用中間變數. 
 比如下面例子, 互換 {\tt a} 和 {\tt b}的值:
 
 \begin{verbatim}
@@ -8495,11 +8495,11 @@ True
 >>> a, b = b, a
 \end{verbatim}
 %
-左側是個變量元組;右側是個表達式元組. 
-每個值都會賦值給其對應的變量. 
+左側是個變數元組;右側是個表達式元組. 
+每個值都會賦值給其對應的變數. 
 右側的表達式在賦值操作前都會先計算. 
 
-同時左側變量的數量必須要和右側值的數量一樣:
+同時左側變數的數量必須要和右側值的數量一樣:
 \index{exception!ValueError}
 \index{ValueError}
 
@@ -8989,8 +8989,8 @@ for last, first in directory:
 \item[元組(tuple):] 一個不可變的元素序列. 
 \index{tuple}
 
-\item[元組賦值(tuple assignment):] 一種序列居右, 變量元組在左的賦值語句. 
-等號右側會先運算, 然後這些結果會賦值給相應的左側變量. 
+\item[元組賦值(tuple assignment):] 一種序列居右, 變數元組在左的賦值語句. 
+等號右側會先運算, 然後這些結果會賦值給相應的左側變數. 
 \index{tuple assignment}
 \index{assignment!tuple}
 
@@ -10455,7 +10455,7 @@ if __name__ == '__main__':
     print(linecount('wc.py'))
 \end{verbatim}
 %
-\verb"__name__" 是一個內置變量, 程式一旦開始運行, 便被賦值. 
+\verb"__name__" 是一個內置變數, 程式一旦開始運行, 便被賦值. 
 如果程式作為一個腳本運行, \verb"__name__"的值為\verb"'__main__'";
 就像上面例子, 測試代碼便會執行. 
 如果程式作為模塊導入, 那\verb"__name__"的值便不是\verb"'__main__'", 
@@ -10671,7 +10671,7 @@ if __name__ == '__main__':
 
 \begin{itemize}
 
-\item 我們可以將坐標分別保存在兩個變量中, {\tt x}和{\tt y}. 
+\item 我們可以將坐標分別保存在兩個變數中, {\tt x}和{\tt y}. 
 
 \item 我們也可以將坐標作為串列或元組的元素進行存儲. 
 
@@ -10697,7 +10697,7 @@ class Point:
 %
 代碼頭表示這個新類叫做{\tt Point}. 
 代碼體是一個文檔字符串, 用來描述類的用途. 
-你可以在類定義內部, 定義變量和方法, 
+你可以在類定義內部, 定義變數和方法, 
 稍後再來講解. 
 \index{Point class}
 \index{class!Point}
@@ -10751,7 +10751,7 @@ class Point:
 \end{verbatim}
 %
 
-這種語法類似於從模塊中選取變量, 比如{\tt math.pi}, 或者 {\tt string.whitespace}. 
+這種語法類似於從模塊中選取變數, 比如{\tt math.pi}, 或者 {\tt string.whitespace}. 
 但在此處, 我們是使用點標法對對象中特定元素進行賦值. 
 這些元素叫做{\bf 屬性(attribute)}. 
 
@@ -10771,7 +10771,7 @@ class Point:
 \label{fig.point}
 \end{figure}
 
-變量{\tt blank}指向了一個包含兩個屬性的Point對象. 
+變數{\tt blank}指向了一個包含兩個屬性的Point對象. 
 每個屬性指向了一個浮點數. 
 
 你可以基於同樣語法, 讀取屬性值:
@@ -10785,8 +10785,8 @@ class Point:
 \end{verbatim}
 %
 表達式{\tt blank.x}表示, ``定位{\tt blank}指向的對象, 獲取{\tt x}的值.''
-在上面例子中,  我們把這個表達式的值, 賦給了變量{\tt x}. 
-變量{\tt x}和屬性{\tt x}並不會出現衝突. 
+在上面例子中,  我們把這個表達式的值, 賦給了變數{\tt x}. 
+變數{\tt x}和屬性{\tt x}並不會出現衝突. 
 
 同時, 你也可以在任意表達式中使用點標法. 比如:
 
@@ -10908,7 +10908,7 @@ def find_center(rect):
 \end{verbatim}
 %
 下面的例子中, 傳入了一個{\tt box}參數, 
-然後將結果賦值給了{\tt center}變量:
+然後將結果賦值給了{\tt center}變數:
 
 \begin{verbatim}
 >>> center = find_center(box)
@@ -10965,7 +10965,7 @@ def grow_rectangle(rect, dwidth, dheight):
 \index{aliasing}
 
 別名的使用會讓程式變得複雜, 因為一處改動可能會影響到其他地方. 
-同時, 追蹤指向某個既定對象的所有變量, 又很困難. 
+同時, 追蹤指向某個既定對象的所有變數, 又很困難. 
 \index{copying objects}
 \index{object!copying}
 \index{copy module}
@@ -12445,8 +12445,8 @@ queen_of_diamonds = Card(1, 12)
                              Card.suit_names[self.suit])
 \end{verbatim}
 %
-像變量\verb"suit_names" 和\verb"rank_names"一樣, 
-定義在類的內部, 但同時在方法外部的變量, 叫做類屬性, 
+像變數\verb"suit_names" 和\verb"rank_names"一樣, 
+定義在類的內部, 但同時在方法外部的變數, 叫做類屬性, 
 因為它們屬於{\tt Card}這個類對象. 
 \index{instance attribute}
 \index{attribute!instance}
@@ -12939,7 +12939,7 @@ def find_defining_class(obj, meth_name):
 
 第~\ref{markov}節的馬爾可夫分析, 便是一個很好的例子. 
 如果你從\url{http://thinkpython2.com/code/markov.py}下載我的代碼, 
-你會看到使用了兩個全局變量---\verb"suffix_map" 和
+你會看到使用了兩個全局變數---\verb"suffix_map" 和
 \verb"prefix"---會被多個函數讀寫. 
 
 \begin{verbatim}
@@ -12947,7 +12947,7 @@ suffix_map = {}
 prefix = ()            
 \end{verbatim}
 
-因為這些變量是全局的, 我們一次只能運行一個分析. 
+因為這些變數是全局的, 我們一次只能運行一個分析. 
 如果我們讀取兩個文本, 他們的前置和後置詞彙都會被添加到同一個資料結構
 中(會生成一些有趣的文本). 
 
@@ -12987,18 +12987,18 @@ class Markov:
 
 \begin{enumerate}
 
-\item 先編寫讀寫全局變量的函數(如有必要).
+\item 先編寫讀寫全局變數的函數(如有必要).
 
-\item 一旦程式可以運行, 便可尋找全局變量和使用它們的函數之間的關聯.
+\item 一旦程式可以運行, 便可尋找全局變數和使用它們的函數之間的關聯.
 
-\item 將相關變量封裝為對象的屬性.
+\item 將相關變數封裝為對象的屬性.
 
 \item 將相關函數轉換為新類的方法.
 
 \end{enumerate}
 
 做個練習, 從\url{http://thinkpython2.com/code/markov.py}下載筆者的馬爾可夫代碼, 
-遵循上述步驟, 將全局變量封裝為新類{\tt Markov}的屬性. 
+遵循上述步驟, 將全局變數封裝為新類{\tt Markov}的屬性. 
 解決方案代碼見\url{http://thinkpython2.com/code/markov2.py}.
 
 
@@ -13052,7 +13052,7 @@ class Markov:
 \index{multiplicity (in class diagram)}
 
 \item[數據封裝(data encapsulation):] 一種開發模式, 
-起始用全局變量出原型, 最後將全局變量均變為實例屬性, 從而產生最終版本. 
+起始用全局變數出原型, 最後將全局變數均變為實例屬性, 從而產生最終版本. 
 \index{data encapsulation}
 \index{development plan!data encapsulation}
 
@@ -13260,7 +13260,7 @@ init方法:
         self.pouch_contents = [] if contents == None else contents 
 \end{verbatim}
 
-通常, 如果條件語句的兩個分支都是簡單表達式, 要麼是被返回, 要麼是被賦給同一變量, 
+通常, 如果條件語句的兩個分支都是簡單表達式, 要麼是被返回, 要麼是被賦給同一變數, 
 那麼你便可以用條件表達式替換條件語句. 
 \index{conditional statement}
 \index{statement!conditional}
@@ -13294,7 +13294,7 @@ def capitalize_all(t):
 \index{list}
 \index{for loop}
 
-串列推導式的語法略顯奇怪, 主要因為這個迴圈變量, 如例子中的{\tt s}, 在定義之前, 
+串列推導式的語法略顯奇怪, 主要因為這個迴圈變數, 如例子中的{\tt s}, 在定義之前, 
 便出現在了表達式中. 
 \index{loop variable}
 
@@ -13949,7 +13949,7 @@ def binomial_coeff(n, k):
 
 \begin{enumerate}
 
-\item 確保你沒有用Python關鍵字作為變量名. 
+\item 確保你沒有用Python關鍵字作為變數名. 
 \index{keyword}
 
 \item 檢查每個複合語句的頭部末尾是否都寫了冒號, 包括{\tt for}, {\tt while},
@@ -14079,7 +14079,7 @@ recursion depth exceeded(運行時錯誤：超出最大遞歸深度)''的錯誤.
 \index{loop!condition}
 
 如果你認為程式中存在無限迴圈, 同時知道出問題的迴圈所在, 那便可以在
-迴圈的末尾添加{\tt print}語句, 輸出條件中變量的值以及條件的結果. 
+迴圈的末尾添加{\tt print}語句, 輸出條件中變數的值以及條件的結果. 
 
 比如:
 
@@ -14145,9 +14145,9 @@ while x > 0 and y < 0 :
 
 \begin{description}
 
-\item[名稱異常(NameError):] 嘗試使用當前環境不存在的變量. 
+\item[名稱異常(NameError):] 嘗試使用當前環境不存在的變數. 
 檢查名稱拼寫是否正確, 或者前後是否一致. 
-同時要謹記局部變量是局部的; 你不能在函數定義的外面引用它們.
+同時要謹記局部變數是局部的; 你不能在函數定義的外面引用它們.
 \index{NameError}
 \index{exception!NameError}
 
@@ -14297,7 +14297,7 @@ Python除錯器({\tt pdb})對於追蹤異常非常有用,
 
 編寫複雜的表達式, 代碼長一些, 但可讀性高的話, 也沒問題.
 只是除錯就不方便了. 
-通常更好的做法是, 將複雜表達式拆解為一系列對臨時變量賦值的語句. 
+通常更好的做法是, 將複雜表達式拆解為一系列對臨時變數賦值的語句. 
 
 比如:
 
@@ -14314,8 +14314,8 @@ self.hands[i].addCard(pickedCard)
 \end{verbatim}
 %
 
-顯然這個版本更易於閱讀, 因為變量名稱提供了額外的文檔說明, 
-同時它也便於除錯, 因為你可以檢查中間變量的型態和值. 
+顯然這個版本更易於閱讀, 因為變數名稱提供了額外的文檔說明, 
+同時它也便於除錯, 因為你可以檢查中間變數的型態和值. 
 \index{temporary variable}
 \index{variable!temporary}
 
@@ -14349,7 +14349,7 @@ y = x / 2 * math.pi
 
 如果你的{\tt return}語句是個複雜的表達式, 
 那你很難在返回之前打印結果. 
-不過, 你依然可以用臨時變量. 
+不過, 你依然可以用臨時變數. 
 比如, 將:
 
 \begin{verbatim}
