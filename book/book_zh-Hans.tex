@@ -532,7 +532,7 @@ Allen B. Downey \\
 
 \item Keith Verheyden 修正了第3章的一个错误. 
 
-\item Peter Winstanley 指出了第3章拉丁语中的一个长期存在的错误. 
+\item Peter Winstanley 指出了第3章拉丁语中的一个一直存在的错误. 
 
 \item Chris Wrobell修正了 I/O 和异常章节中的一个错误. 
 
@@ -773,29 +773,56 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
 
 \chapter{程序之道}
 
+%The goal of this book is to teach you to think like a computer
+%scientist.  This way of thinking combines some of the best features of
+%mathematics, engineering, and natural science.  Like mathematicians,
+%computer scientists use formal languages to denote ideas (specifically
+%computations).  Like engineers, they design things, assembling
+%components into systems and evaluating tradeoffs among alternatives.
+%Like scientists, they observe the behavior of complex systems, form
+%hypotheses, and test predictions.  \index{problem solving}
 本书期望能带你做到像计算机专家一样思考. 
 这意味着你要整合数学, 工程和自然科学的知识去综合思考. 
-像数学家一样, 计算机专家通常以形式语言去表达思想(尤其涉及计算). 
-像工程师一样, 他们设计原件, 拼装组件, 构建系统, 权衡各种方案. 
-像科学家一样, 他们观察复杂系统行为, 小心假设, 积极求证. 
+如数学家一样, 计算机专家通常以形式语言去表达思想(尤其涉及计算). 
+如工程师一样, 他们设计原件, 拼装组件, 构建系统, 权衡各种方案. 
+如科学家一样, 他们观察复杂系统的行为, 小心假设, 积极求证. 
 \index{problem solving}
 
+%The single most important skill for a computer scientist is {\bf
+%  problem solving}.  Problem solving means the ability to formulate
+%problems, think creatively about solutions, and express a solution
+%clearly and accurately.  As it turns out, the process of learning to
+%program is an excellent opportunity to practice problem-solving
+%skills.  That's why this chapter is called, ``The way of the
+%program''.
 计算机专家最重要的能力是{\bf 解决问题}. 
 解决问题意味着能够发现问题, 同时可以提出创造性解决方案, 并能清晰准确表述. 
 事实证明, 学习编程是锻炼解决问题能力的绝佳机会. 
 这也是本章叫做程序之道的缘由. 
- 
+
+%On one level, you will be learning to program, a useful skill by
+%itself.  On another level, you will use programming as a means to an
+%end.  As we go along, that end will become clearer.
 一方面, 你将学习编程这一技能, 另一方面, 你将利用编程技能来实现目标. 
 随着不断学习, 我们终将看到彼岸. 
 
+%\section{What is a program?}
 \section{何为程序}
 
+%A {\bf program} is a sequence of instructions that specifies how to
+%perform a computation.  The computation might be something
+%mathematical, such as solving a system of equations or finding the
+%roots of a polynomial, but it can also be a symbolic computation, such
+%as searching and replacing text in a document or something
+%graphical, like processing an image or playing a video.
 {\bf 程序} 简而言之, 就是一堆执行运算的指令. 
-运算可以是数学计算, 例如求解方程或多项式. 
+运算可以是数学计算, 例如求解方程组或多项式的根. 
 也可以是符号运算, 例如检索或者替换文档中的语句词汇. 
 也可以是图形运算, 比如处理图片, 播放视频. 
 \index{program}
 
+%The details look different in different languages, but a few basic
+%instructions appear in just about every language:
 不同语言虽各有特色, 但基础指令相差无几:
 
 \begin{description}
